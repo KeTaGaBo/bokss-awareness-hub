@@ -133,413 +133,337 @@
     }
   },
 
-  "questions": [
-    {
-      "id": 1,
-      "type": "single",
-      "presentation": "classic",
-      "category": {
-        "zh-HK": "查看資料",
-        "zh-CN": "查看资料",
-        "en": "Viewing Data"
-      },
-      "title": {
-        "zh-HK": "以下哪一項最準確？",
-        "zh-CN": "以下哪一项最准确？",
-        "en": "Which statement is the most accurate?"
-      },
-      "scenario": {
-        "zh-HK": "你喺系統入面見到一位熟人資料，你無下載、無截圖、無外傳，只係出於好奇望一望。以下哪一項最準確？",
-        "zh-CN": "你在系统里看到一位熟人资料，你没有下载、截图或外传，只是出于好奇看一看。以下哪一项最准确？",
-        "en": "You notice the record of someone you know in the system. You do not download, screenshot, or share it—you simply look out of curiosity. Which statement is the most accurate?"
-      },
-      "options": [
-        {
-          "text": {
-            "zh-HK": "只要無外傳，就無問題。",
-            "zh-CN": "只要没有外传，就没有问题。",
-            "en": "It is fine as long as nothing is shared."
-          },
-          "correct": false
-        },
-        {
-          "text": {
-            "zh-HK": "只要對方係你識嘅人，就唔算違規。",
-            "zh-CN": "只要对方是你认识的人，就不算违规。",
-            "en": "It is not a breach if the person is someone you know."
-          },
-          "correct": false
-        },
-        {
-          "text": {
-            "zh-HK": "如果無工作需要，單純查看本身已可能構成不當使用。",
-            "zh-CN": "如果没有工作需要，单纯查看本身已可能构成不当使用。",
-            "en": "If there is no work-related need, simply viewing the data may already constitute misuse."
-          },
-          "correct": true
-        },
-        {
-          "text": {
-            "zh-HK": "只要系統有顯示，即係可以看。",
-            "zh-CN": "只要系统有显示，就表示可以看。",
-            "en": "If the system shows it, then you are allowed to view it."
-          },
-          "correct": false
-        }
-      ],
-      "explanation": {
-        "zh-HK": "即使無下載或分享，未經授權查閱與自己工作無關的資料，本身已可能屬於不當使用。",
-        "zh-CN": "即使没有下载或分享，未经授权查阅与自己工作无关的资料，本身已可能属于不当使用。",
-        "en": "Even without downloading or sharing, viewing data unrelated to your work without authorization may already amount to misuse."
-      },
-      "reminder": {
-        "zh-HK": "查看本身，就已經是使用資料。",
-        "zh-CN": "查看本身，就已经是在使用资料。",
-        "en": "Viewing data is already a form of using data."
-      }
-    },
+"questions": [
 
-    {
-      "id": 2,
-      "type": "single",
-      "presentation": "scenario",
-      "category": {
-        "zh-HK": "帳號與身份",
-        "zh-CN": "账号与身份",
-        "en": "Accounts and Identity"
-      },
-      "title": {
-        "zh-HK": "實習第一日",
-        "zh-CN": "实习第一天",
-        "en": "First Day of Internship"
-      },
-      "story": {
-        "zh-HK": {
-          "label": "情境",
-          "title": "實習第一日",
-          "dialogues": [
-            {
-              "speaker": "前輩同事",
-              "avatar": "🧑‍💼",
-              "side": "left",
-              "text": "我趕住去開會，我個帳號仲開住，你幫我睇埋呢位服務使用者資料，快手搞掂佢啦。"
-            },
-            {
-              "speaker": "你",
-              "avatar": "🧑‍🎓",
-              "side": "right",
-              "text": "但我唔係用緊自己帳號，咁樣得唔得？"
-            },
-            {
-              "speaker": "另一位同事",
-              "avatar": "😅",
-              "side": "left",
-              "text": "都係幫手啫，大家忙緊，唔使咁執著啦。"
-            }
-          ]
-        },
-        "zh-CN": {
-          "label": "情境",
-          "title": "实习第一天",
-          "dialogues": [
-            {
-              "speaker": "前辈同事",
-              "avatar": "🧑‍💼",
-              "side": "left",
-              "text": "我赶着去开会，我的账号还开着，你帮我看一下这位服务使用者资料，快点处理吧。"
-            },
-            {
-              "speaker": "你",
-              "avatar": "🧑‍🎓",
-              "side": "right",
-              "text": "但我不是用自己的账号，这样可以吗？"
-            },
-            {
-              "speaker": "另一位同事",
-              "avatar": "😅",
-              "side": "left",
-              "text": "只是帮个忙而已，大家都很忙，不用太执着。"
-            }
-          ]
-        },
-        "en": {
-          "label": "Scenario",
-          "title": "First Day of Internship",
-          "dialogues": [
-            {
-              "speaker": "Senior colleague",
-              "avatar": "🧑‍💼",
-              "side": "left",
-              "text": "I’m rushing to a meeting and my account is still open. Please check this service user’s record for me and sort it out quickly."
-            },
-            {
-              "speaker": "You",
-              "avatar": "🧑‍🎓",
-              "side": "right",
-              "text": "But I’m not using my own account. Is that okay?"
-            },
-            {
-              "speaker": "Another colleague",
-              "avatar": "😅",
-              "side": "left",
-              "text": "You’re only helping. Everyone’s busy—no need to be so strict."
-            }
-          ]
-        }
-      },
-      "question": {
-        "zh-HK": "以下哪一項最合適？",
-        "zh-CN": "以下哪一项最合适？",
-        "en": "What is the most appropriate response?"
-      },
-      "options": [
-        {
-          "text": {
-            "zh-HK": "既然畫面已經開住，而且只是幫手，可以照做。",
-            "zh-CN": "既然画面已经开着，而且只是帮忙，可以照做。",
-            "en": "Since the screen is already open and you are only helping, it is fine to continue."
-          },
-          "correct": false
-        },
-        {
-          "text": {
-            "zh-HK": "應拒絕使用他人帳號，並按正規程序處理。",
-            "zh-CN": "应拒绝使用他人账号，并按正规程序处理。",
-            "en": "You should refuse to use another person’s account and follow the proper procedure."
-          },
-          "correct": true
-        },
-        {
-          "text": {
-            "zh-HK": "只要之後向主管補充說明，就無問題。",
-            "zh-CN": "只要之后向主管补充说明，就没有问题。",
-            "en": "It is acceptable as long as you explain it to a supervisor afterwards."
-          },
-          "correct": false
-        },
-        {
-          "text": {
-            "zh-HK": "可以先查，之後立即 logout 就可以。",
-            "zh-CN": "可以先查，之后立刻 logout 就可以。",
-            "en": "You may do it first and then log out immediately afterwards."
-          },
-          "correct": false
-        }
-      ],
-      "explanation": {
-        "zh-HK": "即使出於幫忙，使用他人帳號仍會破壞身份追蹤及審計紀錄，屬高風險行為。",
-        "zh-CN": "即使出于帮忙，使用他人账号仍会破坏身份追踪及审计记录，属于高风险行为。",
-        "en": "Even if the intention is to help, using another person’s account breaks identity tracking and audit trails and is therefore high-risk."
-      },
-      "reminder": {
-        "zh-HK": "借帳號 = 借身份 = 借風險。",
-        "zh-CN": "借账号 = 借身份 = 借风险。",
-        "en": "Borrowing an account means borrowing identity and risk."
-      }
-    },
+{
+  "id": 1,
+  "type": "single",
+  "presentation": "classic",
+  "category": { "zh-HK": "基本觀念", "zh-CN": "基本观念", "en": "Basics" },
+  "title": {
+    "zh-HK": "只係「睇一睇」，算唔算問題？",
+    "zh-CN": "只是“看一看”，算不算问题？",
+    "en": "Is “just looking” a problem?"
+  },
+  "scenario": {
+    "zh-HK": "你見到系統內一份資料，雖然唔關你工作，但只是看一下。",
+    "zh-CN": "你在系统里看到一份资料，虽然与你工作无关，但只是看一下。",
+    "en": "You see a record in the system unrelated to your work and just take a look."
+  },
+  "options": [
+    {"text": {"zh-HK":"冇問題","zh-CN":"没问题","en":"No problem"}, "correct": false},
+    {"text": {"zh-HK":"可能構成不當使用","zh-CN":"可能构成不当使用","en":"May be improper use"}, "correct": true},
+    {"text": {"zh-HK":"只要唔影印就得","zh-CN":"只要不打印就可以","en":"Fine if not copied"}, "correct": false},
+    {"text": {"zh-HK":"要睇人情況","zh-CN":"要看情况","en":"Depends"}, "correct": false}
+  ],
+  "explanation": {
+    "zh-HK": "即使冇下載或分享，只要無工作需要，查看本身已可能違規。",
+    "zh-CN": "即使没有下载或分享，只要没有工作需要，查看本身已可能违规。",
+    "en": "Even without downloading, accessing without a valid need may already be misuse."
+  },
+  "reminder": {
+    "zh-HK": "查看 = 使用。",
+    "zh-CN": "查看 = 使用。",
+    "en": "Viewing is already usage."
+  }
+},
 
-    {
-      "id": 3,
-      "type": "multiple",
-      "presentation": "scenario",
-      "category": {
-        "zh-HK": "資料外帶與漏洞責任",
-        "zh-CN": "资料外带与漏洞责任",
-        "en": "Off-site Data and Responsibility"
-      },
-      "title": {
-        "zh-HK": "趕交差之下的陷阱",
-        "zh-CN": "赶任务时的陷阱",
-        "en": "The Trap of “Just Finishing the Task”"
-      },
-      "story": {
-        "zh-HK": {
-          "label": "情境",
-          "title": "趕交差之下的陷阱",
-          "dialogues": [
-            {
-              "speaker": "同學義工",
-              "avatar": "📋",
-              "side": "left",
-              "text": "不如你先把資料下載到你部手提電腦，今晚返屋企再整理，咁就趕得切。"
-            },
-            {
-              "speaker": "你",
-              "avatar": "🧑‍💻",
-              "side": "right",
-              "text": "但我部機唔係機構裝置，而且呢啲資料都幾敏感。"
-            },
-            {
-              "speaker": "朋友",
-              "avatar": "🤷",
-              "side": "left",
-              "text": "如果系統畀你見到，其實都係 IT 設定問題啦，應該唔關你事。"
-            }
-          ]
-        },
-        "zh-CN": {
-          "label": "情境",
-          "title": "赶任务时的陷阱",
-          "dialogues": [
-            {
-              "speaker": "同学义工",
-              "avatar": "📋",
-              "side": "left",
-              "text": "不如你先把资料下载到你的手提电脑，今晚回家再整理，这样比较赶得及。"
-            },
-            {
-              "speaker": "你",
-              "avatar": "🧑‍💻",
-              "side": "right",
-              "text": "但我的电脑不是机构装置，而且这些资料也很敏感。"
-            },
-            {
-              "speaker": "朋友",
-              "avatar": "🤷",
-              "side": "left",
-              "text": "如果系统让你看得到，其实也是 IT 设置问题，应该不关你事。"
-            }
-          ]
-        },
-        "en": {
-          "label": "Scenario",
-          "title": "The Trap of “Just Finishing the Task”",
-          "dialogues": [
-            {
-              "speaker": "Student volunteer",
-              "avatar": "📋",
-              "side": "left",
-              "text": "Why don’t you download the data to your laptop and finish sorting it at home tonight? That way you’ll still make the deadline."
-            },
-            {
-              "speaker": "You",
-              "avatar": "🧑‍💻",
-              "side": "right",
-              "text": "But my laptop isn’t an approved device, and the data looks quite sensitive."
-            },
-            {
-              "speaker": "Friend",
-              "avatar": "🤷",
-              "side": "left",
-              "text": "If the system lets you see it, that’s really an IT setup problem. It shouldn’t be your responsibility."
-            }
-          ]
-        }
-      },
-      "question": {
-        "zh-HK": "以下哪些說法是正確的？（可選多項）",
-        "zh-CN": "以下哪些说法是正确的？（可多选）",
-        "en": "Which of the following statements are correct? (Select all that apply.)"
-      },
-      "options": [
-        {
-          "text": {
-            "zh-HK": "把資料下載到私人電腦或未經批准裝置，會增加洩漏風險。",
-            "zh-CN": "把资料下载到私人电脑或未经批准装置，会增加泄漏风险。",
-            "en": "Downloading data to a personal computer or unapproved device increases the risk of leakage."
-          },
-          "correct": true
-        },
-        {
-          "text": {
-            "zh-HK": "如果完成後即刻刪除，就代表無問題。",
-            "zh-CN": "如果完成后立刻删除，就代表没有问题。",
-            "en": "If the data is deleted immediately afterwards, there is no problem."
-          },
-          "correct": false
-        },
-        {
-          "text": {
-            "zh-HK": "即使系統權限設置有問題，明知與工作無關仍鑽漏洞取用資料，使用者仍可能要負責。",
-            "zh-CN": "即使系统权限设置有问题，明知与工作无关仍钻漏洞取用资料，使用者仍可能要负责。",
-            "en": "Even if permissions were configured wrongly, a user who knowingly exploits the weakness for unrelated access may still be responsible."
-          },
-          "correct": true
-        },
-        {
-          "text": {
-            "zh-HK": "只要責任喺 IT，使用者就唔使再判斷自己應否取用資料。",
-            "zh-CN": "只要责任在 IT，使用者就不用再判断自己应否取用资料。",
-            "en": "If the issue started with IT, the user no longer needs to judge whether taking the data is appropriate."
-          },
-          "correct": false
-        }
-      ],
-      "explanation": {
-        "zh-HK": "把資料帶離受控環境本身已屬高風險；而系統設置失誤與個人濫用係兩回事，使用者仍需對自己的行為負責。",
-        "zh-CN": "把资料带离受控环境本身已属高风险；而系统设置失误与个人滥用是两回事，使用者仍需对自己的行为负责。",
-        "en": "Taking data outside a controlled environment is itself high-risk. System misconfiguration and personal misuse are separate issues, and users still remain responsible for their own actions."
-      },
-      "reminder": {
-        "zh-HK": "系統有洞，不等於你可以鑽；帶走資料，風險不會準時下班。",
-        "zh-CN": "系统有洞，不等于你可以钻；带走资料，风险不会准时下班。",
-        "en": "A system weakness does not mean you may exploit it; once data leaves the system, the risk does not clock off."
-      }
-    },
+{
+  "id": 2,
+  "type": "single",
+  "presentation": "classic",
+  "category": { "zh-HK": "權限", "zh-CN": "权限", "en": "Access" },
+  "title": {
+    "zh-HK": "看得到＝可以用？",
+    "zh-CN": "看得到＝可以用？",
+    "en": "Visible = Allowed?"
+  },
+  "scenario": {
+    "zh-HK": "系統顯示資料。",
+    "zh-CN": "系统显示数据。",
+    "en": "Data is visible in the system."
+  },
+  "options": [
+    {"text": {"zh-HK":"可以用","zh-CN":"可以使用","en":"Can use"}, "correct": false},
+    {"text": {"zh-HK":"不一定","zh-CN":"不一定","en":"Not necessarily"}, "correct": true},
+    {"text": {"zh-HK":"看情況","zh-CN":"看情况","en":"Depends"}, "correct": false},
+    {"text": {"zh-HK":"只要唔分享就得","zh-CN":"只要不分享","en":"No share ok"}, "correct": false}
+  ],
+  "explanation": {
+    "zh-HK": "是否可用取決於授權目的。",
+    "zh-CN": "是否可用取决于授权目的。",
+    "en": "Access depends on purpose and authorization."
+  },
+  "reminder": {
+    "zh-HK": "見到 ≠ 可以用",
+    "zh-CN": "看到 ≠ 可以用",
+    "en": "Seen ≠ Allowed"
+  }
+},
 
-    {
-      "id": 4,
-      "type": "single",
-      "presentation": "classic",
-      "category": {
-        "zh-HK": "私人關係",
-        "zh-CN": "私人关系",
-        "en": "Personal Relationships"
-      },
-      "title": {
-        "zh-HK": "以下哪一項最合適？",
-        "zh-CN": "以下哪一项最合适？",
-        "en": "Which option is the most appropriate?"
-      },
-      "scenario": {
-        "zh-HK": "如果你朋友正在使用某項服務，而你並非負責相關個案，以下哪一項最合適？",
-        "zh-CN": "如果你的朋友正在使用某项服务，而你并非负责相关个案，以下哪一项最合适？",
-        "en": "If your friend is receiving a service and you are not responsible for the case, which option is the most appropriate?"
-      },
-      "options": [
-        {
-          "text": {
-            "zh-HK": "出於關心，可以自行登入系統查看。",
-            "zh-CN": "出于关心，可以自行登录系统查看。",
-            "en": "You may log in and check the record yourself out of concern."
-          },
-          "correct": false
-        },
-        {
-          "text": {
-            "zh-HK": "私人關係不等於工作需要，不應自行查閱。",
-            "zh-CN": "私人关系不等于工作需要，不应自行查阅。",
-            "en": "A personal relationship does not equal a work need, so you should not access the record yourself."
-          },
-          "correct": true
-        },
-        {
-          "text": {
-            "zh-HK": "只看少量資料，不算問題。",
-            "zh-CN": "只看少量资料，不算问题。",
-            "en": "Looking at only a small amount of data is not a problem."
-          },
-          "correct": false
-        },
-        {
-          "text": {
-            "zh-HK": "如果朋友口頭同意，就可以直接查看。",
-            "zh-CN": "如果朋友口头同意，就可以直接查看。",
-            "en": "If your friend verbally agrees, you may directly view the record."
-          },
-          "correct": false
-        }
-      ],
-      "explanation": {
-        "zh-HK": "私人關係不等於工作需要。即使出發點是關心，只要唔屬於你嘅職責範圍，就唔應自行查閱。",
-        "zh-CN": "私人关系不等于工作需要。即使出发点是关心，只要不属于你的职责范围，就不应自行查阅。",
-        "en": "A personal relationship does not equal a work need. Even if the intention is concern, you should not access records outside your role."
-      },
-      "reminder": {
-        "zh-HK": "關心要有界線，資料也有界線。",
-        "zh-CN": "关心要有界线，资料也有界线。",
-        "en": "Concern needs boundaries, and so does data."
-      }
+{
+  "id": 3,
+  "type": "single",
+  "presentation": "scenario",
+  "category": { "zh-HK": "帳號", "zh-CN": "账号", "en": "Account" },
+  "title": {
+    "zh-HK": "幫手 vs 風險",
+    "zh-CN": "帮忙 vs 风险",
+    "en": "Helping vs Risk"
+  },
+  "story": {
+    "zh-HK": {
+      "label": "情境",
+      "title": "同事求助",
+      "dialogues":[
+        {"speaker":"同事","avatar":"😅","side":"left","text":"幫我查一查，用我帳號啦。"},
+        {"speaker":"你","avatar":"🧑‍💻","side":"right","text":"我咁做得唔得？"}
+      ]
+    },
+    "zh-CN": {
+      "label": "情境",
+      "title": "同事求助",
+      "dialogues":[
+        {"speaker":"同事","avatar":"😅","side":"left","text":"帮我查，用我账号吧。"},
+        {"speaker":"你","avatar":"🧑‍💻","side":"right","text":"这样可以吗？"}
+      ]
+    },
+    "en": {
+      "label": "Scenario",
+      "title": "Colleague Request",
+      "dialogues":[
+        {"speaker":"Colleague","avatar":"😅","side":"left","text":"Use my account to help me."},
+        {"speaker":"You","avatar":"🧑‍💻","side":"right","text":"Is that okay?"}
+      ]
     }
+  },
+  "question": {
+    "zh-HK": "最適當做法？",
+    "zh-CN": "最合适做法？",
+    "en": "Best response?"
+  },
+  "options":[
+    {"text":{"zh-HK":"照做","zh-CN":"照做","en":"Do it"},"correct":false},
+    {"text":{"zh-HK":"拒絕","zh-CN":"拒绝","en":"Refuse"},"correct":true},
+    {"text":{"zh-HK":"之後補報","zh-CN":"事后报告","en":"Report later"},"correct":false},
+    {"text":{"zh-HK":"只睇少量","zh-CN":"看一点","en":"Check a bit"},"correct":false}
+  ],
+  "explanation":{"zh-HK":"借帳號屬高風險行為。","zh-CN":"借账号属于高风险。","en":"Account sharing is high risk."},
+  "reminder":{"zh-HK":"借帳號＝借風險","zh-CN":"借账号＝借风险","en":"Borrow account = borrow risk"}
+},
+
+{
+  "id": 4,
+  "type": "single",
+  "presentation": "scenario",
+  "category": { "zh-HK": "熟人", "zh-CN": "熟人", "en": "Familiar" },
+  "title": {
+    "zh-HK": "朋友資料",
+    "zh-CN": "朋友资料",
+    "en": "Friend Data"
+  },
+  "story": {
+    "zh-HK": {
+      "label": "情境",
+      "title": "朋友入院",
+      "dialogues":[
+        {"speaker":"你","avatar":"👀","side":"right","text":"想睇佢情況..."}
+      ]
+    },
+    "zh-CN": {
+      "label": "情境",
+      "title": "朋友入院",
+      "dialogues":[
+        {"speaker":"你","avatar":"👀","side":"right","text":"想看看情况..."}
+      ]
+    },
+    "en": {
+      "label": "Scenario",
+      "title": "Friend in care",
+      "dialogues":[
+        {"speaker":"You","avatar":"👀","side":"right","text":"I want to check their record..."}
+      ]
+    }
+  },
+  "question": {
+      "zh-HK": "應否查看？","zh-CN": "是否查看？","en": "Should you check?"
+    },
+    "options":[
+      {"text":{"zh-HK":"可以","zh-CN":"可以","en":"Yes"},"correct":false},
+      {"text":{"zh-HK":"不可以","zh-CN":"不可以","en":"No"},"correct":true},
+      {"text":{"zh-HK":"少量可以","zh-CN":"可以看一点","en":"Only a bit"},"correct":false},
+      {"text":{"zh-HK":"看情況","zh-CN":"看情况","en":"Depends"},"correct":false}
+    ],
+    "explanation":{"zh-HK":"私人關係不等於授權。","zh-CN":"私人关系不代表授权。","en":"Personal relation ≠ authorization"},
+    "reminder":{"zh-HK":"關心 ≠ 可以查","zh-CN":"关心 ≠ 可查","en":"Care ≠ access"}
+  },
+  
+  {
+    "id": 5,
+    "type": "multiple",
+    "presentation": "classic",
+    "category": { "zh-HK": "高風險", "zh-CN": "高风险", "en": "Risk" },
+    "title": {
+      "zh-HK": "哪些屬高風險？",
+      "zh-CN": "哪些属于高风险？",
+      "en": "Which are high risk?"
+    },
+    "scenario": {
+      "zh-HK": "選出所有高風險行為",
+      "zh-CN": "选出高风险行为",
+      "en": "Select all high-risk actions"
+    },
+    "options":[
+      {"text":{"zh-HK":"共用帳號","zh-CN":"共享账号","en":"Sharing account"},"correct":true},
+      {"text":{"zh-HK":"下載資料回家","zh-CN":"下载数据回家","en":"Download home"},"correct":true},
+      {"text":{"zh-HK":"按授權工作","zh-CN":"按授权工作","en":"Authorized work"},"correct":false},
+      {"text":{"zh-HK":"借他人帳號","zh-CN":"借用账号","en":"Borrow login"},"correct":true}
+    ],
+    "explanation":{"zh-HK":"三者都會破壞控制。","zh-CN":"都会破坏控制。","en":"All weaken control"},
+    "reminder":{"zh-HK":"方便＝風險","zh-CN":"方便＝风险","en":"Convenience = risk"}
+  },
+  
+  {
+    "id": 6,
+    "type": "single",
+    "presentation": "classic",
+    "category": { "zh-HK": "速度", "zh-CN": "速度", "en": "Speed" },
+    "title": {
+      "zh-HK": "趕時間時",
+      "zh-CN": "赶时间时",
+      "en": "When rushed"
+    },
+    "scenario": {
+      "zh-HK": "時間緊迫",
+      "zh-CN": "时间紧迫",
+      "en": "You're rushed"
+    },
+    "options":[
+      {"text":{"zh-HK":"可放寬規則","zh-CN":"可放宽","en":"Relax rules"},"correct":false},
+      {"text":{"zh-HK":"仍需遵守","zh-CN":"仍需遵守","en":"Still follow rules"},"correct":true},
+      {"text":{"zh-HK":"先做再算","zh-CN":"先做再说","en":"Just do"},"correct":false},
+      {"text":{"zh-HK":"人人都會做","zh-CN":"大家都这样","en":"Everyone does"},"correct":false}
+    ],
+    "explanation":{"zh-HK":"壓力唔等於合理。","zh-CN":"压力不代表合理。","en":"Pressure ≠ justification"},
+    "reminder":{"zh-HK":"忙 ≠ 無責任","zh-CN":"忙 ≠ 无责任","en":"Busy ≠ exempt"}
+  },
+  
+  {
+    "id": 7,
+    "type": "single",
+    "presentation": "scenario",
+    "category": { "zh-HK": "漏洞", "zh-CN": "漏洞", "en": "Loophole" },
+    "title": {
+      "zh-HK": "系統漏洞",
+      "zh-CN": "系统漏洞",
+      "en": "System loophole"
+    },
+    "story": {
+      "zh-HK": {
+        "label": "情境",
+        "title": "睇到唔應睇",
+        "dialogues":[
+          {"speaker":"你","avatar":"😳","side":"right","text":"竟然入到去？"}
+        ]
+      },
+      "zh-CN": {"label":"情境","title":"看到了权限外内容","dialogues":[{"speaker":"你","avatar":"😳","side":"right","text":"居然可以看到？"}]},
+      "en": {"label":"Scenario","title":"Unexpected access","dialogues":[{"speaker":"You","avatar":"😳","side":"right","text":"I can access this?"}]}
+    },
+    "question":{"zh-HK":"應點做？","zh-CN":"应该怎么做？","en":"What should you do?"},
+    "options":[
+      {"text":{"zh-HK":"即用","zh-CN":"直接用","en":"Use it"},"correct":false},
+      {"text":{"zh-HK":"報告","zh-CN":"报告","en":"Report"},"correct":true},
+      {"text":{"zh-HK":"試多幾次","zh-CN":"多试几次","en":"Test more"},"correct":false},
+      {"text":{"zh-HK":"叫朋友試","zh-CN":"叫别人试","en":"Let others try"},"correct":false}
+    ],
+    "explanation":{"zh-HK":"漏洞唔可利用。","zh-CN":"漏洞不能利用。","en":"Do not exploit weaknesses"},
+    "reminder":{"zh-HK":"有洞 ≠ 可用","zh-CN":"有漏洞 ≠ 可用","en":"Weakness ≠ permission"}
+  },
+  
+  {
+    "id": 8,
+    "type": "multiple",
+    "presentation": "scenario",
+    "category": { "zh-HK": "高峰", "zh-CN": "高峰", "en": "Peak" },
+    "title": {
+      "zh-HK": "多重陷阱",
+      "zh-CN": "多重陷阱",
+      "en": "Multiple traps"
+    },
+    "story": {
+      "zh-HK":{"label":"情境","title":"混合壓力","dialogues":[{"speaker":"同事","avatar":"😅","side":"left","text":"幫手啦!"},{"speaker":"你","avatar":"🤔","side":"right","text":"可以咁做嗎？"}]},
+      "zh-CN":{"label":"情境","title":"多重压力","dialogues":[{"speaker":"同事","avatar":"😅","side":"left","text":"帮忙吧!"},{"speaker":"你","avatar":"🤔","side":"right","text":"这样可以吗？"}]},
+      "en":{"label":"Scenario","title":"Mixed pressure","dialogues":[{"speaker":"Colleague","avatar":"😅","side":"left","text":"Help me!"},{"speaker":"You","avatar":"🤔","side":"right","text":"Is it ok?"}]}
+    },
+    "question":{"zh-HK":"哪些正確？","zh-CN":"哪些正确？","en":"Which correct?"},
+    "options":[
+      {"text":{"zh-HK":"拒絕未授權","zh-CN":"拒绝未授权","en":"Reject unauthorized"},"correct":true},
+      {"text":{"zh-HK":"借帳號","zh-CN":"借账号","en":"Borrow account"},"correct":false},
+      {"text":{"zh-HK":"只做授權部分","zh-CN":"只做授权部分","en":"Only authorized"},"correct":true},
+      {"text":{"zh-HK":"之後補救","zh-CN":"事后补救","en":"Fix later"},"correct":false}
+    ],
+    "explanation":{"zh-HK":"兩個正確：拒絕＋守界線","zh-CN":"两个正确","en":"Correct: refuse + respect boundary"},
+    "reminder":{"zh-HK":"壓力 ≠ 可違規","zh-CN":"压力 ≠ 可违规","en":"Pressure ≠ permission"}
+  },
+  
+  {
+    "id": 9,
+    "type": "single",
+    "presentation": "classic",
+    "category": { "zh-HK": "責任", "zh-CN": "责任", "en": "Responsibility" },
+    "title": {
+      "zh-HK": "責任屬誰？",
+      "zh-CN": "责任属于谁？",
+      "en": "Who is responsible?"
+    },
+    "scenario": {
+      "zh-HK": "如果 IT 設錯權限",
+      "zh-CN": "如果 IT 设置错误",
+      "en": "If IT misconfigures"
+    },
+    "options":[
+      {"text":{"zh-HK":"只係 IT","zh-CN":"只有 IT","en":"Only IT"},"correct":false},
+      {"text":{"zh-HK":"使用者仍需負責","zh-CN":"用户仍需负责","en":"User still responsible"},"correct":true},
+      {"text":{"zh-HK":"無人負責","zh-CN":"没人负责","en":"Nobody"},"correct":false},
+      {"text":{"zh-HK":"看情況","zh-CN":"看情况","en":"Depends"},"correct":false}
+    ],
+    "explanation":{"zh-HK":"使用者仍有責任。","zh-CN":"用户仍有责任。","en":"User still accountable"},
+    "reminder":{"zh-HK":"漏洞 ≠ 免責","zh-CN":"漏洞 ≠ 免责","en":"Weakness ≠ excuse"}
+  },
+  
+  {
+    "id": 10,
+    "type": "single",
+    "presentation": "classic",
+    "category": { "zh-HK": "總結", "zh-CN": "总结", "en": "Summary" },
+    "title": {
+      "zh-HK": "最重要原則",
+      "zh-CN": "最重要原则",
+      "en": "Key principle"
+    },
+    "scenario": {
+      "zh-HK": "以下哪句最重要？",
+      "zh-CN": "以下哪句最重要？",
+      "en": "Which is key?"
+    },
+    "options":[
+      {"text":{"zh-HK":"方便優先","zh-CN":"方便优先","en":"Convenience first"},"correct":false},
+      {"text":{"zh-HK":"系統允許就得","zh-CN":"系统允许就行","en":"System allows"},"correct":false},
+      {"text":{"zh-HK":"有授權＋有需要才可用","zh-CN":"有授权才用","en":"Authorized & needed"},"correct":true},
+      {"text":{"zh-HK":"大家都做","zh-CN":"大家都做","en":"Everyone does"},"correct":false}
+    ],
+    "explanation":{
+      "zh-HK":"所有決策核心都係：授權＋需要。",
+      "zh-CN":"核心原则是授权与需要。",
+      "en":"Core principle: authorized + necessary."
+    },
+    "reminder":{
+      "zh-HK":"最簡單原則：應唔應該用？",
+      "zh-CN":"最简单原则：应不应该用？",
+      "en":"Ask: should I use this?"
+    }
+  }
+  
   ]
+
 }

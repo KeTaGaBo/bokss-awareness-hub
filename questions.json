@@ -1,38 +1,186 @@
-[
-  {
-    "id": 1,
-    "category": "查看資料",
-    "title": "只是「看一看」，算不算問題？",
-    "scenario": "只係查看朋友資料，唔外傳，可以嗎？",
-    "options": [
-      { "text": "可以", "correct": false },
-      { "text": "不可以", "correct": true }
-    ],
-    "explanation": "單純查看已可能違規。即使無下載或外傳，只要無工作需要，查閱本身已可能構成不當使用。",
-    "reminder": "查看本身，就已經是使用資料。"
+{
+  "ui": {
+    "zh-HK": {
+      "badge": "真實情境改編",
+      "siteTitle": "你以為冇問題？其實可能犯法",
+      "intro": "以下每題都來自真實工作情境。有些行為看似「無傷大雅」，但其實可能已經涉及違規甚至犯法。試試你的判斷，看看你能答對幾多題。",
+      "prev": "上一題",
+      "next": "下一題",
+      "scoreLabel": "目前得分",
+      "footer": "保護資料 = 保護自己",
+      "correctLabel": "✅ 正確！",
+      "wrongLabel": "❌ 錯誤。",
+      "reminderLabel": "⚠️ 提醒",
+      "loadError": "❌ 載入題目失敗，請稍後再試。",
+      "questionLabel": "第 {current} 題 / 共 {total} 題"
+    },
+    "zh-CN": {
+      "badge": "真实情境改编",
+      "siteTitle": "你以为没问题？其实可能犯法",
+      "intro": "以下每题都来自真实工作情境。有些行为看似“无伤大雅”，但其实可能已经涉及违规甚至犯法。试试你的判断，看看你能答对几题。",
+      "prev": "上一题",
+      "next": "下一题",
+      "scoreLabel": "当前得分",
+      "footer": "保护资料 = 保护自己",
+      "correctLabel": "✅ 正确！",
+      "wrongLabel": "❌ 错误。",
+      "reminderLabel": "⚠️ 提醒",
+      "loadError": "❌ 题目加载失败，请稍后再试。",
+      "questionLabel": "第 {current} 题 / 共 {total} 题"
+    },
+    "en": {
+      "badge": "Based on Real-life Scenarios",
+      "siteTitle": "You Think It’s Fine? It Might Actually Be Illegal",
+      "intro": "Each question below is based on real workplace scenarios. Some actions may seem harmless, but they may already involve misconduct or even legal risk. Test your judgment and see how many you can get right.",
+      "prev": "Previous",
+      "next": "Next",
+      "scoreLabel": "Current score",
+      "footer": "Protecting data = Protecting yourself",
+      "correctLabel": "✅ Correct!",
+      "wrongLabel": "❌ Incorrect.",
+      "reminderLabel": "⚠️ Reminder",
+      "loadError": "❌ Failed to load quiz questions. Please try again later.",
+      "questionLabel": "Question {current} of {total}"
+    }
   },
-  {
-    "id": 2,
-    "category": "帳號使用",
-    "title": "借同事帳號幫手查資料，可以嗎？",
-    "scenario": "用同事帳號幫手查資料，可以嗎？",
-    "options": [
-      { "text": "可以", "correct": false },
-      { "text": "不可以", "correct": true }
-    ],
-    "explanation": "借帳號 = 未授權存取。帳號代表身份與責任，借用帳號會破壞追蹤紀錄，亦可能帶來法律風險。",
-    "reminder": "借帳號 = 借身份 = 借風險。"
-  },
-  {
-    "id": 3,
-    "category": "權限觀念",
-    "title": "系統見到，就代表可以用？",
-    "scenario": "如果系統本身顯示到資料，是否代表你可以使用？",
-    "options": [
-      { "text": "可以", "correct": false },
-      { "text": "不一定", "correct": true }
-    ],
-    "explanation": "有權限 ≠ 可任用。是否可以使用資料，取決於工作需要與授權目的。",
-    "reminder": "看得到，不等於獲准使用。"
-  }
-]
+  "questions": [
+    {
+      "id": 1,
+      "category": {
+        "zh-HK": "查看資料",
+        "zh-CN": "查看资料",
+        "en": "Viewing Data"
+      },
+      "title": {
+        "zh-HK": "只是「看一看」，算不算問題？",
+        "zh-CN": "只是“看一看”，算不算问题？",
+        "en": "Is “just taking a look” a problem?"
+      },
+      "scenario": {
+        "zh-HK": "只係查看朋友資料，唔外傳，可以嗎？",
+        "zh-CN": "只是查看朋友资料，不外传，可以吗？",
+        "en": "If you only look at a friend’s information and do not share it, is that acceptable?"
+      },
+      "options": [
+        {
+          "text": {
+            "zh-HK": "可以",
+            "zh-CN": "可以",
+            "en": "Yes"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "不可以",
+            "zh-CN": "不可以",
+            "en": "No"
+          },
+          "correct": true
+        }
+      ],
+      "explanation": {
+        "zh-HK": "單純查看已可能違規。即使無下載或外傳，只要無工作需要，查閱本身已可能構成不當使用。",
+        "zh-CN": "单纯查看也可能违规。即使没有下载或外传，只要没有工作需要，查阅本身已可能构成不当使用。",
+        "en": "Simply viewing data may already be improper. Even if nothing is downloaded or shared, access without a work-related need may still constitute misuse."
+      },
+      "reminder": {
+        "zh-HK": "查看本身，就已經是使用資料。",
+        "zh-CN": "查看本身，就已经是在使用资料。",
+        "en": "Viewing data is already a form of using data."
+      }
+    },
+    {
+      "id": 2,
+      "category": {
+        "zh-HK": "帳號使用",
+        "zh-CN": "账号使用",
+        "en": "Account Use"
+      },
+      "title": {
+        "zh-HK": "借同事帳號幫手查資料，可以嗎？",
+        "zh-CN": "借同事账号帮忙查资料，可以吗？",
+        "en": "Can you use a colleague’s account to help look up information?"
+      },
+      "scenario": {
+        "zh-HK": "如果同事趕時間，叫你暫時用佢帳號幫手查資料，是否可以？",
+        "zh-CN": "如果同事赶时间，让你暂时用其账号帮忙查资料，是否可以？",
+        "en": "If a colleague is in a rush and asks you to use that colleague’s account temporarily to look up information, is that acceptable?"
+      },
+      "options": [
+        {
+          "text": {
+            "zh-HK": "可以",
+            "zh-CN": "可以",
+            "en": "Yes"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "不可以",
+            "zh-CN": "不可以",
+            "en": "No"
+          },
+          "correct": true
+        }
+      ],
+      "explanation": {
+        "zh-HK": "借帳號 = 未授權存取。帳號代表身份與責任，借用帳號會破壞追蹤紀錄，亦可能帶來法律風險。",
+        "zh-CN": "借账号 = 未经授权存取。账号代表身份与责任，借用账号会破坏追踪记录，也可能带来法律风险。",
+        "en": "Borrowing an account can amount to unauthorized access. Accounts represent identity and responsibility, and account sharing breaks audit trails and may create legal risk."
+      },
+      "reminder": {
+        "zh-HK": "借帳號 = 借身份 = 借風險。",
+        "zh-CN": "借账号 = 借身份 = 借风险。",
+        "en": "Borrowing an account means borrowing identity and risk."
+      }
+    },
+    {
+      "id": 3,
+      "category": {
+        "zh-HK": "權限觀念",
+        "zh-CN": "权限观念",
+        "en": "Access Rights"
+      },
+      "title": {
+        "zh-HK": "系統見到，就代表可以用？",
+        "zh-CN": "系统看到，就代表可以用？",
+        "en": "If the system shows it, does it mean you may use it?"
+      },
+      "scenario": {
+        "zh-HK": "如果系統本身顯示到資料，是否代表你可以使用？",
+        "zh-CN": "如果系统本身显示到资料，是否代表你可以使用？",
+        "en": "If data is visible in the system, does that automatically mean you are allowed to use it?"
+      },
+      "options": [
+        {
+          "text": {
+            "zh-HK": "可以",
+            "zh-CN": "可以",
+            "en": "Yes"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "不一定",
+            "zh-CN": "不一定",
+            "en": "Not necessarily"
+          },
+          "correct": true
+        }
+      ],
+      "explanation": {
+        "zh-HK": "有權限 ≠ 可任用。是否可以使用資料，取決於工作需要與授權目的。",
+        "zh-CN": "有权限 ≠ 可任用。是否可以使用资料，取决于工作需要与授权目的。",
+        "en": "Having access does not mean unrestricted use. Whether data may be used depends on job need and authorized purpose."
+      },
+      "reminder": {
+        "zh-HK": "看得到，不等於獲准使用。",
+        "zh-CN": "看得到，不等于获准使用。",
+        "en": "Visible does not mean permitted."
+      }
+    }
+  ]
+}

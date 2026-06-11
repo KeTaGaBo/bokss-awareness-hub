@@ -1,6 +1,7 @@
 {
   "ui": {
     "zh-HK": {
+      "answerBeforeNext": "請先回答這一題，才可進入下一題。",
       "badge": "真實情境改編",
       "siteTitle": "你以為冇問題？其實可能犯法",
       "intro": "以下題目有些是直接判斷題，有些是情境題。部分題目可能只有一個最佳答案，部分題目則可能需要同時選出多個正確答案。試試你的判斷。",
@@ -27,6 +28,7 @@
     },
     "zh-CN": {
       "badge": "真实情境改编",
+      "answerBeforeNext": "请先回答这一题，才可进入下一题。",
       "siteTitle": "你以为没问题？其实可能犯法",
       "intro": "以下题目有些是直接判断题，有些是情境题。部分题目可能只有一个最佳答案，部分题目则可能需要同时选出多个正确答案。试试你的判断。",
       "prev": "上一题",
@@ -52,6 +54,7 @@
     },
     "en": {
       "badge": "Based on Real-life Scenarios",
+      "answerBeforeNext": "Please answer this question before moving to the next one.",
       "siteTitle": "You Think It’s Fine? It Might Actually Be Illegal",
       "intro": "Some questions below are direct judgment questions, while others are scenario-based. Some require one best answer; others may require multiple correct answers. Test your judgment.",
       "prev": "Previous",

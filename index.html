@@ -17,7 +17,7 @@
       background: white;
       padding: 28px;
       border-radius: 16px;
-      max-width: 820px;
+      max-width: 860px;
       margin: 30px auto;
       box-shadow: 0 4px 18px rgba(0,0,0,0.08);
     }
@@ -87,6 +87,38 @@
       font-size: 20px;
       line-height: 1.6;
       margin-bottom: 14px;
+    }
+
+    .story-card {
+      display: none;
+      background: #f7f9fc;
+      border: 1px solid #d9e2ef;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    .story-label {
+      display: inline-block;
+      font-size: 13px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #e8f2fc;
+      color: #2b6cb0;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .story-title {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .story-line {
+      line-height: 1.75;
+      margin-bottom: 8px;
+      color: #333;
     }
 
     .question-type {
@@ -281,6 +313,10 @@
       .lang-box {
         text-align: left;
       }
+
+      .story-title {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
@@ -306,6 +342,13 @@
 
     <div class="meta" id="meta"></div>
     <h2 class="question-title" id="title"></h2>
+
+    <div id="storyCard" class="story-card">
+      <div class="story-label" id="storyLabel"></div>
+      <div class="story-title" id="storyTitle"></div>
+      <div id="storyContent"></div>
+    </div>
+
     <div class="scenario" id="question"></div>
     <div class="question-type" id="questionType"></div>
     <div class="question-hint" id="questionHint"></div>
@@ -476,6 +519,7 @@
       document.getElementById("questionHint").innerHTML = "";
       document.getElementById("answers").innerHTML = "";
       document.getElementById("answerAction").style.display = "none";
+      document.getElementById("storyCard").style.display = "none";
       hideResult();
 
       const total = quizData.questions.length;
@@ -509,6 +553,37 @@
       return ["A", "B", "C", "D", "E", "F"][index] || `${index + 1}`;
     }
 
+    function renderPresentation(question) {
+      const storyCard = document.getElementById("storyCard");
+      const questionBox = document.getElementById("question");
+
+      if (question.presentation === "scenario" && question.story && question.story[currentLang]) {
+        const story = question.story[currentLang];
+
+        document.getElementById("storyLabel").innerText =
+          story.label || getUIText("scenarioLabelDefault");
+        document.getElementById("storyTitle").innerText = story.title || "";
+
+        const storyContentBox = document.getElementById("storyContent");
+        storyContentBox.innerHTML = "";
+
+        if (Array.isArray(story.content)) {
+          story.content.forEach(line => {
+            const div = document.createElement("div");
+            div.className = "story-line";
+            div.textContent = line;
+            storyContentBox.appendChild(div);
+          });
+        }
+
+        storyCard.style.display = "block";
+        questionBox.innerHTML = question.question[currentLang];
+      } else {
+        storyCard.style.display = "none";
+        questionBox.innerHTML = question.scenario[currentLang];
+      }
+    }
+
     function renderQuestion() {
       const question = quizData.questions[current];
       if (!question) return;
@@ -525,7 +600,9 @@
 
       document.getElementById("meta").innerHTML = `${questionLabel} ・ ${question.category[currentLang]}`;
       document.getElementById("title").innerHTML = question.title[currentLang];
-      document.getElementById("question").innerHTML = question.scenario[currentLang];
+
+      renderPresentation(question);
+
       document.getElementById("questionType").innerHTML =
         question.type === "multiple"
           ? getUIText("multipleLabel")

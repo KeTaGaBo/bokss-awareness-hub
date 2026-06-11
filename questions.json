@@ -12,7 +12,10 @@
       "wrongLabel": "❌ 錯誤。",
       "reminderLabel": "⚠️ 提醒",
       "loadError": "❌ 載入題目失敗，請稍後再試。",
-      "questionLabel": "第 {current} 題 / 共 {total} 題"
+      "questionLabel": "第 {current} 題 / 共 {total} 題",
+      "finish": "完成測驗",
+      "restart": "重新開始",
+      "resultTitle": "你的結果"
     },
     "zh-CN": {
       "badge": "真实情境改编",
@@ -26,7 +29,10 @@
       "wrongLabel": "❌ 错误。",
       "reminderLabel": "⚠️ 提醒",
       "loadError": "❌ 题目加载失败，请稍后再试。",
-      "questionLabel": "第 {current} 题 / 共 {total} 题"
+      "questionLabel": "第 {current} 题 / 共 {total} 题",
+      "finish": "完成测验",
+      "restart": "重新开始",
+      "resultTitle": "你的结果"
     },
     "en": {
       "badge": "Based on Real-life Scenarios",
@@ -40,9 +46,31 @@
       "wrongLabel": "❌ Incorrect.",
       "reminderLabel": "⚠️ Reminder",
       "loadError": "❌ Failed to load quiz questions. Please try again later.",
-      "questionLabel": "Question {current} of {total}"
+      "questionLabel": "Question {current} of {total}",
+      "finish": "Finish Quiz",
+      "restart": "Restart",
+      "resultTitle": "Your Result"
     }
   },
+
+  "messages": {
+    "perfect": {
+      "zh-HK": "滿分！你對資料使用界線有很清晰的理解，請繼續保持，也提醒身邊人不要以為『只是看一看』就沒有問題。",
+      "zh-CN": "满分！你对资料使用界线有很清晰的理解，请继续保持，也提醒身边人不要以为“只是看一看”就没有问题。",
+      "en": "Perfect score! You have a very clear understanding of the boundaries for using data. Keep it up, and remind others that “just taking a look” can still be a problem."
+    },
+    "pass70": {
+      "zh-HK": "做得不錯！你已掌握大部分重點。不過，一些『看似方便』或『出於好意』的做法，仍可能帶來風險，值得再留意。",
+      "zh-CN": "做得不错！你已掌握大部分重点。不过，一些“看似方便”或“出于好意”的做法，仍可能带来风险，值得再留意。",
+      "en": "Well done! You have understood most of the key points. However, some actions that seem convenient or well-intentioned can still create risk, so it is worth staying alert."
+    },
+    "below70": {
+      "zh-HK": "這次未到理想分數，不要緊。這正正反映很多風險行為在直覺上並不明顯。最重要是記住：系統有漏洞，不等於你可以使用它。",
+      "zh-CN": "这次未达到理想分数，不要紧。这正反映很多风险行为在直觉上并不明显。最重要是记住：系统有漏洞，不等于你可以使用它。",
+      "en": "This time the score was below target, but that is okay. It shows that many risky behaviours are not obvious at first glance. The key reminder is this: a system weakness does not mean you are allowed to use it."
+    }
+  },
+
   "questions": [
     {
       "id": 1,
@@ -88,98 +116,6 @@
         "zh-HK": "查看本身，就已經是使用資料。",
         "zh-CN": "查看本身，就已经是在使用资料。",
         "en": "Viewing data is already a form of using data."
-      }
-    },
-    {
-      "id": 2,
-      "category": {
-        "zh-HK": "帳號使用",
-        "zh-CN": "账号使用",
-        "en": "Account Use"
-      },
-      "title": {
-        "zh-HK": "借同事帳號幫手查資料，可以嗎？",
-        "zh-CN": "借同事账号帮忙查资料，可以吗？",
-        "en": "Can you use a colleague’s account to help look up information?"
-      },
-      "scenario": {
-        "zh-HK": "如果同事趕時間，叫你暫時用佢帳號幫手查資料，是否可以？",
-        "zh-CN": "如果同事赶时间，让你暂时用其账号帮忙查资料，是否可以？",
-        "en": "If a colleague is in a rush and asks you to use that colleague’s account temporarily to look up information, is that acceptable?"
-      },
-      "options": [
-        {
-          "text": {
-            "zh-HK": "可以",
-            "zh-CN": "可以",
-            "en": "Yes"
-          },
-          "correct": false
-        },
-        {
-          "text": {
-            "zh-HK": "不可以",
-            "zh-CN": "不可以",
-            "en": "No"
-          },
-          "correct": true
-        }
-      ],
-      "explanation": {
-        "zh-HK": "借帳號 = 未授權存取。帳號代表身份與責任，借用帳號會破壞追蹤紀錄，亦可能帶來法律風險。",
-        "zh-CN": "借账号 = 未经授权存取。账号代表身份与责任，借用账号会破坏追踪记录，也可能带来法律风险。",
-        "en": "Borrowing an account can amount to unauthorized access. Accounts represent identity and responsibility, and account sharing breaks audit trails and may create legal risk."
-      },
-      "reminder": {
-        "zh-HK": "借帳號 = 借身份 = 借風險。",
-        "zh-CN": "借账号 = 借身份 = 借风险。",
-        "en": "Borrowing an account means borrowing identity and risk."
-      }
-    },
-    {
-      "id": 3,
-      "category": {
-        "zh-HK": "權限觀念",
-        "zh-CN": "权限观念",
-        "en": "Access Rights"
-      },
-      "title": {
-        "zh-HK": "系統見到，就代表可以用？",
-        "zh-CN": "系统看到，就代表可以用？",
-        "en": "If the system shows it, does it mean you may use it?"
-      },
-      "scenario": {
-        "zh-HK": "如果系統本身顯示到資料，是否代表你可以使用？",
-        "zh-CN": "如果系统本身显示到资料，是否代表你可以使用？",
-        "en": "If data is visible in the system, does that automatically mean you are allowed to use it?"
-      },
-      "options": [
-        {
-          "text": {
-            "zh-HK": "可以",
-            "zh-CN": "可以",
-            "en": "Yes"
-          },
-          "correct": false
-        },
-        {
-          "text": {
-            "zh-HK": "不一定",
-            "zh-CN": "不一定",
-            "en": "Not necessarily"
-          },
-          "correct": true
-        }
-      ],
-      "explanation": {
-        "zh-HK": "有權限 ≠ 可任用。是否可以使用資料，取決於工作需要與授權目的。",
-        "zh-CN": "有权限 ≠ 可任用。是否可以使用资料，取决于工作需要与授权目的。",
-        "en": "Having access does not mean unrestricted use. Whether data may be used depends on job need and authorized purpose."
-      },
-      "reminder": {
-        "zh-HK": "看得到，不等於獲准使用。",
-        "zh-CN": "看得到，不等于获准使用。",
-        "en": "Visible does not mean permitted."
       }
     }
   ]

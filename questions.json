@@ -15,7 +15,8 @@
       "questionLabel": "第 {current} 題 / 共 {total} 題",
       "finish": "完成測驗",
       "restart": "重新開始",
-      "resultTitle": "你的結果"
+      "resultTitle": "你的結果",
+      "langLabel": "Language / 語言 / 语言"
     },
     "zh-CN": {
       "badge": "真实情境改编",
@@ -32,7 +33,8 @@
       "questionLabel": "第 {current} 题 / 共 {total} 题",
       "finish": "完成测验",
       "restart": "重新开始",
-      "resultTitle": "你的结果"
+      "resultTitle": "你的结果",
+      "langLabel": "Language / 語言 / 语言"
     },
     "en": {
       "badge": "Based on Real-life Scenarios",
@@ -49,18 +51,18 @@
       "questionLabel": "Question {current} of {total}",
       "finish": "Finish Quiz",
       "restart": "Restart",
-      "resultTitle": "Your Result"
+      "resultTitle": "Your Result",
+      "langLabel": "Language / 語言 / 语言"
     }
   },
-
   "messages": {
     "perfect": {
-      "zh-HK": "滿分！你對資料使用界線有很清晰的理解，請繼續保持，也提醒身邊人不要以為『只是看一看』就沒有問題。",
+      "zh-HK": "滿分！你對資料使用界線有很清晰的理解，請繼續保持，也提醒身邊人不要以為「只是看一看」就沒有問題。",
       "zh-CN": "满分！你对资料使用界线有很清晰的理解，请继续保持，也提醒身边人不要以为“只是看一看”就没有问题。",
       "en": "Perfect score! You have a very clear understanding of the boundaries for using data. Keep it up, and remind others that “just taking a look” can still be a problem."
     },
     "pass70": {
-      "zh-HK": "做得不錯！你已掌握大部分重點。不過，一些『看似方便』或『出於好意』的做法，仍可能帶來風險，值得再留意。",
+      "zh-HK": "做得不錯！你已掌握大部分重點。不過，一些「看似方便」或「出於好意」的做法，仍可能帶來風險，值得再留意。",
       "zh-CN": "做得不错！你已掌握大部分重点。不过，一些“看似方便”或“出于好意”的做法，仍可能带来风险，值得再留意。",
       "en": "Well done! You have understood most of the key points. However, some actions that seem convenient or well-intentioned can still create risk, so it is worth staying alert."
     },
@@ -70,7 +72,6 @@
       "en": "This time the score was below target, but that is okay. It shows that many risky behaviours are not obvious at first glance. The key reminder is this: a system weakness does not mean you are allowed to use it."
     }
   },
-
   "questions": [
     {
       "id": 1,
@@ -116,6 +117,236 @@
         "zh-HK": "查看本身，就已經是使用資料。",
         "zh-CN": "查看本身，就已经是在使用资料。",
         "en": "Viewing data is already a form of using data."
+      }
+    },
+    {
+      "id": 2,
+      "category": {
+        "zh-HK": "帳號使用",
+        "zh-CN": "账号使用",
+        "en": "Account Use"
+      },
+      "title": {
+        "zh-HK": "借同事帳號幫手查資料，可以嗎？",
+        "zh-CN": "借同事账号帮忙查资料，可以吗？",
+        "en": "Can you use a colleague’s account to help look up information?"
+      },
+      "scenario": {
+        "zh-HK": "如果同事趕時間，叫你暫時用佢帳號幫手查資料，是否可以？",
+        "zh-CN": "如果同事赶时间，让你暂时用其账号帮忙查资料，是否可以？",
+        "en": "If a colleague is in a rush and asks you to use that colleague’s account temporarily to look up information, is that acceptable?"
+      },
+      "options": [
+        {
+          "text": {
+            "zh-HK": "可以",
+            "zh-CN": "可以",
+            "en": "Yes"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "不可以",
+            "zh-CN": "不可以",
+            "en": "No"
+          },
+          "correct": true
+        }
+      ],
+      "explanation": {
+        "zh-HK": "借帳號 = 未授權存取。帳號代表身份與責任，借用帳號會破壞追蹤紀錄，亦可能帶來法律風險。",
+        "zh-CN": "借账号 = 未经授权存取。账号代表身份与责任，借用账号会破坏追踪记录，也可能带来法律风险。",
+        "en": "Borrowing an account can amount to unauthorized access. Accounts represent identity and responsibility, and account sharing breaks audit trails and may create legal risk."
+      },
+      "reminder": {
+        "zh-HK": "借帳號 = 借身份 = 借風險。",
+        "zh-CN": "借账号 = 借身份 = 借风险。",
+        "en": "Borrowing an account means borrowing identity and risk."
+      }
+    },
+    {
+      "id": 3,
+      "category": {
+        "zh-HK": "權限觀念",
+        "zh-CN": "权限观念",
+        "en": "Access Rights"
+      },
+      "title": {
+        "zh-HK": "系統見到，就代表可以用？",
+        "zh-CN": "系统看到，就代表可以用？",
+        "en": "If the system shows it, does it mean you may use it?"
+      },
+      "scenario": {
+        "zh-HK": "如果系統本身顯示到資料，是否代表你可以使用？",
+        "zh-CN": "如果系统本身显示到资料，是否代表你可以使用？",
+        "en": "If data is visible in the system, does that automatically mean you are allowed to use it?"
+      },
+      "options": [
+        {
+          "text": {
+            "zh-HK": "可以",
+            "zh-CN": "可以",
+            "en": "Yes"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "不一定",
+            "zh-CN": "不一定",
+            "en": "Not necessarily"
+          },
+          "correct": true
+        }
+      ],
+      "explanation": {
+        "zh-HK": "有權限 ≠ 可任用。是否可以使用資料，取決於工作需要與授權目的。",
+        "zh-CN": "有权限 ≠ 可任用。是否可以使用资料，取决于工作需要与授权目的。",
+        "en": "Having access does not mean unrestricted use. Whether data may be used depends on job need and authorized purpose."
+      },
+      "reminder": {
+        "zh-HK": "看得到，不等於獲准使用。",
+        "zh-CN": "看得到，不等于获准使用。",
+        "en": "Visible does not mean permitted."
+      }
+    },
+    {
+      "id": 4,
+      "category": {
+        "zh-HK": "資料外帶",
+        "zh-CN": "资料外带",
+        "en": "Taking Data Off-site"
+      },
+      "title": {
+        "zh-HK": "下載回家做分析，可以嗎？",
+        "zh-CN": "下载回家做分析，可以吗？",
+        "en": "Can you download data and analyze it at home?"
+      },
+      "scenario": {
+        "zh-HK": "為了方便工作，把資料下載回家做分析，是否可以？",
+        "zh-CN": "为了方便工作，把资料下载回家做分析，是否可以？",
+        "en": "To make work more convenient, can you download data and analyze it at home?"
+      },
+      "options": [
+        {
+          "text": {
+            "zh-HK": "可以",
+            "zh-CN": "可以",
+            "en": "Yes"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "不可以",
+            "zh-CN": "不可以",
+            "en": "No"
+          },
+          "correct": true
+        }
+      ],
+      "explanation": {
+        "zh-HK": "把資料帶離受控環境會大幅增加洩漏及濫用風險。",
+        "zh-CN": "把资料带离受控环境会大幅增加泄漏及滥用风险。",
+        "en": "Taking data outside a controlled environment greatly increases the risk of leakage and misuse."
+      },
+      "reminder": {
+        "zh-HK": "帶走資料，風險不會跟你準時下班。",
+        "zh-CN": "带走资料，风险不会准时下班。",
+        "en": "When data leaves the system, the risk does not clock off."
+      }
+    },
+    {
+      "id": 5,
+      "category": {
+        "zh-HK": "私人關係",
+        "zh-CN": "私人关系",
+        "en": "Personal Relationships"
+      },
+      "title": {
+        "zh-HK": "幫親友查資料，出發點是關心，是否可以？",
+        "zh-CN": "帮亲友查资料，出发点是关心，是否可以？",
+        "en": "Can you check records for family or friends out of concern?"
+      },
+      "scenario": {
+        "zh-HK": "如果親友正在接受服務／治療，你想自己登入系統查閱情況，是否可以？",
+        "zh-CN": "如果亲友正在接受服务／治疗，你想自己登录系统查阅情况，是否可以？",
+        "en": "If a relative or friend is receiving care or services, can you log in to the system to check their situation yourself?"
+      },
+      "options": [
+        {
+          "text": {
+            "zh-HK": "可以",
+            "zh-CN": "可以",
+            "en": "Yes"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "不可以",
+            "zh-CN": "不可以",
+            "en": "No"
+          },
+          "correct": true
+        }
+      ],
+      "explanation": {
+        "zh-HK": "私人關係不等於工作需要。即使出發點是關心，只要不屬於你的職責範圍，就不應自行查閱。",
+        "zh-CN": "私人关系不等于工作需要。即使出发点是关心，只要不属于你的职责范围，就不应自行查阅。",
+        "en": "A personal relationship does not equal a work need. Even if the intention is concern, you should not access records outside your role."
+      },
+      "reminder": {
+        "zh-HK": "關心要有界線，資料也有界線。",
+        "zh-CN": "关心要有界线，资料也有界线。",
+        "en": "Concern needs boundaries, and so does data."
+      }
+    },
+    {
+      "id": 6,
+      "category": {
+        "zh-HK": "責任觀念",
+        "zh-CN": "责任观念",
+        "en": "Responsibility"
+      },
+      "title": {
+        "zh-HK": "如果是 IT 權限設置失誤，責任是否只在 IT？",
+        "zh-CN": "如果是 IT 权限设置失误，责任是否只在 IT？",
+        "en": "If IT configured permissions wrongly, is IT solely responsible?"
+      },
+      "scenario": {
+        "zh-HK": "如果你明知與自己工作無關，但因系統設定錯誤而進入到某資料頁面，責任是否只在 IT？",
+        "zh-CN": "如果你明知与自己工作无关，但因系统设置错误而进入到某资料页面，责任是否只在 IT？",
+        "en": "If you know a page is unrelated to your work, but gain access because of a configuration error, is IT the only party responsible?"
+      },
+      "options": [
+        {
+          "text": {
+            "zh-HK": "是",
+            "zh-CN": "是",
+            "en": "Yes"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "不是",
+            "zh-CN": "不是",
+            "en": "No"
+          },
+          "correct": true
+        }
+      ],
+      "explanation": {
+        "zh-HK": "系統設置不當是管理問題，但如果使用者明知與工作無關仍鑽漏洞查閱或取用資料，仍可能涉及紀律甚至法律責任。",
+        "zh-CN": "系统设置不当是管理问题，但如果使用者明知与工作无关仍钻漏洞查阅或取用资料，仍可能涉及纪律甚至法律责任。",
+        "en": "Poor configuration is a management issue, but a user who knowingly exploits that weakness for unrelated access may still face disciplinary or legal consequences."
+      },
+      "reminder": {
+        "zh-HK": "系統有洞，不等於你可以鑽。",
+        "zh-CN": "系统有洞，不等于你可以钻。",
+        "en": "A system weakness does not mean you may exploit it."
       }
     }
   ]

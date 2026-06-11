@@ -17,7 +17,7 @@
       background: white;
       padding: 28px;
       border-radius: 16px;
-      max-width: 780px;
+      max-width: 820px;
       margin: 30px auto;
       box-shadow: 0 4px 18px rgba(0,0,0,0.08);
     }
@@ -86,7 +86,23 @@
     .scenario {
       font-size: 20px;
       line-height: 1.6;
-      margin-bottom: 20px;
+      margin-bottom: 14px;
+    }
+
+    .question-type {
+      display: inline-block;
+      font-size: 13px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #eef3f8;
+      color: #4a5568;
+      margin-bottom: 18px;
+    }
+
+    .question-hint {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
     }
 
     .option-btn {
@@ -97,9 +113,12 @@
       border: 1px solid #ccc;
       background: white;
       cursor: pointer;
-      font-size: 18px;
+      font-size: 17px;
       transition: 0.2s ease;
-      text-align: center;
+      text-align: left;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
     }
 
     .option-btn:hover {
@@ -108,7 +127,51 @@
 
     .option-btn:disabled {
       cursor: default;
-      opacity: 0.9;
+      opacity: 0.95;
+    }
+
+    .option-letter {
+      font-weight: bold;
+      min-width: 24px;
+    }
+
+    .option-selected {
+      border-color: #0078d4;
+      background: #e8f2fc;
+    }
+
+    .option-correct {
+      border-color: #28a745;
+      background: #d4edda;
+    }
+
+    .option-wrong {
+      border-color: #dc3545;
+      background: #f8d7da;
+    }
+
+    .answer-action {
+      margin-top: 14px;
+      margin-bottom: 8px;
+    }
+
+    .action-btn {
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      background: #0078d4;
+      color: white;
+    }
+
+    .action-btn:hover {
+      background: #106ebe;
+    }
+
+    .action-btn:disabled {
+      background: #9bbfe3;
+      cursor: not-allowed;
     }
 
     .result {
@@ -244,8 +307,15 @@
     <div class="meta" id="meta"></div>
     <h2 class="question-title" id="title"></h2>
     <div class="scenario" id="question"></div>
+    <div class="question-type" id="questionType"></div>
+    <div class="question-hint" id="questionHint"></div>
 
     <div id="answers"></div>
+
+    <div class="answer-action" id="answerAction" style="display:none;">
+      <button id="checkBtn" class="action-btn"></button>
+    </div>
+
     <div id="result" class="result"></div>
 
     <div class="controls">
@@ -263,23 +333,25 @@
     let quizData = null;
     let currentLang = "zh-HK";
     let current = 0;
-    let answeredSelections = {};
+    let answersState = {};
     let showingFinal = false;
 
     function getScore() {
       if (!quizData) return 0;
       let score = 0;
+
       quizData.questions.forEach(q => {
-        const sel = answeredSelections[q.id];
-        if (sel !== undefined && q.options[sel] && q.options[sel].correct) {
+        const state = answersState[q.id];
+        if (state && state.submitted && isAnswerCorrect(q, state.selected)) {
           score++;
         }
       });
+
       return score;
     }
 
     function getAnsweredCount() {
-      return Object.keys(answeredSelections).length;
+      return Object.values(answersState).filter(s => s && s.submitted).length;
     }
 
     function allAnswered() {
@@ -296,6 +368,36 @@
       window.history.replaceState({}, "", url);
     }
 
+    function getQuestionState(questionId) {
+      if (!answersState[questionId]) {
+        answersState[questionId] = {
+          selected: [],
+          submitted: false
+        };
+      }
+      return answersState[questionId];
+    }
+
+    function getCorrectIndexes(question) {
+      const indexes = [];
+      question.options.forEach((opt, i) => {
+        if (opt.correct) indexes.push(i);
+      });
+      return indexes;
+    }
+
+    function arraysEqual(a, b) {
+      if (a.length !== b.length) return false;
+      const sortedA = [...a].sort((x, y) => x - y);
+      const sortedB = [...b].sort((x, y) => x - y);
+      return sortedA.every((v, i) => v === sortedB[i]);
+    }
+
+    function isAnswerCorrect(question, selectedIndexes) {
+      const correctIndexes = getCorrectIndexes(question);
+      return arraysEqual(selectedIndexes, correctIndexes);
+    }
+
     function applyLanguageUI() {
       const ui = quizData.ui[currentLang];
       document.title = ui.siteTitle;
@@ -309,6 +411,7 @@
       document.getElementById("footer").innerText = ui.footer;
       document.getElementById("langSelect").value = currentLang;
       document.getElementById("langLabel").innerText = ui.langLabel || "Language / 語言 / 语言";
+      document.getElementById("checkBtn").innerText = ui.checkAnswer;
     }
 
     function updateSummary() {
@@ -323,37 +426,27 @@
       box.style.display = "none";
     }
 
-    function showResult(q, selectedIndex) {
-      const selected = q.options[selectedIndex];
+    function showResult(question, selectedIndexes) {
       const resultBox = document.getElementById("result");
+      const correct = isAnswerCorrect(question, selectedIndexes);
 
-      if (selected.correct) {
+      if (correct) {
         resultBox.className = "result correct";
         resultBox.innerHTML = `
           ${getUIText("correctLabel")}<br>
-          ${q.explanation[currentLang]}
-          <div class="reminder">${getUIText("reminderLabel")}：${q.reminder[currentLang]}</div>
+          ${question.explanation[currentLang]}
+          <div class="reminder">${getUIText("reminderLabel")}：${question.reminder[currentLang]}</div>
         `;
       } else {
         resultBox.className = "result wrong";
         resultBox.innerHTML = `
           ${getUIText("wrongLabel")}<br>
-          ${q.explanation[currentLang]}
-          <div class="reminder">${getUIText("reminderLabel")}：${q.reminder[currentLang]}</div>
+          ${question.explanation[currentLang]}
+          <div class="reminder">${getUIText("reminderLabel")}：${question.reminder[currentLang]}</div>
         `;
       }
 
       resultBox.style.display = "block";
-    }
-
-    function disableCurrentOptions() {
-      const buttons = document.querySelectorAll("#answers .option-btn");
-      buttons.forEach(btn => btn.disabled = true);
-    }
-
-    function enableCurrentOptions() {
-      const buttons = document.querySelectorAll("#answers .option-btn");
-      buttons.forEach(btn => btn.disabled = false);
     }
 
     function getEncouragementMessage() {
@@ -379,7 +472,10 @@
       document.getElementById("meta").innerHTML = "";
       document.getElementById("title").innerHTML = getUIText("resultTitle");
       document.getElementById("question").innerHTML = "";
+      document.getElementById("questionType").innerHTML = "";
+      document.getElementById("questionHint").innerHTML = "";
       document.getElementById("answers").innerHTML = "";
+      document.getElementById("answerAction").style.display = "none";
       hideResult();
 
       const total = quizData.questions.length;
@@ -409,60 +505,126 @@
       showingFinal = false;
     }
 
+    function getOptionLetter(index) {
+      return ["A", "B", "C", "D", "E", "F"][index] || `${index + 1}`;
+    }
+
     function renderQuestion() {
-      const q = quizData.questions[current];
-      if (!q) return;
+      const question = quizData.questions[current];
+      if (!question) return;
 
       hideFinalResult();
       applyLanguageUI();
+
+      const state = getQuestionState(question.id);
+      const alreadySubmitted = state.submitted;
 
       const questionLabel = getUIText("questionLabel")
         .replace("{current}", current + 1)
         .replace("{total}", quizData.questions.length);
 
-      document.getElementById("meta").innerHTML = `${questionLabel} ・ ${q.category[currentLang]}`;
-      document.getElementById("title").innerHTML = q.title[currentLang];
-      document.getElementById("question").innerHTML = q.scenario[currentLang];
+      document.getElementById("meta").innerHTML = `${questionLabel} ・ ${question.category[currentLang]}`;
+      document.getElementById("title").innerHTML = question.title[currentLang];
+      document.getElementById("question").innerHTML = question.scenario[currentLang];
+      document.getElementById("questionType").innerHTML =
+        question.type === "multiple"
+          ? getUIText("multipleLabel")
+          : getUIText("singleLabel");
 
-      const alreadyAnswered = answeredSelections[q.id] !== undefined;
+      document.getElementById("questionHint").innerHTML =
+        question.type === "multiple"
+          ? getUIText("multipleHint")
+          : getUIText("singleHint");
 
       let html = "";
-      q.options.forEach((opt, i) => {
+      const correctIndexes = getCorrectIndexes(question);
+
+      question.options.forEach((opt, i) => {
+        let classes = ["option-btn"];
+
+        if (state.selected.includes(i)) {
+          classes.push("option-selected");
+        }
+
+        if (alreadySubmitted) {
+          if (correctIndexes.includes(i)) {
+            classes.push("option-correct");
+          } else if (state.selected.includes(i) && !correctIndexes.includes(i)) {
+            classes.push("option-wrong");
+          }
+        }
+
         html += `
-          <button class="option-btn" onclick="checkAnswer(${i})" ${alreadyAnswered ? "disabled" : ""}>
-            ${opt.text[currentLang]}
+          <button class="${classes.join(" ")}" onclick="selectOption(${i})" ${alreadySubmitted ? "disabled" : ""}>
+            <span class="option-letter">${getOptionLetter(i)}.</span>
+            <span>${opt.text[currentLang]}</span>
           </button>
         `;
       });
+
       document.getElementById("answers").innerHTML = html;
 
-      if (alreadyAnswered) {
-        showResult(q, answeredSelections[q.id]);
-        disableCurrentOptions();
+      if (question.type === "multiple" && !alreadySubmitted) {
+        document.getElementById("answerAction").style.display = "block";
+        document.getElementById("checkBtn").disabled = state.selected.length === 0;
+      } else {
+        document.getElementById("answerAction").style.display = "none";
+      }
+
+      if (alreadySubmitted) {
+        showResult(question, state.selected);
       } else {
         hideResult();
-        enableCurrentOptions();
       }
 
       updateSummary();
+
+      if (allAnswered() && current === quizData.questions.length - 1) {
+        document.getElementById("nextBtn").innerText = getUIText("finish");
+      } else {
+        document.getElementById("nextBtn").innerText = getUIText("next");
+      }
     }
 
-    function checkAnswer(index) {
-      const q = quizData.questions[current];
-      if (answeredSelections[q.id] !== undefined) return;
+    function selectOption(index) {
+      const question = quizData.questions[current];
+      const state = getQuestionState(question.id);
 
-      answeredSelections[q.id] = index;
-      showResult(q, index);
-      disableCurrentOptions();
-      updateSummary();
+      if (state.submitted) return;
 
-      if (allAnswered()) {
-        document.getElementById("nextBtn").innerText = getUIText("finish");
+      if (question.type === "single") {
+        state.selected = [index];
+        state.submitted = true;
+        renderQuestion();
+        return;
       }
+
+      if (question.type === "multiple") {
+        if (state.selected.includes(index)) {
+          state.selected = state.selected.filter(i => i !== index);
+        } else {
+          state.selected.push(index);
+        }
+        renderQuestion();
+      }
+    }
+
+    function submitMultipleAnswer() {
+      const question = quizData.questions[current];
+      const state = getQuestionState(question.id);
+
+      if (question.type !== "multiple") return;
+      if (state.selected.length === 0) {
+        alert(getUIText("selectAtLeastOne"));
+        return;
+      }
+
+      state.submitted = true;
+      renderQuestion();
     }
 
     function restartQuiz() {
-      answeredSelections = {};
+      answersState = {};
       current = 0;
       showingFinal = false;
       renderQuestion();
@@ -551,6 +713,7 @@
       }
     });
 
+    document.getElementById("checkBtn").addEventListener("click", submitMultipleAnswer);
     document.getElementById("nextBtn").addEventListener("click", nextQuestion);
     document.getElementById("prevBtn").addEventListener("click", prevQuestion);
 

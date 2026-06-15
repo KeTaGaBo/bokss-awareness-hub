@@ -4,26 +4,21 @@ let current = 0;
 let answersState = {};
 let showingFinal = false;
 
-// 取得當前語言的 UI 翻譯文字
+// 🛡️ 強化版：取得翻譯文字，若 JSON 漏寫 key 則安全回傳空字串，防止程式崩潰
 function getUIText(key) {
   if (!quizData || !quizData.ui || !quizData.ui[currentLang]) return "";
   return quizData.ui[currentLang][key] || "";
 }
 
-// 將目前的語系參數同步寫入 URL 地址欄，維持瀏覽狀態
 function updateLanguageInUrl(lang) {
   const url = new URL(window.location);
   url.searchParams.set("lang", lang);
   window.history.replaceState({}, "", url);
 }
 
-// 取得或初始化指定題目的答題狀態
 function getQuestionState(questionId) {
   if (!answersState[questionId]) {
-    answersState[questionId] = {
-      selected: [],
-      submitted: false
-    };
+    answersState[questionId] = { selected: [], submitted: false };
   }
   return answersState[questionId];
 }
@@ -32,14 +27,12 @@ function getQuestionState(questionId) {
 function shareWhatsApp() {
   const url = window.location.origin + window.location.pathname + "?lang=" + currentLang;
   const text = `${getUIText("siteTitle")} \n${url}`;
-  const waUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
-  window.open(waUrl, "_blank");
+  window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
 }
 
 function shareFacebook() {
   const url = window.location.origin + window.location.pathname + "?lang=" + currentLang;
-  const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-  window.open(fbUrl, "_blank");
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, "_blank");
 }
 
 function shareInstagram() {
@@ -47,15 +40,14 @@ function shareInstagram() {
   navigator.clipboard.writeText(url).then(() => {
     const msg = document.getElementById("copyMsg");
     if (msg) {
-      msg.innerText = getUIText("copied");
+      msg.innerText = getUIText("copied") || "Link Copied!";
       setTimeout(() => { msg.innerText = ""; }, 3000);
     } else {
-      alert(getUIText("copied"));
+      alert("Link Copied!");
     }
   });
 }
 
-/* === 分數計算邏輯 === */
 function calculateScore() {
   let score = 0;
   if (!quizData || !quizData.questions) return 0;
@@ -66,23 +58,17 @@ function calculateScore() {
     
     if (q.type === "single") {
       const correctIdx = q.options.findIndex(o => o.correct);
-      if (state.selected.length === 1 && state.selected[0] === correctIdx) {
-        score += 10;
-      }
+      if (state.selected.length === 1 && state.selected[0] === correctIdx) score += 10;
     } else if (q.type === "multiple") {
       const correctIndices = q.options.map((o, idx) => o.correct ? idx : null).filter(v => v !== null);
       const userSel = [...state.selected].sort((x, y) => x - y);
       const corrSel = [...correctIndices].sort((x, y) => x - y);
-      
-      if (userSel.length === corrSel.length && userSel.every((v, i) => v === corrSel[i])) {
-        score += 10;
-      }
+      if (userSel.length === corrSel.length && userSel.every((v, i) => v === corrSel[i])) score += 10;
     }
   });
   return score;
 }
 
-/* === 實時刷新主頁面靜態 UI 元件的語言 === */
 function applyLanguageUI() {
   const badgeEl = document.getElementById("badge");
   const langLabelEl = document.getElementById("langLabel");
@@ -97,7 +83,6 @@ function applyLanguageUI() {
   if (introEl) introEl.innerText = getUIText("intro");
 }
 
-/* === 渲染核心測驗題目畫面 === */
 function renderQuestion() {
   applyLanguageUI();
   showingFinal = false;
@@ -109,23 +94,20 @@ function renderQuestion() {
   const question = quizData.questions[current];
   const state = getQuestionState(question.id);
 
-  // 設置題號進度 (例如: 第 1 題 / 共 5 題)
   const metaEl = document.getElementById("meta");
   if (metaEl) {
-    metaEl.innerText = getUIText("questionLabel")
-      .replace("{current}", current + 1)
-      .replace("{total}", quizData.questions.length);
+    // 🛡️ 確保 replace 前字串存在
+    let qLabel = getUIText("questionLabel") || "Question {current} / {total}";
+    metaEl.innerText = String(qLabel).replace("{current}", current + 1).replace("{total}", quizData.questions.length);
   }
 
-  // 設定題目大標題
   const titleEl = document.getElementById("title");
-  if (titleEl) titleEl.innerText = question.title[currentLang] || "";
+  if (titleEl) titleEl.innerText = (question.title && question.title[currentLang]) ? question.title[currentLang] : "";
 
-  // 處理情境對話框 (Scenario Presentation)
   const storyCard = document.getElementById("storyCard");
   if (question.presentation === "scenario" && question.story) {
     if (storyCard) storyCard.style.display = "block";
-    const story = question.story[currentLang];
+    const story = question.story[currentLang] || {};
     
     const storyLabelEl = document.getElementById("storyLabel");
     const storyTitleEl = document.getElementById("storyTitle");
@@ -136,77 +118,67 @@ function renderQuestion() {
     
     if (storyContentEl) {
       storyContentEl.innerHTML = "";
-      story.dialogues.forEach(d => {
-        const row = document.createElement("div");
-        row.className = `dialogue-item ${d.side === "right" ? "right" : ""}`;
-        row.innerHTML = `
-          <div class="dialogue-avatar">${d.avatar}</div>
-          <div class="dialogue-bubble">
-            <strong>${d.speaker}:</strong> ${d.text}
-          </div>
-        `;
-        storyContentEl.appendChild(row);
-      });
+      if (story.dialogues) {
+        story.dialogues.forEach(d => {
+          const row = document.createElement("div");
+          row.className = `dialogue-item ${d.side === "right" ? "right" : ""}`;
+          row.innerHTML = `<div class="dialogue-avatar">${d.avatar || "👤"}</div><div class="dialogue-bubble"><strong>${d.speaker || "User"}:</strong> ${d.text || ""}</div>`;
+          storyContentEl.appendChild(row);
+        });
+      }
     }
   } else {
     if (storyCard) storyCard.style.display = "none";
   }
 
-  // 設定題目主要內文、題型標籤與點選提示
   const questionEl = document.getElementById("question");
   if (questionEl) {
-    questionEl.innerText = question.type === "single" 
-      ? (question.question ? question.question[currentLang] : question.scenario[currentLang])
-      : (question.scenario ? question.scenario[currentLang] : "");
+    let qText = "";
+    if (question.type === "single") {
+      qText = (question.question && question.question[currentLang]) ? question.question[currentLang] : (question.scenario && question.scenario[currentLang] ? question.scenario[currentLang] : "");
+    } else {
+      qText = (question.scenario && question.scenario[currentLang]) ? question.scenario[currentLang] : "";
+    }
+    questionEl.innerText = qText;
   }
 
   const questionTypeEl = document.getElementById("questionType");
-  if (questionTypeEl) {
-    questionTypeEl.innerText = question.type === "single" 
-      ? getUIText("singleLabel") 
-      : getUIText("multipleLabel");
-  }
+  if (questionTypeEl) questionTypeEl.innerText = question.type === "single" ? getUIText("singleLabel") : getUIText("multipleLabel");
 
   const questionHintEl = document.getElementById("questionHint");
-  if (questionHintEl) {
-    questionHintEl.innerText = question.type === "single" 
-      ? getUIText("singleHint") 
-      : getUIText("multipleHint");
-  }
+  if (questionHintEl) questionHintEl.innerText = question.type === "single" ? getUIText("singleHint") : getUIText("multipleHint");
 
-  // 渲染選項按鈕
   const answersContainer = document.getElementById("answers");
   if (answersContainer) {
     answersContainer.innerHTML = "";
-    question.options.forEach((opt, idx) => {
-      const div = document.createElement("div");
-      div.className = `option ${state.selected.includes(idx) ? "selected" : ""}`;
-      
-      const iconClass = question.type === "single" ? "radio-box" : "checkbox-box";
-      div.innerHTML = `
-        <div class="${iconClass}"></div>
-        <div class="option-text">${opt.text[currentLang]}</div>
-      `;
+    if (question.options) {
+      question.options.forEach((opt, idx) => {
+        const div = document.createElement("div");
+        div.className = `option ${state.selected.includes(idx) ? "selected" : ""}`;
+        const iconClass = question.type === "single" ? "radio-box" : "checkbox-box";
+        const optText = (opt.text && opt.text[currentLang]) ? opt.text[currentLang] : "";
+        
+        div.innerHTML = `<div class="${iconClass}"></div><div class="option-text">${optText}</div>`;
 
-      if (!state.submitted) {
-        div.onclick = () => {
-          if (question.type === "single") {
-            state.selected = [idx];
-          } else {
-            if (state.selected.includes(idx)) {
-              state.selected = state.selected.filter(i => i !== idx);
+        if (!state.submitted) {
+          div.onclick = () => {
+            if (question.type === "single") {
+              state.selected = [idx];
             } else {
-              state.selected.push(idx);
+              if (state.selected.includes(idx)) {
+                state.selected = state.selected.filter(i => i !== idx);
+              } else {
+                state.selected.push(idx);
+              }
             }
-          }
-          renderQuestion();
-        };
-      }
-      answersContainer.appendChild(div);
-    });
+            renderQuestion();
+          };
+        }
+        answersContainer.appendChild(div);
+      });
+    }
   }
 
-  // 處理下方「提交答案」按鈕與「正確/錯誤批改詳解」的顯示邏輯
   const answerAction = document.getElementById("answerAction");
   const checkBtn = document.getElementById("checkBtn");
   const resultDiv = document.getElementById("result");
@@ -230,43 +202,39 @@ function renderQuestion() {
         isCorrect = userSel.length === corrSel.length && userSel.every((v, i) => v === corrSel[i]);
       }
 
+      // 🛡️ 安全讀取詳解與提醒，避免出現 "undefined"
+      const expText = (question.explanation && question.explanation[currentLang]) ? question.explanation[currentLang] : "";
+      const remText = (question.reminder && question.reminder[currentLang]) ? question.reminder[currentLang] : "";
+
       resultDiv.className = `result ${isCorrect ? "correct" : "wrong"}`;
       resultDiv.innerHTML = `
         <div class="result-status">${isCorrect ? getUIText("correctLabel") : getUIText("wrongLabel")}</div>
-        <div>${question.explanation[currentLang]}</div>
+        <div>${expText}</div>
         <div class="reminder-box">
-          <strong>${getUIText("reminderLabel")}:</strong> ${question.reminder[currentLang]}
+          <strong>${getUIText("reminderLabel")}:</strong> ${remText}
         </div>
       `;
     }
   }
 
-  // 修改「下一步」或「完成測驗」的導覽按鈕文字
   const nextBtn = document.getElementById("nextBtn");
   if (nextBtn) {
-    if (current === quizData.questions.length - 1) {
-      nextBtn.innerText = getUIText("finish");
-    } else {
-      nextBtn.innerText = getUIText("next");
-    }
+    nextBtn.innerText = (current === quizData.questions.length - 1) ? getUIText("finish") : getUIText("next");
   }
 }
 
-// 當使用者點擊「提交答案」時的驗證邏測
 function checkCurrentAnswer() {
   const question = quizData.questions[current];
   const state = getQuestionState(question.id);
 
   if (state.selected.length === 0) {
-    alert(getUIText("selectAtLeastOne"));
+    alert(getUIText("selectAtLeastOne") || "Please select an answer.");
     return;
   }
-
   state.submitted = true;
   renderQuestion();
 }
 
-/* === 核心修正：結算結果頁與多語言卡片生成 === */
 function showFinalResult() {
   showingFinal = true;
   applyLanguageUI();
@@ -274,7 +242,6 @@ function showFinalResult() {
   const total = quizData.questions.length * 10;
   const score = calculateScore();
 
-  // 根據分數比對對應的等級 ID 
   let levelKey = "below70";
   if (score === total) {
     levelKey = "perfect";
@@ -282,10 +249,19 @@ function showFinalResult() {
     levelKey = "pass70";
   }
 
-  const levelText = getUIText("levels")[levelKey] || "";
-  const msgText = quizData.messages[levelKey][currentLang] || "";
+  // 🛡️ 終極強化：相容不同的 JSON 結構（不管 levels 是寫在 ui 裡面還是外層）
+  let levelText = "Rank";
+  if (quizData.levels && quizData.levels[levelKey] && quizData.levels[levelKey][currentLang]) {
+    levelText = quizData.levels[levelKey][currentLang];
+  } else if (quizData.ui && quizData.ui[currentLang] && quizData.ui[currentLang].levels) {
+    levelText = quizData.ui[currentLang].levels[levelKey] || "Rank";
+  }
 
-  // 🎯 完美同步：將隱藏卡片模板（#hiddenCardCapture）內的所有元件全面替換為當前所選語言
+  let msgText = "Great job!";
+  if (quizData.messages && quizData.messages[levelKey] && quizData.messages[levelKey][currentLang]) {
+    msgText = quizData.messages[levelKey][currentLang];
+  }
+
   const certBadgeTop = document.getElementById("certBadgeTop");
   const certSiteTitle = document.getElementById("certSiteTitle");
   const certScoreLabel = document.getElementById("certScoreLabel");
@@ -303,9 +279,9 @@ function showFinalResult() {
   if (certScoreVal) certScoreVal.innerText = `${score} / ${total}`;
   if (certLevelLabel) certLevelLabel.innerText = getUIText("levelLabel") + ":";
   
-  // 乾淨清除稱號字串中的 Emoji，避免部分網頁環境字體渲染破碎
   if (certLevelName) {
-    const cleanLevelName = levelText.replace(/[\u2000-\u3300\ud83c\ud83d\ud83e]/g, '').trim();
+    // 🛡️ 強制轉型為字串，確保 .replace 絕對不會報錯
+    const cleanLevelName = String(levelText).replace(/[\u2000-\u3300\ud83c\ud83d\ud83e]/g, '').trim();
     certLevelName.innerText = cleanLevelName;
   }
   
@@ -314,13 +290,9 @@ function showFinalResult() {
   if (certQuizName) certQuizName.innerText = "Data Protection Compliance System";
   if (certMotto) certMotto.innerText = getUIText("footer");
 
-  // 🎯 核心圖片聯動：載入對應等級的專屬 PNG 勳章檔名到卡片模板
   const certBadgeImg = document.getElementById("certBadgeImg");
-  if (certBadgeImg) {
-    certBadgeImg.src = `badge-${levelKey}.png`;
-  }
+  if (certBadgeImg) certBadgeImg.src = `badge-${levelKey}.png`;
 
-  // 渲染前端主畫面的結果頁面板
   const questionArea = document.getElementById("questionArea");
   if (questionArea) {
     questionArea.innerHTML = `
@@ -351,18 +323,16 @@ function showFinalResult() {
     `;
   }
 
-  // 變更主導覽按鈕為「再試一次」文字
   const nextBtn = document.getElementById("nextBtn");
   if (nextBtn) nextBtn.innerText = getUIText("restartQuiz");
 
-  // 使用 setTimeout 確保圖片 DOM 完全生成並渲染完畢後，再調用 html2canvas 擷取高清圖形
   setTimeout(() => {
     const target = document.getElementById("hiddenCardCapture");
     if (!target) return;
 
     html2canvas(target, {
       useCORS: true,
-      scale: 2, // 提升渲染放大率，確保手機或視網膜螢幕上字體清晰不模糊
+      scale: 2,
       backgroundColor: null
     }).then(canvas => {
       const imgData = canvas.toDataURL("image/png");
@@ -375,7 +345,7 @@ function showFinalResult() {
       const statusTip = document.getElementById("screenshotStatusTip");
 
       if (container) {
-        container.innerHTML = ""; // 清除舊圖
+        container.innerHTML = ""; 
         container.appendChild(img);
       }
       if (spinner) spinner.style.display = "none";
@@ -388,15 +358,13 @@ function showFinalResult() {
   }, 600);
 }
 
-// 重新開始測驗
 function restartQuiz() {
   current = 0;
   answersState = {};
   showingFinal = false;
-  window.location.reload(); // 清除所有暫存狀態，完整重新載入
+  window.location.reload(); 
 }
 
-// 控制點擊主導覽按鈕時的切換狀態機
 function handleNext() {
   if (showingFinal) {
     restartQuiz();
@@ -421,14 +389,12 @@ function handleNext() {
   renderQuestion();
 }
 
-// 異步讀取 JSON 設定檔與初始化
 async function loadQuestions() {
   try {
     const response = await fetch("questions.json");
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     quizData = await response.json();
 
-    // 解析 URL 中的語系參數 (例如: ?lang=en)
     const urlLang = new URLSearchParams(window.location.search).get("lang");
     const supported = ["zh-HK", "zh-CN", "en"];
     if (supported.includes(urlLang)) {
@@ -451,27 +417,23 @@ async function loadQuestions() {
   }
 }
 
-/* === 核心修正：監聽語言下拉選單切換事件 === */
 const langSelectEl = document.getElementById("langSelect");
 if (langSelectEl) {
   langSelectEl.addEventListener("change", function () {
-    currentLang = this.value; // 更新當前系統全域語言變數
-    updateLanguageInUrl(currentLang); // 同步改寫瀏覽器網址列參數
+    currentLang = this.value; 
+    updateLanguageInUrl(currentLang);
 
-    // 關鍵修復：依據使用者目前停留在「答題中」還是「最終結果頁」，即時重新驅動渲染流程
     if (showingFinal) {
-      showFinalResult(); // 重新整理隱藏卡片各語系標籤並重繪畫布
+      showFinalResult(); 
     } else {
-      renderQuestion(); // 重新編排當前題目的翻譯文字與選項
+      renderQuestion(); 
     }
   });
 }
 
-// 註冊「下一步」按鈕的點擊監聽器
 const nextBtnEl = document.getElementById("nextBtn");
 if (nextBtnEl) {
   nextBtnEl.addEventListener("click", handleNext);
 }
 
-// 初始化加載
 window.onload = loadQuestions;

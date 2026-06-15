@@ -3,7 +3,7 @@
     "zh-HK": {
       "badge": "資訊安全與合規科普",
       "siteTitle": "數據安全大考驗：你以為沒問題，其實藏風險？",
-      "heroSubtitle": "💡 10分鐘資安自我檢測 × 數據合規防範",
+      "heroSubtitle": "💡 5分鐘資安自我檢測 × 數據合規防範",
       "intro": "本測驗包含單選題與多選題。部分情境看似為了『工作方便』或出於『一時好奇』，但在法規與資訊安全標準中卻可能隱藏巨大風險。試試你的判斷力，看看你能得幾分！",
       "prev": "上一題",
       "next": "下一題",
@@ -41,7 +41,7 @@
     "zh-CN": {
       "badge": "信息安全与合规科普",
       "siteTitle": "数据安全大考验：你以为没问题，其实藏风险？",
-      "heroSubtitle": "💡 10分钟资安自我检测 × 数据合规防范",
+      "heroSubtitle": "💡 5分钟资安自我检测 × 数据合规防范",
       "intro": "本测验包含单选题与多选题。部分情境看似为了『工作方便』或出于『一时好奇』，但在法规与信息安全标准中却可能隐藏巨大风险。试试你的判断力，看看你能得几分！",
       "prev": "上一题",
       "next": "下一题",
@@ -79,7 +79,7 @@
     "en": {
       "badge": "Cybersecurity & Compliance",
       "siteTitle": "Data Security Challenge: Safe or Risky?",
-      "heroSubtitle": "💡 10-Min Quiz × Data Protection Compliance",
+      "heroSubtitle": "💡 5-Min Quiz × Data Protection Compliance",
       "intro": "This quiz contains single and multiple-choice questions. Some actions may seem convenient or driven by casual curiosity, but they pose major legal and security risks. Test your boundaries!",
       "prev": "Prev",
       "next": "Next",

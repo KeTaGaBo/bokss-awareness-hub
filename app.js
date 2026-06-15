@@ -66,16 +66,17 @@ function getCorrectIndexes(question) {
   return indexes;
 }
 
-function arraysEqual(a, b) {
-  if (a.length !== b.length) return false;
-  const sortedA = [...a].sort((x, y) => x - y);
-  const sortedB = [...b].sort((x, y) => x - y);
-  return sortedA.every((v, i) => v === sortedB[i]);
-}
-
+// 🛠️ 修正核心：精準的多選題陣列比對邏輯，忽略選擇的先後順序
 function isAnswerCorrect(question, selectedIndexes) {
   const correctIndexes = getCorrectIndexes(question);
-  return arraysEqual(selectedIndexes, correctIndexes);
+  
+  if (selectedIndexes.length !== correctIndexes.length) return false;
+  
+  // 將兩邊的陣列都進行由小到大的數字排序，排除因為點擊順序不同而誤判的情況
+  const sortedSelected = [...selectedIndexes].map(Number).sort((a, b) => a - b);
+  const sortedCorrect = [...correctIndexes].map(Number).sort((a, b) => a - b);
+  
+  return sortedSelected.every((value, index) => value === sortedCorrect[index]);
 }
 
 function getScore() {
@@ -201,7 +202,7 @@ function refreshOptionSelectionUI(question, state) {
   }
 }
 
-// 核心補全：生成最終結算頁面，添加社交平台分享與ESG綠色傳播
+// 生成最終結算頁面，添加社交平台分享與ESG綠色傳播
 function showFinalResult() {
   showingFinal = true;
   const card = document.getElementById("quizCard");
@@ -242,7 +243,6 @@ function showFinalResult() {
   finalBox.className = "result info";
   finalBox.style.display = "block";
 
-  // 將前進按鈕重製為重新開始
   const nextBtn = document.getElementById("nextBtn");
   nextBtn.innerText = getUIText("restart");
   nextBtn.classList.remove("cta-glow");

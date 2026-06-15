@@ -3,6 +3,7 @@ let currentLang = "zh-HK";
 let current = 0;
 let answersState = {};
 let showingFinal = false;
+let qrCodeInstance = null; // 用來儲存 QR Code 物件
 
 function getUIText(key) {
   return quizData.ui[currentLang][key];
@@ -24,34 +25,74 @@ function getQuestionState(questionId) {
   return answersState[questionId];
 }
 
-function shareWhatsApp() {
-  const url = window.location.origin + window.location.pathname + "?lang=" + currentLang;
-  const text = `${getUIText("siteTitle")} \n${url}`;
-  const waUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
-  window.open(waUrl, "_blank");
-}
+/* 一鍵生成圖片大引擎 */
+function generateCertificateImage() {
+  const score = getScore();
+  const total = quizData.questions.length;
+  const levelKey = getLevelKey();
+  
+  // 1. 同步資料到隱藏的 HTML 繪圖模板
+  document.getElementById("certSiteTitle").innerText = getUIText("siteTitle");
+  document.getElementById("certScoreLabel").innerText = getUIText("scoreLabel");
+  document.getElementById("certScoreVal").innerText = `${score} / ${total}`;
+  document.getElementById("certMsgVal").innerText = getEncouragementMessage();
+  
+  const levelText = getUIText("levels")[levelKey] || "";
+  const parts = levelText.trim().split(" ");
+  document.getElementById("certLevelIcon").innerText = parts[0] || "🏅";
+  document.getElementById("certLevelText").innerText = getUIText("levelLabel") + "：" + (parts.slice(1).join(" ") || levelText);
 
-function shareFacebook() {
-  const url = window.location.origin + window.location.pathname + "?lang=" + currentLang;
-  const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-  window.open(fbUrl, "_blank");
-}
-
-function shareInstagram() {
-  const url = window.location.origin + window.location.pathname + "?lang=" + currentLang;
-  navigator.clipboard.writeText(url).then(() => {
-    const msg = document.getElementById("copyMsg");
-    const igHint = document.getElementById("igHint");
-    if (msg) {
-      msg.classList.remove("show");
-      void msg.offsetWidth;
-      msg.classList.add("show");
-    }
-    if (igHint) {
-      igHint.style.display = "block";
-      setTimeout(() => { igHint.style.display = "none"; }, 4000);
-    }
+  // 2. 在模板中動態繪製現有網址的 QR Code，讓別人掃描就能挑戰
+  const qrContainer = document.getElementById("certQrCode");
+  qrContainer.innerHTML = "";
+  const currentUrl = window.location.origin + window.location.pathname + "?lang=" + currentLang;
+  new QRCode(qrContainer, {
+    text: currentUrl,
+    width: 90,
+    height: 90,
+    correctLevel: QRCode.CorrectLevel.H
   });
+
+  // 3. 等待 QR Code 渲染完畢後，呼叫 html2canvas 將 DOM 轉換為畫布
+  setTimeout(() => {
+    const element = document.getElementById("certificateCaptureTemplate").firstElementChild;
+    
+    html2canvas(element, {
+      scale: 2, // 提升圖片清晰度，發社群不模糊
+      useCORS: true,
+      backgroundColor: "#ffffff"
+    }).then(canvas => {
+      const imgData = canvas.toDataURL("image/png");
+      
+      // 4. 判斷是否為 iOS / iPhone 行動裝置
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      
+      if (isIOS) {
+        // iPhone 開放彈出預覽層，讓使用者長按圖片儲存
+        const container = document.getElementById("previewImageContainer");
+        container.innerHTML = `<img src="${imgData}" alt="Certificate">`;
+        document.getElementById("imagePreviewModal").style.display = "flex";
+      } else {
+        // 電腦、Android 直接自動化下載圖片
+        const link = document.createElement("a");
+        link.download = `quiz-result-${score}pts.png`;
+        link.href = imgData;
+        link.click();
+        
+        // 同時也複製連結方便雙重分享
+        navigator.clipboard.writeText(currentUrl);
+        const msg = document.getElementById("copyMsg");
+        if (msg) {
+          msg.classList.add("show");
+          setTimeout(() => { msg.classList.remove("show"); }, 2000);
+        }
+      }
+    });
+  }, 150);
+}
+
+function closePreviewModal() {
+  document.getElementById("imagePreviewModal").style.display = "none";
 }
 
 function getCorrectIndexes(question) {
@@ -66,7 +107,6 @@ function isAnswerCorrect(question, selectedIndexes) {
   const correctIndexes = getCorrectIndexes(question);
   if (selectedIndexes.length !== correctIndexes.length) return false;
   
-  // ✨ 完美修復點：確保不論亂序，型態是字串還是數字，都強制轉為數字並按數值大小嚴格排序
   const sortedSelected = [...selectedIndexes].map(num => Number(num)).sort((x, y) => x - y);
   const sortedCorrect = [...correctIndexes].map(num => Number(num)).sort((x, y) => x - y);
   
@@ -85,7 +125,6 @@ function getScore() {
   return score;
 }
 
-// 修正：修正計分與提交通算狀態
 function getAnsweredCount() {
   return Object.values(answersState).filter(s => s && s.submitted).length;
 }
@@ -180,12 +219,14 @@ function buildLevelBadge(levelKey) {
   `;
 }
 
+/* 即時變更選項的 UI 反應，確保底色與邊框同步連動 */
 function refreshOptionSelectionUI(question, state) {
   const buttons = document.querySelectorAll("#answers .option-btn");
   buttons.forEach((btn, i) => {
-    btn.classList.remove("option-selected");
     if (state.selected.includes(i)) {
       btn.classList.add("option-selected");
+    } else {
+      btn.classList.remove("option-selected");
     }
   });
 
@@ -217,16 +258,14 @@ function showFinalResult() {
       </p>
       
       <div class="share-box" style="text-align:left;">
-        <div class="share-title">${getUIText("shareTitle")}</div>
-        <div class="share-text">${getUIText("shareText")}</div>
+        <div class="share-title">📸 生成你的榮譽成就卡</div>
+        <div class="share-text">我們已為您優化分享功能。點選下方按鈕即可「一鍵生成專屬證書圖片」，自由發布至 Instagram、WhatsApp、Facebook 等各大社群平台！</div>
         <div class="share-actions">
-          <button class="share-btn whatsapp" onclick="shareWhatsApp()">🟢 WhatsApp</button>
-          <button class="share-btn facebook" onclick="shareFacebook()">🔵 Facebook</button>
-          <button class="share-btn instagram" onclick="shareInstagram()">🟣 Instagram</button>
-          <button class="share-btn" style="background:var(--grey);" onclick="copyQuizLink()">${getUIText("copyLink")}</button>
+          <button class="share-btn" style="background:linear-gradient(135deg, #ffd54f, #ff6b6b); color:#1f1f1f; width:100%; font-size:16px; padding:14px;" onclick="generateCertificateImage()">
+            ✨ 一鍵生成/下載成就卡圖片
+          </button>
         </div>
-        <div class="copy-msg" id="copyMsg">${getUIText("copied")}</div>
-        <div class="ig-hint" id="igHint" style="display:none;">📸 已複製小測驗連結！您可以前往社交媒體發布貼文分享。</div>
+        <div class="copy-msg" id="copyMsg">📋 測驗連結已同時複製到剪貼簿！</div>
       </div>
     </div>
   `;
@@ -247,21 +286,6 @@ function hideFinalResult() {
   box.innerHTML = "";
   box.style.display = "none";
   showingFinal = false;
-}
-
-function copyQuizLink() {
-  const url = window.location.origin + window.location.pathname + "?lang=" + currentLang;
-  navigator.clipboard.writeText(url).then(() => {
-    const msg = document.getElementById("copyMsg");
-    if (msg) {
-      msg.classList.remove("show");
-      void msg.offsetWidth;
-      msg.classList.add("show");
-      setTimeout(() => { msg.classList.remove("show"); }, 2500);
-    }
-  }).catch(() => {
-    alert(url);
-  });
 }
 
 function getOptionLetter(index) {

@@ -35,688 +35,484 @@ body {
   margin: 24px auto;
   border: 3px solid var(--ink);
   box-shadow: var(--shadow);
-  position: relative;
-  overflow: hidden;
-  transition: 0.2s ease;
-}
-
-.card::after {
-  content: "";
-  position: absolute;
-  right: -40px;
-  top: -40px;
-  width: 180px;
-  height: 180px;
-  background: radial-gradient(circle, rgba(255, 213, 79, 0.22) 0%, rgba(255, 213, 79, 0.07) 45%, rgba(255,255,255,0) 70%);
-  pointer-events: none;
 }
 
 .topbar {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
-  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 24px;
 }
 
 .badge {
-  display: inline-block;
   background: var(--yellow);
-  color: var(--ink);
-  font-size: 14px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  margin-bottom: 12px;
-  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 40px;
   border: 2px solid var(--ink);
-  box-shadow: 3px 3px 0 var(--ink);
-  transform: rotate(-2deg);
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .lang-box {
-  text-align: right;
-  position: relative;
-  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
 }
 
 .lang-label {
-  font-size: 13px;
-  color: #555;
-  margin-bottom: 4px;
+  font-size: 12px;
   font-weight: bold;
 }
 
-select {
-  padding: 8px 10px;
-  border-radius: 10px;
+#langSelect {
+  padding: 6px 12px;
+  border-radius: 8px;
   border: 2px solid var(--ink);
-  font-size: 14px;
-  background: white;
-  box-shadow: 2px 2px 0 var(--ink);
+  font-weight: bold;
+  background: #fff;
+  cursor: pointer;
 }
 
 .hero-subtitle {
-  display: inline-block;
-  background: #fff;
-  border: 2px solid var(--ink);
-  border-radius: 12px;
-  padding: 8px 12px;
-  box-shadow: 3px 3px 0 var(--ink);
-  margin-bottom: 14px;
   font-weight: bold;
-  color: #444;
+  font-size: 18px;
+  color: var(--purple);
+  margin-bottom: 8px;
 }
 
 h1 {
-  margin: 0 0 12px 0;
-  font-size: 34px;
-  line-height: 1.12;
-  letter-spacing: 0.3px;
-  position: relative;
-  z-index: 2;
+  margin: 0 0 16px 0;
+  font-size: 36px;
 }
 
 .intro {
   font-size: 16px;
-  line-height: 1.75;
-  color: #555;
-  margin-bottom: 24px;
-  position: relative;
-  z-index: 2;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  background: var(--grey);
+  padding: 16px;
+  border-radius: 12px;
+  border: 2px solid var(--ink);
 }
 
 .meta {
-  font-size: 14px;
+  font-weight: bold;
   color: #666;
   margin-bottom: 8px;
-  font-weight: bold;
 }
 
 .question-title {
-  font-size: 26px;
-  margin: 0 0 10px 0;
-  line-height: 1.3;
-}
-
-.scenario {
-  font-size: 20px;
-  line-height: 1.65;
-  margin-bottom: 14px;
+  margin: 0 0 20px 0;
+  font-size: 24px;
 }
 
 .story-card {
-  display: none;
-  background: #f9fbff;
+  background: #fff;
   border: 3px solid var(--ink);
-  border-radius: 16px;
-  padding: 18px;
-  margin-bottom: 18px;
-  box-shadow: 5px 5px 0 var(--ink);
-  position: relative;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+  box-shadow: 4px 4px 0 var(--ink);
 }
 
 .story-label {
   display: inline-block;
-  font-size: 13px;
-  padding: 5px 10px;
-  border-radius: 999px;
-  background: var(--blue);
+  background: var(--red);
   color: #fff;
-  margin-bottom: 10px;
+  padding: 4px 10px;
   font-weight: bold;
+  font-size: 12px;
+  border-radius: 6px;
   border: 2px solid var(--ink);
-  box-shadow: 2px 2px 0 var(--ink);
+  margin-bottom: 8px;
 }
 
 .story-title {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: bold;
-  margin-bottom: 14px;
-}
-
-.dialogue-wrap {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
   margin-bottom: 12px;
-  opacity: 0;
-  animation: bubbleIn 0.35s ease forwards;
 }
 
-.dialogue-wrap.right {
+.dialogue-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.dialogue-item.right {
   flex-direction: row-reverse;
 }
 
-.avatar {
-  width: 44px;
-  height: 44px;
-  min-width: 44px;
-  border-radius: 50%;
-  border: 3px solid var(--ink);
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.dialogue-avatar {
   font-size: 24px;
-  box-shadow: 3px 3px 0 var(--ink);
 }
 
-.bubble {
-  max-width: calc(100% - 60px);
-  background: #fff;
-  border: 3px solid var(--ink);
-  border-radius: 16px;
-  padding: 10px 12px;
-  box-shadow: 3px 3px 0 var(--ink);
-  position: relative;
+.dialogue-bubble {
+  background: var(--grey);
+  border: 2px solid var(--ink);
+  padding: 10px 14px;
+  border-radius: 12px;
+  max-width: 75%;
+  line-height: 1.5;
 }
 
-.dialogue-wrap.left .bubble::before {
-  content: "";
-  position: absolute;
-  left: -10px;
-  top: 14px;
-  width: 14px;
-  height: 14px;
-  background: #fff;
-  border-left: 3px solid var(--ink);
-  border-bottom: 3px solid var(--ink);
-  transform: rotate(45deg);
+.dialogue-item.right .dialogue-bubble {
+  background: var(--blue);
 }
 
-.dialogue-wrap.right .bubble::before {
-  content: "";
-  position: absolute;
-  right: -10px;
-  top: 14px;
-  width: 14px;
-  height: 14px;
-  background: #fff;
-  border-right: 3px solid var(--ink);
-  border-top: 3px solid var(--ink);
-  transform: rotate(45deg);
-}
-
-.speaker {
-  font-size: 13px;
+.scenario {
+  font-size: 18px;
   font-weight: bold;
-  margin-bottom: 6px;
-  color: #4b5563;
-}
-
-.bubble-text {
-  line-height: 1.75;
-  color: #333;
+  line-height: 1.5;
+  margin-bottom: 12px;
 }
 
 .question-type {
   display: inline-block;
-  font-size: 13px;
-  padding: 5px 10px;
-  border-radius: 999px;
-  background: var(--grey);
-  color: #4a5568;
-  margin-bottom: 14px;
-  border: 2px solid var(--ink);
-  box-shadow: 2px 2px 0 var(--ink);
+  background: var(--ink);
+  color: #fff;
+  padding: 2px 8px;
+  font-size: 12px;
   font-weight: bold;
+  border-radius: 4px;
+  margin-bottom: 6px;
 }
 
 .question-hint {
   font-size: 14px;
   color: #555;
-  margin-bottom: 12px;
-  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-.content-anim {
-  animation: slideFadeIn 0.35s ease;
-}
-
-/* ✨ 改良亮點：強化選取狀態時的醒目色塊與邊框線條 */
-.option-btn {
-  width: 100%;
-  padding: 14px;
-  margin: 8px 0;
-  border-radius: 14px;
-  border: 3px solid var(--ink);
+.option {
   background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
   cursor: pointer;
-  font-size: 17px;
-  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s ease, border-color 0.15s ease;
-  text-align: left;
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
+  align-items: center;
+  gap: 12px;
+  font-weight: bold;
+  transition: transform 0.1s;
+}
+
+.option:hover {
+  background: var(--bg1);
+  transform: translateY(-2px);
+}
+
+.option.selected {
+  background: var(--yellow);
   box-shadow: 4px 4px 0 var(--ink);
 }
 
-.option-btn:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 5px 5px 0 var(--ink);
-  background: #fffdf8;
+.checkbox-box, .radio-box {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--ink);
+  background: #fff;
+  flex-shrink: 0;
 }
 
-/* 當按鈕被選取時：邊框加深、底色變為非常明顯的科技粉藍 */
-.option-btn.option-selected {
-  border-color: #005fcc !important;
-  background: #edf5ff !important;
-  box-shadow: 4px 4px 0 #005fcc;
-  transform: translate(1px, 1px);
+.radio-box {
+  border-radius: 50%;
 }
 
-.option-btn:disabled {
-  cursor: default;
-  opacity: 0.98;
+.option.selected .checkbox-box {
+  background: var(--ink);
+  position: relative;
+}
+.option.selected .checkbox-box::after {
+  content: "✓";
+  color: #fff;
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  font-size: 14px;
 }
 
-.option-letter {
-  font-weight: bold;
-  min-width: 26px;
-}
-
-/* 回答正確後的著色 */
-.option-correct {
-  border-color: #0b7a2c !important;
-  background: #dff7e6 !important;
-  box-shadow: 4px 4px 0 #0b7a2c !important;
-}
-
-/* 回答錯誤後的著色 */
-.option-wrong {
-  border-color: #b42318 !important;
-  background: #ffe3e0 !important;
-  box-shadow: 4px 4px 0 #b42318 !important;
+.option.selected .radio-box {
+  background: var(--ink);
 }
 
 .answer-action {
-  margin-top: 14px;
-  margin-bottom: 8px;
+  margin: 20px 0;
 }
 
-.action-btn {
-  padding: 12px 18px;
-  border-radius: 12px;
+.action-btn, .nav-btn {
+  background: var(--green);
   border: 3px solid var(--ink);
-  cursor: pointer;
-  font-size: 15px;
-  background: var(--blue);
-  color: white;
-  box-shadow: 4px 4px 0 var(--ink);
-  font-weight: bold;
-  transition: transform 0.18s ease;
-}
-
-.action-btn:hover {
-  transform: translate(-1px, -1px);
-}
-
-.action-btn:disabled {
-  background: #9bbfe3;
-  cursor: not-allowed;
-}
-
-.result {
-  margin-top: 22px;
-  padding: 16px;
-  border-radius: 14px;
-  line-height: 1.85;
+  padding: 12px 24px;
+  border-radius: 10px;
   font-size: 16px;
-  display: none;
-  border: 3px solid var(--ink);
+  font-weight: bold;
+  cursor: pointer;
   box-shadow: 4px 4px 0 var(--ink);
 }
 
-.correct {
-  background: #dff7e6;
-  color: #135626;
-  display: block;
-}
-
-.wrong {
-  background: #ffe3e0;
-  color: #7a1e18;
-  display: block;
-}
-
-.info {
-  background: #eef6ff;
-  color: #163b63;
-  display: block;
-}
-
-.result-pop {
-  animation: popIn 0.30s ease;
-}
-
-.result-shake {
-  animation: shakeX 0.32s ease;
-}
-
-.final-enter {
-  animation: finalEnter 0.45s ease;
-}
-
-.reminder {
-  margin-top: 8px;
-  font-weight: bold;
-}
-
-.level-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 10px;
-  margin-bottom: 16px;
-  padding: 14px 20px;
-  font-weight: 900;
-  font-size: 20px;
-  line-height: 1.2;
-  border-radius: 999px;
-  border: 4px solid var(--ink);
-  background: linear-gradient(135deg, #fffef8 0%, #ffe7a8 35%, #ffd54f 100%);
-  color: var(--ink);
-  box-shadow:
-    0 0 0 4px #fff,
-    0 0 0 8px var(--ink),
-    0 10px 0 var(--ink),
-    0 0 24px rgba(255, 213, 79, 0.35);
-  text-shadow: 1px 1px 0 rgba(255,255,255,0.7);
-  animation: badgeRise 0.45s ease;
-}
-
-.level-badge .level-icon {
-  font-size: 26px;
-  line-height: 1;
-}
-
-.share-box {
-  margin-top: 18px;
-  background: #fff;
-  border: 3px dashed var(--ink);
-  border-radius: 14px;
-  padding: 14px;
-}
-
-.share-title {
-  font-weight: bold;
-  margin-bottom: 8px;
-  font-size: 16px;
-}
-
-.share-text {
-  color: #444;
-  line-height: 1.7;
-  margin-bottom: 10px;
-}
-
-.share-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.share-btn {
-  padding: 10px 14px;
-  border-radius: 12px;
-  border: 3px solid var(--ink);
-  background: #fff;
-  cursor: pointer;
-  font-weight: bold;
-  box-shadow: 3px 3px 0 var(--ink);
-  transition: transform 0.18s ease;
-}
-
-.share-btn:hover {
-  transform: translate(-1px, -1px);
-}
-
-.share-btn.whatsapp { background: #25D366; color: white; }
-.share-btn.facebook { background: #1877F2; color: white; }
-.share-btn.instagram { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4); color: white; }
-
-.copy-msg {
-  margin-top: 10px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #00703c;
-  display: none;
-}
-
-.copy-msg.show {
-  display: block;
-  animation: fadePop 0.3s ease;
-}
-
-.controls {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-top: 24px;
-  flex-wrap: wrap;
-}
-
-.nav-btn {
-  min-width: 150px;
-  padding: 12px;
-  border-radius: 12px;
-  border: 3px solid var(--ink);
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  box-shadow: 4px 4px 0 var(--ink);
-  transition: transform 0.18s ease;
+.action-btn:active, .nav-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ink);
 }
 
 .nav-btn.primary {
-  background: var(--red);
-  color: white;
+  background: var(--blue);
 }
 
-.nav-btn.primary:hover {
-  transform: translate(-1px, -1px);
+.result {
+  padding: 16px;
+  border-radius: 12px;
+  border: 3px solid var(--ink);
+  margin-top: 20px;
+  display: none;
+  line-height: 1.6;
 }
 
-.nav-btn.cta-glow {
-  animation: ctaPulse 1.2s infinite;
+.result.correct {
+  background: #e8f8f0;
 }
 
-.summary {
-  margin-top: 24px;
-  font-size: 15px;
-  color: #555;
-  text-align: right;
-  font-weight: bold;
+.result.wrong {
+  background: #ffebeb;
 }
 
-.footer-note {
-  margin-top: 24px;
-  font-size: 14px;
-  color: #666;
-  text-align: center;
-  border-top: 2px dashed #ccc;
-  padding-top: 16px;
-  font-weight: bold;
-}
-
-.card.final-mode .topbar,
-.card.final-mode .hero-subtitle,
-.card.final-mode .intro,
-.card.final-mode .meta,
-.card.final-mode .story-card,
-.card.final-mode .question-type,
-.card.final-mode .question-hint,
-.card.final-mode #answers,
-.card.final-mode #answerAction,
-.card.final-mode #result,
-.card.final-mode .summary,
-.card.final-mode #question,
-.card.final-mode .question-title {
-  display: none !important;
-}
-
-.card.final-mode #finalResult {
-  display: block !important;
-  margin-top: 8px;
-  max-width: 780px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.card.final-mode .controls {
-  justify-content: center;
-  margin-top: 18px;
-}
-
-.card.final-mode .nav-btn {
-  min-width: 180px;
-}
-
-/* ✨ 改良亮點：精美實體「成就認證卡」繪圖模組樣式 */
-.cert-card {
-  width: 520px;
-  background: #ffffff;
-  padding: 30px;
-  border: 5px solid #1f1f1f;
-  box-shadow: 8px 8px 0px #1f1f1f;
-  border-radius: 16px;
-  font-family: Arial, sans-serif;
-  color: #1f1f1f;
-  text-align: center;
-  background-image: radial-gradient(#ffd54f 1px, transparent 1px);
-  background-size: 16px 16px;
-}
-.cert-badge {
-  display: inline-block;
-  background: #ffd54f;
-  padding: 6px 16px;
-  font-size: 14px;
-  font-weight: bold;
-  border: 2px solid #1f1f1f;
-  border-radius: 999px;
-  box-shadow: 3px 3px 0 #1f1f1f;
-  margin-bottom: 16px;
-}
-.cert-title {
-  font-size: 24px;
-  margin: 0 0 16px 0;
-  font-weight: 900;
-  line-height: 1.2;
-}
-.cert-score-wrap {
-  margin: 14px 0;
-}
-.cert-label {
-  display: block;
-  font-size: 14px;
-  color: #555;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-.cert-score {
-  font-size: 44px;
-  font-weight: 900;
-  color: #ff6b6b;
-}
-.cert-level-box {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #eef2f7;
-  border: 2px solid #1f1f1f;
-  padding: 8px 16px;
-  border-radius: 10px;
+.result-status {
   font-weight: bold;
   font-size: 18px;
-  margin-bottom: 16px;
-}
-.cert-msg {
-  font-size: 14px;
-  color: #444;
-  line-height: 1.5;
-  padding: 0 10px;
-  margin-bottom: 24px;
-}
-.cert-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 3px dashed #1f1f1f;
-  padding-top: 16px;
-  text-align: left;
-}
-.cert-qr-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-}
-.cert-qr-tip {
-  font-size: 10px;
-  font-weight: bold;
-  color: #666;
-}
-.cert-brand {
-  text-align: right;
-}
-.cert-brand strong {
-  display: block;
-  font-size: 16px;
-}
-.cert-brand span {
-  font-size: 12px;
-  color: #666;
+  margin-bottom: 8px;
 }
 
-/* ✨ iPhone 專用彈出層預覽核心 CSS */
-.preview-modal {
-  position: fixed;
-  z-index: 9999;
-  left: 0; top: 0; width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.6);
-  display: flex; align-items: center; justify-content: center;
-  padding: 20px;
-}
-.preview-content {
+.reminder-box {
+  margin-top: 12px;
   background: #fff;
-  padding: 20px;
-  border-radius: 16px;
-  max-width: 560px;
-  width: 100%;
-  border: 3px solid var(--ink);
-  box-shadow: 6px 6px 0 var(--ink);
-  text-align: center;
-  max-height: 90vh;
-  overflow-y: auto;
-}
-#previewImageContainer img {
-  max-width: 100%;
-  height: auto;
   border: 2px solid var(--ink);
+  padding: 10px;
   border-radius: 8px;
 }
 
-/* 動畫定義 */
-@keyframes slideFadeIn { from { opacity: 0; transform: translateX(14px); } to { opacity: 1; transform: translateX(0); } }
-@keyframes popIn { 0% { transform: scale(0.96); opacity: 0.7; } 70% { transform: scale(1.03); opacity: 1; } 100% { transform: scale(1); } }
-@keyframes shakeX { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-4px); } 40% { transform: translateX(4px); } 60% { transform: translateX(-3px); } 80% { transform: translateX(3px); } }
-@keyframes finalEnter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fadePop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes bubbleIn { from { opacity: 0; transform: translateY(10px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
-@keyframes ctaPulse { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
-@keyframes badgeRise { 0% { opacity: 0; transform: scale(0.92) translateY(8px); } 70% { opacity: 1; transform: scale(1.04) translateY(0); } 100% { transform: scale(1) translateY(0); } }
+.final-score-title {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
 
-@media (max-width: 640px) {
-  h1 { font-size: 28px; }
-  .question-title { font-size: 22px; }
-  .scenario { font-size: 18px; }
-  .option-btn { font-size: 16px; }
-  .lang-box { text-align: left; }
-  .story-title { font-size: 20px; }
-  .bubble { max-width: calc(100% - 54px); }
-  .controls { justify-content: stretch; }
-  .nav-btn { width: 100%; }
-  .card.final-mode .nav-btn { width: 100%; min-width: 0; }
-  .level-badge { font-size: 17px; padding: 12px 16px; }
+.final-rank {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--purple);
+  margin-bottom: 16px;
+}
+
+.share-zone {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  background: #fff;
+  border: 2px solid var(--ink);
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.share-btn:hover {
+  background: var(--grey);
+}
+
+.screenshot-area {
+  margin-top: 24px;
+  border: 3px dashed var(--ink);
+  padding: 16px;
+  border-radius: 12px;
+  background: #fbfbfb;
+  text-align: center;
+}
+
+.screenshot-img {
+  max-width: 100%;
+  border: 3px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+  border-radius: 12px;
+  margin-top: 12px;
+}
+
+/* === 核心修正：隱藏截圖面板樣式設計 === */
+.hidden-capture-container {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  width: 760px; /* 固定寬度，利於 html2canvas 高解析度渲染 */
+  background: #ffffff;
+}
+
+.cert-card {
+  border: 4px solid var(--ink);
+  padding: 32px;
+  background: #ffffff;
+  position: relative;
+  box-shadow: 12px 12px 0 var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px dashed var(--ink);
+  padding-bottom: 16px;
+}
+
+.cert-badge-top {
+  background: var(--yellow);
+  border: 2px solid var(--ink);
+  padding: 6px 14px;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.cert-title {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+
+.cert-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.cert-info {
+  flex: 1;
+}
+
+.cert-site-title {
+  margin: 0 0 16px 0;
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+.cert-data-row {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.cert-data-label {
+  font-weight: bold;
+  color: #555;
+}
+
+.cert-data-value {
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.cert-data-value.highlighted {
+  color: var(--purple);
+  font-size: 20px;
+  background: var(--bg2);
+  padding: 2px 8px;
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+}
+
+.cert-msg {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 16px 0 0 0;
+  background: var(--grey);
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid var(--ink);
+}
+
+.cert-qrtip {
+  font-size: 12px;
+  color: #777;
+  margin-top: 8px;
+}
+
+/* 右側動態勳章圖片 */
+.cert-visual {
+  width: 220px;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.cert-badge-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  box-shadow: 6px 6px 0 var(--ink);
+  background: #fff;
+}
+
+.cert-footer {
+  border-top: 4px dashed var(--ink);
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.cert-qr-zone {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cert-qr-placeholder {
+  width: 70px;
+  height: 70px;
+  border: 2px solid var(--ink);
+  padding: 4px;
+  background: #fff;
+}
+
+.qr-block {
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(45deg, #000, #000 4px, #fff 4px, #fff 8px),
+    repeating-linear-gradient(-45deg, #000, #000 4px, #fff 4px, #fff 8px);
+  background-blend-mode: multiply;
+}
+
+.cert-qr-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cert-quiz-name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.cert-motto {
+  font-size: 12px;
+  color: #555;
+}
+
+.cert-watermark {
+  font-weight: bold;
+  font-size: 14px;
+  color: #ccc;
+  letter-spacing: 1px;
 }

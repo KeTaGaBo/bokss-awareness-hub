@@ -11,7 +11,7 @@ on:
 
 jobs:
   build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event_name != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     permissions:
@@ -38,11 +38,10 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_PURPLE_BAY_0468F8800 }}
           action: "upload"
-          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/" # App source code path
-          api_location: "" # Api source code path - optional
-          output_location: "." # Built app content directory - optional
+          ###### Repository/Build Configurations ######
+          app_location: "/" # 應用程式原始碼路徑（根目錄）
+          api_location: "" # Api 原始碼路徑 - 無
+          output_location: "/" # 微調：明確指定發布內容目錄為根目錄，確保 style.css 和 app.js 完美上傳
           skip_app_build: true
           github_id_token: ${{ steps.idtoken.outputs.result }}
           ###### End of Repository/Build Configurations ######
@@ -52,8 +51,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Close Pull Request Job
     steps:
-      - name: Close Pull Request
-        id: closepullrequest
+      - name: Close Job
+        id: closejob
         uses: Azure/static-web-apps-deploy@v1
         with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_PURPLE_BAY_0468F8800 }}
           action: "close"

@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz</title>
+  <title>Data Security Quiz</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
   <div class="card" id="quizCard">
@@ -18,9 +16,9 @@
       <div class="lang-box">
         <div class="lang-label" id="langLabel">Language / 語言 / 语言</div>
         <select id="langSelect">
-          <option value="zh-HK">繁體中文</option>
-          <option value="zh-CN">简体中文</option>
-          <option value="en">English</option>
+          <option value=\"zh-HK\">繁體中文</option>
+          <option value=\"zh-CN\">简体中文</option>
+          <option value=\"en\">English</option>
         </select>
       </div>
     </div>
@@ -45,7 +43,7 @@
 
       <div id="answers"></div>
 
-      <div class="answer-action" id="answerAction" style="display:none;">
+      <div class="answer-action" id="answerAction" style=\"display:none;\">
         <button id="checkBtn" class="action-btn"></button>
       </div>
 
@@ -55,50 +53,54 @@
     <div class="controls">
       <button class="nav-btn primary" id="nextBtn"></button>
     </div>
-
-    <div class="summary" id="summary"></div>
-    
-    <div id="finalResult" class="result"></div>
-
-    <div class="footer-note" id="footer"></div>
   </div>
 
-  <div id="certificateCaptureTemplate" style="position: absolute; left: -9999px; top: -9999px;">
+  <div id="hiddenCardCapture" class="hidden-capture-container">
     <div class="cert-card">
-      <div class="cert-badge" id="certBadge">資安測試認證</div>
-      <h2 class="cert-title" id="certSiteTitle">你以為冇問題？其實可能犯法</h2>
-      <div class="cert-score-wrap">
-        <span class="cert-label" id="certScoreLabel">最終得分</span>
-        <span class="cert-score" id="certScoreVal">0 / 0</span>
+      <div class="cert-header">
+        <span class="cert-badge-top" id="certBadgeTop"></span>
+        <h1 class="cert-title" id="certTitleLabel">CERTIFICATE</h1>
       </div>
-      <div class="cert-level-box">
-        <span id="certLevelIcon">🏅</span>
-        <span id="certLevelText">稱號載入中...</span>
+      
+      <div class="cert-body">
+        <div class="cert-info">
+          <h2 class="cert-site-title" id="certSiteTitle"></h2>
+          
+          <div class="cert-data-row">
+            <span class="cert-data-label" id="certScoreLabel"></span>
+            <span class="cert-data-value" id="certScoreVal"></span>
+          </div>
+          
+          <div class="cert-data-row">
+            <span class="cert-data-label" id="certLevelLabel"></span>
+            <span class="cert-data-value highlighted" id="certLevelName"></span>
+          </div>
+          
+          <p class="cert-msg" id="certMsgVal"></p>
+          <p class="cert-qrtip" id="certQrTip"></p>
+        </div>
+        
+        <div class="cert-visual">
+          <img class="cert-badge-img" id="certBadgeImg" src=\"\" alt=\"Security Badge\">
+        </div>
       </div>
-      <div class="cert-msg" id="certMsgVal">恭喜完成測試！</div>
       
       <div class="cert-footer">
-        <div class="cert-qr-block">
-          <div id="certQrCode"></div>
-          <span class="cert-qr-tip">長按或掃描挑戰</span>
+        <div class="cert-qr-zone">
+          <div class="cert-qr-placeholder">
+            <div class="qr-block"></div>
+          </div>
+          <div class="cert-qr-text">
+            <span class="cert-quiz-name" id="certQuizName"></span>
+            <span class="cert-motto" id="certMotto"></span>
+          </div>
         </div>
-        <div class="cert-brand">
-          <strong>互動知識小測驗</strong>
-          <span>保護資料・保護自己</span>
-        </div>
+        <div class="cert-watermark">INTERACTIVE QUIZ</div>
       </div>
     </div>
   </div>
 
-  <div id="imagePreviewModal" class="preview-modal" style="display: none;">
-    <div class="preview-content">
-      <h3 id="previewModalTitle">成就卡已生成！</h3>
-      <p id="previewModalDesc">💡 iPhone 玩家：請「長按圖片」選擇儲存或複製，即可自由分享至 IG Story / WA / FB！</p>
-      <div id="previewImageContainer"></div>
-      <button onclick="closePreviewModal()" class="action-btn" style="background:var(--ink); margin-top:14px; width:100%;">關閉預覽</button>
-    </div>
-  </div>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

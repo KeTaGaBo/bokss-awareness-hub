@@ -24,6 +24,28 @@
       box-sizing: border-box;
     }
 
+    .share-btn.whatsapp {
+      background: #25D366;
+      color: white;
+    }
+    
+    .share-btn.facebook {
+      background: #1877F2;
+      color: white;
+    }
+    
+    .share-btn.instagram {
+      background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
+      color: white;
+    }
+    
+    .ig-hint {
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #8134af;
+    }
+    
     body {
       font-family: Arial, sans-serif;
       background:
@@ -811,6 +833,41 @@
       return answersState[questionId];
     }
 
+    function shareWhatsApp() {
+      const url = window.location.origin + window.location.pathname + "?lang=" + currentLang;
+      const text = `${getUIText("siteTitle")} \n${url}`;
+      const waUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
+      window.open(waUrl, "_blank");
+    }
+
+    function shareFacebook() {
+      const url = window.location.origin + window.location.pathname + "?lang=" + currentLang;
+      const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+      window.open(fbUrl, "_blank");
+    }
+
+    function shareInstagram() {
+      const url = window.location.origin + window.location.pathname + "?lang=" + currentLang;
+    
+      navigator.clipboard.writeText(url).then(() => {
+        const msg = document.getElementById("copyMsg");
+        const igHint = document.getElementById("igHint");
+    
+        if (msg) {
+          msg.classList.remove("show");
+          void msg.offsetWidth;
+          msg.classList.add("show");
+        }
+    
+        if (igHint) {
+          igHint.style.display = "block";
+          setTimeout(() => {
+            igHint.style.display = "none";
+          }, 4000);
+        }
+      });
+    }
+
     function getCorrectIndexes(question) {
       const indexes = [];
       question.options.forEach((opt, i) => {
@@ -970,44 +1027,32 @@
       `;
     }
 
-    function showFinalResult() {
-      const box = document.getElementById("finalResult");
-      if (!box) return;
-
-      document.getElementById("quizCard").classList.add("final-mode");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-
-      showingFinal = true;
-
-      document.getElementById("meta").innerHTML = "";
-      document.getElementById("title").innerHTML = getUIText("resultTitle");
-      document.getElementById("question").innerHTML = "";
-      document.getElementById("questionType").innerHTML = "";
-      document.getElementById("questionHint").innerHTML = "";
-      document.getElementById("answers").innerHTML = "";
-      document.getElementById("answerAction").style.display = "none";
-      document.getElementById("storyCard").style.display = "none";
-      hideResult();
-
-      const total = quizData.questions.length;
-      const score = getScore();
-      const scorePercent = Math.round((score / total) * 100);
-      const levelKey = getLevelKey();
-
-      box.className = "result info";
-      box.innerHTML = `
-        <strong>${getUIText("resultTitle")}</strong><br>
-        ${getUIText("scoreLabel")}：${score} / ${total} (${scorePercent}%)<br>
-        ${buildLevelBadge(levelKey)}
-        <div>${getEncouragementMessage()}</div>
-        ${renderShareSection()}
+    function renderShareSection() {
+      return `
+        <div class="share-box">
+          <div class="share-title">${getUIText("shareTitle")}</div>
+          <div class="share-text">${getUIText("shareText")}</div>
+    
+          <div class="share-actions">
+            <button class="share-btn whatsapp" onclick="shareWhatsApp()">
+              🟢 WhatsApp
+            </button>
+    
+            <button class="share-btn facebook" onclick="shareFacebook()">
+              🔵 Facebook
+            </button>
+    
+            <button class="share-btn instagram" onclick="shareInstagram()">
+              🟣 Instagram
+            </button>
+          </div>
+    
+          <div class="copy-msg" id="copyMsg">${getUIText("copied")}</div>
+          <div class="ig-hint" id="igHint" style="display:none;">
+            📸 已複製連結，請到 Instagram 貼上分享
+          </div>
+        </div>
       `;
-      box.style.display = "block";
-      triggerAnimation(box, "final-enter");
-
-      document.getElementById("nextBtn").innerText = getUIText("restart");
-      document.getElementById("nextBtn").classList.remove("cta-glow");
-      updateSummary();
     }
 
     function hideFinalResult() {

@@ -1,4 +1,3 @@
-
 let quizData = null;
 let currentLang = "zh-HK";
 let current = 0;
@@ -57,12 +56,14 @@ function isAnswerCorrect(question, selectedIndexes) {
 function getScore() {
   if (!quizData) return 0;
   let score = 0;
+
   quizData.questions.forEach(q => {
     const state = answersState[q.id];
     if (state && state.submitted && isAnswerCorrect(q, state.selected)) {
       score++;
     }
   });
+
   return score;
 }
 
@@ -78,6 +79,7 @@ function getLevelKey() {
   const total = quizData.questions.length;
   const score = getScore();
   const ratio = score / total;
+
   if (score === total) return "perfect";
   if (ratio >= 0.7) return "pass70";
   return "below70";
@@ -104,7 +106,7 @@ function getLevelText(levelKey) {
 }
 
 function cleanLevelText(levelText) {
-  return levelText.replace(/^\p{Emoji_Presentation}|^\p{Extended_Pictographic}/u, "").trim();
+  return levelText.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "").trim();
 }
 
 function applyLanguageUI() {
@@ -125,7 +127,8 @@ function applyLanguageUI() {
 
 function updateSummary() {
   const score = getScore();
-  document.getElementById("summary").innerHTML = `${getUIText("scoreLabel")}：${score} / ${quizData.questions.length}`;
+  document.getElementById("summary").innerHTML =
+    `${getUIText("scoreLabel")}：${score} / ${quizData.questions.length}`;
 }
 
 function hideResult() {
@@ -178,11 +181,33 @@ function buildLevelBadge(levelKey) {
   `;
 }
 
-function getResultScoreLine() {
-  const score = getScore();
-  const total = quizData.questions.length;
-  const percent = Math.round((score / total) * 100);
-  return `${getUIText("scoreLabel")}：${score} / ${total} (${percent}%)`;
+function renderShareSection(levelKey) {
+  return `
+    <div class="share-box">
+      <div class="share-title">${getUIText("shareTitle")}</div>
+      <div class="share-text">${getUIText("shareText")}</div>
+
+      <div class="share-card-preview">
+        ${buildShareCardHTML(levelKey)}
+      </div>
+
+      <div class="share-actions">
+        <button class="share-btn download" onclick="downloadShareCard()">🖼️ 下載成就卡</button>
+        <button class="share-btn secondary" onclick="systemShareCard()">📤 系統分享圖片</button>
+        <button class="share-btn whatsapp" onclick="shareWhatsApp()">🟢 WhatsApp</button>
+        <button class="share-btn facebook" onclick="shareFacebook()">🔵 Facebook</button>
+        <button class="share-btn instagram" onclick="shareInstagram()">🟣 Instagram</button>
+        <button class="share-btn secondary" onclick="copyQuizLink()">${getUIText("copyLink")}</button>
+      </div>
+
+      <div class="share-note">
+        提示：你而家可以先下載或系統分享「成就卡圖片」。WhatsApp / Facebook / Instagram 按鈕目前仍以分享連結為主；如要做到各平台從網頁直接貼圖分享，仍受平台和瀏覽器限制。
+      </div>
+
+      <div class="copy-msg" id="copyMsg">${getUIText("copied")}</div>
+      <div class="ig-hint" id="igHint" style="display:none;">📸 已複製小測驗連結！你可以去 Instagram 貼上分享，或先下載成就卡再發佈。</div>
+    </div>
+  `;
 }
 
 function buildShareCardHTML(levelKey) {
@@ -219,38 +244,10 @@ function buildShareCardHTML(levelKey) {
   `;
 }
 
-function renderShareSection(levelKey) {
-  return `
-    <div class="share-box">
-      <div class="share-title">${getUIText("shareTitle")}</div>
-      <div class="share-text">${getUIText("shareText")}</div>
-
-      <div class="share-card-preview">
-        ${buildShareCardHTML(levelKey)}
-      </div>
-
-      <div class="share-actions">
-        <button class="share-btn download" onclick="downloadShareCard()">🖼️ 下載成就卡</button>
-        <button class="share-btn secondary" onclick="systemShareCard()">📤 系統分享圖片</button>
-        <button class="share-btn whatsapp" onclick="shareWhatsApp()">🟢 WhatsApp</button>
-        <button class="share-btn facebook" onclick="shareFacebook()">🔵 Facebook</button>
-        <button class="share-btn instagram" onclick="shareInstagram()">🟣 Instagram</button>
-        <button class="share-btn secondary" onclick="copyQuizLink()">${getUIText("copyLink")}</button>
-      </div>
-
-      <div class="share-note">
-        提示：你而家可以先下載或系統分享「成就卡圖片」。WhatsApp / Facebook / Instagram 按鈕目前仍以分享連結為主；如要做到各平台從網頁直接貼圖分享，仍受平台和瀏覽器限制。
-      </div>
-
-      <div class="copy-msg" id="copyMsg">${getUIText("copied")}</div>
-      <div class="ig-hint" id="igHint" style="display:none;">📸 已複製小測驗連結！你可以去 Instagram 貼上分享，或先下載成就卡再發佈。</div>
-    </div>
-  `;
-}
-
 function hideFinalResult() {
   const box = document.getElementById("finalResult");
   if (!box) return;
+
   box.className = "result";
   box.innerHTML = "";
   box.style.display = "none";
@@ -259,6 +256,7 @@ function hideFinalResult() {
 
 function copyQuizLink() {
   const url = getShareUrl();
+
   navigator.clipboard.writeText(url).then(() => {
     const msg = document.getElementById("copyMsg");
     if (msg) {
@@ -287,6 +285,7 @@ function shareFacebook() {
 
 function shareInstagram() {
   const url = getShareUrl();
+
   navigator.clipboard.writeText(url).then(() => {
     const msg = document.getElementById("copyMsg");
     const igHint = document.getElementById("igHint");
@@ -308,6 +307,10 @@ function shareInstagram() {
   });
 }
 
+/* =========================
+   Canvas 生成分享圖：修正變形 / 溢出
+   ========================= */
+
 function waitImageLoaded(img) {
   return new Promise((resolve, reject) => {
     if (img.complete && img.naturalWidth > 0) {
@@ -317,50 +320,6 @@ function waitImageLoaded(img) {
     img.onload = () => resolve(img);
     img.onerror = reject;
   });
-}
-
-function wrapText(ctx, text, x, y, maxWidth, lineHeight, maxLines = 6) {
-  const words = String(text).split(/\s+/);
-  let line = "";
-  let lines = [];
-
-  for (let n = 0; n < words.length; n++) {
-    const testLine = line ? `${line} ${words[n]}` : words[n];
-    const metrics = ctx.measureText(testLine);
-    if (metrics.width > maxWidth && line) {
-      lines.push(line);
-      line = words[n];
-      if (lines.length >= maxLines - 1) break;
-    } else {
-      line = testLine;
-    }
-  }
-  if (line) lines.push(line);
-
-  lines = lines.slice(0, maxLines);
-  lines.forEach((ln, idx) => ctx.fillText(ln, x, y + (idx * lineHeight)));
-}
-
-function wrapTextByChars(ctx, text, x, y, maxWidth, lineHeight, maxLines = 6) {
-  const chars = Array.from(String(text));
-  let line = "";
-  let lines = [];
-
-  for (let i = 0; i < chars.length; i++) {
-    const testLine = line + chars[i];
-    const metrics = ctx.measureText(testLine);
-    if (metrics.width > maxWidth && line) {
-      lines.push(line);
-      line = chars[i];
-      if (lines.length >= maxLines - 1) break;
-    } else {
-      line = testLine;
-    }
-  }
-  if (line) lines.push(line);
-
-  lines = lines.slice(0, maxLines);
-  lines.forEach((ln, idx) => ctx.fillText(ln, x, y + (idx * lineHeight)));
 }
 
 function drawRoundedRect(ctx, x, y, w, h, r) {
@@ -377,6 +336,121 @@ function drawRoundedRect(ctx, x, y, w, h, r) {
   ctx.closePath();
 }
 
+function drawImageContain(ctx, img, x, y, boxW, boxH) {
+  const ratio = Math.min(boxW / img.naturalWidth, boxH / img.naturalHeight);
+  const drawW = img.naturalWidth * ratio;
+  const drawH = img.naturalHeight * ratio;
+  const drawX = x + (boxW - drawW) / 2;
+  const drawY = y + (boxH - drawH) / 2;
+  ctx.drawImage(img, drawX, drawY, drawW, drawH);
+}
+
+function truncateTextToWidth(ctx, text, maxWidth) {
+  if (ctx.measureText(text).width <= maxWidth) return text;
+  let result = text;
+  while (result.length > 1 && ctx.measureText(result + "…").width > maxWidth) {
+    result = result.slice(0, -1);
+  }
+  return result + "…";
+}
+
+function wrapTextByWords(ctx, text, maxWidth, maxLines = 4) {
+  const words = String(text).split(/\s+/);
+  const lines = [];
+  let line = "";
+
+  for (let i = 0; i < words.length; i++) {
+    const testLine = line ? `${line} ${words[i]}` : words[i];
+    if (ctx.measureText(testLine).width > maxWidth && line) {
+      lines.push(line);
+      line = words[i];
+      if (lines.length >= maxLines - 1) break;
+    } else {
+      line = testLine;
+    }
+  }
+
+  if (line) lines.push(line);
+
+  if (lines.length > maxLines) {
+    lines.length = maxLines;
+  }
+
+  if (lines.length === maxLines) {
+    lines[maxLines - 1] = truncateTextToWidth(ctx, lines[maxLines - 1], maxWidth);
+  }
+
+  return lines;
+}
+
+function wrapTextByChars(ctx, text, maxWidth, maxLines = 4) {
+  const chars = Array.from(String(text));
+  const lines = [];
+  let line = "";
+
+  for (let i = 0; i < chars.length; i++) {
+    const testLine = line + chars[i];
+    if (ctx.measureText(testLine).width > maxWidth && line) {
+      lines.push(line);
+      line = chars[i];
+      if (lines.length >= maxLines - 1) break;
+    } else {
+      line = testLine;
+    }
+  }
+
+  if (line) lines.push(line);
+
+  if (lines.length > maxLines) {
+    lines.length = maxLines;
+  }
+
+  if (lines.length === maxLines) {
+    lines[maxLines - 1] = truncateTextToWidth(ctx, lines[maxLines - 1], maxWidth);
+  }
+
+  return lines;
+}
+
+function drawWrappedLines(ctx, lines, x, y, lineHeight) {
+  lines.forEach((line, index) => {
+    ctx.fillText(line, x, y + index * lineHeight);
+  });
+}
+
+function pickTitleFont(ctx, title, maxWidth, isEnglish) {
+  const candidates = isEnglish ? [64, 60, 56, 52, 48] : [66, 62, 58, 54, 50, 46];
+  for (const size of candidates) {
+    ctx.font = `bold ${size}px Arial`;
+    const lines = isEnglish
+      ? wrapTextByWords(ctx, title, maxWidth, 3)
+      : wrapTextByChars(ctx, title, maxWidth, 3);
+
+    const widest = Math.max(...lines.map(line => ctx.measureText(line).width));
+    if (widest <= maxWidth && lines.length <= 3) {
+      return { size, lines };
+    }
+  }
+
+  const fallbackSize = candidates[candidates.length - 1];
+  ctx.font = `bold ${fallbackSize}px Arial`;
+  return {
+    size: fallbackSize,
+    lines: isEnglish
+      ? wrapTextByWords(ctx, title, maxWidth, 3)
+      : wrapTextByChars(ctx, title, maxWidth, 3)
+  };
+}
+
+function getShortShareUrlForCard() {
+  const url = new URL(getShareUrl());
+  let shortText = url.host + url.pathname;
+  if (url.searchParams.get("lang")) {
+    shortText += `?lang=${url.searchParams.get("lang")}`;
+  }
+  return shortText;
+}
+
 async function generateShareCardBlob() {
   const levelKey = getLevelKey();
   const badgePath = getBadgeImagePath(levelKey);
@@ -385,14 +459,14 @@ async function generateShareCardBlob() {
   canvas.height = 1350;
   const ctx = canvas.getContext("2d");
 
-  // Background
+  // 背景
   const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
   grad.addColorStop(0, "#fff8ec");
   grad.addColorStop(1, "#ffeed0");
   ctx.fillStyle = grad;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // comic dots
+  // 點點背景
   ctx.fillStyle = "rgba(255,213,79,0.22)";
   for (let y = 30; y < canvas.height; y += 32) {
     for (let x = 30; x < canvas.width; x += 32) {
@@ -402,7 +476,7 @@ async function generateShareCardBlob() {
     }
   }
 
-  // outer panel
+  // 主面板
   ctx.fillStyle = "#ffffff";
   drawRoundedRect(ctx, 54, 54, 972, 1242, 34);
   ctx.fill();
@@ -410,41 +484,46 @@ async function generateShareCardBlob() {
   ctx.strokeStyle = "#1f1f1f";
   ctx.stroke();
 
-  // sticker
+  // 頂部標籤
   ctx.fillStyle = "#ffd54f";
-  drawRoundedRect(ctx, 120, 104, 250, 72, 36);
+  drawRoundedRect(ctx, 120, 104, 300, 72, 36);
   ctx.fill();
   ctx.lineWidth = 4;
   ctx.strokeStyle = "#1f1f1f";
   ctx.stroke();
-  ctx.fillStyle = "#1f1f1f";
-  ctx.font = "bold 30px Arial";
-  ctx.fillText(getUIText("badge"), 150, 150);
 
-  // title
   ctx.fillStyle = "#1f1f1f";
-  ctx.font = "bold 66px Arial";
-  if (currentLang === "en") {
-    wrapText(ctx, getUIText("siteTitle"), 120, 250, 840, 78, 3);
-  } else {
-    wrapTextByChars(ctx, getUIText("siteTitle"), 120, 250, 840, 78, 3);
-  }
+  ctx.font = "bold 28px Arial";
+  const badgeLabel = truncateTextToWidth(ctx, getUIText("badge"), 240);
+  ctx.fillText(badgeLabel, 150, 150);
 
-  // badge image
+  // 大標題：自動縮小以適應寬度
+  const title = getUIText("siteTitle");
+  const isEnglish = currentLang === "en";
+  const titleBoxWidth = 840;
+  const picked = pickTitleFont(ctx, title, titleBoxWidth, isEnglish);
+
+  ctx.fillStyle = "#1f1f1f";
+  ctx.font = `bold ${picked.size}px Arial`;
+  drawWrappedLines(ctx, picked.lines, 120, 250, picked.size + 12);
+
+  // badge 圖（等比例 contain，修正變形）
   const badgeImg = new Image();
   badgeImg.src = badgePath;
   await waitImageLoaded(badgeImg);
+
   ctx.fillStyle = "#fffef8";
-  drawRoundedRect(ctx, 110, 390, 290, 320, 28);
+  drawRoundedRect(ctx, 110, 410, 290, 300, 28);
   ctx.fill();
   ctx.lineWidth = 6;
   ctx.strokeStyle = "#1f1f1f";
   ctx.stroke();
-  ctx.drawImage(badgeImg, 150, 430, 210, 210);
 
-  // score box
+  drawImageContain(ctx, badgeImg, 140, 445, 230, 230);
+
+  // 分數區
   ctx.fillStyle = "#ffffff";
-  drawRoundedRect(ctx, 430, 390, 520, 320, 28);
+  drawRoundedRect(ctx, 430, 410, 520, 300, 28);
   ctx.fill();
   ctx.lineWidth = 6;
   ctx.strokeStyle = "#1f1f1f";
@@ -452,31 +531,36 @@ async function generateShareCardBlob() {
 
   ctx.fillStyle = "#1f1f1f";
   ctx.font = "bold 38px Arial";
-  ctx.fillText(getUIText("scoreLabel"), 470, 455);
+  ctx.fillText(getUIText("scoreLabel"), 470, 470);
 
   const score = getScore();
   const total = quizData.questions.length;
-  ctx.fillStyle = "#ff6b6b";
-  ctx.font = "bold 86px Arial";
-  ctx.fillText(String(score), 470, 560);
-  ctx.fillStyle = "#1f1f1f";
-  ctx.font = "bold 44px Arial";
-  ctx.fillText(`/ ${total}`, 590, 558);
 
+  ctx.fillStyle = "#ff6b6b";
+  ctx.font = "bold 88px Arial";
+  ctx.fillText(String(score), 470, 580);
+
+  ctx.fillStyle = "#1f1f1f";
+  ctx.font = "bold 46px Arial";
+  ctx.fillText(`/ ${total}`, 600, 577);
+
+  // 級別 pill
   const levelText = cleanLevelText(getLevelText(levelKey));
   ctx.fillStyle = "#fff7d0";
-  drawRoundedRect(ctx, 468, 590, 430, 80, 40);
+  drawRoundedRect(ctx, 465, 600, 430, 78, 39);
   ctx.fill();
   ctx.lineWidth = 5;
   ctx.strokeStyle = "#1f1f1f";
   ctx.stroke();
-  ctx.font = "bold 34px Arial";
-  ctx.fillStyle = "#1f1f1f";
-  ctx.fillText(levelText, 505, 643);
 
-  // message panel
+  ctx.fillStyle = "#1f1f1f";
+  ctx.font = "bold 30px Arial";
+  const safeLevelText = truncateTextToWidth(ctx, levelText, 360);
+  ctx.fillText(safeLevelText, 500, 648);
+
+  // 結果訊息區
   ctx.fillStyle = "#ffffff";
-  drawRoundedRect(ctx, 110, 760, 840, 340, 24);
+  drawRoundedRect(ctx, 110, 760, 840, 310, 24);
   ctx.fill();
   ctx.lineWidth = 6;
   ctx.strokeStyle = "#1f1f1f";
@@ -485,34 +569,39 @@ async function generateShareCardBlob() {
   ctx.fillStyle = "#1f1f1f";
   ctx.font = "bold 34px Arial";
   ctx.fillText(getUIText("resultTitle"), 150, 825);
-  ctx.font = "30px Arial";
 
-  if (currentLang === "en") {
-    wrapText(ctx, getEncouragementMessage(), 150, 890, 760, 46, 5);
-  } else {
-    wrapTextByChars(ctx, getEncouragementMessage(), 150, 890, 760, 46, 5);
-  }
+  ctx.font = "30px Arial";
+  const message = getEncouragementMessage();
+  const messageLines = isEnglish
+    ? wrapTextByWords(ctx, message, 740, 5)
+    : wrapTextByChars(ctx, message, 740, 5);
+
+  drawWrappedLines(ctx, messageLines, 150, 885, 46);
 
   // footer chips
   ctx.fillStyle = "#ffffff";
-  drawRoundedRect(ctx, 120, 1140, 280, 56, 28);
+  drawRoundedRect(ctx, 110, 1130, 330, 64, 32);
   ctx.fill();
   ctx.lineWidth = 4;
   ctx.strokeStyle = "#1f1f1f";
   ctx.stroke();
+
   ctx.fillStyle = "#1f1f1f";
   ctx.font = "bold 24px Arial";
-  ctx.fillText(getUIText("footer"), 150, 1176);
+  const footerLabel = truncateTextToWidth(ctx, getUIText("footer"), 280);
+  ctx.fillText(footerLabel, 140, 1171);
 
-  drawRoundedRect(ctx, 430, 1140, 520, 56, 28);
+  drawRoundedRect(ctx, 470, 1130, 460, 64, 32);
   ctx.fillStyle = "#ffffff";
   ctx.fill();
   ctx.lineWidth = 4;
   ctx.strokeStyle = "#1f1f1f";
   ctx.stroke();
+
   ctx.fillStyle = "#1f1f1f";
   ctx.font = "20px Arial";
-  wrapText(ctx, getShareUrl(), 455, 1176, 470, 24, 2);
+  const shortUrl = truncateTextToWidth(ctx, getShortShareUrlForCard(), 390);
+  ctx.fillText(shortUrl, 500, 1171);
 
   return await new Promise(resolve => canvas.toBlob(resolve, "image/png", 1.0));
 }
@@ -605,7 +694,8 @@ function renderPresentation(question) {
   if (question.presentation === "scenario" && question.story && question.story[currentLang]) {
     const story = question.story[currentLang];
 
-    document.getElementById("storyLabel").innerText = story.label || getUIText("scenarioLabelDefault");
+    document.getElementById("storyLabel").innerText =
+      story.label || getUIText("scenarioLabelDefault");
     document.getElementById("storyTitle").innerText = story.title || "";
 
     const storyContentBox = document.getElementById("storyContent");
@@ -634,8 +724,10 @@ function renderPresentation(question) {
 
         bubble.appendChild(speaker);
         bubble.appendChild(text);
+
         wrap.appendChild(avatar);
         wrap.appendChild(bubble);
+
         storyContentBox.appendChild(wrap);
       });
     } else if (Array.isArray(story.content)) {
@@ -658,6 +750,7 @@ function renderPresentation(question) {
 function animateQuestionArea() {
   const area = document.getElementById("questionArea");
   if (!area) return;
+
   area.classList.remove("content-anim");
   void area.offsetWidth;
   area.classList.add("content-anim");
@@ -668,6 +761,7 @@ function refreshOptionSelectionUI(question, state) {
 
   buttons.forEach((btn, i) => {
     btn.classList.remove("option-selected");
+
     if (state.selected.includes(i)) {
       btn.classList.add("option-selected");
     }
@@ -700,18 +794,24 @@ function renderQuestion() {
   renderPresentation(question);
 
   document.getElementById("questionType").innerHTML =
-    question.type === "multiple" ? getUIText("multipleLabel") : getUIText("singleLabel");
+    question.type === "multiple"
+      ? getUIText("multipleLabel")
+      : getUIText("singleLabel");
 
   document.getElementById("questionHint").innerHTML =
-    question.type === "multiple" ? getUIText("multipleHint") : getUIText("singleHint");
+    question.type === "multiple"
+      ? getUIText("multipleHint")
+      : getUIText("singleHint");
 
-  const correctIndexes = getCorrectIndexes(question);
   let html = "";
+  const correctIndexes = getCorrectIndexes(question);
 
   question.options.forEach((opt, i) => {
-    const classes = ["option-btn"];
+    let classes = ["option-btn"];
 
-    if (state.selected.includes(i)) classes.push("option-selected");
+    if (state.selected.includes(i)) {
+      classes.push("option-selected");
+    }
 
     if (alreadySubmitted) {
       if (correctIndexes.includes(i)) {
@@ -762,6 +862,7 @@ function renderQuestion() {
 function selectOption(index) {
   const question = quizData.questions[current];
   const state = getQuestionState(question.id);
+
   if (state.submitted) return;
 
   if (question.type === "single") {
@@ -777,6 +878,7 @@ function selectOption(index) {
     } else {
       state.selected.push(index);
     }
+
     refreshOptionSelectionUI(question, state);
   }
 }
@@ -784,6 +886,7 @@ function selectOption(index) {
 function submitMultipleAnswer() {
   const question = quizData.questions[current];
   const state = getQuestionState(question.id);
+
   if (question.type !== "multiple") return;
 
   if (state.selected.length === 0) {
@@ -838,6 +941,7 @@ async function loadQuestions() {
 
     const urlLang = new URLSearchParams(window.location.search).get("lang");
     const supported = ["zh-HK", "zh-CN", "en"];
+
     if (supported.includes(urlLang)) {
       currentLang = urlLang;
     }
@@ -858,6 +962,7 @@ async function loadQuestions() {
 document.getElementById("langSelect").addEventListener("change", function () {
   currentLang = this.value;
   updateLanguageInUrl(currentLang);
+
   if (showingFinal) {
     applyLanguageUI();
     showFinalResult();

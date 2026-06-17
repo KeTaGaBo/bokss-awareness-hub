@@ -148,7 +148,12 @@
   background: #fff;
   cursor: pointer;
   font-size: 17px;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
   text-align: left;
   display: flex;
   align-items: flex-start;
@@ -172,20 +177,33 @@
   min-width: 26px;
 }
 
+/* ✅ 強化：多選 / 單選被點選時，邊框 + 底色 + 文字一起改變 */
 .option-selected {
   border-color: #005fcc;
-  background: #cde3ff;
+  background: #8fc4ff;
+  color: #0b2d57;
+  box-shadow: 4px 4px 0 #005fcc;
   animation: selectedPulse 0.22s ease;
+}
+
+.option-selected .option-letter {
+  color: #003e87;
+}
+
+.option-selected span:last-child {
+  font-weight: 700;
 }
 
 .option-correct {
   border-color: #0b7a2c;
   background: #dff7e6;
+  color: #135626;
 }
 
 .option-wrong {
   border-color: #b42318;
   background: #ffe3e0;
+  color: #7a1e18;
 }
 
 .answer-action {
@@ -268,6 +286,7 @@
 
   .option-btn {
     font-size: 16px;
+    padding: 15px;
   }
 
   .story-title {
@@ -276,5 +295,11 @@
 
   .bubble {
     max-width: calc(100% - 54px);
+  }
+
+  /* 手機上再加強被選中視覺效果 */
+  .option-selected {
+    background: #7ab8ff;
+    box-shadow: 4px 4px 0 #005fcc;
   }
 }

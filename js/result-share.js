@@ -160,6 +160,18 @@ function pickTitleFont(ctx, title, maxWidth, isEnglish) {
   };
 }
 
+function loadQrImage(dataUrl) {
+  return new Promise((resolve, reject) => {
+    const qrImg = new Image();
+    qrImg.crossOrigin = "anonymous";
+    qrImg.onload = () => resolve(qrImg);
+    qrImg.onerror = reject;
+
+    // 使用外部 QR 服務；若失敗，稍後會 fallback 回 URL 文字框
+    qrImg.src = `https://quickchart.io/qr?text=${encodeURIComponent(dataUrl)}&size=220`;
+  });
+}
+
 async function generateShareCardBlob() {
   const levelKey = getLevelKey();
   const badgePath = getBadgeImagePath(levelKey);
@@ -293,21 +305,58 @@ async function generateShareCardBlob() {
     : wrapTextByChars(ctx, shortSummary, 740, 4);
   drawWrappedLines(ctx, summaryLines, 150, 910, 46);
 
-  // URL box
-  ctx.fillStyle = "#ffffff";
-  drawRoundedRect(ctx, 110, 1100, 840, 120, 24);
-  ctx.fill();
-  ctx.lineWidth = 5;
-  ctx.strokeStyle = "#1f1f1f";
-  ctx.stroke();
+  // QR 區塊（優先）
+  let qrLoaded = false;
 
-  ctx.fillStyle = "#1f1f1f";
-  ctx.font = "bold 22px Arial";
-  ctx.fillText("URL", 145, 1140);
+  try {
+    const qrImg = await loadQrImage(urlText);
 
-  ctx.font = "20px Arial";
-  const urlLines = wrapTextByWords(ctx, urlText, 760, 3);
-  drawWrappedLines(ctx, urlLines, 145, 1180, 28);
+    ctx.fillStyle = "#ffffff";
+    drawRoundedRect(ctx, 110, 1080, 840, 150, 24);
+    ctx.fill();
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = "#1f1f1f";
+    ctx.stroke();
+
+    ctx.fillStyle = "#1f1f1f";
+    ctx.font = "bold 26px Arial";
+    ctx.fillText(
+      AppState.currentLang === "en" ? "Scan to try" : "掃描 QR Code 立即參與",
+      145,
+      1135
+    );
+
+    drawImageContain(ctx, qrImg, 700, 1094, 220, 120);
+
+    ctx.font = "20px Arial";
+    const qrHint =
+      AppState.currentLang === "en"
+        ? "Open the quiz instantly"
+        : "打開網頁立即參與";
+    ctx.fillText(qrHint, 145, 1188);
+
+    qrLoaded = true;
+  } catch (error) {
+    console.warn("QR image load failed, fallback to URL box.", error);
+  }
+
+  // fallback：若 QR 載入失敗，退回 URL 文字框
+  if (!qrLoaded) {
+    ctx.fillStyle = "#ffffff";
+    drawRoundedRect(ctx, 110, 1100, 840, 120, 24);
+    ctx.fill();
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = "#1f1f1f";
+    ctx.stroke();
+
+    ctx.fillStyle = "#1f1f1f";
+    ctx.font = "bold 22px Arial";
+    ctx.fillText("URL", 145, 1140);
+
+    ctx.font = "20px Arial";
+    const urlLines = wrapTextByWords(ctx, urlText, 760, 3);
+    drawWrappedLines(ctx, urlLines, 145, 1180, 28);
+  }
 
   return await new Promise(resolve => canvas.toBlob(resolve, "image/png", 1.0));
 }

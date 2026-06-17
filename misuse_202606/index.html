@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card" id="quizCard">
+    <div class="topbar">
+      <div>
+        <div class="badge" id="badge"></div>
+      </div>
+
+      <div class="lang-box">
+        <div class="lang-label" id="langLabel">Language / 語言 / 语言</div>
+        <select id="langSelect">
+          <option value="zh-HK">繁體中文</option>
+          <option value="zh-CN">简体中文</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="hero-subtitle" id="heroSubtitle"></div>
+    <h1 id="siteTitle"></h1>
+    <div class="intro" id="intro"></div>
+
+    <div id="questionArea">
+      <div class="meta" id="meta"></div>
+      <h2 class="question-title" id="title"></h2>
+
+      <div id="storyCard" class="story-card">
+        <div class="story-label" id="storyLabel"></div>
+        <div class="story-title" id="storyTitle"></div>
+        <div id="storyContent"></div>
+      </div>
+
+      <div class="scenario" id="question"></div>
+      <div class="question-type" id="questionType"></div>
+      <div class="question-hint" id="questionHint"></div>
+
+      <div id="answers"></div>
+
+      <div class="answer-action" id="answerAction" style="display:none;">
+        <button id="checkBtn" class="action-btn"></button>
+      </div>
+
+      <div id="result" class="result"></div>
+    </div>
+
+    <div class="controls">
+      <button class="nav-btn primary" id="nextBtn"></button>
+    </div>
+
+    <div class="summary" id="summary"></div>
+    <div id="finalResult" class="result"></div>
+
+    <div class="footer-note" id="footer"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

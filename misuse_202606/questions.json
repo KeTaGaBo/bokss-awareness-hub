@@ -1,0 +1,357 @@
+{
+  "ui": {
+    "zh-HK": {
+      "badge": "資訊安全與合規科普",
+      "siteTitle": "數據安全大考驗：你以為沒問題，其實藏風險？",
+      "heroSubtitle": "💡 5分鐘資安自我檢測 × 數據合規防範",
+      "intro": "本測驗包含單選題與多選題。部分情境看似為了『工作方便』或出於『一時好奇』，但在法規與資訊安全標準中卻可能隱藏巨大風險。試試你的判斷力，看看你能得幾分！",
+      "prev": "上一題",
+      "next": "下一題",
+      "scoreLabel": "目前得分",
+      "footer": "保護數據合規 = 保護企業與自己",
+      "correctLabel": "✅ 正確！",
+      "wrongLabel": "❌ 錯誤。",
+      "reminderLabel": "⚠️ 提醒",
+      "loadError": "❌ 載入題目失敗，請稍後再試。",
+      "questionLabel": "第 {current} 題 / 共 {total} 題",
+      "finish": "完成測驗",
+      "restart": "重新開始",
+      "resultTitle": "你的結果",
+      "langLabel": "Language / 語言 / 语言",
+      "checkAnswer": "提交答案",
+      "singleLabel": "單選題",
+      "multipleLabel": "多選題",
+      "singleHint": "請選出 1 個最合適答案。",
+      "multipleHint": "本題可選多項，需全部選對才算正確。",
+      "selectAtLeastOne": "請先選擇至少一個答案。",
+      "scenarioLabelDefault": "情境說明",
+      "answerBeforeNext": "請先回答本題才可進入下一題。",
+      "levelLabel": "資安稱號",
+      "restartQuiz": "再試一次",
+      "copyLink": "複製測驗連結",
+      "copied": "📋 連結已成功複製！",
+      "shareTitle": "分享結果",
+      "shareText": "邀請你的朋友一起測試，看看誰才是真正的資安與合規專家！",
+      "levels": {
+        "perfect": "🏆 資安大師 (Perfect Score!)",
+        "pass70": "🛡️ 安全衛士 (Good Job!)",
+        "below70": "⚠️ 風險小白 (Need Practice)"
+      }
+    },
+    "zh-CN": {
+      "badge": "信息安全与合规科普",
+      "siteTitle": "数据安全大考验：你以为没问题，其实藏风险？",
+      "heroSubtitle": "💡 5分钟资安自我检测 × 数据合规防范",
+      "intro": "本测验包含单选题与多选题。部分情境看似为了『工作方便』或出于『一时好奇』，但在法规与信息安全标准中却可能隐藏巨大风险。试试你的判断力，看看你能得几分！",
+      "prev": "上一题",
+      "next": "下一题",
+      "scoreLabel": "目前得分",
+      "footer": "保护数据合规 = 保护企业与自己",
+      "correctLabel": "✅ 正确！",
+      "wrongLabel": "❌ 错误。",
+      "reminderLabel": "⚠️ 提醒",
+      "loadError": "❌ 加载题目失败，请稍后再试。",
+      "questionLabel": "第 {current} 题 / 共 {total} 题",
+      "finish": "完成测验",
+      "restart": "重新开始",
+      "resultTitle": "你的结果",
+      "langLabel": "Language / 语言 / 语言",
+      "checkAnswer": "提交答案",
+      "singleLabel": "单选题",
+      "multipleLabel": "多选题",
+      "singleHint": "请选出 1 个最合适答案。",
+      "multipleHint": "本题可选多项，需全部选对才算正确。",
+      "selectAtLeastOne": "请先选择至少一个答案。",
+      "scenarioLabelDefault": "情境说明",
+      "answerBeforeNext": "请先回答本题才可进入下一题。",
+      "levelLabel": "资安称号",
+      "restartQuiz": "再试一次",
+      "copyLink": "复制测验链接",
+      "copied": "📋 链接已成功复制！",
+      "shareTitle": "分享结果",
+      "shareText": "邀请你的朋友一起测试，看看谁才是真正的资安与合规专家！",
+      "levels": {
+        "perfect": "🏆 资安大师 (Perfect Score!)",
+        "pass70": "🛡️ 安全卫士 (Good Job!)",
+        "below70": "⚠️ 风险小白 (Need Practice)"
+      }
+    },
+    "en": {
+      "badge": "Cybersecurity & Compliance",
+      "siteTitle": "Data Security Challenge: Safe or Risky?",
+      "heroSubtitle": "💡 5-Min Quiz × Data Protection Compliance",
+      "intro": "This quiz contains single and multiple-choice questions. Some actions may seem convenient or driven by casual curiosity, but they pose major legal and security risks. Test your boundaries!",
+      "prev": "Prev",
+      "next": "Next",
+      "scoreLabel": "Score",
+      "footer": "Stay Compliant = Protect Everyone",
+      "correctLabel": "✅ Correct!",
+      "wrongLabel": "❌ Incorrect.",
+      "reminderLabel": "⚠️ Note",
+      "loadError": "❌ Failed to load questions. Please try again later.",
+      "questionLabel": "Q {current} of {total}",
+      "finish": "Finish",
+      "restart": "Restart",
+      "resultTitle": "Your Results",
+      "langLabel": "Language / 語言 / 语言",
+      "checkAnswer": "Submit",
+      "singleLabel": "Single Choice",
+      "multipleLabel": "Multiple Choice",
+      "singleHint": "Select the best answer.",
+      "multipleHint": "Select all that apply. All must be correct.",
+      "selectAtLeastOne": "Please select at least one option.",
+      "scenarioLabelDefault": "Scenario Context",
+      "answerBeforeNext": "Please answer the current question before moving next.",
+      "levelLabel": "Security Rank",
+      "restartQuiz": "Try Again",
+      "copyLink": "Copy Quiz Link",
+      "copied": "📋 Link copied successfully!",
+      "shareTitle": "Share Quiz",
+      "shareText": "Challenge your peers and see who scores highest on compliance!",
+      "levels": {
+        "perfect": "🏆 Security Guru (Perfect Score!)",
+        "pass70": "🛡️ Cyber Defender (Good Job!)",
+        "below70": "⚠️ Risk Exposure (Need Practice)"
+      }
+    }
+  },
+  "messages": {
+    "perfect": {
+      "zh-HK": "太厲害了！你擁有完美的資安意識與法規敏感度，完全避開了所有常見的資料外洩陷阱。請繼續保持！",
+      "zh-CN": "太厉害了！你拥有完美的资安意识与法规敏感度，完全避开了所有常见的数据外泄陷阱。请继续保持！",
+      "en": "Flawless! You demonstrated exceptional security awareness and regulatory knowledge. You steered clear of all high-risk traps. Keep it up!"
+    },
+    "pass70": {
+      "zh-HK": "做得好！你具備相當水準的守法意識，能識別大多數的安全漏洞。只要再細心一點，就能達到完美的防護層級。",
+      "zh-CN": "做得好！你具备相当水平的守法意识，能识别大多数的安全漏洞。只要再细心一点，就能达到完美的防护层级。",
+      "en": "Great effort! You have solid compliance habits and recognize most critical loopholes. A tiny bit more attention to details makes you bulletproof."
+    },
+    "below70": {
+      "zh-HK": "注意！你的一些習慣做法在現實中可能隱藏極大的法律風險或外洩危機。建議仔細閱讀詳解，翻新你的資安觀念！",
+      "zh-CN": "注意！你的一些习惯做法在现实中可能隐藏极大的法律风险或外泄危机。建议仔细阅读详解，翻新你的资安观念！",
+      "en": "Caution! Some of your daily habits pose substantial data breach or legal non-compliance risks. Review the explanations carefully to secure your pipeline!"
+    }
+  },
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "presentation": "classic",
+      "category": { "zh-HK": "帳據安全", "zh-CN": "账据安全", "en": "Credential Security" },
+      "title": {
+        "zh-HK": "臨時工作交接與帳號使用",
+        "zh-CN": "临时工作交接与账号使用",
+        "en": "Temporary Task Handover"
+      },
+      "scenario": {
+        "zh-HK": "項目組同事急需從系統下載一份核心報告，但你正準備離開辦公室。他因為沒有該模組的權限，向你索取帳號密碼，並承諾「用完立刻登出」，你該怎麼做？",
+        "zh-CN": "项目组同事急需从系统下载一份核心报告，但你正准备离开办公室。他因为没有该模组的权限，向你索取账号密码，并承诺“用完立刻登出”，你该怎么做？",
+        "en": "A colleague urgently needs a report from a module they don't have access to, right as you are leaving. They ask for your credentials and promise to log out immediately. What do you do?"
+      },
+      "options": [
+        { "text": { "zh-HK": "口頭告訴他密碼，叮囑他下載完畢後立刻修改密碼", "zh-CN": "口头告诉他密码，嘱咐他下载完毕后立刻修改密码", "en": "Tell them verbally and ask them to change the password right after." }, "correct": false },
+        { "text": { "zh-HK": "嚴正拒絕。請他循公司正式流程申請臨時權限，或等工作對接完成由你親自操作下載", "zh-CN": "严正拒绝。请他循公司正式流程申请临时权限，或等工作对接完成由你亲自操作下载", "en": "Refuse firmly. Ask them to apply for temporary permissions via official channels or wait for you to do it." }, "correct": true },
+        { "text": { "zh-HK": "透過公司內部加密通訊軟體發送給他，這樣能留下文字交接記錄", "zh-CN": "通过公司内部加密通讯软件发送给他，这样能留下文字交接记录", "en": "Send via internal encrypted chat so there is a text record of the handover." }, "correct": false },
+        { "text": { "zh-HK": "登入好系統後將電腦維持解鎖狀態留在辦公桌上，交給他使用", "zh-CN": "登入好系统后将电脑维持解锁状态留在办公桌上，交给他使用", "en": "Log in and leave your computer unlocked on the desk for them to use." }, "correct": false }
+      ],
+      "explanation": {
+        "zh-HK": "帳號共用會徹底破壞系統的「審計軌跡（Audit Trail）」。一旦該帳號在共用期間發生數據非法外洩或違規操作，法律與行政責任將由帳號原持有人承擔。",
+        "zh-CN": "账号共用会彻底破坏系统的“审计轨迹（Audit Trail）”。一旦该账号在共用期间发生数据非法外泄或违规操作，法律与行政责任将由账号原持有人承担。",
+        "en": "Sharing accounts destroys the audit trail. If any data misuse occurs during the shared period, the primary account owner carries full liability."
+      },
+      "reminder": {
+        "zh-HK": "個人帳號即個人身份，不容代理或外借。",
+        "zh-CN": "个人账号即个人身份，不容代理或外借。",
+        "en": "Your account represents your digital identity. Never delegate or lend it."
+      }
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "presentation": "scenario",
+      "category": { "zh-HK": "權限合規 / 日誌法律效力", "zh-CN": "权限合规 / 日志法律效力", "en": "Access Compliance / Log Validity" },
+      "title": {
+        "zh-HK": "數據庫不當查詢與合規界線",
+        "zh-CN": "数据库不当查询与合规界线",
+        "en": "Database Access & Compliance"
+      },
+      "story": {
+        "zh-HK": {
+          "label": "企業合規案例模擬",
+          "title": "系統內部的「越界窺探」",
+          "dialogues": [
+            { "avatar": "💻", "speaker": "系統操作員", "text": "雖然這批客戶的商務資料不在我的負責範圍內，但我擁有系統管理權限，反正我只是出於好奇隨便看看，不複製也不外傳，應該沒事吧？", "side": "left" },
+            { "avatar": "⚖️", "speaker": "安全稽核機制", "text": "警告：核心系統內的所有資料檢視動作均已被記錄於不可篡改的日誌（Log）中。非業務必要的行為將自動觸發異常告警。", "side": "right" }
+          ]
+        },
+        "zh-CN": {
+          "label": "企业合规案例模拟",
+          "title": "系统内部的“越界窥探”",
+          "dialogues": [
+            { "avatar": "💻", "speaker": "系统操作员", "text": "虽然这批客户的商务资料不在我的负责范围内，但我拥有系统管理权限，反正我只是出于好奇随便看看，不复制也不外传，应该没事吧？", "side": "left" },
+            { "avatar": "⚖️", "speaker": "安全稽核机制", "text": "警告：核心系统内的所有资料检视动作均已被记录于不可篡改的日志（Log）中。非业务必要的行为将自动触发异常告警。", "side": "right" }
+          ]
+        },
+        "en": {
+          "label": "Corporate Compliance Simulation",
+          "title": "Out-of-Bounds Data Snooping",
+          "dialogues": [
+            { "avatar": "💻", "speaker": "System Operator", "text": "Even though this client database isn't under my assigned projects, I have administrative access. Looking around out of curiosity without copying shouldn't hurt, right?", "side": "left" },
+            { "avatar": "⚖️", "speaker": "Audit Mechanism", "text": "Warning: All data views are recorded in an immutable log. Access without business justification will trigger an anomaly alert.", "side": "right" }
+          ]
+        }
+      },
+      "question": {
+        "zh-HK": "【測試：多選項排版】針對「擁有系統技術權限，但查閱非工作職責所需之敏感數據」的行為，以下哪項說明完全正確？",
+        "zh-CN": "【测试：多选项排版】针对「拥有系统技术权限，但查阅非工作职责所需之敏感数据」的行为，以下哪项说明完全正确？",
+        "en": "[Testing: Extra Options] Regarding the act of 'accessing sensitive data beyond job duties using general technical privileges', which statement is entirely correct?"
+      },
+      "options": [
+        { "text": { "zh-HK": "只要沒有將數據下載、截圖或向第三方傳播，純粹在螢幕上瀏覽便不構成違法或违規", "zh-CN": "只要没有将数据下载、截图或向第三方传播，纯粹在屏幕上浏览便不构成违法或违规", "en": "As long as no files are downloaded or shared, viewing it on screen does not constitute a violation." }, "correct": false },
+        { "text": { "zh-HK": "只要系統技術上允許點擊進入，就代表企業預設同意員工可以檢視該系統內的所有資料", "zh-CN": "只要系统技术上允许点击进入，就代表企业预设同意员工可以检视该系统内的所有资料", "en": "If the system allows the click, it implies corporate consent to view all accessible records." }, "correct": false },
+        { "text": { "zh-HK": "這屬於嚴重的非授權不當存取。系統日誌會成為勞動紀律處分、甚至違反個人資料保護法規的直接鐵證", "zh-CN": "这属于严重的非授权不当存取。系统日志会成为劳动纪律处分、甚至违反个人资料保护法规的直接铁证", "en": "This is unauthorized access. System logs serve as definitive evidence for disciplinary or legal prosecution under privacy frameworks." }, "correct": true },
+        { "text": { "zh-HK": "外聘人員或臨時派遣工因為不屬於企業編制員工，故不受此類資安合規與法律守則的約束", "zh-CN": "外聘人员或临时派遣工因为不属于企业编制员工，故不受此类资安合规与法律守则的约束", "en": "Contractors or temporary staff are exempt from corporate compliance guidelines and privacy laws." }, "correct": false },
+        { "text": { "zh-HK": "此行為僅屬於個人工作習慣與道德層面問題，只要事後向主管口頭說明即可完全免責", "zh-CN": "此行为仅属于个人工作习惯与道德层面问题，只要事后向主管口头说明即可完全免责", "en": "This is purely an internal workflow or ethical issue that a simple verbal notice to supervisors can fully resolve." }, "correct": false },
+        { "text": { "zh-HK": "事後若宣稱是「不小心點錯介面」或者「系統出現隨機導向」，即可在行政及法律上完全免除日誌追責", "zh-CN": "事后若宣称是“不小心点错界面”或者“系统出现随机导向”，即可在行政及法律上完全免除日志追责", "en": "Claiming an 'accidental click' or a 'UI glitch' automatically absolves the individual from log-based liabilities." }, "correct": false }
+      ],
+      "explanation": {
+        "zh-HK": "資訊安全與法規合規實務中，權限授權是以「業務必要（Need-to-know）」為絕對前提，而非以「技術上能不能點進去」為標準。任何超越職責範圍的窺探皆屬不當存取，且不可篡改的系統日誌會讓此類行為無所遁形。",
+        "zh-CN": "信息安全与法规合规实务中，权限授权是以“业务必要（Need-to-know）”为绝对前提，而非以“技术上能不能点进去”为标准。任何超越职责范围的窥探皆属不当存取，且不可篡改的系统日志会让此类行为无所遁形。",
+        "en": "Data authorization operates strictly on a 'Need-to-know' basis. Technical accessibility does not grant compliance permission. Unjustified browsing is logged and deemed actionable unauthorized access."
+      },
+      "reminder": {
+        "zh-HK": "職務必要方可查閱，系統日誌凡走過必留痕跡。",
+        "zh-CN": "职务必要方可查阅，系统日志凡走过必留痕迹。",
+        "en": "Access data only when duty requires. Every single click leaves an indelible digital footprint."
+      }
+    },
+    {
+      "id": 5,
+      "type": "multiple",
+      "presentation": "classic",
+      "category": { "zh-HK": "資訊安全基礎", "zh-CN": "信息安全基础", "en": "Security Basics" },
+      "title": {
+        "zh-HK": "資訊安全三要素 (CIA Triad)",
+        "zh-CN": "信息安全三要素 (CIA Triad)",
+        "en": "The CIA Triad"
+      },
+      "scenario": {
+        "zh-HK": "【測試：多選正確比對】在現代資訊安全管理體系中，最核心、最經典的「CIA 三要素」包含以下哪三項？（多選，需全部選對）",
+        "zh-CN": "【测试：多选正确比对】在现代信息安全管理体系中，最核心、最经典的“CIA 三要素”包含以下哪三项？（多选，需全部选对）",
+        "en": "[Testing: Multiple Choice] In modern security frameworks, which three core pillars constitute the foundational 'CIA Triad'? (Select all that apply)"
+      },
+      "options": [
+        { "text": { "zh-HK": "可用性（Availability）：確保獲授權的人員在需要時能夠正常存取數據與系統", "zh-CN": "可用性（Availability）：确保获授权的人员在需要时能够正常存取数据与系统", "en": "Availability: Ensuring authorized personnel have uninterrupted access to systems and assets." }, "correct": true },
+        { "text": { "zh-HK": "保密性（Confidentiality）：確保數據受到保護，防止未授權的第三方讀取敏感資訊", "zh-CN": "保密性（Confidentiality）：确保数据受到保护，防止未授权的第三方读取敏感信息", "en": "Confidentiality: Restricting sensitive data deployment to prevent leaks to unauthorized eyes." }, "correct": true },
+        { "text": { "zh-HK": "完整性（Integrity）：確保數據在傳輸、儲存或處理過程中不被未授權地篡改、刪除或損壞", "zh-CN": "完整性（Integrity）：确保数据在传输、储存或处理过程中不被未授权地篡改、删除或损坏", "en": "Integrity: Guaranteeing that data remains accurate, complete, and free from malicious tampering." }, "correct": true },
+        { "text": { "zh-HK": "不可否認性（Non-repudiation）：確保發送方在完成某項系統操作或交易後無法否認其行為", "zh-CN": "不可否认性（Non-repudiation）：确保发送方在完成某项系统操作或交易后无法否认其行为", "en": "Non-repudiation: Ensuring that a digital transaction or log action cannot be denied post-facto." }, "correct": false }
+      ],
+      "explanation": {
+        "zh-HK": "資訊安全的核心三要素（CIA）指的是 Confidentiality（保密性）、Integrity（完整性）與 Availability（可用性）。不可否認性（Non-repudiation）雖然也是資安領域的重要概念，但並不屬於經典 CIA 三要素的原始定義。",
+        "zh-CN": "信息安全的核心三要素（CIA）指的是 Confidentiality（保密性）、Integrity（完整性）与 Availability（可用性）。不可否认性（Non-repudiation）虽然也是资安领域的重要概念，但并不属于经典 CIA 三要素的原始定义。",
+        "en": "The CIA Triad stands explicitly for Confidentiality, Integrity, and Availability. Non-repudiation is a key auxiliary compliance capability, but outside the baseline triad structure."
+      },
+      "reminder": {
+        "zh-HK": "牢記 CIA 三大核心英文字首組合，即可精準解題！",
+        "zh-CN": "牢记 CIA 三大核心英文字首组合，即可精准解题！",
+        "en": "Remember the standard CIA acronym to distinguish the core tenets."
+      }
+    },
+    {
+      "id": 8,
+      "type": "multiple",
+      "presentation": "classic",
+      "category": { "zh-HK": "資料合規", "zh-CN": "资料合规", "en": "Data Compliance" },
+      "title": {
+        "zh-HK": "大眾個人資料收集原則",
+        "zh-CN": "大众个人资料收集原则",
+        "en": "Public Data Collection Principles"
+      },
+      "scenario": {
+        "zh-HK": "【測試：多選亂序測試】企業或機構面向公眾收集個人資料（例如舉辦線上宣傳活動）時，根據主流隱私法規，以下哪些做法是強制要求的合規義務？（多選，有兩個正確答案）",
+        "zh-CN": "【测试：多选乱序测试】企业或机构面向公众收集个人资料（例如举办线上宣传活动）时，根据主流隐私法规，以下哪些做法是强制要求的合规义务？（多选，有两个正确答案）",
+        "en": "[Testing: Multi-Select Sorting] When an organization collects public personal user data (e.g., via promotional events), which practices are legally mandatory under primary privacy acts? (Select all that apply)"
+      },
+      "options": [
+        { "text": { "zh-HK": "必須提供明確的「個人資料收集聲明（PICS）」，清晰告知公眾收集數據的目的、用途以及資料保留期限", "zh-CN": "必须提供明确的“个人资料收集声明（PICS）”，清晰告知公众收集数据的目的、用途以及资料保留期限", "en": "Provide a transparent Personal Information Collection Statement (PICS) defining goals and retention terms." }, "correct": true },
+        { "text": { "zh-HK": "不論活動規模與本質，一律強制用戶填寫身份證字號與家庭住址等高敏感欄位，以留作企業未來不時之需", "zh-CN": "不论活动规模与本质，一律强制用户填写身份证字号与家庭住址等高敏感栏位，以留作企业未来不时之需", "en": "Enforce mandatory entries for national ID numbers and residential addresses across all minor events for reserve use." }, "correct": false },
+        { "text": { "zh-HK": "提供獨立、明確的拒絕（Opt-out）或單獨同意選項，保障公眾未來拒絕接受直接促銷宣傳的合法權利", "zh-CN": "提供独立、明确的拒绝（Opt-out）或单独同意选项，保障公众未来拒绝接受直接促销宣传的合法权利", "en": "Implement an explicit opt-out interface or separate toggles to let users withdraw from direct marketing tracks." }, "correct": true },
+        { "text": { "zh-HK": "將收集到的用戶名單以 Excel 格式直接上傳至完全公開、無密碼保護的雲端空間，以便內外部團隊快速下載對接", "zh-CN": "将收集到的名单以 Excel 格式直接上传至完全公开、无密码保护的云端空间，以便内外部团队快速下载对接", "en": "Upload collected databases via an unencrypted, public spreadsheet link to optimize workflow access across vendors." }, "correct": false }
+      ],
+      "explanation": {
+        "zh-HK": "主流隱私條例與資料保護法要求資料收集必須遵循「數據最小化原則」（不得過度收集非必要的敏感隱私）。同時，機構必須在收集關口履行明確告知義務（PICS），並賦予用戶拒絕（Opt-out）直銷宣傳的自願選擇權。",
+        "zh-CN": "主流隐私条例与数据保护法要求资料收集必须遵循“数据最小化原则”（不得过度收集非必要的敏感隐私）。同时，机构必须在收集关口履行明确告知义务（PICS），并赋予用户拒绝（Opt-out）直销宣传的自愿选择权。",
+        "en": "Data legislation dictates data minimization (no excessive gathering of national IDs/addresses) along with proactive PICS warnings and reliable opt-out direct marketing vectors."
+      },
+      "reminder": {
+        "zh-HK": "告知同意、最小化收集，是面向公眾處理資料的合法基石。",
+        "zh-CN": "告知同意、最小化收集，是面向公众处理资料的合法基石。",
+        "en": "Clear notification and strict data minimization are the core bedrocks of legal database management."
+      }
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "presentation": "classic",
+      "category": { "zh-HK": "權限與法律責任", "zh-CN": "权限与法律责任", "en": "Privileges & Liabilities" },
+      "title": {
+        "zh-HK": "系統漏洞與操作者免責邊界",
+        "zh-CN": "系统漏洞与操作者免责边界",
+        "en": "System Exploits vs Responsibility"
+      },
+      "scenario": {
+        "zh-HK": "如果某一公眾服務系統本身存在安全漏洞或防護漏洞（例如網址結構暴露，導致未經權限驗證也能看到上層目錄），此時使用者若明知該漏洞，仍刻意利用此漏洞提取非授權的企業或大眾資料，該使用者是否需要承擔法律責任？",
+        "zh-CN": "如果某一公众服务系统本身存在安全漏洞或防护漏洞（例如网址结构暴露，导致未经权限验证也能看到上层目录），此时使用者若明知该漏洞，仍刻意利用此漏洞提取非授权的企业或大众资料，该使用者是否需要承担法律责任？",
+        "en": "If a platform possesses an authentication bypass flaw (e.g., directory traversal), is a user who knowingly exploits this flaw to secure restricted corporate or user data legally responsible?"
+      },
+      "options": [
+        { "text": { "zh-HK": "不需要，這屬於系統開發商或技術部門的設計過錯，使用者無需為技術漏洞承擔後果", "zh-CN": "不需要，这属于系统开发商或技术部门的设计过错，使用者无需为技术漏洞承担后果", "en": "No, it is purely an engineering defect by software developers; end-users carry zero liability." }, "correct": false },
+        { "text": { "zh-HK": "需要。操作者明知為非授權邊界，仍刻意利用技術漏洞進行越權提取，在多數法律管轄區內仍構成刑事或行政違法行為", "zh-CN": "需要。操作者明知为非授权边界，仍刻意利用技术漏洞进行越权提取，在多数法律管辖区内仍构成刑事或行政违法行为", "en": "Yes. Knowingly breaking authorization boundaries to exploit a structural vulnerability constitutes an offense under standard tech laws." }, "correct": true },
+        { "text": { "zh-HK": "只要其操作行為未被系統實時攔截或當場捕捉，在法律溯及力上便完全無法予以追究", "zh-CN": "只要其操作行为未被系统实时拦截或当场捕捉，在法律溯及力上便完全无法予以追究", "en": "As long as defensive scripts do not issue a real-time block, logs cannot be leveraged to execute a back-dated penalty." }, "correct": false },
+        { "text": { "zh-HK": "法律僅規範系統開發方必須做好絕對安全的防護，未做完美防護的數據在法律上皆被視為公開數據", "zh-CN": "法律仅规范系统开发方必须做好绝对安全的防护，未做完美防护的数据在法律上皆被视为公开数据", "en": "Statutes only govern infrastructure owners; any unprotected system structure mathematically implies open public information." }, "correct": false }
+      ],
+      "explanation": {
+        "zh-HK": "系統防護不足絕非使用者惡意入侵或非授權越權提取數據的合法辯護理由。不論在刑事（如不誠實取用電腦、計算機犯罪法案）還是民事行政侵權上，明知故犯的越界操作者均需承擔完全的法律責任。",
+        "zh-CN": "系统防护不足绝非使用者恶意入侵或非授权越权提取数据的合法辩护理由。不论在刑事（如不诚实取用电脑、计算机犯罪法案）还是民事行政侵权上，明知故犯的越界操作者均需承担完全的法律责任。",
+        "en": "Structural network weak points never justify un-vetted extraction. Intentionally breaking authorization loops to harvest proprietary files carries severe personal standard civil and criminal liability."
+      },
+      "reminder": {
+        "zh-HK": "門鎖縱有破綻，也不代表外人可以合法入內搬取資產。",
+        "zh-CN": "门锁纵有破绽，也不代表外人可以合法入内搬取资产。",
+        "en": "A weak lock never translates to a legal permission to walk in and extract private assets."
+      }
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "presentation": "classic",
+      "category": { "zh-HK": "總結", "zh-CN": "总结", "en": "Summary" },
+      "title": {
+        "zh-HK": "現代數據安全核心意識",
+        "zh-CN": "现代数据安全核心意识",
+        "en": "Modern Data Security Mindset"
+      },
+      "scenario": {
+        "zh-HK": "在處理日常敏感業務數據、大眾隱私或系統操作權限時，以下哪一種工作習慣與心態最符合現代資訊安全與法規合規的要求？",
+        "zh-CN": "在处理日常敏感业务数据、大众隐私或系统操作权限时，以下哪一种工作习惯与心态最符合现代信息安全与法规合规的要求？",
+        "en": "When administering business-critical databanks or system roles, which operational mindset aligns best with modern security compliance standards?"
+      },
+      "options": [
+        { "text": { "zh-HK": "「效率優先」原則，只要工作需要或客戶催促，即使借用他人帳號或繞過資安流程也應全力配合", "zh-CN": "「效率优先」原则，只要工作需要或客户催促，即使借用他人账号或绕过资安流程也应全力配合", "en": "'Efficiency First': If a client is rushing, borrow credentials or bypass security pipelines to deliver fast." }, "correct": false },
+        { "text": { "zh-HK": "「最小特權與職責必要」原則，秉持審慎、依規矩授權的心態操作，明知與自身職責無關的敏感數據絕不基於好奇而查閱", "zh-CN": "「最小特权与职责必要」原则，秉持审慎、依规矩授权的心态操作，明知与自身职责无关的敏感数据绝不基于好奇而查阅", "en": "'Least Privilege & Need-to-Know': Conduct strict workflow boundaries. Never access unrelated data out of passive curiosity." }, "correct": true },
+        { "text": { "zh-HK": "「技術無罪」原則，只要公司技術維護小組沒有定期發送警告，就可以採用任何個人習慣來處理數據", "zh-CN": "「技术无罪」原则，只要公司技术维护小组没有定期发送警告，就可以采用任何个人习惯来处理数据", "en": "'Technical Immunity': As long as the IT taskforce hasn't issued warnings, apply personal work habits freely." }, "correct": false },
+        { "text": { "zh-HK": "「信任至上」原則，因為都是同公司或合作團隊的熟人，對方的任何索取與下載要求都應不加驗證地給予支持", "zh-CN": "「信任至上」原则，因为都是同公司或合作团队的熟人，对方的任何索取与下载要求都应不加验证地给予支持", "en": "'Absolute Trust': Since everyone belongs to the same corporate banner, honor transfer requests without auditing identities." }, "correct": false }
+      ],
+      "explanation": {
+        "zh-HK": "現代資訊安全治理的核心基石是「零信任（Zero Trust）」與「最小特權（Least Privilege）」。唯有建立依規運作、權限與職責嚴格綁定的工作習慣，才能真正將企業合規風險與大眾數據外洩機率降至最低。",
+        "zh-CN": "现代信息安全治理的核心基石是“零信任（Zero Trust）”与“最小特权（Least Privilege）”。唯有建立依规运作、权限与职责严格绑定的工作习惯，才能真正将企业合规风险与大众数据外泄机率降至最低。",
+        "en": "Zero Trust and Least Privilege are the modern counter-measures against leaks. Strict adherence to role-based privileges minimizes systemic institutional liabilities."
+      },
+      "reminder": {
+        "zh-HK": "安全合規不是繁瑣的束縛，而是保護大家最堅實的護欄。",
+        "zh-CN": "安全合规不是繁琐的束缚，而是保护大家最坚实的护栏。",
+        "en": "Compliance is never an efficiency barrier; it's a solid shield protecting everyone's integrity."
+      }
+    }
+  ]
+}

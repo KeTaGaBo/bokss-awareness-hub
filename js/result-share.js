@@ -9,6 +9,21 @@ function copyQuizLink(showAlert = true) {
   });
 }
 
+function getShareInviteText() {
+  const levelKey = getLevelKey();
+  const levelText = cleanLevelText(getLevelText(levelKey));
+  const score = getScore();
+  const total = AppState.quizData.questions.length;
+
+  const templates = {
+    "zh-HK": `我的評價是「${levelText}」 (${score}/${total})，你也一起來參與吧！`,
+    "zh-CN": `我的评价是「${levelText}」 (${score}/${total})，你也一起来参与吧！`,
+    "en": `My result is "${levelText}" (${score}/${total}). Come and give it a try too!`
+  };
+
+  return templates[AppState.currentLang] || templates["zh-HK"];
+}
+
 function waitImageLoaded(img) {
   return new Promise((resolve, reject) => {
     if (img.complete && img.naturalWidth > 0) {
@@ -67,6 +82,7 @@ function wrapTextByWords(ctx, text, maxWidth, maxLines = 4) {
       line = testLine;
     }
   }
+
   if (line) lines.push(line);
 
   if (lines.length === maxLines) {
@@ -91,6 +107,7 @@ function wrapTextByChars(ctx, text, maxWidth, maxLines = 4) {
       line = testLine;
     }
   }
+
   if (line) lines.push(line);
 
   if (lines.length === maxLines) {
@@ -122,6 +139,7 @@ function pickTitleFont(ctx, title, maxWidth, isEnglish) {
 
   const fallbackSize = candidates[candidates.length - 1];
   ctx.font = `bold ${fallbackSize}px Arial`;
+
   return {
     size: fallbackSize,
     lines: isEnglish
@@ -303,7 +321,7 @@ async function downloadShareCard() {
 async function shareImageAndUrl() {
   const url = getShareUrl();
   const title = getShareTitle();
-  const text = getShortResultSummary(getLevelKey());
+  const text = getShareInviteText();
 
   try {
     const blob = await generateShareCardBlob();

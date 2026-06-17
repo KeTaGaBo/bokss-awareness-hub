@@ -4,7 +4,7 @@
       "badge": "資訊安全與合規科普",
       "siteTitle": "數據安全大考驗：你以為沒問題，其實藏風險？",
       "heroSubtitle": "💡 5分鐘資安自我檢測 × 數據合規防範",
-      "intro": "本測驗包含單選題與多選題。部分情境看似為了『工作方便』或出於『一時好奇』，但在法規與資訊安全標準中卻可能隱藏巨大風險。試試你的判斷力，看看你能得幾分！",
+      "intro": "本測驗包含單選題與多選題。部分情境看似為了「工作方便」或出於「一時好奇」，但在法規與資訊安全標準中卻可能隱藏巨大風險。試試你的判斷力，看看你能得幾分！",
       "prev": "上一題",
       "next": "下一題",
       "scoreLabel": "目前得分",
@@ -42,7 +42,7 @@
       "badge": "信息安全与合规科普",
       "siteTitle": "数据安全大考验：你以为没问题，其实藏风险？",
       "heroSubtitle": "💡 5分钟资安自我检测 × 数据合规防范",
-      "intro": "本测验包含单选题与多选题。部分情境看似为了『工作方便』或出于『一时好奇』，但在法规与信息安全标准中却可能隐藏巨大风险。试试你的判断力，看看你能得几分！",
+      "intro": "本测验包含单选题与多选题。部分情境看似为了「工作方便」或出于「一时好奇」，但在法规与信息安全标准中却可能隐藏巨大风险。试试你的判断力，看看你能得几分！",
       "prev": "上一题",
       "next": "下一题",
       "scoreLabel": "目前得分",
@@ -137,188 +137,314 @@
       "id": 1,
       "type": "single",
       "presentation": "classic",
-      "category": { "zh-HK": "帳據安全", "zh-CN": "账据安全", "en": "Credential Security" },
+      "category": { "zh-HK": "醫療系統濫用", "zh-CN": "医疗系统滥用", "en": "Medical System Misuse" },
       "title": {
-        "zh-HK": "臨時工作交接與帳號使用",
-        "zh-CN": "临时工作交接与账号使用",
-        "en": "Temporary Task Handover"
+        "zh-HK": "沒有診療需要，能否查看病歷？",
+        "zh-CN": "没有诊疗需要，能否查看病历？",
+        "en": "Can you view records without treatment need?"
       },
       "scenario": {
-        "zh-HK": "項目組同事急需從系統下載一份核心報告，但你正準備離開辦公室。他因為沒有該模組的權限，向你索取帳號密碼，並承諾「用完立刻登出」，你該怎麼做？",
-        "zh-CN": "项目组同事急需从系统下载一份核心报告，但你正准备离开办公室。他因为没有该模组的权限，向你索取账号密码，并承诺“用完立刻登出”，你该怎么做？",
-        "en": "A colleague urgently needs a report from a module they don't have access to, right as you are leaving. They ask for your credentials and promise to log out immediately. What do you do?"
+        "zh-HK": "醫生因好奇，打開自己沒有跟進的病人紀錄看看，但沒有下載或列印。這樣是否恰當？",
+        "zh-CN": "医生因好奇，打开自己没有跟进的病人纪录看看，但没有下载或列印。这样是否恰当？",
+        "en": "A doctor opens records of a patient not under their care out of curiosity, without printing or downloading. Is this acceptable?"
       },
       "options": [
-        { "text": { "zh-HK": "口頭告訴他密碼，叮囑他下載完畢後立刻修改密碼", "zh-CN": "口头告诉他密码，嘱咐他下载完毕后立刻修改密码", "en": "Tell them verbally and ask them to change the password right after." }, "correct": false },
-        { "text": { "zh-HK": "嚴正拒絕。請他循公司正式流程申請臨時權限，或等工作對接完成由你親自操作下載", "zh-CN": "严正拒绝。请他循公司正式流程申请临时权限，或等工作对接完成由你亲自操作下载", "en": "Refuse firmly. Ask them to apply for temporary permissions via official channels or wait for you to do it." }, "correct": true },
-        { "text": { "zh-HK": "透過公司內部加密通訊軟體發送給他，這樣能留下文字交接記錄", "zh-CN": "通过公司内部加密通讯软件发送给他，这样能留下文字交接记录", "en": "Send via internal encrypted chat so there is a text record of the handover." }, "correct": false },
-        { "text": { "zh-HK": "登入好系統後將電腦維持解鎖狀態留在辦公桌上，交給他使用", "zh-CN": "登入好系统后将电脑维持解锁状态留在办公桌上，交给他使用", "en": "Log in and leave your computer unlocked on the desk for them to use." }, "correct": false }
+        { "text": { "zh-HK": "可以，只要不外傳", "zh-CN": "可以，只要不外传", "en": "Yes, as long as nothing is shared" }, "correct": false },
+        { "text": { "zh-HK": "不可以，沒有工作需要就屬不當存取", "zh-CN": "不可以，没有工作需要就属不当存取", "en": "No, without work need it is improper access" }, "correct": true },
+        { "text": { "zh-HK": "可以，醫生本來就有權限", "zh-CN": "可以，医生本来就有权限", "en": "Yes, doctors already have access" }, "correct": false },
+        { "text": { "zh-HK": "只要事後通知主管即可", "zh-CN": "只要事后通知主管即可", "en": "Yes, if reported later" }, "correct": false }
       ],
       "explanation": {
-        "zh-HK": "帳號共用會徹底破壞系統的「審計軌跡（Audit Trail）」。一旦該帳號在共用期間發生數據非法外洩或違規操作，法律與行政責任將由帳號原持有人承擔。",
-        "zh-CN": "账号共用会彻底破坏系统的“审计轨迹（Audit Trail）”。一旦该账号在共用期间发生数据非法外泄或违规操作，法律与行政责任将由账号原持有人承担。",
-        "en": "Sharing accounts destroys the audit trail. If any data misuse occurs during the shared period, the primary account owner carries full liability."
+        "zh-HK": "能否查看資料的關鍵，在於是否有診療或工作需要，不是單看有沒有系統權限。",
+        "zh-CN": "能否查看资料的关键，在于是否有诊疗或工作需要，不是单看有没有系统权限。",
+        "en": "Access depends on treatment or work need, not merely whether technical access exists."
       },
       "reminder": {
-        "zh-HK": "個人帳號即個人身份，不容代理或外借。",
-        "zh-CN": "个人账号即个人身份，不容代理或外借。",
-        "en": "Your account represents your digital identity. Never delegate or lend it."
+        "zh-HK": "有權限，不等於可隨意使用。",
+        "zh-CN": "有权限，不等于可随意使用。",
+        "en": "Having access does not mean free use."
       }
     },
     {
       "id": 2,
       "type": "single",
-      "presentation": "scenario",
-      "category": { "zh-HK": "權限合規 / 日誌法律效力", "zh-CN": "权限合规 / 日志法律效力", "en": "Access Compliance / Log Validity" },
+      "presentation": "classic",
+      "category": { "zh-HK": "醫療系統濫用", "zh-CN": "医疗系统滥用", "en": "Medical System Misuse" },
       "title": {
-        "zh-HK": "數據庫不當查詢與合規界線",
-        "zh-CN": "数据库不当查询与合规界线",
-        "en": "Database Access & Compliance"
+        "zh-HK": "查熟人病歷是否合理？",
+        "zh-CN": "查熟人病历是否合理？",
+        "en": "Is checking a friend’s record acceptable?"
       },
-      "story": {
-        "zh-HK": {
-          "label": "企業合規案例模擬",
-          "title": "系統內部的「越界窺探」",
-          "dialogues": [
-            { "avatar": "💻", "speaker": "系統操作員", "text": "雖然這批客戶的商務資料不在我的負責範圍內，但我擁有系統管理權限，反正我只是出於好奇隨便看看，不複製也不外傳，應該沒事吧？", "side": "left" },
-            { "avatar": "⚖️", "speaker": "安全稽核機制", "text": "警告：核心系統內的所有資料檢視動作均已被記錄於不可篡改的日誌（Log）中。非業務必要的行為將自動觸發異常告警。", "side": "right" }
-          ]
-        },
-        "zh-CN": {
-          "label": "企业合规案例模拟",
-          "title": "系统内部的“越界窥探”",
-          "dialogues": [
-            { "avatar": "💻", "speaker": "系统操作员", "text": "虽然这批客户的商务资料不在我的负责范围内，但我拥有系统管理权限，反正我只是出于好奇随便看看，不复制也不外传，应该没事吧？", "side": "left" },
-            { "avatar": "⚖️", "speaker": "安全稽核机制", "text": "警告：核心系统内的所有资料检视动作均已被记录于不可篡改的日志（Log）中。非业务必要的行为将自动触发异常告警。", "side": "right" }
-          ]
-        },
-        "en": {
-          "label": "Corporate Compliance Simulation",
-          "title": "Out-of-Bounds Data Snooping",
-          "dialogues": [
-            { "avatar": "💻", "speaker": "System Operator", "text": "Even though this client database isn't under my assigned projects, I have administrative access. Looking around out of curiosity without copying shouldn't hurt, right?", "side": "left" },
-            { "avatar": "⚖️", "speaker": "Audit Mechanism", "text": "Warning: All data views are recorded in an immutable log. Access without business justification will trigger an anomaly alert.", "side": "right" }
-          ]
-        }
-      },
-      "question": {
-        "zh-HK": "【測試：多選項排版】針對「擁有系統技術權限，但查閱非工作職責所需之敏感數據」的行為，以下哪項說明完全正確？",
-        "zh-CN": "【测试：多选项排版】针对「拥有系统技术权限，但查阅非工作职责所需之敏感数据」的行为，以下哪项说明完全正确？",
-        "en": "[Testing: Extra Options] Regarding the act of 'accessing sensitive data beyond job duties using general technical privileges', which statement is entirely correct?"
+      "scenario": {
+        "zh-HK": "你聽聞熟人入院，於是登入系統看看對方診斷紀錄，只是想知道近況。這樣合理嗎？",
+        "zh-CN": "你听闻熟人入院，于是登入系统看看对方诊断纪录，只是想知道近况。这样合理吗？",
+        "en": "You hear an acquaintance was admitted and check their diagnosis in the system just to know how they are doing. Is this acceptable?"
       },
       "options": [
-        { "text": { "zh-HK": "只要沒有將數據下載、截圖或向第三方傳播，純粹在螢幕上瀏覽便不構成違法或违規", "zh-CN": "只要没有将数据下载、截图或向第三方传播，纯粹在屏幕上浏览便不构成违法或违规", "en": "As long as no files are downloaded or shared, viewing it on screen does not constitute a violation." }, "correct": false },
-        { "text": { "zh-HK": "只要系統技術上允許點擊進入，就代表企業預設同意員工可以檢視該系統內的所有資料", "zh-CN": "只要系统技术上允许点击进入，就代表企业预设同意员工可以检视该系统内的所有资料", "en": "If the system allows the click, it implies corporate consent to view all accessible records." }, "correct": false },
-        { "text": { "zh-HK": "這屬於嚴重的非授權不當存取。系統日誌會成為勞動紀律處分、甚至違反個人資料保護法規的直接鐵證", "zh-CN": "这属于严重的非授权不当存取。系统日志会成为劳动纪律处分、甚至违反个人资料保护法规的直接铁证", "en": "This is unauthorized access. System logs serve as definitive evidence for disciplinary or legal prosecution under privacy frameworks." }, "correct": true },
-        { "text": { "zh-HK": "外聘人員或臨時派遣工因為不屬於企業編制員工，故不受此類資安合規與法律守則的約束", "zh-CN": "外聘人员或临时派遣工因为不属于企业编制员工，故不受此类资安合规与法律守则的约束", "en": "Contractors or temporary staff are exempt from corporate compliance guidelines and privacy laws." }, "correct": false },
-        { "text": { "zh-HK": "此行為僅屬於個人工作習慣與道德層面問題，只要事後向主管口頭說明即可完全免責", "zh-CN": "此行为仅属于个人工作习惯与道德层面问题，只要事后向主管口头说明即可完全免责", "en": "This is purely an internal workflow or ethical issue that a simple verbal notice to supervisors can fully resolve." }, "correct": false },
-        { "text": { "zh-HK": "事後若宣稱是「不小心點錯介面」或者「系統出現隨機導向」，即可在行政及法律上完全免除日誌追責", "zh-CN": "事后若宣称是“不小心点错界面”或者“系统出现随机导向”，即可在行政及法律上完全免除日志追责", "en": "Claiming an 'accidental click' or a 'UI glitch' automatically absolves the individual from log-based liabilities." }, "correct": false }
+        { "text": { "zh-HK": "合理，因為只是關心對方", "zh-CN": "合理，因为只是关心对方", "en": "Yes, because it is out of concern" }, "correct": false },
+        { "text": { "zh-HK": "不合理，這屬私人原因查閱", "zh-CN": "不合理，这属私人原因查阅", "en": "No, this is access for a private reason" }, "correct": true },
+        { "text": { "zh-HK": "合理，只要不告訴其他人", "zh-CN": "合理，只要不告诉其他人", "en": "Yes, if you do not tell others" }, "correct": false },
+        { "text": { "zh-HK": "合理，紀錄本來就在系統內", "zh-CN": "合理，纪录本来就在系统内", "en": "Yes, because the record is already in the system" }, "correct": false }
       ],
       "explanation": {
-        "zh-HK": "資訊安全與法規合規實務中，權限授權是以「業務必要（Need-to-know）」為絕對前提，而非以「技術上能不能點進去」為標準。任何超越職責範圍的窺探皆屬不當存取，且不可篡改的系統日誌會讓此類行為無所遁形。",
-        "zh-CN": "信息安全与法规合规实务中，权限授权是以“业务必要（Need-to-know）”为绝对前提，而非以“技术上能不能点进去”为标准。任何超越职责范围的窥探皆属不当存取，且不可篡改的系统日志会让此类行为无所遁形。",
-        "en": "Data authorization operates strictly on a 'Need-to-know' basis. Technical accessibility does not grant compliance permission. Unjustified browsing is logged and deemed actionable unauthorized access."
+        "zh-HK": "私人關心不構成診療需要。用系統查閱熟人資料，屬與工作無關的不當存取。",
+        "zh-CN": "私人关心不构成诊疗需要。用系统查阅熟人资料，属与工作无关的不当存取。",
+        "en": "Personal concern is not a clinical need. Accessing records for private reasons is improper."
       },
       "reminder": {
-        "zh-HK": "職務必要方可查閱，系統日誌凡走過必留痕跡。",
-        "zh-CN": "职务必要方可查阅，系统日志凡走过必留痕迹。",
-        "en": "Access data only when duty requires. Every single click leaves an indelible digital footprint."
+        "zh-HK": "關心他人，也不能越過資料界線。",
+        "zh-CN": "关心他人，也不能越过资料界线。",
+        "en": "Concern does not override privacy boundaries."
+      }
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "presentation": "classic",
+      "category": { "zh-HK": "醫療系統濫用", "zh-CN": "医疗系统滥用", "en": "Medical System Misuse" },
+      "title": {
+        "zh-HK": "「只是看看，沒有外傳」可以嗎？",
+        "zh-CN": "“只是看看，没有外传”可以吗？",
+        "en": "Is “just looking” acceptable?"
+      },
+      "scenario": {
+        "zh-HK": "某同事說：「我只是看看，沒有截圖、沒有傳出去，所以不算嚴重。」這種說法正確嗎？",
+        "zh-CN": "某同事说：“我只是看看，没有截图、没有传出去，所以不算严重。”这种说法正确吗？",
+        "en": "A colleague says, “I only looked. I didn’t screenshot or share anything, so it is not serious.” Is this correct?"
+      },
+      "options": [
+        { "text": { "zh-HK": "正確，沒有外傳就不算違規", "zh-CN": "正确，没有外传就不算违规", "en": "Correct, no sharing means no violation" }, "correct": false },
+        { "text": { "zh-HK": "不正確，只要無需要地查看已屬違規", "zh-CN": "不正确，只要无需要地查看已属违规", "en": "Incorrect, unnecessary viewing is already a violation" }, "correct": true },
+        { "text": { "zh-HK": "視乎當事人是否知名人士", "zh-CN": "视乎当事人是否知名人士", "en": "It depends whether the person is high profile" }, "correct": false },
+        { "text": { "zh-HK": "只要沒有列印就可以", "zh-CN": "只要没有列印就可以", "en": "It is fine if nothing is printed" }, "correct": false }
+      ],
+      "explanation": {
+        "zh-HK": "問題不只在於有沒有外傳，無正當理由地查閱本身就已是違規。",
+        "zh-CN": "问题不只在于有没有外传，无正当理由地查阅本身就已是违规。",
+        "en": "The issue is not only disclosure. Unjustified viewing itself is already improper."
+      },
+      "reminder": {
+        "zh-HK": "「只是看」不代表「沒有違規」。",
+        "zh-CN": "“只是看”不代表“没有违规”。",
+        "en": "Just looking does not mean no wrongdoing."
+      }
+    },
+    {
+      "id": 4,
+      "type": "multiple",
+      "presentation": "classic",
+      "category": { "zh-HK": "醫療系統濫用", "zh-CN": "医疗系统滥用", "en": "Medical System Misuse" },
+      "title": {
+        "zh-HK": "哪些情況屬不當病歷查閱？",
+        "zh-CN": "哪些情况属不当病历查阅？",
+        "en": "Which situations are improper record access?"
+      },
+      "scenario": {
+        "zh-HK": "以下哪些情況屬於沒有臨床或工作需要下的不當查閱？（多選）",
+        "zh-CN": "以下哪些情况属于没有临床或工作需要下的不当查阅？（多选）",
+        "en": "Which of the following are improper access without clinical or work need? (Select all that apply)"
+      },
+      "options": [
+        { "text": { "zh-HK": "查看自己正在跟進的病人紀錄", "zh-CN": "查看自己正在跟进的病人纪录", "en": "Viewing records of a patient under your care" }, "correct": false },
+        { "text": { "zh-HK": "查看朋友是否入院及診斷內容", "zh-CN": "查看朋友是否入院及诊断内容", "en": "Checking whether a friend was admitted and their diagnosis" }, "correct": true },
+        { "text": { "zh-HK": "因好奇查看某名人的就診紀錄", "zh-CN": "因好奇查看某名人的就诊纪录", "en": "Viewing a celebrity’s record out of curiosity" }, "correct": true },
+        { "text": { "zh-HK": "按工作流程核對自己部門病人資料", "zh-CN": "按工作流程核对自己部门病人资料", "en": "Verifying records within your assigned workflow" }, "correct": false }
+      ],
+      "explanation": {
+        "zh-HK": "有工作需要的查閱屬正常流程；出於私人關係、八卦或好奇的查閱則屬不當。",
+        "zh-CN": "有工作需要的查阅属正常流程；出于私人关系、八卦或好奇的查阅则属不当。",
+        "en": "Work-related access is legitimate. Curiosity, gossip, or private interest is not."
+      },
+      "reminder": {
+        "zh-HK": "用途正當，才是界線所在。",
+        "zh-CN": "用途正当，才是界线所在。",
+        "en": "The key boundary is legitimate purpose."
       }
     },
     {
       "id": 5,
-      "type": "multiple",
-      "presentation": "classic",
-      "category": { "zh-HK": "資訊安全基礎", "zh-CN": "信息安全基础", "en": "Security Basics" },
+      "type": "single",
+      "presentation": "scenario",
+      "category": { "zh-HK": "醫療系統濫用", "zh-CN": "医疗系统滥用", "en": "Medical System Misuse" },
       "title": {
-        "zh-HK": "資訊安全三要素 (CIA Triad)",
-        "zh-CN": "信息安全三要素 (CIA Triad)",
-        "en": "The CIA Triad"
+        "zh-HK": "借同事帳戶查病歷",
+        "zh-CN": "借同事账户查病历",
+        "en": "Using a colleague’s account"
       },
-      "scenario": {
-        "zh-HK": "【測試：多選正確比對】在現代資訊安全管理體系中，最核心、最經典的「CIA 三要素」包含以下哪三項？（多選，需全部選對）",
-        "zh-CN": "【测试：多选正确比对】在现代信息安全管理体系中，最核心、最经典的“CIA 三要素”包含以下哪三项？（多选，需全部选对）",
-        "en": "[Testing: Multiple Choice] In modern security frameworks, which three core pillars constitute the foundational 'CIA Triad'? (Select all that apply)"
+      "story": {
+        "zh-HK": {
+          "label": "醫療系統案例",
+          "title": "權限不夠，就借帳戶？",
+          "dialogues": [
+            { "avatar": "🩺", "speaker": "醫生甲", "text": "我暫時查不到那位病人的資料，你幫我登入一下，我只看一眼。", "side": "left" },
+            { "avatar": "💻", "speaker": "系統提示", "text": "所有操作都會記錄在登入者帳戶內。", "side": "right" }
+          ]
+        },
+        "zh-CN": {
+          "label": "医疗系统案例",
+          "title": "权限不够，就借账户？",
+          "dialogues": [
+            { "avatar": "🩺", "speaker": "医生甲", "text": "我暂时查不到那位病人的资料，你帮我登入一下，我只看一眼。", "side": "left" },
+            { "avatar": "💻", "speaker": "系统提示", "text": "所有操作都会记录在登入者账户内。", "side": "right" }
+          ]
+        },
+        "en": {
+          "label": "Medical System Case",
+          "title": "Not enough rights, so borrow an account?",
+          "dialogues": [
+            { "avatar": "🩺", "speaker": "Doctor A", "text": "I can’t access this patient’s record right now. Log in for me; I’ll just take a quick look.", "side": "left" },
+            { "avatar": "💻", "speaker": "System Notice", "text": "All actions are logged under the signed-in account.", "side": "right" }
+          ]
+        }
+      },
+      "question": {
+        "zh-HK": "以下哪個做法最正確？",
+        "zh-CN": "以下哪个做法最正确？",
+        "en": "Which response is most appropriate?"
       },
       "options": [
-        { "text": { "zh-HK": "可用性（Availability）：確保獲授權的人員在需要時能夠正常存取數據與系統", "zh-CN": "可用性（Availability）：确保获授权的人员在需要时能够正常存取数据与系统", "en": "Availability: Ensuring authorized personnel have uninterrupted access to systems and assets." }, "correct": true },
-        { "text": { "zh-HK": "保密性（Confidentiality）：確保數據受到保護，防止未授權的第三方讀取敏感資訊", "zh-CN": "保密性（Confidentiality）：确保数据受到保护，防止未授权的第三方读取敏感信息", "en": "Confidentiality: Restricting sensitive data deployment to prevent leaks to unauthorized eyes." }, "correct": true },
-        { "text": { "zh-HK": "完整性（Integrity）：確保數據在傳輸、儲存或處理過程中不被未授權地篡改、刪除或損壞", "zh-CN": "完整性（Integrity）：确保数据在传输、储存或处理过程中不被未授权地篡改、删除或损坏", "en": "Integrity: Guaranteeing that data remains accurate, complete, and free from malicious tampering." }, "correct": true },
-        { "text": { "zh-HK": "不可否認性（Non-repudiation）：確保發送方在完成某項系統操作或交易後無法否認其行為", "zh-CN": "不可否认性（Non-repudiation）：确保发送方在完成某项系统操作或交易后无法否认其行为", "en": "Non-repudiation: Ensuring that a digital transaction or log action cannot be denied post-facto." }, "correct": false }
+        { "text": { "zh-HK": "幫對方登入，自己在旁邊看著", "zh-CN": "帮对方登入，自己在旁边看着", "en": "Log in for the doctor and watch beside them" }, "correct": false },
+        { "text": { "zh-HK": "拒絕，要求對方按正式流程申請權限", "zh-CN": "拒绝，要求对方按正式流程申请权限", "en": "Refuse and require formal access approval" }, "correct": true },
+        { "text": { "zh-HK": "把帳戶密碼暫時借給對方", "zh-CN": "把账户密码暂时借给对方", "en": "Lend your credentials temporarily" }, "correct": false },
+        { "text": { "zh-HK": "先登入，再把電腦交給對方使用", "zh-CN": "先登入，再把电脑交给对方使用", "en": "Log in first and hand over the computer" }, "correct": false }
       ],
       "explanation": {
-        "zh-HK": "資訊安全的核心三要素（CIA）指的是 Confidentiality（保密性）、Integrity（完整性）與 Availability（可用性）。不可否認性（Non-repudiation）雖然也是資安領域的重要概念，但並不屬於經典 CIA 三要素的原始定義。",
-        "zh-CN": "信息安全的核心三要素（CIA）指的是 Confidentiality（保密性）、Integrity（完整性）与 Availability（可用性）。不可否认性（Non-repudiation）虽然也是资安领域的重要概念，但并不属于经典 CIA 三要素的原始定义。",
-        "en": "The CIA Triad stands explicitly for Confidentiality, Integrity, and Availability. Non-repudiation is a key auxiliary compliance capability, but outside the baseline triad structure."
+        "zh-HK": "借帳戶或代登入會破壞審計紀錄，也會把責任記到登入者身上。",
+        "zh-CN": "借账户或代登入会破坏审计纪录，也会把责任记到登入者身上。",
+        "en": "Borrowing or proxy logins break the audit trail and shift liability to the account owner."
       },
       "reminder": {
-        "zh-HK": "牢記 CIA 三大核心英文字首組合，即可精準解題！",
-        "zh-CN": "牢记 CIA 三大核心英文字首组合，即可精准解题！",
-        "en": "Remember the standard CIA acronym to distinguish the core tenets."
+        "zh-HK": "帳戶即身份，不可代用。",
+        "zh-CN": "账户即身份，不可代用。",
+        "en": "An account is an identity, not a shared tool."
+      }
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "presentation": "classic",
+      "category": { "zh-HK": "最小權限", "zh-CN": "最小权限", "en": "Least Privilege" },
+      "title": {
+        "zh-HK": "「有權限」是否等於「可任意查看」？",
+        "zh-CN": "“有权限”是否等于“可任意查看”？",
+        "en": "Does access mean free browsing?"
+      },
+      "scenario": {
+        "zh-HK": "員工說：「系統都讓我看得到，就代表我可以看。」這句話是否正確？",
+        "zh-CN": "员工说：“系统都让我看得到，就代表我可以看。”这句话是否正确？",
+        "en": "An employee says, “If the system lets me see it, then I’m allowed to see it.” Is this correct?"
+      },
+      "options": [
+        { "text": { "zh-HK": "正確，技術上可見就是已授權", "zh-CN": "正确，技术上可见就是已授权", "en": "Yes, technical visibility means authorization" }, "correct": false },
+        { "text": { "zh-HK": "不正確，仍須符合職務需要", "zh-CN": "不正确，仍须符合职务需要", "en": "No, access still depends on job need" }, "correct": true },
+        { "text": { "zh-HK": "只要不是敏感數據就可以", "zh-CN": "只要不是敏感数据就可以", "en": "Yes, if the data is not highly sensitive" }, "correct": false },
+        { "text": { "zh-HK": "只要沒有下載就可以", "zh-CN": "只要没有下载就可以", "en": "Yes, if nothing is downloaded" }, "correct": false }
+      ],
+      "explanation": {
+        "zh-HK": "技術權限只是存取能力，是否可用仍要看職責範圍與業務需要。",
+        "zh-CN": "技术权限只是存取能力，是否可用仍要看职责范围与业务需要。",
+        "en": "Technical access is only capability; legitimate use still depends on role and need."
+      },
+      "reminder": {
+        "zh-HK": "看得到，不等於看得起。",
+        "zh-CN": "看得到，不等于看得起。",
+        "en": "Visibility is not permission."
+      }
+    },
+    {
+      "id": 7,
+      "type": "multiple",
+      "presentation": "classic",
+      "category": { "zh-HK": "審計紀錄", "zh-CN": "审计纪录", "en": "Audit Trail" },
+      "title": {
+        "zh-HK": "系統日誌有什麼作用？",
+        "zh-CN": "系统日志有什么作用？",
+        "en": "What is the role of system logs?"
+      },
+      "scenario": {
+        "zh-HK": "以下哪些說法正確描述了系統日誌（log）的作用？（多選）",
+        "zh-CN": "以下哪些说法正确描述了系统日志（log）的作用？（多选）",
+        "en": "Which statements correctly describe the role of system logs? (Select all that apply)"
+      },
+      "options": [
+        { "text": { "zh-HK": "記錄誰在何時查閱了什麼資料", "zh-CN": "记录谁在何时查阅了什么资料", "en": "They record who accessed what and when" }, "correct": true },
+        { "text": { "zh-HK": "可用作調查不當存取事件", "zh-CN": "可用作调查不当存取事件", "en": "They can be used to investigate misuse" }, "correct": true },
+        { "text": { "zh-HK": "刪除瀏覽器紀錄就會令 log 消失", "zh-CN": "删除浏览器纪录就会令 log 消失", "en": "Deleting browser history also removes system logs" }, "correct": false },
+        { "text": { "zh-HK": "只有下載資料時才會留下 log", "zh-CN": "只有下载资料时才会留下 log", "en": "Logs only exist if data is downloaded" }, "correct": false }
+      ],
+      "explanation": {
+        "zh-HK": "系統 log 不只記下載，很多查閱、搜尋、登入與操作行為都會留下紀錄。",
+        "zh-CN": "系统 log 不只记下载，很多查阅、搜寻、登入与操作行为都会留下纪录。",
+        "en": "System logs do not only track downloads; viewing, searching, login, and many other actions are recorded."
+      },
+      "reminder": {
+        "zh-HK": "你以為沒痕跡，其實系統都記得。",
+        "zh-CN": "你以为没痕迹，其实系统都记得。",
+        "en": "The system remembers more than most people think."
       }
     },
     {
       "id": 8,
-      "type": "multiple",
+      "type": "single",
       "presentation": "classic",
-      "category": { "zh-HK": "資料合規", "zh-CN": "资料合规", "en": "Data Compliance" },
+      "category": { "zh-HK": "最少資料原則", "zh-CN": "最少资料原则", "en": "Data Minimization" },
       "title": {
-        "zh-HK": "大眾個人資料收集原則",
-        "zh-CN": "大众个人资料收集原则",
-        "en": "Public Data Collection Principles"
+        "zh-HK": "收集資料是否愈多愈好？",
+        "zh-CN": "收集资料是否愈多愈好？",
+        "en": "Is more data always better?"
       },
       "scenario": {
-        "zh-HK": "【測試：多選亂序測試】企業或機構面向公眾收集個人資料（例如舉辦線上宣傳活動）時，根據主流隱私法規，以下哪些做法是強制要求的合規義務？（多選，有兩個正確答案）",
-        "zh-CN": "【测试：多选乱序测试】企业或机构面向公众收集个人资料（例如举办线上宣传活动）时，根据主流隐私法规，以下哪些做法是强制要求的合规义务？（多选，有两个正确答案）",
-        "en": "[Testing: Multi-Select Sorting] When an organization collects public personal user data (e.g., via promotional events), which practices are legally mandatory under primary privacy acts? (Select all that apply)"
+        "zh-HK": "部門準備舉辦講座報名，是否應預先收集身份證號碼、住址、婚姻狀況，以備日後可能有用？",
+        "zh-CN": "部门准备举办讲座报名，是否应预先收集身份证号码、住址、婚姻状况，以备日后可能有用？",
+        "en": "A team is organising an event registration. Should they collect ID number, home address and marital status now in case these may be useful later?"
       },
       "options": [
-        { "text": { "zh-HK": "必須提供明確的「個人資料收集聲明（PICS）」，清晰告知公眾收集數據的目的、用途以及資料保留期限", "zh-CN": "必须提供明确的“个人资料收集声明（PICS）”，清晰告知公众收集数据的目的、用途以及资料保留期限", "en": "Provide a transparent Personal Information Collection Statement (PICS) defining goals and retention terms." }, "correct": true },
-        { "text": { "zh-HK": "不論活動規模與本質，一律強制用戶填寫身份證字號與家庭住址等高敏感欄位，以留作企業未來不時之需", "zh-CN": "不论活动规模与本质，一律强制用户填写身份证字号与家庭住址等高敏感栏位，以留作企业未来不时之需", "en": "Enforce mandatory entries for national ID numbers and residential addresses across all minor events for reserve use." }, "correct": false },
-        { "text": { "zh-HK": "提供獨立、明確的拒絕（Opt-out）或單獨同意選項，保障公眾未來拒絕接受直接促銷宣傳的合法權利", "zh-CN": "提供独立、明确的拒绝（Opt-out）或单独同意选项，保障公众未来拒绝接受直接促销宣传的合法权利", "en": "Implement an explicit opt-out interface or separate toggles to let users withdraw from direct marketing tracks." }, "correct": true },
-        { "text": { "zh-HK": "將收集到的用戶名單以 Excel 格式直接上傳至完全公開、無密碼保護的雲端空間，以便內外部團隊快速下載對接", "zh-CN": "将收集到的名单以 Excel 格式直接上传至完全公开、无密码保护的云端空间，以便内外部团队快速下载对接", "en": "Upload collected databases via an unencrypted, public spreadsheet link to optimize workflow access across vendors." }, "correct": false }
+        { "text": { "zh-HK": "應該，先收集以備不時之需", "zh-CN": "应该，先收集以备不时之需", "en": "Yes, collect now for possible future use" }, "correct": false },
+        { "text": { "zh-HK": "不應該，只收與活動直接相關的資料", "zh-CN": "不应该，只收与活动直接相关的资料", "en": "No, collect only what is directly needed" }, "correct": true },
+        { "text": { "zh-HK": "只要內部保存就可以多收", "zh-CN": "只要内部保存就可以多收", "en": "Yes, if it stays internal" }, "correct": false },
+        { "text": { "zh-HK": "有參加者同意就可無限收集", "zh-CN": "有参加者同意就可无限收集", "en": "Yes, if the participant agrees" }, "correct": false }
       ],
       "explanation": {
-        "zh-HK": "主流隱私條例與資料保護法要求資料收集必須遵循「數據最小化原則」（不得過度收集非必要的敏感隱私）。同時，機構必須在收集關口履行明確告知義務（PICS），並賦予用戶拒絕（Opt-out）直銷宣傳的自願選擇權。",
-        "zh-CN": "主流隐私条例与数据保护法要求资料收集必须遵循“数据最小化原则”（不得过度收集非必要的敏感隐私）。同时，机构必须在收集关口履行明确告知义务（PICS），并赋予用户拒绝（Opt-out）直销宣传的自愿选择权。",
-        "en": "Data legislation dictates data minimization (no excessive gathering of national IDs/addresses) along with proactive PICS warnings and reliable opt-out direct marketing vectors."
+        "zh-HK": "資料收集應遵從最少資料原則，只收與當前目的直接相關的內容。",
+        "zh-CN": "资料收集应遵从最少资料原则，只收与当前目的直接相关的内容。",
+        "en": "Data collection should follow minimization: collect only what is directly relevant to the current purpose."
       },
       "reminder": {
-        "zh-HK": "告知同意、最小化收集，是面向公眾處理資料的合法基石。",
-        "zh-CN": "告知同意、最小化收集，是面向公众处理资料的合法基石。",
-        "en": "Clear notification and strict data minimization are the core bedrocks of legal database management."
+        "zh-HK": "不是將來可能有用，就可以現在先收。",
+        "zh-CN": "不是将来可能有用，就可以现在先收。",
+        "en": "Possible future usefulness is not enough reason to collect now."
       }
     },
     {
       "id": 9,
       "type": "single",
       "presentation": "classic",
-      "category": { "zh-HK": "權限與法律責任", "zh-CN": "权限与法律责任", "en": "Privileges & Liabilities" },
+      "category": { "zh-HK": "社交工程", "zh-CN": "社交工程", "en": "Social Engineering" },
       "title": {
-        "zh-HK": "系統漏洞與操作者免責邊界",
-        "zh-CN": "系统漏洞与操作者免责边界",
-        "en": "System Exploits vs Responsibility"
+        "zh-HK": "熟人請求是否可直接相信？",
+        "zh-CN": "熟人请求是否可直接相信？",
+        "en": "Can familiar requests be trusted automatically?"
       },
       "scenario": {
-        "zh-HK": "如果某一公眾服務系統本身存在安全漏洞或防護漏洞（例如網址結構暴露，導致未經權限驗證也能看到上層目錄），此時使用者若明知該漏洞，仍刻意利用此漏洞提取非授權的企業或大眾資料，該使用者是否需要承擔法律責任？",
-        "zh-CN": "如果某一公众服务系统本身存在安全漏洞或防护漏洞（例如网址结构暴露，导致未经权限验证也能看到上层目录），此时使用者若明知该漏洞，仍刻意利用此漏洞提取非授权的企业或大众资料，该使用者是否需要承担法律责任？",
-        "en": "If a platform possesses an authentication bypass flaw (e.g., directory traversal), is a user who knowingly exploits this flaw to secure restricted corporate or user data legally responsible?"
+        "zh-HK": "同事透過通訊軟體要求你立刻提供某病人或客戶資料，並說「主管已知會我，快點就行」。最穩妥做法是什麼？",
+        "zh-CN": "同事透过通讯软件要求你立刻提供某病人或客户资料，并说“主管已知会我，快点就行”。最稳妥做法是什么？",
+        "en": "A coworker asks over chat for patient or client data and says, “Management already knows, just send it quickly.” What is the safest response?"
       },
       "options": [
-        { "text": { "zh-HK": "不需要，這屬於系統開發商或技術部門的設計過錯，使用者無需為技術漏洞承擔後果", "zh-CN": "不需要，这属于系统开发商或技术部门的设计过错，使用者无需为技术漏洞承担后果", "en": "No, it is purely an engineering defect by software developers; end-users carry zero liability." }, "correct": false },
-        { "text": { "zh-HK": "需要。操作者明知為非授權邊界，仍刻意利用技術漏洞進行越權提取，在多數法律管轄區內仍構成刑事或行政違法行為", "zh-CN": "需要。操作者明知为非授权边界，仍刻意利用技术漏洞进行越权提取，在多数法律管辖区内仍构成刑事或行政违法行为", "en": "Yes. Knowingly breaking authorization boundaries to exploit a structural vulnerability constitutes an offense under standard tech laws." }, "correct": true },
-        { "text": { "zh-HK": "只要其操作行為未被系統實時攔截或當場捕捉，在法律溯及力上便完全無法予以追究", "zh-CN": "只要其操作行为未被系统实时拦截或当场捕捉，在法律溯及力上便完全无法予以追究", "en": "As long as defensive scripts do not issue a real-time block, logs cannot be leveraged to execute a back-dated penalty." }, "correct": false },
-        { "text": { "zh-HK": "法律僅規範系統開發方必須做好絕對安全的防護，未做完美防護的數據在法律上皆被視為公開數據", "zh-CN": "法律仅规范系统开发方必须做好绝对安全的防护，未做完美防护的数据在法律上皆被视为公开数据", "en": "Statutes only govern infrastructure owners; any unprotected system structure mathematically implies open public information." }, "correct": false }
+        { "text": { "zh-HK": "立刻傳送，避免耽誤工作", "zh-CN": "立刻传送，避免耽误工作", "en": "Send immediately to avoid delay" }, "correct": false },
+        { "text": { "zh-HK": "先用正式渠道核實身份與用途", "zh-CN": "先用正式渠道核实身份与用途", "en": "Verify identity and purpose through formal channels first" }, "correct": true },
+        { "text": { "zh-HK": "只傳部分資料先應急", "zh-CN": "只传部分资料先应急", "en": "Send only part of the data first" }, "correct": false },
+        { "text": { "zh-HK": "先放上共用雲端連結給對方", "zh-CN": "先放上共用云端连结给对方", "en": "Upload the data to a shared cloud link first" }, "correct": false }
       ],
       "explanation": {
-        "zh-HK": "系統防護不足絕非使用者惡意入侵或非授權越權提取數據的合法辯護理由。不論在刑事（如不誠實取用電腦、計算機犯罪法案）還是民事行政侵權上，明知故犯的越界操作者均需承擔完全的法律責任。",
-        "zh-CN": "系统防护不足绝非使用者恶意入侵或非授权越权提取数据的合法辩护理由。不论在刑事（如不诚实取用电脑、计算机犯罪法案）还是民事行政侵权上，明知故犯的越界操作者均需承担完全的法律责任。",
-        "en": "Structural network weak points never justify un-vetted extraction. Intentionally breaking authorization loops to harvest proprietary files carries severe personal standard civil and criminal liability."
+        "zh-HK": "熟人、內部人員或看似急迫的要求，也要核實身份與用途，避免社交工程風險。",
+        "zh-CN": "熟人、内部人员或看似急迫的要求，也要核实身份与用途，避免社交工程风险。",
+        "en": "Even familiar or urgent requests should be verified to reduce social engineering risk."
       },
       "reminder": {
-        "zh-HK": "門鎖縱有破綻，也不代表外人可以合法入內搬取資產。",
-        "zh-CN": "门锁纵有破绽，也不代表外人可以合法入内搬取资产。",
-        "en": "A weak lock never translates to a legal permission to walk in and extract private assets."
+        "zh-HK": "熟人，不代表可跳過核實。",
+        "zh-CN": "熟人，不代表可跳过核实。",
+        "en": "Familiarity is not a substitute for verification."
       }
     },
     {
@@ -327,30 +453,30 @@
       "presentation": "classic",
       "category": { "zh-HK": "總結", "zh-CN": "总结", "en": "Summary" },
       "title": {
-        "zh-HK": "現代數據安全核心意識",
-        "zh-CN": "现代数据安全核心意识",
-        "en": "Modern Data Security Mindset"
+        "zh-HK": "最重要的資料安全觀念",
+        "zh-CN": "最重要的资料安全观念",
+        "en": "The most important data safety mindset"
       },
       "scenario": {
-        "zh-HK": "在處理日常敏感業務數據、大眾隱私或系統操作權限時，以下哪一種工作習慣與心態最符合現代資訊安全與法規合規的要求？",
-        "zh-CN": "在处理日常敏感业务数据、大众隐私或系统操作权限时，以下哪一种工作习惯与心态最符合现代信息安全与法规合规的要求？",
-        "en": "When administering business-critical databanks or system roles, which operational mindset aligns best with modern security compliance standards?"
+        "zh-HK": "以下哪一句最能代表日常處理敏感資料時應有的基本態度？",
+        "zh-CN": "以下哪一句最能代表日常处理敏感资料时应有的基本态度？",
+        "en": "Which statement best represents the right mindset when handling sensitive data?"
       },
       "options": [
-        { "text": { "zh-HK": "「效率優先」原則，只要工作需要或客戶催促，即使借用他人帳號或繞過資安流程也應全力配合", "zh-CN": "「效率优先」原则，只要工作需要或客户催促，即使借用他人账号或绕过资安流程也应全力配合", "en": "'Efficiency First': If a client is rushing, borrow credentials or bypass security pipelines to deliver fast." }, "correct": false },
-        { "text": { "zh-HK": "「最小特權與職責必要」原則，秉持審慎、依規矩授權的心態操作，明知與自身職責無關的敏感數據絕不基於好奇而查閱", "zh-CN": "「最小特权与职责必要」原则，秉持审慎、依规矩授权的心态操作，明知与自身职责无关的敏感数据绝不基于好奇而查阅", "en": "'Least Privilege & Need-to-Know': Conduct strict workflow boundaries. Never access unrelated data out of passive curiosity." }, "correct": true },
-        { "text": { "zh-HK": "「技術無罪」原則，只要公司技術維護小組沒有定期發送警告，就可以採用任何個人習慣來處理數據", "zh-CN": "「技术无罪」原则，只要公司技术维护小组没有定期发送警告，就可以采用任何个人习惯来处理数据", "en": "'Technical Immunity': As long as the IT taskforce hasn't issued warnings, apply personal work habits freely." }, "correct": false },
-        { "text": { "zh-HK": "「信任至上」原則，因為都是同公司或合作團隊的熟人，對方的任何索取與下載要求都應不加驗證地給予支持", "zh-CN": "「信任至上」原则，因为都是同公司或合作团队的熟人，对方的任何索取与下载要求都应不加验证地给予支持", "en": "'Absolute Trust': Since everyone belongs to the same corporate banner, honor transfer requests without auditing identities." }, "correct": false }
+        { "text": { "zh-HK": "只要方便工作，程序可以靈活處理", "zh-CN": "只要方便工作，程序可以灵活处理", "en": "If it helps work move faster, rules can be flexible" }, "correct": false },
+        { "text": { "zh-HK": "有需要才看、有授權才用、有疑問先核實", "zh-CN": "有需要才看、有授权才用、有疑问先核实", "en": "View only when needed, use only when authorized, verify when unsure" }, "correct": true },
+        { "text": { "zh-HK": "熟人要求時可酌情處理", "zh-CN": "熟人要求时可酌情处理", "en": "A familiar request is enough reason for flexibility" }, "correct": false },
+        { "text": { "zh-HK": "只要不外傳，就不算高風險", "zh-CN": "只要不外传，就不算高风险", "en": "If nothing is shared externally, the risk is low" }, "correct": false }
       ],
       "explanation": {
-        "zh-HK": "現代資訊安全治理的核心基石是「零信任（Zero Trust）」與「最小特權（Least Privilege）」。唯有建立依規運作、權限與職責嚴格綁定的工作習慣，才能真正將企業合規風險與大眾數據外洩機率降至最低。",
-        "zh-CN": "现代信息安全治理的核心基石是“零信任（Zero Trust）”与“最小特权（Least Privilege）”。唯有建立依规运作、权限与职责严格绑定的工作习惯，才能真正将企业合规风险与大众数据外泄机率降至最低。",
-        "en": "Zero Trust and Least Privilege are the modern counter-measures against leaks. Strict adherence to role-based privileges minimizes systemic institutional liabilities."
+        "zh-HK": "資料安全的核心不是『技術上做得到』，而是『是否有需要、是否有授權、是否經得起稽核』。",
+        "zh-CN": "资料安全的核心不是‘技术上做得到’，而是‘是否有需要、是否有授权、是否经得起稽核’。",
+        "en": "The core of data safety is not whether something is technically possible, but whether it is necessary, authorized, and auditable."
       },
       "reminder": {
-        "zh-HK": "安全合規不是繁瑣的束縛，而是保護大家最堅實的護欄。",
-        "zh-CN": "安全合规不是繁琐的束缚，而是保护大家最坚实的护栏。",
-        "en": "Compliance is never an efficiency barrier; it's a solid shield protecting everyone's integrity."
+        "zh-HK": "方便，永遠不應凌駕於合規與責任之上。",
+        "zh-CN": "方便，永远不应凌驾于合规与责任之上。",
+        "en": "Convenience should never override compliance and accountability."
       }
     }
   ]

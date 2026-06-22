@@ -125,7 +125,7 @@ h1 {
   z-index: 2;
 }
 
-/* 新增：聲明區 */
+/* 三語聲明區 */
 .disclaimer-note {
   margin-bottom: 24px;
   padding: 12px 14px;
@@ -136,6 +136,14 @@ h1 {
   font-size: 14px;
   line-height: 1.7;
   font-weight: bold;
+}
+
+.disclaimer-text {
+  display: none;
+}
+
+.disclaimer-text.active {
+  display: inline;
 }
 
 .meta {

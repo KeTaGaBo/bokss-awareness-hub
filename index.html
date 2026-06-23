@@ -1,17 +1,88 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="zh-HK">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Songti TC'; -webkit-text-stroke: #000000}
-    span.s1 {font-kerning: none}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awareness Hub</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #fff8ec;
+      padding: 20px;
+      color: #1f1f1f;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .quiz-list {
+      margin-top: 20px;
+    }
+
+    .quiz-card {
+      border: 2px solid #1f1f1f;
+      padding: 16px;
+      margin-bottom: 16px;
+      border-radius: 12px;
+      background: white;
+      box-shadow: 4px 4px 0 #1f1f1f;
+    }
+
+    .quiz-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .quiz-desc {
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .start-btn {
+      display: inline-block;
+      background: #ff6b6b;
+      color: white;
+      padding: 8px 12px;
+      text-decoration: none;
+      border-radius: 8px;
+      border: 2px solid #1f1f1f;
+    }
   </style>
 </head>
+
 <body>
-<p class="p1"><span class="s1">Hello</span></p>
+
+<h1>🎯 Awareness Hub</h1>
+<div>請選擇一個測驗開始：</div>
+
+<div class="quiz-list" id="quizList"></div>
+
+<script>
+async function loadQuizzes() {
+  const res = await fetch('/quizzes.json');
+  const data = await res.json();
+
+  const container = document.getElementById('quizList');
+
+  data.forEach(q => {
+    if (q.status !== 'active') return;
+
+    const card = document.createElement('div');
+    card.className = 'quiz-card';
+
+    card.innerHTML = `
+      <div class="quiz-title">${q.title['zh-HK']}</div>
+      <div class="quiz-desc">${q.description['zh-HK']}</div>
+      <a class="start-btn" href="${q.path}?lang=zh-HKner.appendChild(card);
+  });
+}
+
+loadQuizzes();
+</script>
+
 </body>
 </html>
+``

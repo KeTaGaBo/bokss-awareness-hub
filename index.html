@@ -26,18 +26,25 @@
       </div>
 
       <div class="subtitle" id="hubSubtitle">資安與私隱學習目錄</div>
-      <h1 id="hubTitle">請選擇一個測驗開始</h1>
+      <h1 class="hero-title" id="hubTitle">請選擇一個測驗開始</h1>
       <div class="intro" id="hubIntro">
         這裡集合了不同主題的資安及私隱教育測驗。你可按需要選擇合適的測驗開始，並持續留意最新更新。
       </div>
+
+      <div class="hero-highlight" id="hubHighlight">
+        🎯 精選互動測驗 · 即開即玩
+      </div>
     </div>
+
+    <div class="section-title" id="sectionTitle">📚 測驗目錄</div>
 
     <div id="quizList" class="quiz-list">
       <div class="loading-box" id="loadingBox">載入中...</div>
     </div>
 
     <div class="footer" id="hubFooter">
-      BOKSS Awareness Hub
+      © 2026 Baptist Oi Kwan Social Service (BOKSS). All rights reserved.
+      <small id="hubFooterSub">Awareness Hub · Cybersecurity & Privacy Education</small>
     </div>
   </div>
 
@@ -48,7 +55,9 @@
         subtitle: "資安與私隱學習目錄",
         title: "請選擇一個測驗開始",
         intro: "這裡集合了不同主題的資安及私隱教育測驗。你可按需要選擇合適的測驗開始，並持續留意最新更新。",
-        footer: "BOKSS Awareness Hub",
+        highlight: "🎯 精選互動測驗 · 即開即玩",
+        sectionTitle: "📚 測驗目錄",
+        footerSub: "Awareness Hub · 資安及私隱教育",
         start: "開始測驗",
         updated: "更新至",
         active: "進行中",
@@ -61,7 +70,9 @@
         subtitle: "信息安全与隐私学习目录",
         title: "请选择一个测验开始",
         intro: "这里集合了不同主题的信息安全与隐私教育测验。你可按需要选择合适的测验开始，并持续留意最新更新。",
-        footer: "BOKSS Awareness Hub",
+        highlight: "🎯 精选互动测验 · 即开即玩",
+        sectionTitle: "📚 测验目录",
+        footerSub: "Awareness Hub · 信息安全与隐私教育",
         start: "开始测验",
         updated: "更新至",
         active: "进行中",
@@ -74,7 +85,9 @@
         subtitle: "Cybersecurity & Privacy Learning Directory",
         title: "Choose a quiz to begin",
         intro: "This hub brings together different cybersecurity and privacy awareness quizzes. Pick a quiz to start and keep an eye on the latest updates.",
-        footer: "BOKSS Awareness Hub",
+        highlight: "🎯 Featured interactive quizzes · Start instantly",
+        sectionTitle: "📚 Quiz Directory",
+        footerSub: "Awareness Hub · Cybersecurity & Privacy Education",
         start: "Start Quiz",
         updated: "Updated",
         active: "Active",
@@ -124,7 +137,9 @@
       document.getElementById("hubSubtitle").innerText = t.subtitle;
       document.getElementById("hubTitle").innerText = t.title;
       document.getElementById("hubIntro").innerText = t.intro;
-      document.getElementById("hubFooter").innerText = t.footer;
+      document.getElementById("hubHighlight").innerText = t.highlight;
+      document.getElementById("sectionTitle").innerText = t.sectionTitle;
+      document.getElementById("hubFooterSub").innerText = t.footerSub;
       document.getElementById("langSelect").value = currentLang;
 
       const loadingBox = document.getElementById("loadingBox");
@@ -164,14 +179,24 @@
         const desc = getLangText(q.description);
         const lastModified = formatYearMonth(q.lastModified);
         const langParam = encodeURIComponent(currentLang);
+        const targetUrl = `${q.path}?lang=${langParam}`;
 
         card.innerHTML = `
           <div class="quiz-status">${t.active}</div>
-          <div class="quiz-title">${title}</div>
+
+          <a class="quiz-title-link" href="${targetUrltle">${title}</div>
+          </a>
+
           <div class="quiz-desc">${desc}</div>
+
           <div class="quiz-meta">${t.updated}：${lastModified || "-"}</div>
+
           <div class="quiz-actions">
-            <a class="start-btn" href="${q.path}?lang=${langParam}div>
+            <a class="start-btn" href="${targetUrl="open-icon">🚀</span>
+              <span>${t.start}</span>
+            </a>
+            <div class="quiz-url">${q.path}</div>
+          </div>
         `;
 
         list.appendChild(card);

@@ -206,7 +206,9 @@
     async function loadQuizzes() {
       try {
         const res = await fetch("/quizzes.json");
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
 
         const data = await res.json();
         renderQuizzes(data);

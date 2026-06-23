@@ -12,6 +12,10 @@
       "en": "Explore common data misuse risks in everyday work scenarios"
     },
     "path": "/misuse_202606/",
-    "status": "active"
+    "status": "active",
+    "lastModified": {
+      "iso": "2026-06-23T15:02:16+08:00",
+      "display": "2026-06-23"
+    }
   }
 ]

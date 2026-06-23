@@ -4,11 +4,11 @@
       "badge": "資訊安全與合規科普",
       "siteTitle": "數據安全大考驗：你以為沒問題，其實藏風險？",
       "heroSubtitle": "💡 5分鐘資安自我檢測 × 數據合規防範",
-      "intro": "本測驗包含單選題與多選題。部分情境看似為了「工作方便」或出於「一時好奇」，但在法規與資訊安全標準中卻可能隱藏巨大風險。試試你的判斷力，看看你能得幾分！",
+      "intro": "本測驗包含單選題與多選題。部分情境看似只是「方便」或「好奇」，其實已經踩中資訊安全與合規紅線。試試你的判斷力，看看你能得幾分！",
       "prev": "上一題",
       "next": "下一題",
       "scoreLabel": "目前得分",
-      "footer": "保護數據合規 = 保護企業與自己",
+      "footer": "保護數據合規 = 保護機構與自己",
       "correctLabel": "✅ 正確！",
       "wrongLabel": "❌ 錯誤。",
       "reminderLabel": "⚠️ 提醒",
@@ -31,7 +31,7 @@
       "copyLink": "複製測驗連結",
       "copied": "📋 連結已成功複製！",
       "shareTitle": "分享結果",
-      "shareText": "邀請你的朋友一起測試，看看誰才是真正的資安與合規專家！",
+      "shareText": "邀請你的朋友一起測試，看看誰才是真正的資安與合規高手！",
       "levels": {
         "perfect": "🏆 資安大師 (Perfect Score!)",
         "pass70": "🛡️ 安全衛士 (Good Job!)",
@@ -42,11 +42,11 @@
       "badge": "信息安全与合规科普",
       "siteTitle": "数据安全大考验：你以为没问题，其实藏风险？",
       "heroSubtitle": "💡 5分钟资安自我检测 × 数据合规防范",
-      "intro": "本测验包含单选题与多选题。部分情境看似为了「工作方便」或出于「一时好奇」，但在法规与信息安全标准中却可能隐藏巨大风险。试试你的判断力，看看你能得几分！",
+      "intro": "本测验包含单选题与多选题。部分情境看似只是“方便”或“好奇”，其实已经踩中信息安全与合规红线。试试你的判断力，看看你能得几分！",
       "prev": "上一题",
       "next": "下一题",
       "scoreLabel": "目前得分",
-      "footer": "保护数据合规 = 保护企业与自己",
+      "footer": "保护数据合规 = 保护机构与自己",
       "correctLabel": "✅ 正确！",
       "wrongLabel": "❌ 错误。",
       "reminderLabel": "⚠️ 提醒",
@@ -69,7 +69,7 @@
       "copyLink": "复制测验链接",
       "copied": "📋 链接已成功复制！",
       "shareTitle": "分享结果",
-      "shareText": "邀请你的朋友一起测试，看看谁才是真正的资安与合规专家！",
+      "shareText": "邀请你的朋友一起测试，看看谁才是真正的信息安全与合规高手！",
       "levels": {
         "perfect": "🏆 资安大师 (Perfect Score!)",
         "pass70": "🛡️ 安全卫士 (Good Job!)",
@@ -79,12 +79,12 @@
     "en": {
       "badge": "Cybersecurity & Compliance",
       "siteTitle": "Data Security Challenge: Safe or Risky?",
-      "heroSubtitle": "💡 5-Min Quiz × Data Protection Compliance",
-      "intro": "This quiz contains single and multiple-choice questions. Some actions may seem convenient or driven by casual curiosity, but they pose major legal and security risks. Test your boundaries!",
+      "heroSubtitle": "💡 5-Min Quiz × Privacy & Compliance",
+      "intro": "This quiz includes both single and multiple-choice questions. Some actions may seem merely convenient or curious, but they can cross major security and compliance boundaries. Test your judgement and see how you score!",
       "prev": "Prev",
       "next": "Next",
       "scoreLabel": "Score",
-      "footer": "Stay Compliant = Protect Everyone",
+      "footer": "Stay Compliant = Protect the Organization and Yourself",
       "correctLabel": "✅ Correct!",
       "wrongLabel": "❌ Incorrect.",
       "reminderLabel": "⚠️ Note",
@@ -92,22 +92,22 @@
       "questionLabel": "Q {current} of {total}",
       "finish": "Finish",
       "restart": "Restart",
-      "resultTitle": "Your Results",
+      "resultTitle": "Your Result",
       "langLabel": "Language / 語言 / 语言",
       "checkAnswer": "Submit",
       "singleLabel": "Single Choice",
       "multipleLabel": "Multiple Choice",
       "singleHint": "Select the best answer.",
       "multipleHint": "Select all that apply. All must be correct.",
-      "selectAtLeastOne": "Please select at least one option.",
-      "scenarioLabelDefault": "Scenario Context",
-      "answerBeforeNext": "Please answer the current question before moving next.",
+      "selectAtLeastOne": "Please select at least one answer.",
+      "scenarioLabelDefault": "Scenario",
+      "answerBeforeNext": "Please answer this question before moving on.",
       "levelLabel": "Security Rank",
       "restartQuiz": "Try Again",
       "copyLink": "Copy Quiz Link",
       "copied": "📋 Link copied successfully!",
-      "shareTitle": "Share Quiz",
-      "shareText": "Challenge your peers and see who scores highest on compliance!",
+      "shareTitle": "Share Result",
+      "shareText": "Invite your friends to try the quiz and see who is the true security and compliance expert!",
       "levels": {
         "perfect": "🏆 Security Guru (Perfect Score!)",
         "pass70": "🛡️ Cyber Defender (Good Job!)",
@@ -117,19 +117,19 @@
   },
   "messages": {
     "perfect": {
-      "zh-HK": "太厲害了！你擁有完美的資安意識與法規敏感度，完全避開了所有常見的資料外洩陷阱。請繼續保持！",
-      "zh-CN": "太厉害了！你拥有完美的资安意识与法规敏感度，完全避开了所有常见的数据外泄陷阱。请继续保持！",
-      "en": "Flawless! You demonstrated exceptional security awareness and regulatory knowledge. You steered clear of all high-risk traps. Keep it up!"
+      "zh-HK": "太厲害了！你對資訊安全與合規界線掌握得非常好，成功避開了所有高風險陷阱。",
+      "zh-CN": "太厉害了！你对信息安全与合规界线掌握得非常好，成功避开了所有高风险陷阱。",
+      "en": "Excellent! You showed a strong grasp of security and compliance boundaries, and avoided all major traps."
     },
     "pass70": {
-      "zh-HK": "做得好！你具備相當水準的守法意識，能識別大多數的安全漏洞。只要再細心一點，就能達到完美的防護層級。",
-      "zh-CN": "做得好！你具备相当水平的守法意识，能识别大多数的安全漏洞。只要再细心一点，就能达到完美的防护层级。",
-      "en": "Great effort! You have solid compliance habits and recognize most critical loopholes. A tiny bit more attention to details makes you bulletproof."
+      "zh-HK": "做得好！你已掌握大部分重點，只要再留意細節，就更接近滿分。",
+      "zh-CN": "做得好！你已掌握大部分重点，只要再留意细节，就更接近满分。",
+      "en": "Well done! You understand most of the key ideas. A little more attention to detail will get you even closer to full marks."
     },
     "below70": {
-      "zh-HK": "注意！你的一些習慣做法在現實中可能隱藏極大的法律風險或外洩危機。建議仔細閱讀詳解，翻新你的資安觀念！",
-      "zh-CN": "注意！你的一些习惯做法在现实中可能隐藏极大的法律风险或外泄危机。建议仔细阅读详解，翻新你的资安观念！",
-      "en": "Caution! Some of your daily habits pose substantial data breach or legal non-compliance risks. Review the explanations carefully to secure your pipeline!"
+      "zh-HK": "要小心！部分日常做法可能隱藏合規或資料外洩風險，建議仔細閱讀詳解。",
+      "zh-CN": "要小心！部分日常做法可能隐藏合规或数据外泄风险，建议仔细阅读详解。",
+      "en": "Be careful! Some everyday habits may create compliance or data leakage risks. Review the explanations closely."
     }
   },
   "questions": [
@@ -137,59 +137,91 @@
       "id": 1,
       "type": "single",
       "presentation": "classic",
-      "category": { "zh-HK": "醫療系統濫用", "zh-CN": "医疗系统滥用", "en": "Medical System Misuse" },
+      "category": { "zh-HK": "專業系統使用", "zh-CN": "专业系统使用", "en": "Professional System Use" },
       "title": {
-        "zh-HK": "沒有診療需要，能否查看病歷？",
-        "zh-CN": "没有诊疗需要，能否查看病历？",
-        "en": "Can you view records without treatment need?"
+        "zh-HK": "沒有工作需要，可否查看敏感個人資料？",
+        "zh-CN": "没有工作需要，可否查看敏感个人资料？",
+        "en": "Can you view sensitive personal data without work need?"
       },
       "scenario": {
-        "zh-HK": "醫生因好奇，打開自己沒有跟進的病人紀錄看看，但沒有下載或列印。這樣是否恰當？",
-        "zh-CN": "医生因好奇，打开自己没有跟进的病人纪录看看，但没有下载或列印。这样是否恰当？",
-        "en": "A doctor opens records of a patient not under their care out of curiosity, without printing or downloading. Is this acceptable?"
+        "zh-HK": "某專業人員出於好奇，查看一項與其工作無關的敏感個人資料，但沒有下載或外傳。這樣是否恰當？",
+        "zh-CN": "某专业人员出于好奇，查看一项与其工作无关的敏感个人资料，但没有下载或外传。这样是否恰当？",
+        "en": "A professional user views sensitive personal data unrelated to their duties out of curiosity, without downloading or sharing it. Is this acceptable?"
       },
       "options": [
-        { "text": { "zh-HK": "可以，只要不外傳", "zh-CN": "可以，只要不外传", "en": "Yes, as long as nothing is shared" }, "correct": false },
-        { "text": { "zh-HK": "不可以，沒有工作需要就屬不當存取", "zh-CN": "不可以，没有工作需要就属不当存取", "en": "No, without work need it is improper access" }, "correct": true },
-        { "text": { "zh-HK": "可以，醫生本來就有權限", "zh-CN": "可以，医生本来就有权限", "en": "Yes, doctors already have access" }, "correct": false },
-        { "text": { "zh-HK": "只要事後通知主管即可", "zh-CN": "只要事后通知主管即可", "en": "Yes, if reported later" }, "correct": false }
+        {
+          "text": {
+            "zh-HK": "可以，只要沒有外傳",
+            "zh-CN": "可以，只要没有外传",
+            "en": "Yes, as long as it is not shared"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "不可以，沒有工作需要已屬不當存取",
+            "zh-CN": "不可以，没有工作需要已属不当存取",
+            "en": "No, access without work need is improper access"
+          },
+          "correct": true
+        },
+        {
+          "text": {
+            "zh-HK": "可以，因為系統容許查看",
+            "zh-CN": "可以，因为系统容许查看",
+            "en": "Yes, because the system technically allows access"
+          },
+          "correct": false
+        }
       ],
       "explanation": {
-        "zh-HK": "能否查看資料的關鍵，在於是否有診療或工作需要，不是單看有沒有系統權限。",
-        "zh-CN": "能否查看资料的关键，在于是否有诊疗或工作需要，不是单看有没有系统权限。",
-        "en": "Access depends on treatment or work need, not merely whether technical access exists."
+        "zh-HK": "能否查看資料，關鍵在於有沒有工作需要，而不是你技術上能否打開。",
+        "zh-CN": "能否查看资料，关键在于有没有工作需要，而不是你技术上能否打开。",
+        "en": "The key test is whether there is a legitimate work need, not whether the system technically lets you open it."
       },
       "reminder": {
-        "zh-HK": "有權限，不等於可隨意使用。",
-        "zh-CN": "有权限，不等于可随意使用。",
-        "en": "Having access does not mean free use."
+        "zh-HK": "看得到，不等於看得起。",
+        "zh-CN": "看得到，不等于看得起。",
+        "en": "Being able to see it does not mean you are allowed to."
       }
     },
     {
       "id": 2,
       "type": "single",
       "presentation": "classic",
-      "category": { "zh-HK": "醫療系統濫用", "zh-CN": "医疗系统滥用", "en": "Medical System Misuse" },
+      "category": { "zh-HK": "專業系統使用", "zh-CN": "专业系统使用", "en": "Professional System Use" },
       "title": {
-        "zh-HK": "查熟人病歷是否合理？",
-        "zh-CN": "查熟人病历是否合理？",
-        "en": "Is checking a friend’s record acceptable?"
+        "zh-HK": "因私人關心而查資料，可以嗎？",
+        "zh-CN": "因私人关心而查资料，可以吗？",
+        "en": "Can you look up data out of personal concern?"
       },
       "scenario": {
-        "zh-HK": "你聽聞熟人入院，於是登入系統看看對方診斷紀錄，只是想知道近況。這樣合理嗎？",
-        "zh-CN": "你听闻熟人入院，于是登入系统看看对方诊断纪录，只是想知道近况。这样合理吗？",
-        "en": "You hear an acquaintance was admitted and check their diagnosis in the system just to know how they are doing. Is this acceptable?"
+        "zh-HK": "你聽聞熟人遇到狀況，於是登入專業系統查看對方資料，只是想了解近況。這樣是否合理？",
+        "zh-CN": "你听闻熟人遇到状况，于是登入专业系统查看对方资料，只是想了解近况。这样是否合理？",
+        "en": "You hear that an acquaintance is facing a situation and log into a professional system to check their information, just to know how they are doing. Is this acceptable?"
       },
       "options": [
-        { "text": { "zh-HK": "合理，因為只是關心對方", "zh-CN": "合理，因为只是关心对方", "en": "Yes, because it is out of concern" }, "correct": false },
-        { "text": { "zh-HK": "不合理，這屬私人原因查閱", "zh-CN": "不合理，这属私人原因查阅", "en": "No, this is access for a private reason" }, "correct": true },
-        { "text": { "zh-HK": "合理，只要不告訴其他人", "zh-CN": "合理，只要不告诉其他人", "en": "Yes, if you do not tell others" }, "correct": false },
-        { "text": { "zh-HK": "合理，紀錄本來就在系統內", "zh-CN": "合理，纪录本来就在系统内", "en": "Yes, because the record is already in the system" }, "correct": false }
+        {
+          "text": {
+            "zh-HK": "合理，因為只是關心",
+            "zh-CN": "合理，因为只是关心",
+            "en": "Yes, because it is out of concern"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "不合理，私人原因不等於工作需要",
+            "zh-CN": "不合理，私人原因不等于工作需要",
+            "en": "No, personal concern is not a work need"
+          },
+          "correct": true
+        }
       ],
       "explanation": {
-        "zh-HK": "私人關心不構成診療需要。用系統查閱熟人資料，屬與工作無關的不當存取。",
-        "zh-CN": "私人关心不构成诊疗需要。用系统查阅熟人资料，属与工作无关的不当存取。",
-        "en": "Personal concern is not a clinical need. Accessing records for private reasons is improper."
+        "zh-HK": "私人關心不構成正當工作理由，用系統查熟人資料屬不當查閱。",
+        "zh-CN": "私人关心不构成正当工作理由，用系统查熟人资料属不当查阅。",
+        "en": "Personal concern is not a legitimate work purpose. Using a system to look up an acquaintance is improper."
       },
       "reminder": {
         "zh-HK": "關心他人，也不能越過資料界線。",
@@ -201,99 +233,185 @@
       "id": 3,
       "type": "single",
       "presentation": "classic",
-      "category": { "zh-HK": "醫療系統濫用", "zh-CN": "医疗系统滥用", "en": "Medical System Misuse" },
+      "category": { "zh-HK": "專業系統使用", "zh-CN": "专业系统使用", "en": "Professional System Use" },
       "title": {
-        "zh-HK": "「只是看看，沒有外傳」可以嗎？",
-        "zh-CN": "“只是看看，没有外传”可以吗？",
-        "en": "Is “just looking” acceptable?"
+        "zh-HK": "「只是看看」算不算違規？",
+        "zh-CN": "“只是看看”算不算违规？",
+        "en": "Is “just looking” still a violation?"
       },
       "scenario": {
-        "zh-HK": "某同事說：「我只是看看，沒有截圖、沒有傳出去，所以不算嚴重。」這種說法正確嗎？",
-        "zh-CN": "某同事说：“我只是看看，没有截图、没有传出去，所以不算严重。”这种说法正确吗？",
-        "en": "A colleague says, “I only looked. I didn’t screenshot or share anything, so it is not serious.” Is this correct?"
+        "zh-HK": "同事說：「我只是看看，沒有截圖、沒有下載、沒有外傳，所以不算嚴重。」這句話是否正確？",
+        "zh-CN": "同事说：“我只是看看，没有截图、没有下载、没有外传，所以不算严重。”这句话是否正确？",
+        "en": "A colleague says, “I only looked. I didn’t screenshot, download, or share anything, so it’s not serious.” Is this correct?"
       },
       "options": [
-        { "text": { "zh-HK": "正確，沒有外傳就不算違規", "zh-CN": "正确，没有外传就不算违规", "en": "Correct, no sharing means no violation" }, "correct": false },
-        { "text": { "zh-HK": "不正確，只要無需要地查看已屬違規", "zh-CN": "不正确，只要无需要地查看已属违规", "en": "Incorrect, unnecessary viewing is already a violation" }, "correct": true },
-        { "text": { "zh-HK": "視乎當事人是否知名人士", "zh-CN": "视乎当事人是否知名人士", "en": "It depends whether the person is high profile" }, "correct": false },
-        { "text": { "zh-HK": "只要沒有列印就可以", "zh-CN": "只要没有列印就可以", "en": "It is fine if nothing is printed" }, "correct": false }
+        {
+          "text": {
+            "zh-HK": "正確，沒有外傳就不算違規",
+            "zh-CN": "正确，没有外传就不算违规",
+            "en": "Correct, no sharing means no violation"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "不正確，無正當理由查看本身已屬違規",
+            "zh-CN": "不正确，无正当理由查看本身已属违规",
+            "en": "Incorrect, unjustified viewing itself is already a violation"
+          },
+          "correct": true
+        },
+        {
+          "text": {
+            "zh-HK": "只要不告訴主管就沒事",
+            "zh-CN": "只要不告诉主管就没事",
+            "en": "It is fine as long as a supervisor is not told"
+          },
+          "correct": false
+        }
       ],
       "explanation": {
-        "zh-HK": "問題不只在於有沒有外傳，無正當理由地查閱本身就已是違規。",
-        "zh-CN": "问题不只在于有没有外传，无正当理由地查阅本身就已是违规。",
-        "en": "The issue is not only disclosure. Unjustified viewing itself is already improper."
+        "zh-HK": "問題不只是有沒有外傳，沒有需要而查看資料，本身已經是合規問題。",
+        "zh-CN": "问题不只是有没有外传，没有需要而查看资料，本身已经是合规问题。",
+        "en": "The problem is not only disclosure. Access without a legitimate need is already a compliance issue."
       },
       "reminder": {
-        "zh-HK": "「只是看」不代表「沒有違規」。",
-        "zh-CN": "“只是看”不代表“没有违规”。",
-        "en": "Just looking does not mean no wrongdoing."
+        "zh-HK": "「只是看」不等於「沒有問題」。",
+        "zh-CN": "“只是看”不等于“没有问题”。",
+        "en": "Just looking does not mean nothing is wrong."
       }
     },
     {
       "id": 4,
       "type": "multiple",
       "presentation": "classic",
-      "category": { "zh-HK": "醫療系統濫用", "zh-CN": "医疗系统滥用", "en": "Medical System Misuse" },
+      "category": { "zh-HK": "專業系統使用", "zh-CN": "专业系统使用", "en": "Professional System Use" },
       "title": {
-        "zh-HK": "哪些情況屬不當病歷查閱？",
-        "zh-CN": "哪些情况属不当病历查阅？",
-        "en": "Which situations are improper record access?"
+        "zh-HK": "哪些情況屬不當查閱？",
+        "zh-CN": "哪些情况属不当查阅？",
+        "en": "Which situations count as improper access?"
       },
       "scenario": {
-        "zh-HK": "以下哪些情況屬於沒有臨床或工作需要下的不當查閱？（多選）",
-        "zh-CN": "以下哪些情况属于没有临床或工作需要下的不当查阅？（多选）",
-        "en": "Which of the following are improper access without clinical or work need? (Select all that apply)"
+        "zh-HK": "以下哪些情況屬於與職務無關的不當查閱？（多選）",
+        "zh-CN": "以下哪些情况属于与职务无关的不当查阅？（多选）",
+        "en": "Which of the following are improper access unrelated to job duties? (Select all that apply)"
       },
       "options": [
-        { "text": { "zh-HK": "查看自己正在跟進的病人紀錄", "zh-CN": "查看自己正在跟进的病人纪录", "en": "Viewing records of a patient under your care" }, "correct": false },
-        { "text": { "zh-HK": "查看朋友是否入院及診斷內容", "zh-CN": "查看朋友是否入院及诊断内容", "en": "Checking whether a friend was admitted and their diagnosis" }, "correct": true },
-        { "text": { "zh-HK": "因好奇查看某名人的就診紀錄", "zh-CN": "因好奇查看某名人的就诊纪录", "en": "Viewing a celebrity’s record out of curiosity" }, "correct": true },
-        { "text": { "zh-HK": "按工作流程核對自己部門病人資料", "zh-CN": "按工作流程核对自己部门病人资料", "en": "Verifying records within your assigned workflow" }, "correct": false }
+        {
+          "text": {
+            "zh-HK": "按工作流程查看自己負責個案的資料",
+            "zh-CN": "按工作流程查看自己负责个案的资料",
+            "en": "Viewing records you are assigned to handle as part of your work"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "查看朋友資料，只因想知道近況",
+            "zh-CN": "查看朋友资料，只因想知道近况",
+            "en": "Checking a friend’s data just to know how they are doing"
+          },
+          "correct": true
+        },
+        {
+          "text": {
+            "zh-HK": "因好奇查看某名人的敏感個人資料",
+            "zh-CN": "因好奇查看某名人的敏感个人资料",
+            "en": "Viewing a public figure’s sensitive personal data out of curiosity"
+          },
+          "correct": true
+        },
+        {
+          "text": {
+            "zh-HK": "根據正式程序核對自己部門需要的資料",
+            "zh-CN": "根据正式程序核对自己部门需要的资料",
+            "en": "Checking information required by your department through official workflow"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "登入系統搜尋與自己工作無關的記錄",
+            "zh-CN": "登入系统搜寻与自己工作无关的纪录",
+            "en": "Searching records unrelated to your duties in the system"
+          },
+          "correct": true
+        }
       ],
       "explanation": {
-        "zh-HK": "有工作需要的查閱屬正常流程；出於私人關係、八卦或好奇的查閱則屬不當。",
-        "zh-CN": "有工作需要的查阅属正常流程；出于私人关系、八卦或好奇的查阅则属不当。",
-        "en": "Work-related access is legitimate. Curiosity, gossip, or private interest is not."
+        "zh-HK": "有工作需要的查閱屬正常流程；出於好奇、私人關係或八卦的查閱則屬不當。",
+        "zh-CN": "有工作需要的查阅属正常流程；出于好奇、私人关系或八卦的查阅则属不当。",
+        "en": "Work-related access is normal. Curiosity, gossip, and private-interest access are improper."
       },
       "reminder": {
-        "zh-HK": "用途正當，才是界線所在。",
-        "zh-CN": "用途正当，才是界线所在。",
-        "en": "The key boundary is legitimate purpose."
+        "zh-HK": "用途是否正當，才是界線所在。",
+        "zh-CN": "用途是否正当，才是界线所在。",
+        "en": "The real boundary is whether the purpose is legitimate."
       }
     },
     {
       "id": 5,
       "type": "single",
       "presentation": "scenario",
-      "category": { "zh-HK": "醫療系統濫用", "zh-CN": "医疗系统滥用", "en": "Medical System Misuse" },
+      "category": { "zh-HK": "帳戶責任", "zh-CN": "账户责任", "en": "Account Responsibility" },
       "title": {
-        "zh-HK": "借同事帳戶查病歷",
-        "zh-CN": "借同事账户查病历",
-        "en": "Using a colleague’s account"
+        "zh-HK": "權限不足，就借帳戶？",
+        "zh-CN": "权限不足，就借账户？",
+        "en": "Not enough access, so borrow an account?"
       },
       "story": {
         "zh-HK": {
-          "label": "醫療系統案例",
-          "title": "權限不夠，就借帳戶？",
+          "label": "系統案例",
+          "title": "只看一眼，可以借你帳戶嗎？",
           "dialogues": [
-            { "avatar": "🩺", "speaker": "醫生甲", "text": "我暫時查不到那位病人的資料，你幫我登入一下，我只看一眼。", "side": "left" },
-            { "avatar": "💻", "speaker": "系統提示", "text": "所有操作都會記錄在登入者帳戶內。", "side": "right" }
+            {
+              "avatar": "👤",
+              "speaker": "同事",
+              "text": "我暫時打不開那份資料，你幫我登入一下，我只看一眼就好。",
+              "side": "left"
+            },
+            {
+              "avatar": "💻",
+              "speaker": "系統提示",
+              "text": "所有操作都會記錄在登入者帳戶內。",
+              "side": "right"
+            }
           ]
         },
         "zh-CN": {
-          "label": "医疗系统案例",
-          "title": "权限不够，就借账户？",
+          "label": "系统案例",
+          "title": "只看一眼，可以借你账户吗？",
           "dialogues": [
-            { "avatar": "🩺", "speaker": "医生甲", "text": "我暂时查不到那位病人的资料，你帮我登入一下，我只看一眼。", "side": "left" },
-            { "avatar": "💻", "speaker": "系统提示", "text": "所有操作都会记录在登入者账户内。", "side": "right" }
+            {
+              "avatar": "👤",
+              "speaker": "同事",
+              "text": "我暂时打不开那份资料，你帮我登入一下，我只看一眼就好。",
+              "side": "left"
+            },
+            {
+              "avatar": "💻",
+              "speaker": "系统提示",
+              "text": "所有操作都会记录在登入者账户内。",
+              "side": "right"
+            }
           ]
         },
         "en": {
-          "label": "Medical System Case",
-          "title": "Not enough rights, so borrow an account?",
+          "label": "System Case",
+          "title": "Just one quick look—can I use your account?",
           "dialogues": [
-            { "avatar": "🩺", "speaker": "Doctor A", "text": "I can’t access this patient’s record right now. Log in for me; I’ll just take a quick look.", "side": "left" },
-            { "avatar": "💻", "speaker": "System Notice", "text": "All actions are logged under the signed-in account.", "side": "right" }
+            {
+              "avatar": "👤",
+              "speaker": "Colleague",
+              "text": "I can’t open that record right now. Log in for me—I’ll just take a quick look.",
+              "side": "left"
+            },
+            {
+              "avatar": "💻",
+              "speaker": "System Notice",
+              "text": "All actions are recorded under the signed-in account.",
+              "side": "right"
+            }
           ]
         }
       },
@@ -303,10 +421,38 @@
         "en": "Which response is most appropriate?"
       },
       "options": [
-        { "text": { "zh-HK": "幫對方登入，自己在旁邊看著", "zh-CN": "帮对方登入，自己在旁边看着", "en": "Log in for the doctor and watch beside them" }, "correct": false },
-        { "text": { "zh-HK": "拒絕，要求對方按正式流程申請權限", "zh-CN": "拒绝，要求对方按正式流程申请权限", "en": "Refuse and require formal access approval" }, "correct": true },
-        { "text": { "zh-HK": "把帳戶密碼暫時借給對方", "zh-CN": "把账户密码暂时借给对方", "en": "Lend your credentials temporarily" }, "correct": false },
-        { "text": { "zh-HK": "先登入，再把電腦交給對方使用", "zh-CN": "先登入，再把电脑交给对方使用", "en": "Log in first and hand over the computer" }, "correct": false }
+        {
+          "text": {
+            "zh-HK": "幫對方登入，自己在旁邊看著",
+            "zh-CN": "帮对方登入，自己在旁边看着",
+            "en": "Log in for the colleague and watch beside them"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "拒絕，要求對方按正式流程申請權限",
+            "zh-CN": "拒绝，要求对方按正式流程申请权限",
+            "en": "Refuse and require formal access approval"
+          },
+          "correct": true
+        },
+        {
+          "text": {
+            "zh-HK": "把帳戶密碼暫時借給對方",
+            "zh-CN": "把账户密码暂时借给对方",
+            "en": "Temporarily lend your credentials"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "先登入，再把電腦交給對方使用",
+            "zh-CN": "先登入，再把电脑交给对方使用",
+            "en": "Log in first and then hand over the computer"
+          },
+          "correct": false
+        }
       ],
       "explanation": {
         "zh-HK": "借帳戶或代登入會破壞審計紀錄，也會把責任記到登入者身上。",
@@ -325,30 +471,42 @@
       "presentation": "classic",
       "category": { "zh-HK": "最小權限", "zh-CN": "最小权限", "en": "Least Privilege" },
       "title": {
-        "zh-HK": "「有權限」是否等於「可任意查看」？",
-        "zh-CN": "“有权限”是否等于“可任意查看”？",
+        "zh-HK": "有權限，是否等於可以任意查看？",
+        "zh-CN": "有权限，是否等于可以任意查看？",
         "en": "Does access mean free browsing?"
       },
       "scenario": {
-        "zh-HK": "員工說：「系統都讓我看得到，就代表我可以看。」這句話是否正確？",
-        "zh-CN": "员工说：“系统都让我看得到，就代表我可以看。”这句话是否正确？",
-        "en": "An employee says, “If the system lets me see it, then I’m allowed to see it.” Is this correct?"
+        "zh-HK": "員工說：「系統都讓我看得到，就代表我可以看。」這說法正確嗎？",
+        "zh-CN": "员工说：“系统都让我看得到，就代表我可以看。”这说法正确吗？",
+        "en": "An employee says, “If the system lets me see it, then I’m allowed to see it.” Is that correct?"
       },
       "options": [
-        { "text": { "zh-HK": "正確，技術上可見就是已授權", "zh-CN": "正确，技术上可见就是已授权", "en": "Yes, technical visibility means authorization" }, "correct": false },
-        { "text": { "zh-HK": "不正確，仍須符合職務需要", "zh-CN": "不正确，仍须符合职务需要", "en": "No, access still depends on job need" }, "correct": true },
-        { "text": { "zh-HK": "只要不是敏感數據就可以", "zh-CN": "只要不是敏感数据就可以", "en": "Yes, if the data is not highly sensitive" }, "correct": false },
-        { "text": { "zh-HK": "只要沒有下載就可以", "zh-CN": "只要没有下载就可以", "en": "Yes, if nothing is downloaded" }, "correct": false }
+        {
+          "text": {
+            "zh-HK": "正確，技術上看得到就是已授權",
+            "zh-CN": "正确，技术上看得到就是已授权",
+            "en": "Yes, technical visibility means authorization"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "不正確，仍須符合職務需要",
+            "zh-CN": "不正确，仍须符合职务需要",
+            "en": "No, access still depends on role and need"
+          },
+          "correct": true
+        }
       ],
       "explanation": {
-        "zh-HK": "技術權限只是存取能力，是否可用仍要看職責範圍與業務需要。",
-        "zh-CN": "技术权限只是存取能力，是否可用仍要看职责范围与业务需要。",
-        "en": "Technical access is only capability; legitimate use still depends on role and need."
+        "zh-HK": "技術權限只是存取能力，不等於可以脫離職責範圍使用。",
+        "zh-CN": "技术权限只是存取能力，不等于可以脱离职责范围使用。",
+        "en": "Technical access is only capability. It does not remove the need for legitimate role-based use."
       },
       "reminder": {
-        "zh-HK": "看得到，不等於看得起。",
-        "zh-CN": "看得到，不等于看得起。",
-        "en": "Visibility is not permission."
+        "zh-HK": "有權限，不等於有理由。",
+        "zh-CN": "有权限，不等于有理由。",
+        "en": "Having access is not the same as having a reason."
       }
     },
     {
@@ -367,20 +525,48 @@
         "en": "Which statements correctly describe the role of system logs? (Select all that apply)"
       },
       "options": [
-        { "text": { "zh-HK": "記錄誰在何時查閱了什麼資料", "zh-CN": "记录谁在何时查阅了什么资料", "en": "They record who accessed what and when" }, "correct": true },
-        { "text": { "zh-HK": "可用作調查不當存取事件", "zh-CN": "可用作调查不当存取事件", "en": "They can be used to investigate misuse" }, "correct": true },
-        { "text": { "zh-HK": "刪除瀏覽器紀錄就會令 log 消失", "zh-CN": "删除浏览器纪录就会令 log 消失", "en": "Deleting browser history also removes system logs" }, "correct": false },
-        { "text": { "zh-HK": "只有下載資料時才會留下 log", "zh-CN": "只有下载资料时才会留下 log", "en": "Logs only exist if data is downloaded" }, "correct": false }
+        {
+          "text": {
+            "zh-HK": "記錄誰在何時做過什麼操作",
+            "zh-CN": "记录谁在何时做过什么操作",
+            "en": "They record who did what and when"
+          },
+          "correct": true
+        },
+        {
+          "text": {
+            "zh-HK": "可用作調查不當存取",
+            "zh-CN": "可用作调查不当存取",
+            "en": "They can be used to investigate improper access"
+          },
+          "correct": true
+        },
+        {
+          "text": {
+            "zh-HK": "刪除瀏覽器紀錄就會令系統 log 消失",
+            "zh-CN": "删除浏览器纪录就会令系统 log 消失",
+            "en": "Deleting browser history also removes system logs"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "只有下載資料時才會留下 log",
+            "zh-CN": "只有下载资料时才会留下 log",
+            "en": "Logs are created only when data is downloaded"
+          },
+          "correct": false
+        }
       ],
       "explanation": {
         "zh-HK": "系統 log 不只記下載，很多查閱、搜尋、登入與操作行為都會留下紀錄。",
         "zh-CN": "系统 log 不只记下载，很多查阅、搜寻、登入与操作行为都会留下纪录。",
-        "en": "System logs do not only track downloads; viewing, searching, login, and many other actions are recorded."
+        "en": "System logs do not only track downloads. Viewing, searching, login, and many other actions are recorded."
       },
       "reminder": {
         "zh-HK": "你以為沒痕跡，其實系統都記得。",
         "zh-CN": "你以为没痕迹，其实系统都记得。",
-        "en": "The system remembers more than most people think."
+        "en": "The system remembers more than users think."
       }
     },
     {
@@ -394,20 +580,48 @@
         "en": "Is more data always better?"
       },
       "scenario": {
-        "zh-HK": "部門準備舉辦講座報名，是否應預先收集身份證號碼、住址、婚姻狀況，以備日後可能有用？",
-        "zh-CN": "部门准备举办讲座报名，是否应预先收集身份证号码、住址、婚姻状况，以备日后可能有用？",
-        "en": "A team is organising an event registration. Should they collect ID number, home address and marital status now in case these may be useful later?"
+        "zh-HK": "部門舉辦活動報名，是否應預先收集身份證號碼、住址、婚姻狀況，以備日後可能有用？",
+        "zh-CN": "部门举办活动报名，是否应预先收集身份证号码、住址、婚姻状况，以备日后可能有用？",
+        "en": "A team is collecting event registrations. Should it also gather ID numbers, home addresses, and marital status in case these are useful later?"
       },
       "options": [
-        { "text": { "zh-HK": "應該，先收集以備不時之需", "zh-CN": "应该，先收集以备不时之需", "en": "Yes, collect now for possible future use" }, "correct": false },
-        { "text": { "zh-HK": "不應該，只收與活動直接相關的資料", "zh-CN": "不应该，只收与活动直接相关的资料", "en": "No, collect only what is directly needed" }, "correct": true },
-        { "text": { "zh-HK": "只要內部保存就可以多收", "zh-CN": "只要内部保存就可以多收", "en": "Yes, if it stays internal" }, "correct": false },
-        { "text": { "zh-HK": "有參加者同意就可無限收集", "zh-CN": "有参加者同意就可无限收集", "en": "Yes, if the participant agrees" }, "correct": false }
+        {
+          "text": {
+            "zh-HK": "應該，先收集以備不時之需",
+            "zh-CN": "应该，先收集以备不时之需",
+            "en": "Yes, collect now for possible future use"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "不應該，只收與活動直接相關的資料",
+            "zh-CN": "不应该，只收与活动直接相关的资料",
+            "en": "No, collect only what is directly needed"
+          },
+          "correct": true
+        },
+        {
+          "text": {
+            "zh-HK": "只要內部保存就可以多收",
+            "zh-CN": "只要内部保存就可以多收",
+            "en": "Yes, if it stays internal"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "只要對方同意就可以無限收集",
+            "zh-CN": "只要对方同意就可以无限收集",
+            "en": "Yes, if the person agrees you can collect without limit"
+          },
+          "correct": false
+        }
       ],
       "explanation": {
         "zh-HK": "資料收集應遵從最少資料原則，只收與當前目的直接相關的內容。",
         "zh-CN": "资料收集应遵从最少资料原则，只收与当前目的直接相关的内容。",
-        "en": "Data collection should follow minimization: collect only what is directly relevant to the current purpose."
+        "en": "Data collection should follow minimization: only gather what is directly relevant to the current purpose."
       },
       "reminder": {
         "zh-HK": "不是將來可能有用，就可以現在先收。",
@@ -426,15 +640,35 @@
         "en": "Can familiar requests be trusted automatically?"
       },
       "scenario": {
-        "zh-HK": "同事透過通訊軟體要求你立刻提供某病人或客戶資料，並說「主管已知會我，快點就行」。最穩妥做法是什麼？",
-        "zh-CN": "同事透过通讯软件要求你立刻提供某病人或客户资料，并说“主管已知会我，快点就行”。最稳妥做法是什么？",
-        "en": "A coworker asks over chat for patient or client data and says, “Management already knows, just send it quickly.” What is the safest response?"
+        "zh-HK": "同事透過訊息要求你立刻提供某人的敏感資料，並說「主管已知會我，快點就行」。最穩妥做法是什麼？",
+        "zh-CN": "同事透过讯息要求你立刻提供某人的敏感资料，并说“主管已知会我，快点就行”。最稳妥做法是什么？",
+        "en": "A colleague messages you asking for someone’s sensitive data immediately, saying “Management already knows—just send it quickly.” What is the safest response?"
       },
       "options": [
-        { "text": { "zh-HK": "立刻傳送，避免耽誤工作", "zh-CN": "立刻传送，避免耽误工作", "en": "Send immediately to avoid delay" }, "correct": false },
-        { "text": { "zh-HK": "先用正式渠道核實身份與用途", "zh-CN": "先用正式渠道核实身份与用途", "en": "Verify identity and purpose through formal channels first" }, "correct": true },
-        { "text": { "zh-HK": "只傳部分資料先應急", "zh-CN": "只传部分资料先应急", "en": "Send only part of the data first" }, "correct": false },
-        { "text": { "zh-HK": "先放上共用雲端連結給對方", "zh-CN": "先放上共用云端连结给对方", "en": "Upload the data to a shared cloud link first" }, "correct": false }
+        {
+          "text": {
+            "zh-HK": "立刻傳送，避免耽誤工作",
+            "zh-CN": "立刻传送，避免耽误工作",
+            "en": "Send it immediately to avoid delay"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "先用正式渠道核實身份與用途",
+            "zh-CN": "先用正式渠道核实身份与用途",
+            "en": "Verify identity and purpose through official channels first"
+          },
+          "correct": true
+        },
+        {
+          "text": {
+            "zh-HK": "只傳部分資料先應急",
+            "zh-CN": "只传部分资料先应急",
+            "en": "Send only part of it first"
+          },
+          "correct": false
+        }
       ],
       "explanation": {
         "zh-HK": "熟人、內部人員或看似急迫的要求，也要核實身份與用途，避免社交工程風險。",
@@ -463,14 +697,42 @@
         "en": "Which statement best represents the right mindset when handling sensitive data?"
       },
       "options": [
-        { "text": { "zh-HK": "只要方便工作，程序可以靈活處理", "zh-CN": "只要方便工作，程序可以灵活处理", "en": "If it helps work move faster, rules can be flexible" }, "correct": false },
-        { "text": { "zh-HK": "有需要才看、有授權才用、有疑問先核實", "zh-CN": "有需要才看、有授权才用、有疑问先核实", "en": "View only when needed, use only when authorized, verify when unsure" }, "correct": true },
-        { "text": { "zh-HK": "熟人要求時可酌情處理", "zh-CN": "熟人要求时可酌情处理", "en": "A familiar request is enough reason for flexibility" }, "correct": false },
-        { "text": { "zh-HK": "只要不外傳，就不算高風險", "zh-CN": "只要不外传，就不算高风险", "en": "If nothing is shared externally, the risk is low" }, "correct": false }
+        {
+          "text": {
+            "zh-HK": "只要方便工作，程序可以靈活處理",
+            "zh-CN": "只要方便工作，程序可以灵活处理",
+            "en": "If it helps work move faster, rules can be flexible"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "有需要才看、有授權才用、有疑問先核實",
+            "zh-CN": "有需要才看、有授权才用、有疑问先核实",
+            "en": "View only when needed, use only when authorized, verify when unsure"
+          },
+          "correct": true
+        },
+        {
+          "text": {
+            "zh-HK": "只要不外傳，就不算高風險",
+            "zh-CN": "只要不外传，就不算高风险",
+            "en": "If nothing is shared externally, the risk is low"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "熟人要求時可酌情處理",
+            "zh-CN": "熟人要求时可酌情处理",
+            "en": "A familiar request is enough reason for flexibility"
+          },
+          "correct": false
+        }
       ],
       "explanation": {
-        "zh-HK": "資料安全的核心不是『技術上做得到』，而是『是否有需要、是否有授權、是否經得起稽核』。",
-        "zh-CN": "资料安全的核心不是‘技术上做得到’，而是‘是否有需要、是否有授权、是否经得起稽核’。",
+        "zh-HK": "資料安全的核心不是「技術上做得到」，而是「是否有需要、是否有授權、是否經得起稽核」。",
+        "zh-CN": "资料安全的核心不是“技术上做得到”，而是“是否有需要、是否有授权、是否经得起稽核”。",
         "en": "The core of data safety is not whether something is technically possible, but whether it is necessary, authorized, and auditable."
       },
       "reminder": {

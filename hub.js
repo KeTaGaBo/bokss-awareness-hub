@@ -1,4 +1,4 @@
-/* HUB_LAUNCHER_20260624_v1 */
+/* HUB_LAUNCHER_20260624_v3 */
 
 const hubText = {
   "zh-HK": {
@@ -15,7 +15,8 @@ const hubText = {
     footerSub: "Awareness Hub · 資安及私隱教育",
     searchPlaceholder: "搜尋測驗標題或簡介",
     resultCountLabel: "顯示結果",
-    sectionTitle: "應用目錄"
+    sectionTitle: "應用目錄",
+    langLabel: "Language / 語言 / 语言"
   },
   "zh-CN": {
     badge: "BOKSS Awareness Hub",
@@ -31,7 +32,8 @@ const hubText = {
     footerSub: "Awareness Hub · 信息安全与隐私教育",
     searchPlaceholder: "搜索测验标题或简介",
     resultCountLabel: "显示结果",
-    sectionTitle: "应用目录"
+    sectionTitle: "应用目录",
+    langLabel: "Language / 语言 / 语言"
   },
   "en": {
     badge: "BOKSS Awareness Hub",
@@ -47,7 +49,8 @@ const hubText = {
     footerSub: "Awareness Hub · Cybersecurity & Privacy Education",
     searchPlaceholder: "Search by quiz title or description",
     resultCountLabel: "Results",
-    sectionTitle: "App Directory"
+    sectionTitle: "App Directory",
+    langLabel: "Language / 語言 / 语言"
   }
 };
 
@@ -102,6 +105,7 @@ function updateHubLanguageUI() {
   setText("hubFooterSub", t.footerSub);
   setText("resultCountLabel", t.resultCountLabel);
   setText("sectionTitle", t.sectionTitle);
+  setText("langLabel", t.langLabel);
 
   const select = $("langSelect");
   if (select) select.value = currentLang;
@@ -140,9 +144,7 @@ function getTileGradient(index) {
 
 function getTileIconText(quiz, index) {
   const title = getLangText(quiz.title).trim();
-  if (title) {
-    return title.charAt(0).toUpperCase();
-  }
+  if (title) return title.charAt(0).toUpperCase();
   return String(index + 1);
 }
 

@@ -535,6 +535,16 @@ select option {
   }
 }
 
+@media (max-width: 720px) {
+  .footer-row {
+    flex-wrap: wrap;
+  }
+
+  .footer-logo {
+    height: 26px;
+  }
+}
+
 /* =========================
    RESPONSIVE
 ========================= */

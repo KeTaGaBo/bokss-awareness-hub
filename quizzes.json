@@ -1,5 +1,24 @@
 [
   {
+    "id": "fraud_202608",
+    "title": {
+      "zh-HK": "fraud_202608",
+      "zh-CN": "fraud_202608",
+      "en": "fraud_202608"
+    },
+    "description": {
+      "zh-HK": "",
+      "zh-CN": "",
+      "en": ""
+    },
+    "path": "/fraud_202608/",
+    "status": "active",
+    "lastModified": {
+      "iso": "2026-08-28T17:49:57+08:00",
+      "display": "2026-08"
+    }
+  },
+  {
     "id": "misuse_202606",
     "title": {
       "zh-HK": "一念之差：資安及私隱問答挑戰",

@@ -1,372 +1,911 @@
 {
-  "quizId": "fraud_202608",
-  "version": "1.0",
-  "language": "zh-HK",
-  "title": "回報是真的，投資就是真的嗎？",
-  "subtitle": "識破投資騙局中的信任陷阱",
-  "description": "透過一個逐步建立信任的虛構投資情境，學習辨認假冒身份、專業包裝、初期回報、追加投資、異常收款及提款障礙等警號。",
-  "estimatedMinutes": 6,
-  "disclaimer": "本遊戲為一般防騙教育用途。所有人物、機構、投資產品及情境均為虛構，如與現實事件相似，純屬巧合。",
-  "scoring": {
-    "pointsPerQuestion": 1,
-    "maximumScore": 12,
-    "levels": [
-      {
-        "minScore": 10,
-        "maxScore": 12,
-        "title": "獨立查證型",
-        "message": "你能辨認專業包裝、初期回報及追加付款背後的風險。遇到投資推介時，仍要保持「先懷疑、後查證」。"
-      },
-      {
-        "minScore": 7,
-        "maxScore": 9,
-        "title": "具警覺但容易受信任訊號影響",
-        "message": "你能識別明顯警號，但可能因官方外觀、真實回報或長期聯絡而降低戒心。記住，查證必須獨立於推介者。"
-      },
-      {
-        "minScore": 4,
-        "maxScore": 6,
-        "title": "容易被逐步建立信任",
-        "message": "你可能不會立即相信陌生推介，但對方一旦提供文件、回報或成功經驗，便較容易接受後續要求。每次付款前都應重新核實。"
-      },
-      {
-        "minScore": 0,
-        "maxScore": 3,
-        "title": "需要建立「停、查、問、報」習慣",
-        "message": "騙局往往不會一開始便露出破綻。不要單憑身份、文件、回報或對方的耐心服務作判斷。"
+  "ui": {
+    "zh-HK": {
+      "badge": "防騙資訊教育",
+      "siteTitle": "回報是真的，投資就是真的嗎？",
+      "heroSubtitle": "識破投資騙局中的信任陷阱",
+      "intro": "透過一個逐步建立信任的虛構投資情境，學習辨認假冒身份、專業包裝、初期回報、追加投資、異常收款及提款障礙等常見騙局手法。",
+      "prev": "上一題",
+      "next": "下一題",
+      "scoreLabel": "目前得分",
+      "footer": "停．查．問．報 • 投資前先核實 • 懷疑受騙立即求助",
+      "correctLabel": "✅ 正確！",
+      "wrongLabel": "❌ 錯誤。",
+      "reminderLabel": "⚠️ 防騙貼士",
+      "loadError": "❌ 載入題目失敗，請稍後再試。",
+      "questionLabel": "第 {current} 題 / 共 {total} 題",
+      "finish": "完成測驗",
+      "restart": "重新開始",
+      "resultTitle": "你的結果",
+      "langLabel": "Language / 語言 / 语言",
+      "checkAnswer": "提交答案",
+      "singleLabel": "單選題",
+      "multipleLabel": "多選題",
+      "singleHint": "請選出 1 個最合適答案。",
+      "multipleHint": "本題可選多項，需全部選對才算正確。",
+      "selectAtLeastOne": "請先選擇至少一個答案。",
+      "scenarioLabelDefault": "情境說明",
+      "answerBeforeNext": "請先回答本題才可進入下一題。",
+      "levelLabel": "防騙等級",
+      "restartQuiz": "再試一次",
+      "copyLink": "複製測驗連結",
+      "copied": "📋 連結已成功複製！",
+      "shareTitle": "分享結果",
+      "shareText": "一起測試防騙能力，看看你能否識破投資騙局！",
+      "levels": {
+        "perfect": "🏆 防騙專家",
+        "pass70": "🛡️ 警覺高手",
+        "below70": "⚠️ 信任過高"
       }
-    ]
-  },
-  "takeaways": [
-    {
-      "keyword": "停",
-      "message": "面對限時、名額、追加投資或提款費用，先停止付款。"
     },
-    {
-      "keyword": "查",
-      "message": "自行經官方渠道核實機構、聯絡人、產品、牌照及收款人。"
+  
+    "zh-CN": {
+      "badge": "防骗信息教育",
+      "siteTitle": "回报是真的，投资就是真的吗？",
+      "heroSubtitle": "识破投资骗局中的信任陷阱",
+      "intro": "通过一个逐步建立信任的虚构投资情境，学习辨认假冒身份、专业包装、初期回报、追加投资、异常收款及提款障碍等常见骗局手法。",
+      "prev": "上一题",
+      "next": "下一题",
+      "scoreLabel": "目前得分",
+      "footer": "停．查．问．报 • 投资前先核实 • 怀疑受骗立即求助",
+      "correctLabel": "✅ 正确！",
+      "wrongLabel": "❌ 错误。",
+      "reminderLabel": "⚠️ 防骗贴士",
+      "loadError": "❌ 加载题目失败，请稍后再试。",
+      "questionLabel": "第 {current} 题 / 共 {total} 题",
+      "finish": "完成测验",
+      "restart": "重新开始",
+      "resultTitle": "你的结果",
+      "langLabel": "Language / 語言 / 语言",
+      "checkAnswer": "提交答案",
+      "singleLabel": "单选题",
+      "multipleLabel": "多选题",
+      "singleHint": "请选择 1 个最佳答案。",
+      "multipleHint": "本题可选多项，需全部选对才算正确。",
+      "selectAtLeastOne": "请先选择至少一个答案。",
+      "scenarioLabelDefault": "情境说明",
+      "answerBeforeNext": "请先回答本题才可进入下一题。",
+      "levelLabel": "防骗等级",
+      "restartQuiz": "再试一次",
+      "copyLink": "复制测验链接",
+      "copied": "📋 链接已成功复制！",
+      "shareTitle": "分享结果",
+      "shareText": "一起测试防骗能力，看看你能否识破投资骗局！",
+      "levels": {
+        "perfect": "🏆 防骗专家",
+        "pass70": "🛡️ 警觉高手",
+        "below70": "⚠️ 过度信任"
+      }
     },
-    {
-      "keyword": "問",
-      "message": "在不熟悉或大額交易前，尋求銀行、持牌專業人士或可信任人士的第二意見。"
-    },
-    {
-      "keyword": "報",
-      "message": "懷疑受騙時，立即聯絡銀行、保存證據並透過官方渠道求助。"
+  
+    "en": {
+      "badge": "Anti-Fraud Awareness",
+      "siteTitle": "Does a Real Return Mean a Real Investment?",
+      "heroSubtitle": "Recognising Trust-Building Tactics Used in Investment Scams",
+      "intro": "Follow a fictional investment journey and learn how scammers build trust through fake identities, official-looking documents, early returns, upselling tactics and withdrawal barriers.",
+      "prev": "Prev",
+      "next": "Next",
+      "scoreLabel": "Score",
+      "footer": "Stop • Verify • Ask • Report",
+      "correctLabel": "✅ Correct!",
+      "wrongLabel": "❌ Incorrect.",
+      "reminderLabel": "⚠️ Fraud Tip",
+      "loadError": "❌ Failed to load questions. Please try again later.",
+      "questionLabel": "Q {current} of {total}",
+      "finish": "Finish",
+      "restart": "Restart",
+      "resultTitle": "Your Result",
+      "langLabel": "Language / 語言 / 语言",
+      "checkAnswer": "Submit",
+      "singleLabel": "Single Choice",
+      "multipleLabel": "Multiple Choice",
+      "singleHint": "Select the best answer.",
+      "multipleHint": "Select all that apply.",
+      "selectAtLeastOne": "Please select at least one answer.",
+      "scenarioLabelDefault": "Scenario",
+      "answerBeforeNext": "Please answer this question before moving on.",
+      "levelLabel": "Fraud Awareness Rank",
+      "restartQuiz": "Try Again",
+      "copyLink": "Copy Quiz Link",
+      "copied": "📋 Link copied successfully!",
+      "shareTitle": "Share Result",
+      "shareText": "Challenge your friends and see who can spot the scam!",
+      "levels": {
+        "perfect": "🏆 Scam Spotter",
+        "pass70": "🛡️ Alert Investor",
+        "below70": "⚠️ Trusting Too Easily"
+      }
     }
-  ],
+  },
+  
+  "messages": {
+    "perfect": {
+      "zh-HK": "非常出色！你能有效識別投資騙局中常見的信任建立技巧、假冒身份及提款陷阱。",
+      "zh-CN": "非常出色！你能有效识别投资骗局中常见的信任建立技巧、假冒身份及提款陷阱。",
+      "en": "Excellent! You successfully identified common trust-building tactics, impersonation tricks and withdrawal traps used in investment scams."
+    },
+  
+    "pass70": {
+      "zh-HK": "做得不錯！你已掌握大部分防騙技巧，但仍需留意官方包裝、真實回報及限時優惠帶來的誤導。",
+      "zh-CN": "做得不错！你已掌握大部分防骗技巧，但仍需留意官方包装、真实回报及限时优惠带来的误导。",
+      "en": "Well done! You understand most anti-fraud principles, but official-looking materials, real returns and limited-time offers can still be misleading."
+    },
+  
+    "below70": {
+      "zh-HK": "要小心！騙徒往往透過逐步建立信任而非立即行騙。建議仔細閱讀各題詳解。",
+      "zh-CN": "要小心！骗徒往往通过逐步建立信任而非立即行骗。建议仔细阅读各题详解。",
+      "en": "Be careful. Scammers usually build trust gradually rather than revealing the scam immediately. Review the explanations carefully."
+    }
+  },
+
   "questions": [
     {
       "id": 1,
-      "stage": "第一次接觸",
-      "question": "你收到一個陌生來電。對方能說出你的姓名，自稱是某大型金融集團的投資顧問，並準確解釋近期市場走勢。你應該如何處理？",
+      "type": "single",
+      "presentation": "classic",
+      "category": {
+        "zh-HK": "身份核實",
+        "zh-CN": "身份核实",
+        "en": "Identity Verification"
+      },
+      "title": {
+        "zh-HK": "陌生投資顧問來電",
+        "zh-CN": "陌生投资顾问来电",
+        "en": "An Unexpected Call from an Investment Adviser"
+      },
+      "scenario": {
+        "zh-HK": "你收到一個陌生來電。對方能說出你的姓名，自稱是某大型金融集團的投資顧問，並準確解釋近期市場走勢。你應該如何處理？",
+        "zh-CN": "你收到一个陌生来电。对方能说出你的姓名，自称是某大型金融集团的投资顾问，并准确解释近期市场走势。你应该如何处理？",
+        "en": "You receive an unexpected call. The caller knows your name, claims to be an investment adviser from a major financial group, and accurately explains recent market trends. What should you do?"
+      },
       "options": [
         {
-          "id": "A",
-          "text": "對方知道我的姓名和市場資訊，應該可以先聽完整個推介。"
+          "text": {
+            "zh-HK": "對方知道我的姓名和市場資訊，可以先聽完整個推介",
+            "zh-CN": "对方知道我的姓名和市场信息，可以先听完整个推介",
+            "en": "The caller knows my name and market information, so I can listen to the full proposal first"
+          },
+          "correct": false
         },
         {
-          "id": "B",
-          "text": "要求對方透過公司電郵寄出職員證和產品資料，收到後便可以確認身份。"
+          "text": {
+            "zh-HK": "要求對方透過公司電郵寄出職員證和產品資料，收到後便可確認身份",
+            "zh-CN": "要求对方通过公司电邮寄出职员证和产品资料，收到后便可确认身份",
+            "en": "Ask the caller to send an employee card and product information from a company email address, then accept these as proof of identity"
+          },
+          "correct": false
         },
         {
-          "id": "C",
-          "text": "結束通話，自行從金融機構官方網站找到聯絡方法，再直接向機構查證。"
+          "text": {
+            "zh-HK": "結束通話，自行從金融機構官方網站尋找聯絡方法，再直接向機構查證",
+            "zh-CN": "结束通话，自行从金融机构官方网站寻找联络方法，再直接向机构核实",
+            "en": "End the call, find the institution's contact details independently on its official website, and verify directly with the institution"
+          },
+          "correct": true
         },
         {
-          "id": "D",
-          "text": "在網上搜尋對方姓名，如果找到相同職位的人便可以繼續。"
+          "text": {
+            "zh-HK": "在網上搜尋對方姓名，找到相同職位的人便繼續聯絡",
+            "zh-CN": "在网上搜索对方姓名，找到相同职位的人便继续联络",
+            "en": "Search for the caller's name online and continue if someone with the same job title appears"
+          },
+          "correct": false
         }
       ],
-      "correctAnswer": "C",
-      "explanation": "姓名、職銜和市場資訊都可能來自公開資料或資料外洩。職員證、顯示名稱和文件亦可以偽造。真正的獨立查證，是不用對方提供的電話、連結或聯絡資料，而是自行經官方渠道聯絡機構。",
-      "learningPoint": "查證渠道必須獨立於推介者。"
+      "explanation": {
+        "zh-HK": "姓名、職銜和市場資訊都可能來自公開資料或資料外洩。職員證、顯示名稱和文件亦可以偽造。真正的獨立查證，是不用對方提供的電話、連結或聯絡資料，而是自行經官方渠道聯絡機構。",
+        "zh-CN": "姓名、职衔和市场信息都可能来自公开资料或数据泄露。职员证、显示名称和文件也可以伪造。真正的独立核实，是不使用对方提供的电话、链接或联络资料，而是自行通过官方渠道联络机构。",
+        "en": "Names, job titles and market information may come from public sources or leaked data. Employee cards, display names and documents can also be forged. Independent verification means contacting the institution through official channels that you find yourself, rather than using contact details or links supplied by the caller."
+      },
+      "reminder": {
+        "zh-HK": "查證渠道必須獨立於推介者。",
+        "zh-CN": "核实渠道必须独立于推介者。",
+        "en": "Verification must be independent of the person making the proposal."
+      }
     },
     {
       "id": 2,
-      "stage": "看似官方的證據",
-      "question": "對方其後寄來一封設計專業的電郵，附有公司標誌、職員簽署、產品簡介和風險聲明。電郵地址看起來亦很像該金融機構。這代表甚麼？",
+      "type": "single",
+      "presentation": "classic",
+      "category": {
+        "zh-HK": "官方外觀",
+        "zh-CN": "官方外观",
+        "en": "Official Appearance"
+      },
+      "title": {
+        "zh-HK": "看似官方的電郵是否可信？",
+        "zh-CN": "看似官方的电邮是否可信？",
+        "en": "Can an Official-Looking Email Be Trusted?"
+      },
+      "scenario": {
+        "zh-HK": "對方其後寄來一封設計專業的電郵，附有公司標誌、職員簽署、產品簡介和風險聲明。電郵地址看起來亦很像該金融機構。這代表甚麼？",
+        "zh-CN": "对方其后寄来一封设计专业的电邮，附有公司标志、职员签署、产品简介和风险声明。电邮地址看起来也很像该金融机构。这代表什么？",
+        "en": "The caller later sends a professionally designed email containing a company logo, staff signature, product information and a risk statement. The email address also looks similar to that of the financial institution. What does this mean?"
+      },
       "options": [
         {
-          "id": "A",
-          "text": "大型機構的標誌和風險聲明很難偽造，因此可信。"
+          "text": {
+            "zh-HK": "大型機構的標誌和風險聲明很難偽造，因此電郵可信",
+            "zh-CN": "大型机构的标志和风险声明很难伪造，因此电邮可信",
+            "en": "The logos and risk statements of major institutions are difficult to forge, so the email can be trusted"
+          },
+          "correct": false
         },
         {
-          "id": "B",
-          "text": "只要電郵地址包含該機構名稱，便可視為官方郵件。"
+          "text": {
+            "zh-HK": "只要電郵地址包含該機構名稱，便可視為官方郵件",
+            "zh-CN": "只要电邮地址包含该机构名称，便可视为官方邮件",
+            "en": "If the email address contains the institution's name, it can be treated as an official email"
+          },
+          "correct": false
         },
         {
-          "id": "C",
-          "text": "如果附件沒有被防毒軟件攔截，便代表寄件者真實。"
+          "text": {
+            "zh-HK": "如果附件沒有被防毒軟件攔截，便代表寄件者真實",
+            "zh-CN": "如果附件没有被防毒软件拦截，便代表寄件者真实",
+            "en": "If antivirus software does not block the attachment, the sender must be genuine"
+          },
+          "correct": false
         },
         {
-          "id": "D",
-          "text": "這些只屬表面證據，仍須經官方渠道核實寄件者、產品及聯絡資料。"
+          "text": {
+            "zh-HK": "這些只屬表面證據，仍須經官方渠道核實寄件者、產品及聯絡資料",
+            "zh-CN": "这些只属表面证据，仍须通过官方渠道核实寄件者、产品及联络资料",
+            "en": "These are only surface-level signs. The sender, product and contact details must still be verified through official channels"
+          },
+          "correct": true
         }
       ],
-      "correctAnswer": "D",
-      "explanation": "騙徒可以複製公司標誌、文件格式和電郵簽署，也可以註冊非常相似的網域。防毒軟件主要檢查惡意程式，不能證明寄件者或投資產品真實。",
-      "learningPoint": "「看起來官方」不等於「已經核實」。"
+      "explanation": {
+        "zh-HK": "騙徒可以複製公司標誌、文件格式和電郵簽署，也可以註冊非常相似的網域。防毒軟件主要檢查惡意程式，不能證明寄件者身份或投資產品真實。",
+        "zh-CN": "骗徒可以复制公司标志、文件格式和电邮签署，也可以注册非常相似的域名。防毒软件主要检查恶意程序，不能证明寄件者身份或投资产品真实。",
+        "en": "Scammers can copy company logos, document formats and email signatures, and can register very similar domain names. Antivirus software mainly checks for malicious software. It does not prove that the sender or investment product is genuine."
+      },
+      "reminder": {
+        "zh-HK": "「看起來官方」不等於「已經核實」。",
+        "zh-CN": "“看起来官方”不等于“已经核实”。",
+        "en": "Looking official is not the same as being verified."
+      }
     },
     {
       "id": 3,
-      "stage": "核實機構",
-      "question": "你查到推介中提及的金融機構確實存在，而且受到監管。是否代表這項投資安全？",
+      "type": "single",
+      "presentation": "classic",
+      "category": {
+        "zh-HK": "機構核實",
+        "zh-CN": "机构核实",
+        "en": "Institution Verification"
+      },
+      "title": {
+        "zh-HK": "真實機構會否被冒認？",
+        "zh-CN": "真实机构会否被冒认？",
+        "en": "Can a Genuine Institution Be Impersonated?"
+      },
+      "scenario": {
+        "zh-HK": "你查到推介中提及的金融機構確實存在，而且受到監管。是否代表這項投資安全？",
+        "zh-CN": "你查到推介中提及的金融机构确实存在，而且受到监管。是否代表这项投资安全？",
+        "en": "You confirm that the financial institution named in the proposal really exists and is regulated. Does this mean the investment is safe?"
+      },
       "options": [
         {
-          "id": "A",
-          "text": "是，受監管機構不會涉及假投資。"
+          "text": {
+            "zh-HK": "是，受監管機構不會涉及假投資",
+            "zh-CN": "是，受监管机构不会涉及假投资",
+            "en": "Yes. A regulated institution would not be connected with a fake investment"
+          },
+          "correct": false
         },
         {
-          "id": "B",
-          "text": "未必。還要分別核實聯絡人、投資產品、牌照範圍及收款方。"
+          "text": {
+            "zh-HK": "未必，還要分別核實聯絡人、投資產品、牌照範圍及收款方",
+            "zh-CN": "未必，还要分别核实联络人、投资产品、牌照范围及收款方",
+            "en": "Not necessarily. The contact person, investment product, licence scope and payment recipient must each be verified"
+          },
+          "correct": true
         },
         {
-          "id": "C",
-          "text": "是，只要公司網站可以正常開啟便足夠。"
+          "text": {
+            "zh-HK": "是，只要公司網站可以正常開啟便足夠",
+            "zh-CN": "是，只要公司网站可以正常开启便足够",
+            "en": "Yes. It is sufficient if the company's website opens normally"
+          },
+          "correct": false
         },
         {
-          "id": "D",
-          "text": "未必，但只要要求對方再提供一次職員證便可以。"
+          "text": {
+            "zh-HK": "未必，但只要要求對方再次提供職員證便可以",
+            "zh-CN": "未必，但只要要求对方再次提供职员证便可以",
+            "en": "Not necessarily, but asking the caller to provide an employee card again would be sufficient"
+          },
+          "correct": false
         }
       ],
-      "correctAnswer": "B",
-      "explanation": "騙徒可以冒用真實機構的名稱。即使機構本身存在，也不代表聯絡你的人屬於該機構，更不代表該產品由該機構提供。公司、聯絡人、產品、牌照和收款帳戶應分開核實。",
-      "learningPoint": "真公司也可能被冒認。"
+      "explanation": {
+        "zh-HK": "騙徒可以冒用真實機構的名稱。即使機構本身存在，也不代表聯絡你的人屬於該機構，更不代表有關產品由該機構提供。公司、聯絡人、產品、牌照和收款帳戶應分開核實。",
+        "zh-CN": "骗徒可以冒用真实机构的名称。即使机构本身存在，也不代表联络你的人属于该机构，更不代表有关产品由该机构提供。公司、联络人、产品、牌照和收款账户应分别核实。",
+        "en": "Scammers may misuse the name of a genuine institution. The existence of the institution does not prove that the person contacting you works there or that the institution offers the product. The company, contact person, product, licence and receiving account should be verified separately."
+      },
+      "reminder": {
+        "zh-HK": "真公司也可能被冒認。",
+        "zh-CN": "真实公司也可能被冒认。",
+        "en": "A genuine company can still be impersonated."
+      }
     },
     {
       "id": 4,
-      "stage": "專業包裝",
-      "question": "對方推介一項結合債券、股票和環保項目的新投資產品，並表示產品只開放給指定客戶。你未能完全理解產品結構，但對方提供了詳細圖表。你應該怎樣做？",
+      "type": "single",
+      "presentation": "classic",
+      "category": {
+        "zh-HK": "產品查證",
+        "zh-CN": "产品核实",
+        "en": "Product Verification"
+      },
+      "title": {
+        "zh-HK": "專業包裝是否代表產品可靠？",
+        "zh-CN": "专业包装是否代表产品可靠？",
+        "en": "Does Professional Presentation Make a Product Reliable?"
+      },
+      "scenario": {
+        "zh-HK": "對方推介一項結合債券、股票和環保項目的新投資產品，並表示產品只開放給指定客戶。你未能完全理解產品結構，但對方提供了詳細圖表。你應該怎樣做？",
+        "zh-CN": "对方推介一项结合债券、股票和环保项目的新投资产品，并表示产品只开放给指定客户。你未能完全理解产品结构，但对方提供了详细图表。你应该怎样做？",
+        "en": "The adviser promotes a new investment product combining bonds, shares and environmental projects, and says it is available only to selected clients. You do not fully understand its structure, but the adviser provides detailed charts. What should you do?"
+      },
       "options": [
         {
-          "id": "A",
-          "text": "圖表詳細，代表產品經過專業設計，可以先小額參與。"
+          "text": {
+            "zh-HK": "圖表十分詳細，代表產品經過專業設計，可以先小額參與",
+            "zh-CN": "图表十分详细，代表产品经过专业设计，可以先小额参与",
+            "en": "The detailed charts show that the product was professionally designed, so I can start with a small investment"
+          },
+          "correct": false
         },
         {
-          "id": "B",
-          "text": "請對方用更簡單的方式再解釋一次，聽明白後便可立即投資。"
+          "text": {
+            "zh-HK": "請對方以更簡單的方式再解釋一次，聽明白後便可立即投資",
+            "zh-CN": "请对方以更简单的方式再解释一次，听明白后便可立即投资",
+            "en": "Ask the adviser to explain it more simply, then invest immediately once the explanation is understandable"
+          },
+          "correct": false
         },
         {
-          "id": "C",
-          "text": "暫停交易，透過持牌機構或獨立專業人士核實產品是否存在及了解風險。"
+          "text": {
+            "zh-HK": "暫停交易，透過持牌機構或獨立專業人士核實產品是否存在及了解風險",
+            "zh-CN": "暂停交易，通过持牌机构或独立专业人士核实产品是否存在及了解风险",
+            "en": "Pause the transaction and use a licensed institution or independent professional to verify that the product exists and understand its risks"
+          },
+          "correct": true
         },
         {
-          "id": "D",
-          "text": "詢問其他參加者是否曾經獲利，有人獲利便可以參與。"
+          "text": {
+            "zh-HK": "詢問其他參加者是否曾經獲利，有人獲利便可以參與",
+            "zh-CN": "询问其他参加者是否曾经获利，有人获利便可以参与",
+            "en": "Ask whether other participants have made a profit and invest if someone says they have"
+          },
+          "correct": false
         }
       ],
-      "correctAnswer": "C",
-      "explanation": "複雜名稱和圖表可能營造專業形象，但不能證明產品存在。投資者如果未能清楚理解產品如何運作、可能損失多少及由誰監管，便不應付款。",
-      "learningPoint": "不理解的產品，不應只因包裝專業而投資。"
+      "explanation": {
+        "zh-HK": "複雜名稱和圖表可能營造專業形象，但不能證明產品存在。如果投資者未能清楚理解產品如何運作、可能損失多少及由誰監管，便不應付款。",
+        "zh-CN": "复杂名称和图表可能营造专业形象，但不能证明产品存在。如果投资者未能清楚理解产品如何运作、可能损失多少及由谁监管，便不应付款。",
+        "en": "Complex names and charts may create a professional image, but they do not prove that a product exists. You should not pay if you cannot clearly understand how the product works, how much you could lose and who regulates it."
+      },
+      "reminder": {
+        "zh-HK": "不理解的產品，不應只因包裝專業而投資。",
+        "zh-CN": "不理解的产品，不应只因包装专业而投资。",
+        "en": "Do not invest in a product you do not understand merely because it looks professional."
+      }
     },
     {
       "id": 5,
-      "stage": "小額試投",
-      "question": "對方提議你先投入一筆可以承受損失的小額資金，強調這只是「試用」，稍後可以隨時退出。以下哪個判斷最適當？",
+      "type": "single",
+      "presentation": "classic",
+      "category": {
+        "zh-HK": "小額試投",
+        "zh-CN": "小额试投",
+        "en": "Small Trial Investment"
+      },
+      "title": {
+        "zh-HK": "小額投資是否不用查證？",
+        "zh-CN": "小额投资是否不用核实？",
+        "en": "Does a Small Investment Remove the Need to Verify?"
+      },
+      "scenario": {
+        "zh-HK": "對方提議你先投入一筆可以承受損失的小額資金，強調這只是「試用」，稍後可以隨時退出。以下哪個判斷最適當？",
+        "zh-CN": "对方提议你先投入一笔可以承受损失的小额资金，强调这只是“试用”，稍后可以随时退出。以下哪个判断最适当？",
+        "en": "The adviser suggests starting with a small amount that you can afford to lose, describing it as a trial that you can leave at any time. Which judgement is most appropriate?"
+      },
       "options": [
         {
-          "id": "A",
-          "text": "小額損失可以承受，所以不用浪費時間查證。"
+          "text": {
+            "zh-HK": "小額損失可以承受，所以不用花時間查證",
+            "zh-CN": "小额损失可以承受，所以不用花时间核实",
+            "en": "The possible loss is affordable, so there is no need to spend time verifying the investment"
+          },
+          "correct": false
         },
         {
-          "id": "B",
-          "text": "只要不用提供密碼，小額投資便安全。"
+          "text": {
+            "zh-HK": "只要不用提供密碼，小額投資便屬安全",
+            "zh-CN": "只要不用提供密码，小额投资便属安全",
+            "en": "A small investment is safe as long as no password is required"
+          },
+          "correct": false
         },
         {
-          "id": "C",
-          "text": "小額試投不能取代查證，而且可能是建立信任和付款習慣的第一步。"
+          "text": {
+            "zh-HK": "小額試投不能取代查證，而且可能是建立信任和付款習慣的第一步",
+            "zh-CN": "小额试投不能取代核实，而且可能是建立信任和付款习惯的第一步",
+            "en": "A small trial cannot replace verification and may be the first step in building trust and a habit of making payments"
+          },
+          "correct": true
         },
         {
-          "id": "D",
-          "text": "先付款，再看看對方是否真的提供回報。"
+          "text": {
+            "zh-HK": "先付款，再看看對方是否真的提供回報",
+            "zh-CN": "先付款，再看看对方是否真的提供回报",
+            "en": "Pay first and see whether the adviser really provides a return"
+          },
+          "correct": false
         }
       ],
-      "correctAnswer": "C",
-      "explanation": "第一次投資金額較小，可能使人放低戒心。一旦完成首次付款並投入時間，日後更容易接受追加投資。能否承受損失與投資是否真實，是兩個不同問題。",
-      "learningPoint": "「小額試試」可能是信任陷阱的起點。"
+      "explanation": {
+        "zh-HK": "第一次投資金額較小，可能使人放低戒心。一旦完成首次付款並投入時間，日後便可能更容易接受追加投資。能否承受損失與投資是否真實，是兩個不同問題。",
+        "zh-CN": "第一次投资金额较小，可能使人放低戒心。一旦完成首次付款并投入时间，日后便可能更容易接受追加投资。能否承受损失与投资是否真实，是两个不同问题。",
+        "en": "A small first investment may lower your sense of caution. After making the first payment and committing time, you may become more willing to make further investments. Being able to afford a loss and determining whether an investment is genuine are two different matters."
+      },
+      "reminder": {
+        "zh-HK": "「小額試試」可能是信任陷阱的起點。",
+        "zh-CN": "“小额试试”可能是信任陷阱的起点。",
+        "en": "A small trial may be the beginning of a trust trap."
+      }
     },
     {
       "id": 6,
-      "stage": "收到真實回報",
-      "question": "數星期後，你真的收到一筆回報，而且款項已進入你的銀行帳戶。你應如何理解這件事？",
+      "type": "single",
+      "presentation": "classic",
+      "category": {
+        "zh-HK": "初期回報",
+        "zh-CN": "初期回报",
+        "en": "Early Returns"
+      },
+      "title": {
+        "zh-HK": "收到真實回報等於投資真實？",
+        "zh-CN": "收到真实回报等于投资真实？",
+        "en": "Does Receiving a Real Return Prove the Investment Is Genuine?"
+      },
+      "scenario": {
+        "zh-HK": "數星期後，你真的收到一筆回報，而且款項已進入你的銀行帳戶。你應如何理解這件事？",
+        "zh-CN": "数星期后，你真的收到一笔回报，而且款项已进入你的银行账户。你应如何理解这件事？",
+        "en": "Several weeks later, you receive a return and the money reaches your bank account. How should you interpret this?"
+      },
       "options": [
         {
-          "id": "A",
-          "text": "銀行已收到款項，足以證明投資真實。"
+          "text": {
+            "zh-HK": "銀行已收到款項，足以證明投資真實",
+            "zh-CN": "银行已收到款项，足以证明投资真实",
+            "en": "The money reached my bank account, which is enough to prove that the investment is genuine"
+          },
+          "correct": false
         },
         {
-          "id": "B",
-          "text": "能夠提款，代表對方一定受到金融監管。"
+          "text": {
+            "zh-HK": "能夠收到款項，代表對方一定受到金融監管",
+            "zh-CN": "能够收到款项，代表对方一定受到金融监管",
+            "en": "Receiving money proves that the adviser is regulated"
+          },
+          "correct": false
         },
         {
-          "id": "C",
-          "text": "收到回報是正面訊號，但不能單獨證明投資或對方身份真實。"
+          "text": {
+            "zh-HK": "收到回報是正面訊號，但不能單獨證明投資或對方身份真實",
+            "zh-CN": "收到回报是正面信号，但不能单独证明投资或对方身份真实",
+            "en": "Receiving a return is a positive sign, but it cannot by itself prove that the investment or the adviser's identity is genuine"
+          },
+          "correct": true
         },
         {
-          "id": "D",
-          "text": "應把回報立即重新投入，以免錯過增長機會。"
+          "text": {
+            "zh-HK": "應把回報立即重新投入，以免錯過增長機會",
+            "zh-CN": "应把回报立即重新投入，以免错过增长机会",
+            "en": "The return should be reinvested immediately to avoid missing the opportunity for further growth"
+          },
+          "correct": false
         }
       ],
-      "correctAnswer": "C",
-      "explanation": "騙徒可能願意先支付小額回報，以換取更大的信任和後續投資。這筆錢可能來自你的本金、其他付款或騙徒預留的誘餌成本。收到真錢，不等於背後的投資活動真實。",
-      "learningPoint": "真回報也可以是騙局的一部分。"
+      "explanation": {
+        "zh-HK": "騙徒可能願意先支付小額回報，以換取更大的信任和後續投資。這筆錢可能來自你的本金、其他付款或騙徒預留的誘餌成本。收到真錢，不等於背後的投資活動真實。",
+        "zh-CN": "骗徒可能愿意先支付小额回报，以换取更大的信任和后续投资。这笔钱可能来自你的本金、其他付款或骗徒预留的诱饵成本。收到真金钱，不等于背后的投资活动真实。",
+        "en": "Scammers may pay a small early return to gain greater trust and encourage further investment. The payment may come from your original funds, other payments or money set aside as bait. Receiving real money does not prove that genuine investment activity exists behind it."
+      },
+      "reminder": {
+        "zh-HK": "真回報也可以是騙局的一部分。",
+        "zh-CN": "真实回报也可以是骗局的一部分。",
+        "en": "A real payment can still be part of a scam."
+      }
     },
     {
       "id": 7,
-      "stage": "錯誤證明",
-      "question": "對方指出：「你已經親自收到回報，這比任何網上警告都更可靠。」這句說話最大的問題是甚麼？",
+      "type": "single",
+      "presentation": "classic",
+      "category": {
+        "zh-HK": "錯誤推論",
+        "zh-CN": "错误推论",
+        "en": "False Assumptions"
+      },
+      "title": {
+        "zh-HK": "收到回報是否等同安全？",
+        "zh-CN": "收到回报是否等同安全？",
+        "en": "Does Receiving a Return Prove Safety?"
+      },
+      "scenario": {
+        "zh-HK": "對方指出：「你已經親自收到回報，這比任何網上警告都更可靠。」這句說話最大的問題是甚麼？",
+        "zh-CN": "对方指出：“你已经亲自收到回报，这比任何网上警告都更可靠。”这句话最大的問題是什么？",
+        "en": "The adviser says: 'You have already received returns yourself. That is more reliable than anything you read online.' What is the biggest flaw in this claim?"
+      },
       "options": [
         {
-          "id": "A",
-          "text": "回報金額可能不夠高。"
+          "text": {
+            "zh-HK": "回報金額可能不夠高",
+            "zh-CN": "回报金额可能不够高",
+            "en": "The return amount may be too small"
+          },
+          "correct": false
         },
         {
-          "id": "B",
-          "text": "這把一次收款錯誤當成整項投資真實和安全的證明。"
+          "text": {
+            "zh-HK": "這把一次收款錯誤當成整項投資真實和安全的證明",
+            "zh-CN": "这是把一次收款错误当成整项投资真实和安全的证明",
+            "en": "It wrongly treats a single payment as proof that the entire investment is genuine and safe"
+          },
+          "correct": true
         },
         {
-          "id": "C",
-          "text": "銀行轉帳速度可能受假期影響。"
+          "text": {
+            "zh-HK": "銀行轉帳速度可能受假期影響",
+            "zh-CN": "银行转账速度可能受假期影响",
+            "en": "Bank transfers can be delayed by holidays"
+          },
+          "correct": false
         },
         {
-          "id": "D",
-          "text": "投資顧問不應主動談及網上警告。"
+          "text": {
+            "zh-HK": "投資顧問不應主動談及網上警告",
+            "zh-CN": "投资顾问不应主动谈及网上警告",
+            "en": "Investment advisers should not discuss online warnings"
+          },
+          "correct": false
         }
       ],
-      "correctAnswer": "B",
-      "explanation": "一次或數次成功收款，只能證明有人向你付款，不能證明資金來自真正投資收益，也不能證明產品、機構或聯絡人受到適當監管。",
-      "learningPoint": "個別結果不能取代完整查證。"
+      "explanation": {
+        "zh-HK": "一次或數次成功收款，只能證明有人向你付款，不能證明資金來自真正投資收益，也不能證明產品、機構或聯絡人受到適當監管。",
+        "zh-CN": "一次或数次成功收款，只能证明有人向你付款，不能证明资金来自真正投资收益，也不能证明产品、机构或联络人受到适当监管。",
+        "en": "One or several successful payments only prove that someone paid you. They do not prove that the money comes from genuine investment activity or that the product, institution or adviser is properly regulated."
+      },
+      "reminder": {
+        "zh-HK": "個別結果不能取代完整查證。",
+        "zh-CN": "个别结果不能取代完整核实。",
+        "en": "A single result never replaces proper verification."
+      }
     },
     {
       "id": 8,
-      "stage": "追加投資",
-      "question": "在你收到回報後，對方表示只有現有客戶才可參加一個限時升級計劃，投入金額愈大，回報率愈高。你應該如何處理？",
+      "type": "single",
+      "presentation": "classic",
+      "category": {
+        "zh-HK": "追加投資",
+        "zh-CN": "追加投资",
+        "en": "Additional Investment"
+      },
+      "title": {
+        "zh-HK": "曾經獲利，是否應該加碼？",
+        "zh-CN": "曾经获利，是否应该加码？",
+        "en": "Should Past Success Lead to Larger Investments?"
+      },
+      "scenario": {
+        "zh-HK": "在你收到回報後，對方表示只有現有客戶才可參加一個限時升級計劃，投入金額愈大，回報率愈高。你應該如何處理？",
+        "zh-CN": "在你收到回报后，对方表示只有现有客户才可参加一个限时升级计划，投入金额愈大，回报率愈高。你应该如何处理？",
+        "en": "After receiving returns, you are invited to a limited-time upgrade plan exclusively for existing clients. Larger investments promise higher returns. What should you do?"
+      },
       "options": [
         {
-          "id": "A",
-          "text": "過往有成功經驗，可以合理地增加投入。"
+          "text": {
+            "zh-HK": "過往有成功經驗，可以合理地增加投入",
+            "zh-CN": "过往有成功经验，可以合理地增加投入",
+            "en": "Past success justifies investing more"
+          },
+          "correct": false
         },
         {
-          "id": "B",
-          "text": "只把收到的回報再投入，便不算承受新風險。"
+          "text": {
+            "zh-HK": "只把收到的回報再投入，便不算承受新風險",
+            "zh-CN": "只把收到的回报再投入，便不算承担新风险",
+            "en": "Reinvesting profits does not create new risk"
+          },
+          "correct": false
         },
         {
-          "id": "C",
-          "text": "每次新增投資都要重新評估，並警惕限時優惠和階梯式回報帶來的壓力。"
+          "text": {
+            "zh-HK": "每次新增投資都要重新評估，並警惕限時優惠和階梯式回報帶來的壓力",
+            "zh-CN": "每次新增投资都要重新评估，并警惕限时优惠和阶梯式回报带来的压力",
+            "en": "Treat every new investment as a fresh decision and be cautious of time pressure and escalating reward promises"
+          },
+          "correct": true
         },
         {
-          "id": "D",
-          "text": "先加碼，再在下一次獲利後取回本金。"
+          "text": {
+            "zh-HK": "先加碼，再在下一次獲利後取回本金",
+            "zh-CN": "先加码，再在下一次获利后取回本金",
+            "en": "Invest more now and withdraw the principal after the next profit payment"
+          },
+          "correct": false
         }
       ],
-      "correctAnswer": "C",
-      "explanation": "過往曾經獲得回報，可能令人低估風險。限時、專屬資格和更高級別，經常用來製造錯失機會的壓力。每次增加投資都應視為新的財務決定。",
-      "learningPoint": "過往成功不保證下一次交易安全。"
+      "explanation": {
+        "zh-HK": "限時優惠、專屬資格和更高級別待遇，常被用來製造錯失機會的壓力。每次追加投資都應重新進行風險評估。",
+        "zh-CN": "限时优惠、专属资格和更高级别待遇，常被用来制造错失机会的压力。每次追加投资都应重新进行风险评估。",
+        "en": "Exclusive offers, limited-time opportunities and tiered rewards are often used to create pressure. Every additional investment should be evaluated independently."
+      },
+      "reminder": {
+        "zh-HK": "過往成功不保證下一次交易安全。",
+        "zh-CN": "过往成功不保证下一次交易安全。",
+        "en": "Past success does not guarantee future safety."
+      }
     },
     {
       "id": 9,
-      "stage": "收款資料不一致",
-      "question": "對方要求你把款項轉到一家海外公司的銀行帳戶，而不是推介產品的金融機構。對方解釋這是「國際結算及託管安排」。最安全的處理方法是甚麼？",
+      "type": "single",
+      "presentation": "classic",
+      "category": {
+        "zh-HK": "付款核實",
+        "zh-CN": "付款核实",
+        "en": "Payment Verification"
+      },
+      "title": {
+        "zh-HK": "收款人名稱不一致",
+        "zh-CN": "收款人名称不一致",
+        "en": "Inconsistent Payment Details"
+      },
+      "scenario": {
+        "zh-HK": "對方要求你把款項轉到一家海外公司的銀行帳戶，而不是推介產品的金融機構。",
+        "zh-CN": "对方要求你把款项转到一家海外公司的银行账户，而不是推介产品的金融机构。",
+        "en": "You are asked to transfer funds to the bank account of an overseas company instead of the financial institution that promoted the investment."
+      },
       "options": [
         {
-          "id": "A",
-          "text": "海外投資使用第三方帳戶很常見，可以按指示付款。"
+          "text": {
+            "zh-HK": "海外投資使用第三方帳戶很常見，可按指示付款",
+            "zh-CN": "海外投资使用第三方账户很常见，可按指示付款",
+            "en": "Third-party accounts are common in international investments, so follow the instructions"
+          },
+          "correct": false
         },
         {
-          "id": "B",
-          "text": "要求對方以電郵確認理由，留下文字紀錄便可以付款。"
+          "text": {
+            "zh-HK": "要求對方以電郵確認理由即可付款",
+            "zh-CN": "要求对方以电邮确认理由即可付款",
+            "en": "Request an email explanation and proceed"
+          },
+          "correct": false
         },
         {
-          "id": "C",
-          "text": "先支付較小金額，確認能成功入帳。"
+          "text": {
+            "zh-HK": "先支付較小金額測試",
+            "zh-CN": "先支付较小金额测试",
+            "en": "Send a smaller test payment first"
+          },
+          "correct": false
         },
         {
-          "id": "D",
-          "text": "暫停付款，獨立核實合約主體、收款人、託管安排及監管資料是否一致。"
+          "text": {
+            "zh-HK": "暫停付款，獨立核實合約主體、收款人及監管資料是否一致",
+            "zh-CN": "暂停付款，独立核实合约主体、收款人及监管资料是否一致",
+            "en": "Stop the payment and independently verify that the contracting party, recipient and regulatory information match"
+          },
+          "correct": true
         }
       ],
-      "correctAnswer": "D",
-      "explanation": "推介者、產品提供者、合約主體及收款人名稱不一致，是重大警號。複雜的解釋不能取代正式文件和獨立核實。款項一旦轉到海外或第三方帳戶，追討難度可能大幅增加。",
-      "learningPoint": "收款人不一致時，應先停，不應先付。"
+      "explanation": {
+        "zh-HK": "推介者、產品提供者、合約主體及收款人名稱不一致，是重要警號。付款前必須獨立核實。",
+        "zh-CN": "推介者、产品提供者、合约主体及收款人名称不一致，是重要警号。付款前必须独立核实。",
+        "en": "Differences between the promoter, product provider, contracting party and payment recipient are significant warning signs that require independent verification."
+      },
+      "reminder": {
+        "zh-HK": "收款人不一致時，先停再查。",
+        "zh-CN": "收款人不一致时，先停再查。",
+        "en": "When payment details do not match, stop and verify first."
+      }
     },
     {
       "id": 10,
-      "stage": "提款障礙",
-      "question": "你要求提取本金，對方表示帳戶正接受合規審查，需要先支付一筆保證金。完成後，保證金和本金會一併退還。你應該怎樣做？",
+      "type": "single",
+      "presentation": "classic",
+      "category": {
+        "zh-HK": "提款陷阱",
+        "zh-CN": "提款陷阱",
+        "en": "Withdrawal Trap"
+      },
+      "title": {
+        "zh-HK": "提款前要先付費？",
+        "zh-CN": "提款前要先付费？",
+        "en": "Pay Before Withdrawal?"
+      },
+      "scenario": {
+        "zh-HK": "你要求提取本金，對方表示需要先支付一筆保證金，之後本金和保證金會一併退還。",
+        "zh-CN": "你要求提取本金，对方表示需要先支付一笔保证金，之后本金和保证金会一并退还。",
+        "en": "You request to withdraw your money, but are told that a security deposit must be paid first and will later be refunded together with your investment."
+      },
       "options": [
         {
-          "id": "A",
-          "text": "如果保證金相對本金很少，可以支付以取回更多款項。"
+          "text": {
+            "zh-HK": "保證金相對本金較少，可以支付",
+            "zh-CN": "保证金相对本金较少，可以支付",
+            "en": "The deposit is small relative to the investment, so pay it"
+          },
+          "correct": false
         },
         {
-          "id": "B",
-          "text": "要求對方在保證金上給予折扣。"
+          "text": {
+            "zh-HK": "要求折扣後再付款",
+            "zh-CN": "要求折扣后再付款",
+            "en": "Negotiate a discount before paying"
+          },
+          "correct": false
         },
         {
-          "id": "C",
-          "text": "停止付款，立即聯絡銀行並保存所有證據。"
+          "text": {
+            "zh-HK": "停止付款，立即聯絡銀行並保存證據",
+            "zh-CN": "停止付款，立即联络银行并保存证据",
+            "en": "Stop paying immediately, contact your bank and preserve evidence"
+          },
+          "correct": true
         },
         {
-          "id": "D",
-          "text": "以另一個帳戶付款，避免原有帳戶被凍結。"
+          "text": {
+            "zh-HK": "改用另一個帳戶付款",
+            "zh-CN": "改用另一个账户付款",
+            "en": "Use another bank account for payment"
+          },
+          "correct": false
         }
       ],
-      "correctAnswer": "C",
-      "explanation": "要求受害人再付款才能取回資金，是常見的二次詐騙手法。費用可能被稱為稅款、保證金、解凍費或合規費，但基本結構相同。切勿為追回舊款而投入新款。",
-      "learningPoint": "提款前再付款，是立即停止交易的重大警號。"
+      "explanation": {
+        "zh-HK": "要求受害人先付款才能取回資金，是非常常見的二次詐騙模式。",
+        "zh-CN": "要求受害人先付款才能取回资金，是非常常见的二次诈骗模式。",
+        "en": "Requiring victims to make an additional payment before recovering money is a common secondary scam tactic."
+      },
+      "reminder": {
+        "zh-HK": "提款前再付款，是重大警號。",
+        "zh-CN": "提款前再付款，是重大警号。",
+        "en": "Being asked to pay before withdrawing funds is a major red flag."
+      }
     },
     {
       "id": 11,
-      "stage": "沉沒成本",
-      "question": "你已經投入不少資金。對方表示只要完成最後一次付款，之前所有款項便可以取回。你心想：「現在停止，之前投入的錢便可能全部失去。」這反映哪一種風險？",
+      "type": "single",
+      "presentation": "classic",
+      "category": {
+        "zh-HK": "心理陷阱",
+        "zh-CN": "心理陷阱",
+        "en": "Psychological Traps"
+      },
+      "title": {
+        "zh-HK": "沉沒成本效應",
+        "zh-CN": "沉没成本效应",
+        "en": "The Sunk Cost Trap"
+      },
+      "scenario": {
+        "zh-HK": "你已投入不少資金，對方表示只要完成最後一次付款便可取回全部資金。你心想：「現在停手，之前的錢就全沒了。」",
+        "zh-CN": "你已投入不少资金，对方表示只要完成最后一次付款便可取回全部资金。你心想：“现在停手，之前的钱就全没了。”",
+        "en": "You have already invested a substantial amount. The adviser says one final payment will unlock all funds. You think: 'If I stop now, all the money already invested will be lost.'"
+      },
       "options": [
         {
-          "id": "A",
-          "text": "匯率風險"
+          "text": {
+            "zh-HK": "匯率風險",
+            "zh-CN": "汇率风险",
+            "en": "Exchange rate risk"
+          },
+          "correct": false
         },
         {
-          "id": "B",
-          "text": "沉沒成本效應"
+          "text": {
+            "zh-HK": "沉沒成本效應",
+            "zh-CN": "沉没成本效应",
+            "en": "Sunk cost effect"
+          },
+          "correct": true
         },
         {
-          "id": "C",
-          "text": "市場流動性風險"
+          "text": {
+            "zh-HK": "市場流動性風險",
+            "zh-CN": "市场流动性风险",
+            "en": "Liquidity risk"
+          },
+          "correct": false
         },
         {
-          "id": "D",
-          "text": "信用評級下降"
+          "text": {
+            "zh-HK": "信用評級下降",
+            "zh-CN": "信用评级下降",
+            "en": "Credit rating downgrade"
+          },
+          "correct": false
         }
       ],
-      "correctAnswer": "B",
-      "explanation": "沉沒成本效應是指人們因為已投入金錢、時間或心力，而繼續作出本來不合理的決定。過去的損失無法透過增加新風險自動挽回。此時應根據現在掌握的事實重新判斷，而不是被過去投入綁架。",
-      "learningPoint": "已經付出的金錢，不應成為繼續付款的理由。"
+      "explanation": {
+        "zh-HK": "沉沒成本效應會令人因過往投入而作出不合理決定。過去的損失不應成為繼續付款的理由。",
+        "zh-CN": "沉没成本效应会令人因过往投入而作出不合理决定。过去的损失不应成为继续付款的理由。",
+        "en": "The sunk cost effect causes people to continue making poor decisions because of previous investments of money, time or effort."
+      },
+      "reminder": {
+        "zh-HK": "已付出的金錢，不應成為繼續付款的理由。",
+        "zh-CN": "已付出的金钱，不应成为继续付款的理由。",
+        "en": "Money already spent should never justify further payments."
+      }
     },
     {
       "id": 12,
-      "stage": "懷疑受騙後",
-      "question": "你開始懷疑這是一場騙局。以下哪一組行動最適當？",
+      "type": "single",
+      "presentation": "classic",
+      "category": {
+        "zh-HK": "求助應對",
+        "zh-CN": "求助应对",
+        "en": "Getting Help"
+      },
+      "title": {
+        "zh-HK": "懷疑受騙後怎樣做？",
+        "zh-CN": "怀疑受骗后怎样做？",
+        "en": "What Should You Do If You Suspect a Scam?"
+      },
+      "scenario": {
+        "zh-HK": "你開始懷疑這是一場騙局。以下哪一組行動最適當？",
+        "zh-CN": "你开始怀疑这是一场骗局。以下哪一组行动最适当？",
+        "en": "You begin to suspect that the investment may be a scam. Which response is most appropriate?"
+      },
       "options": [
         {
-          "id": "A",
-          "text": "繼續與對方溝通，避免打草驚蛇，待取得更多證據才求助。"
+          "text": {
+            "zh-HK": "繼續與對方周旋，先收集更多證據",
+            "zh-CN": "继续与对方周旋，先收集更多证据",
+            "en": "Continue communicating with the scammer to gather more evidence"
+          },
+          "correct": false
         },
         {
-          "id": "B",
-          "text": "在社交媒體公開對方資料，等待其他人提供意見。"
+          "text": {
+            "zh-HK": "在社交媒體公開對方資料",
+            "zh-CN": "在社交媒体公开对方资料",
+            "en": "Publish the person's details on social media"
+          },
+          "correct": false
         },
         {
-          "id": "C",
-          "text": "停止付款、聯絡銀行、保存證據、檢查帳戶安全，並透過官方渠道尋求協助。"
+          "text": {
+            "zh-HK": "停止付款、聯絡銀行、保存證據並透過官方渠道求助",
+            "zh-CN": "停止付款、联络银行、保存证据并通过官方渠道求助",
+            "en": "Stop payments, contact your bank, preserve evidence and seek help through official channels"
+          },
+          "correct": true
         },
         {
-          "id": "D",
-          "text": "刪除所有對話和應用程式，防止騙徒再找到你。"
+          "text": {
+            "zh-HK": "刪除所有對話紀錄和應用程式",
+            "zh-CN": "删除所有对话纪录和应用程序",
+            "en": "Delete all conversations and applications"
+          },
+          "correct": false
         }
       ],
-      "correctAnswer": "C",
-      "explanation": "懷疑受騙時，時間十分重要。應立即停止付款及聯絡銀行，保存電話、電郵、網址、收款資料、對話和交易紀錄。如曾提供密碼或敏感資料，應更改密碼並檢查帳戶安全。不要因尷尬、職位或損失金額而延遲求助。",
-      "learningPoint": "及早停止、保存證據和求助，比繼續與騙徒周旋更重要。"
+      "explanation": {
+        "zh-HK": "懷疑受騙時，應立即停止付款、保存資料、聯絡銀行及尋求協助，不要拖延。",
+        "zh-CN": "怀疑受骗时，应立即停止付款、保存资料、联络银行及寻求协助，不要拖延。",
+        "en": "If you suspect a scam, act quickly. Stop payments, preserve evidence, contact your bank and seek help through official channels."
+      },
+      "reminder": {
+        "zh-HK": "及早停止、保留證據和求助最重要。",
+        "zh-CN": "及早停止、保留证据和求助最重要。",
+        "en": "Stopping early, preserving evidence and getting help are the most important steps."
+      }
     }
   ]
 }

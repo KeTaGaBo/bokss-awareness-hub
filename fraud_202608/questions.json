@@ -553,14 +553,6 @@
         },
         {
           "text": {
-            "zh-HK": "這不能證明整項投資真實存在或受到適當監管",
-            "zh-CN": "这不能证明整项投资真实存在或受到适当监管",
-            "en": "It does not prove that the investment is genuine or properly regulated"
-          },
-          "correct": true
-        },
-        {
-          "text": {
             "zh-HK": "這代表投資風險已經消失",
             "zh-CN": "这代表投资风险已经消失",
             "en": "It means that the investment risk has disappeared"
@@ -574,6 +566,14 @@
             "en": "It means that the principal and all future returns can definitely be withdrawn"
           },
           "correct": false
+        },
+                {
+          "text": {
+            "zh-HK": "這不能證明整項投資真實存在或受到適當監管",
+            "zh-CN": "这不能证明整项投资真实存在或受到适当监管",
+            "en": "It does not prove that the investment is genuine or properly regulated"
+          },
+          "correct": true
         }
       ],
       "explanation": {
@@ -945,19 +945,19 @@
         },
         {
           "text": {
-            "zh-HK": "透過官方渠道尋求協助；如曾提供密碼或敏感資料，亦應檢查帳戶安全",
-            "zh-CN": "通过官方渠道寻求协助；如曾提供密码或敏感资料，也应检查账户安全",
-            "en": "Seek help through official channels and check account security if passwords or sensitive information were provided"
-          },
-          "correct": true
-        },
-        {
-          "text": {
             "zh-HK": "刪除所有對話和交易紀錄，以免再看到相關內容",
             "zh-CN": "删除所有对话和交易纪录，以免再看到相关内容",
             "en": "Delete all conversations and transaction records so that you no longer have to see them"
           },
           "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "透過官方渠道尋求協助；如曾提供密碼或敏感資料，亦應檢查帳戶安全",
+            "zh-CN": "通过官方渠道寻求协助；如曾提供密码或敏感资料，也应检查账户安全",
+            "en": "Seek help through official channels and check account security if passwords or sensitive information were provided"
+          },
+          "correct": true
         },
         {
           "text": {

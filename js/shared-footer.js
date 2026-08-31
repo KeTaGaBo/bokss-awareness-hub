@@ -3,7 +3,14 @@
 (function () {
   const FOOTER_HTML = `
     <div class="footer-row footer-row-top">
-      <span class="footer-label">Awareness Hub · 資安及私隱教育</span>
+      <a
+        class="footer-site-link"
+        href="https://awareness-hub.bokss.org.hk"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Awareness Hub · 資安及私隱教育
+      </a>
 
       <a
         class="footer-site-link"

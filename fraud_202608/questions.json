@@ -397,7 +397,7 @@
     },
     {
       "id": 5,
-      "type": "single",
+      "type": "multiple",
       "presentation": "classic",
       "category": {
         "zh-HK": "小額試投",
@@ -405,53 +405,53 @@
         "en": "Small Trial Investment"
       },
       "title": {
-        "zh-HK": "小額投資是否不用查證？",
-        "zh-CN": "小额投资是否不用核实？",
-        "en": "Does a Small Investment Remove the Need to Verify?"
+        "zh-HK": "小額試投是否安全？",
+        "zh-CN": "小额试投是否安全？",
+        "en": "Is a Small Trial Investment Safe?"
       },
       "scenario": {
-        "zh-HK": "對方提議你先投入一筆可以承受損失的小額資金，強調這只是「試用」，稍後可以隨時退出。以下哪個判斷最適當？",
-        "zh-CN": "对方提议你先投入一笔可以承受损失的小额资金，强调这只是“试用”，稍后可以随时退出。以下哪个判断最适当？",
-        "en": "The adviser suggests starting with a small amount that you can afford to lose, describing it as a trial that you can leave at any time. Which judgement is most appropriate?"
+        "zh-HK": "對方提議你先投入一筆可以承受損失的小額資金，強調這只是「試用」，稍後可以隨時退出。以下哪些說法正確？（多選）",
+        "zh-CN": "对方提议你先投入一笔可以承受损失的小额资金，强调这只是“试用”，稍后可以随时退出。以下哪些说法正确？（多选）",
+        "en": "The adviser suggests starting with a small amount that you can afford to lose, describing it as a trial that you can leave at any time. Which statements are correct? Select all that apply."
       },
       "options": [
         {
           "text": {
-            "zh-HK": "小額損失可以承受，所以不用花時間查證",
-            "zh-CN": "小额损失可以承受，所以不用花时间核实",
-            "en": "The possible loss is affordable, so there is no need to spend time verifying the investment"
-          },
-          "correct": false
-        },
-        {
-          "text": {
-            "zh-HK": "只要不用提供密碼，小額投資便屬安全",
-            "zh-CN": "只要不用提供密码，小额投资便属安全",
-            "en": "A small investment is safe as long as no password is required"
-          },
-          "correct": false
-        },
-        {
-          "text": {
-            "zh-HK": "小額試投不能取代查證，而且可能是建立信任和付款習慣的第一步",
-            "zh-CN": "小额试投不能取代核实，而且可能是建立信任和付款习惯的第一步",
-            "en": "A small trial cannot replace verification and may be the first step in building trust and a habit of making payments"
+            "zh-HK": "即使金額很小，仍應先核實機構及產品",
+            "zh-CN": "即使金额很小，仍应先核实机构及产品",
+            "en": "Even for a small amount, the institution and product should still be verified first"
           },
           "correct": true
         },
         {
           "text": {
-            "zh-HK": "先付款，再看看對方是否真的提供回報",
-            "zh-CN": "先付款，再看看对方是否真的提供回报",
-            "en": "Pay first and see whether the adviser really provides a return"
+            "zh-HK": "小額付款可能是對方建立信任和付款習慣的第一步",
+            "zh-CN": "小额付款可能是对方建立信任和付款习惯的第一步",
+            "en": "A small payment may be the first step in building trust and a habit of making payments"
+          },
+          "correct": true
+        },
+        {
+          "text": {
+            "zh-HK": "只要金額不大，投資是否真實並不重要",
+            "zh-CN": "只要金额不大，投资是否真实并不重要",
+            "en": "If the amount is small, whether the investment is genuine is not important"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "收到小額回報後，便可放心增加投資",
+            "zh-CN": "收到小额回报后，便可放心增加投资",
+            "en": "After receiving a small return, it is safe to increase the investment"
           },
           "correct": false
         }
       ],
       "explanation": {
-        "zh-HK": "第一次投資金額較小，可能使人放低戒心。一旦完成首次付款並投入時間，日後便可能更容易接受追加投資。能否承受損失與投資是否真實，是兩個不同問題。",
-        "zh-CN": "第一次投资金额较小，可能使人放低戒心。一旦完成首次付款并投入时间，日后便可能更容易接受追加投资。能否承受损失与投资是否真实，是两个不同问题。",
-        "en": "A small first investment may lower your sense of caution. After making the first payment and committing time, you may become more willing to make further investments. Being able to afford a loss and determining whether an investment is genuine are two different matters."
+        "zh-HK": "小額投資不能取代查證。第一次投資金額較小，可能使人放低戒心。一旦完成首次付款並投入時間，日後便可能更容易接受追加投資。能否承受損失與投資是否真實，是兩個不同問題。",
+        "zh-CN": "小额投资不能取代核实。第一次投资金额较小，可能使人放低戒心。一旦完成首次付款并投入时间，日后便可能更容易接受追加投资。能否承受损失与投资是否真实，是两个不同问题。",
+        "en": "A small investment is not a substitute for verification. A small first payment may lower your caution. After making the first payment and committing time, you may become more willing to invest again. Being able to afford a loss and determining whether an investment is genuine are two different matters."
       },
       "reminder": {
         "zh-HK": "「小額試試」可能是信任陷阱的起點。",
@@ -469,9 +469,9 @@
         "en": "Early Returns"
       },
       "title": {
-        "zh-HK": "收到真實回報等於投資真實？",
-        "zh-CN": "收到真实回报等于投资真实？",
-        "en": "Does Receiving a Real Return Prove the Investment Is Genuine?"
+        "zh-HK": "收到真實回報代表甚麼？",
+        "zh-CN": "收到真实回报代表什么？",
+        "en": "What Does a Real Return Prove?"
       },
       "scenario": {
         "zh-HK": "數星期後，你真的收到一筆回報，而且款項已進入你的銀行帳戶。你應如何理解這件事？",
@@ -481,41 +481,41 @@
       "options": [
         {
           "text": {
-            "zh-HK": "銀行已收到款項，足以證明投資真實",
-            "zh-CN": "银行已收到款项，足以证明投资真实",
-            "en": "The money reached my bank account, which is enough to prove that the investment is genuine"
+            "zh-HK": "銀行已收到款項，因此足以證明投資真實",
+            "zh-CN": "银行已收到款项，因此足以证明投资真实",
+            "en": "The payment reached my bank account, so the investment must be genuine"
           },
           "correct": false
         },
         {
           "text": {
-            "zh-HK": "能夠收到款項，代表對方一定受到金融監管",
-            "zh-CN": "能够收到款项，代表对方一定受到金融监管",
-            "en": "Receiving money proves that the adviser is regulated"
+            "zh-HK": "收到回報代表對方一定持有適當的金融牌照",
+            "zh-CN": "收到回报代表对方一定持有适当的金融牌照",
+            "en": "Receiving a return proves that the adviser holds the proper financial licence"
           },
           "correct": false
         },
         {
           "text": {
-            "zh-HK": "收到回報是正面訊號，但不能單獨證明投資或對方身份真實",
-            "zh-CN": "收到回报是正面信号，但不能单独证明投资或对方身份真实",
-            "en": "Receiving a return is a positive sign, but it cannot by itself prove that the investment or the adviser's identity is genuine"
+            "zh-HK": "成功收到一次款項，代表將來一定可以提取全部本金",
+            "zh-CN": "成功收到一次款项，代表将来一定可以提取全部本金",
+            "en": "Receiving one payment means that the full principal can definitely be withdrawn later"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "真實回報可能只是建立信任的手段，不能單獨證明投資真實",
+            "zh-CN": "真实回报可能只是建立信任的手段，不能单独证明投资真实",
+            "en": "A real return may be used to build trust and cannot by itself prove that the investment is genuine"
           },
           "correct": true
-        },
-        {
-          "text": {
-            "zh-HK": "應把回報立即重新投入，以免錯過增長機會",
-            "zh-CN": "应把回报立即重新投入，以免错过增长机会",
-            "en": "The return should be reinvested immediately to avoid missing the opportunity for further growth"
-          },
-          "correct": false
         }
       ],
       "explanation": {
-        "zh-HK": "騙徒可能願意先支付小額回報，以換取更大的信任和後續投資。這筆錢可能來自你的本金、其他付款或騙徒預留的誘餌成本。收到真錢，不等於背後的投資活動真實。",
-        "zh-CN": "骗徒可能愿意先支付小额回报，以换取更大的信任和后续投资。这笔钱可能来自你的本金、其他付款或骗徒预留的诱饵成本。收到真金钱，不等于背后的投资活动真实。",
-        "en": "Scammers may pay a small early return to gain greater trust and encourage further investment. The payment may come from your original funds, other payments or money set aside as bait. Receiving real money does not prove that genuine investment activity exists behind it."
+        "zh-HK": "騙徒可能願意先支付小額回報，以換取更大的信任和後續投資。這筆錢可能來自你的本金、其他人的付款，或騙徒預留的誘餌成本。收到真錢，不等於背後存在真實的投資活動。",
+        "zh-CN": "骗徒可能愿意先支付小额回报，以换取更大的信任和后续投资。这笔钱可能来自你的本金、其他人的付款，或骗徒预留的诱饵成本。收到真金钱，不等于背后存在真实的投资活动。",
+        "en": "Scammers may pay a small early return to gain greater trust and encourage further investment. The payment may come from your original funds, payments made by other people, or money set aside as bait. Receiving real money does not prove that genuine investment activity exists behind it."
       },
       "reminder": {
         "zh-HK": "真回報也可以是騙局的一部分。",
@@ -525,7 +525,7 @@
     },
     {
       "id": 7,
-      "type": "single",
+      "type": "multiple",
       "presentation": "classic",
       "category": {
         "zh-HK": "錯誤推論",
@@ -533,58 +533,58 @@
         "en": "False Assumptions"
       },
       "title": {
-        "zh-HK": "收到回報是否等同安全？",
-        "zh-CN": "收到回报是否等同安全？",
-        "en": "Does Receiving a Return Prove Safety?"
+        "zh-HK": "一次回報能證明甚麼？",
+        "zh-CN": "一次回报能证明什么？",
+        "en": "What Can One Successful Return Prove?"
       },
       "scenario": {
-        "zh-HK": "對方指出：「你已經親自收到回報，這比任何網上警告都更可靠。」這句說話最大的問題是甚麼？",
-        "zh-CN": "对方指出：“你已经亲自收到回报，这比任何网上警告都更可靠。”这句话最大的問題是什么？",
-        "en": "The adviser says: 'You have already received returns yourself. That is more reliable than anything you read online.' What is the biggest flaw in this claim?"
+        "zh-HK": "對方指出：「你已經親自收到回報，這比任何網上警告都更可靠。」根據你收到一次回報的事實，以下哪些說法正確？（多選）",
+        "zh-CN": "对方指出：“你已经亲自收到回报，这比任何网上警告都更可靠。”根据你收到一次回报的事实，以下哪些说法正确？（多选）",
+        "en": "The adviser says: \"You have already received a return yourself. That is more reliable than any online warning.\" Based on the fact that you received one return, which statements are correct? Select all that apply."
       },
       "options": [
         {
           "text": {
-            "zh-HK": "回報金額可能不夠高",
-            "zh-CN": "回报金额可能不够高",
-            "en": "The return amount may be too small"
-          },
-          "correct": false
-        },
-        {
-          "text": {
-            "zh-HK": "這把一次收款錯誤當成整項投資真實和安全的證明",
-            "zh-CN": "这是把一次收款错误当成整项投资真实和安全的证明",
-            "en": "It wrongly treats a single payment as proof that the entire investment is genuine and safe"
+            "zh-HK": "這只能證明有人曾經向你付款",
+            "zh-CN": "这只能证明有人曾经向你付款",
+            "en": "It only proves that someone made a payment to you"
           },
           "correct": true
         },
         {
           "text": {
-            "zh-HK": "銀行轉帳速度可能受假期影響",
-            "zh-CN": "银行转账速度可能受假期影响",
-            "en": "Bank transfers can be delayed by holidays"
+            "zh-HK": "這不能證明整項投資真實存在或受到適當監管",
+            "zh-CN": "这不能证明整项投资真实存在或受到适当监管",
+            "en": "It does not prove that the investment is genuine or properly regulated"
+          },
+          "correct": true
+        },
+        {
+          "text": {
+            "zh-HK": "這代表投資風險已經消失",
+            "zh-CN": "这代表投资风险已经消失",
+            "en": "It means that the investment risk has disappeared"
           },
           "correct": false
         },
         {
           "text": {
-            "zh-HK": "投資顧問不應主動談及網上警告",
-            "zh-CN": "投资顾问不应主动谈及网上警告",
-            "en": "Investment advisers should not discuss online warnings"
+            "zh-HK": "這代表未來一定能成功提取本金和所有回報",
+            "zh-CN": "这代表未来一定能成功提取本金和所有回报",
+            "en": "It means that the principal and all future returns can definitely be withdrawn"
           },
           "correct": false
         }
       ],
       "explanation": {
-        "zh-HK": "一次或數次成功收款，只能證明有人向你付款，不能證明資金來自真正投資收益，也不能證明產品、機構或聯絡人受到適當監管。",
-        "zh-CN": "一次或数次成功收款，只能证明有人向你付款，不能证明资金来自真正投资收益，也不能证明产品、机构或联络人受到适当监管。",
-        "en": "One or several successful payments only prove that someone paid you. They do not prove that the money comes from genuine investment activity or that the product, institution or adviser is properly regulated."
+        "zh-HK": "一次或數次成功收款，只能證明有人向你付款。這不能證明款項來自真正的投資收益，也不能證明產品、機構、聯絡人或收款安排受到適當監管。個別經驗不能取代完整查證。",
+        "zh-CN": "一次或数次成功收款，只能证明有人向你付款。这不能证明款项来自真正的投资收益，也不能证明产品、机构、联络人或收款安排受到适当监管。个别经验不能取代完整核实。",
+        "en": "One or several successful payments only prove that someone paid you. They do not prove that the money came from genuine investment returns or that the product, institution, adviser or payment arrangement is properly regulated. A personal experience does not replace full verification."
       },
       "reminder": {
         "zh-HK": "個別結果不能取代完整查證。",
         "zh-CN": "个别结果不能取代完整核实。",
-        "en": "A single result never replaces proper verification."
+        "en": "A single result cannot replace full verification."
       }
     },
     {
@@ -599,61 +599,61 @@
       "title": {
         "zh-HK": "曾經獲利，是否應該加碼？",
         "zh-CN": "曾经获利，是否应该加码？",
-        "en": "Should Past Success Lead to Larger Investments?"
+        "en": "Should Past Success Lead to a Larger Investment?"
       },
       "scenario": {
         "zh-HK": "在你收到回報後，對方表示只有現有客戶才可參加一個限時升級計劃，投入金額愈大，回報率愈高。你應該如何處理？",
-        "zh-CN": "在你收到回报后，对方表示只有现有客户才可参加一个限时升级计划，投入金额愈大，回报率愈高。你应该如何处理？",
-        "en": "After receiving returns, you are invited to a limited-time upgrade plan exclusively for existing clients. Larger investments promise higher returns. What should you do?"
+        "zh-CN": "在你收到回报后，对方表示只有现有客户才可参加一个限时升级计划，投入金额越大，回报率越高。你应该如何处理？",
+        "en": "After receiving a return, you are invited to a limited-time upgrade plan available only to existing clients. The adviser promises higher return rates for larger investments. What should you do?"
       },
       "options": [
         {
           "text": {
             "zh-HK": "過往有成功經驗，可以合理地增加投入",
             "zh-CN": "过往有成功经验，可以合理地增加投入",
-            "en": "Past success justifies investing more"
+            "en": "Past success provides a good reason to invest more"
           },
           "correct": false
         },
         {
           "text": {
-            "zh-HK": "只把收到的回報再投入，便不算承受新風險",
-            "zh-CN": "只把收到的回报再投入，便不算承担新风险",
-            "en": "Reinvesting profits does not create new risk"
+            "zh-HK": "只把收到的回報再投入，便不算承受新的風險",
+            "zh-CN": "只把收到的回报再投入，便不算承担新的风险",
+            "en": "Reinvesting only the returns does not create any new risk"
           },
           "correct": false
         },
         {
           "text": {
-            "zh-HK": "每次新增投資都要重新評估，並警惕限時優惠和階梯式回報帶來的壓力",
-            "zh-CN": "每次新增投资都要重新评估，并警惕限时优惠和阶梯式回报带来的压力",
-            "en": "Treat every new investment as a fresh decision and be cautious of time pressure and escalating reward promises"
+            "zh-HK": "每次新增投資都要重新評估，並警惕限時優惠及階梯式回報帶來的壓力",
+            "zh-CN": "每次新增投资都要重新评估，并警惕限时优惠及阶梯式回报带来的压力",
+            "en": "Treat every new investment as a fresh decision and be cautious of time pressure and escalating return promises"
           },
           "correct": true
         },
         {
           "text": {
-            "zh-HK": "先加碼，再在下一次獲利後取回本金",
-            "zh-CN": "先加码，再在下一次获利后取回本金",
-            "en": "Invest more now and withdraw the principal after the next profit payment"
+            "zh-HK": "先增加投資，再在下一次獲利後取回本金",
+            "zh-CN": "先增加投资，再在下一次获利后取回本金",
+            "en": "Invest more now and withdraw the principal after the next return"
           },
           "correct": false
         }
       ],
       "explanation": {
-        "zh-HK": "限時優惠、專屬資格和更高級別待遇，常被用來製造錯失機會的壓力。每次追加投資都應重新進行風險評估。",
-        "zh-CN": "限时优惠、专属资格和更高级别待遇，常被用来制造错失机会的压力。每次追加投资都应重新进行风险评估。",
-        "en": "Exclusive offers, limited-time opportunities and tiered rewards are often used to create pressure. Every additional investment should be evaluated independently."
+        "zh-HK": "過往曾經獲得回報，可能令人低估風險。限時、專屬資格和更高級別待遇，經常被用來製造錯失機會的壓力。每次增加投資都應視為新的財務決定，並重新核實相關資料。",
+        "zh-CN": "过往曾经获得回报，可能令人低估风险。限时、专属资格和更高级别待遇，经常被用来制造错失机会的压力。每次增加投资都应视为新的财务决定，并重新核实相关资料。",
+        "en": "Past returns may cause people to underestimate risk. Limited-time offers, exclusive access and higher reward levels are often used to create fear of missing out. Every additional investment should be treated as a new financial decision and verified again."
       },
       "reminder": {
         "zh-HK": "過往成功不保證下一次交易安全。",
         "zh-CN": "过往成功不保证下一次交易安全。",
-        "en": "Past success does not guarantee future safety."
+        "en": "Past success does not guarantee that the next transaction is safe."
       }
     },
     {
       "id": 9,
-      "type": "single",
+      "type": "multiple",
       "presentation": "classic",
       "category": {
         "zh-HK": "付款核實",
@@ -666,53 +666,53 @@
         "en": "Inconsistent Payment Details"
       },
       "scenario": {
-        "zh-HK": "對方要求你把款項轉到一家海外公司的銀行帳戶，而不是推介產品的金融機構。",
-        "zh-CN": "对方要求你把款项转到一家海外公司的银行账户，而不是推介产品的金融机构。",
-        "en": "You are asked to transfer funds to the bank account of an overseas company instead of the financial institution that promoted the investment."
+        "zh-HK": "對方要求你把款項轉到一家海外公司的銀行帳戶，而不是推介產品的金融機構，並解釋這是「國際結算及託管安排」。以下哪些做法較適當？（多選）",
+        "zh-CN": "对方要求你把款项转到一家海外公司的银行账户，而不是推介产品的金融机构，并解释这是“国际结算及托管安排”。以下哪些做法较适当？（多选）",
+        "en": "You are asked to transfer funds to the bank account of an overseas company instead of the financial institution promoting the product. The adviser describes this as an international settlement and custody arrangement. Which actions are appropriate? Select all that apply."
       },
       "options": [
         {
           "text": {
-            "zh-HK": "海外投資使用第三方帳戶很常見，可按指示付款",
-            "zh-CN": "海外投资使用第三方账户很常见，可按指示付款",
-            "en": "Third-party accounts are common in international investments, so follow the instructions"
-          },
-          "correct": false
-        },
-        {
-          "text": {
-            "zh-HK": "要求對方以電郵確認理由即可付款",
-            "zh-CN": "要求对方以电邮确认理由即可付款",
-            "en": "Request an email explanation and proceed"
-          },
-          "correct": false
-        },
-        {
-          "text": {
-            "zh-HK": "先支付較小金額測試",
-            "zh-CN": "先支付较小金额测试",
-            "en": "Send a smaller test payment first"
-          },
-          "correct": false
-        },
-        {
-          "text": {
-            "zh-HK": "暫停付款，獨立核實合約主體、收款人及監管資料是否一致",
-            "zh-CN": "暂停付款，独立核实合约主体、收款人及监管资料是否一致",
-            "en": "Stop the payment and independently verify that the contracting party, recipient and regulatory information match"
+            "zh-HK": "暫停付款，未完成查證前不要轉帳",
+            "zh-CN": "暂停付款，未完成核实前不要转账",
+            "en": "Pause the payment and do not transfer any money until verification is complete"
           },
           "correct": true
+        },
+        {
+          "text": {
+            "zh-HK": "獨立核實收款公司與投資產品及金融機構的關係",
+            "zh-CN": "独立核实收款公司与投资产品及金融机构的关系",
+            "en": "Independently verify the relationship between the receiving company, investment product and financial institution"
+          },
+          "correct": true
+        },
+        {
+          "text": {
+            "zh-HK": "核實合約主體、收款人、託管安排及監管資料是否一致",
+            "zh-CN": "核实合约主体、收款人、托管安排及监管资料是否一致",
+            "en": "Check whether the contracting party, payment recipient, custody arrangement and regulatory information are consistent"
+          },
+          "correct": true
+        },
+        {
+          "text": {
+            "zh-HK": "只要對方能以專業方式解釋第三方收款安排，便可付款",
+            "zh-CN": "只要对方能以专业方式解释第三方收款安排，便可付款",
+            "en": "Proceed with payment if the adviser gives a professional explanation for the third-party account"
+          },
+          "correct": false
         }
       ],
       "explanation": {
-        "zh-HK": "推介者、產品提供者、合約主體及收款人名稱不一致，是重要警號。付款前必須獨立核實。",
-        "zh-CN": "推介者、产品提供者、合约主体及收款人名称不一致，是重要警号。付款前必须独立核实。",
-        "en": "Differences between the promoter, product provider, contracting party and payment recipient are significant warning signs that require independent verification."
+        "zh-HK": "推介者、產品提供者、合約主體及收款人名稱不一致，是重大警號。複雜或專業的解釋不能取代正式文件和獨立核實。款項一旦轉到海外或第三方帳戶，追討難度可能大幅增加。",
+        "zh-CN": "推介者、产品提供者、合约主体及收款人名称不一致，是重大警号。复杂或专业的解释不能取代正式文件和独立核实。款项一旦转到海外或第三方账户，追讨难度可能大幅增加。",
+        "en": "Differences between the promoter, product provider, contracting party and payment recipient are major warning signs. A complex or professional explanation cannot replace formal documents and independent verification. Recovering money may become much more difficult after it is transferred to an overseas or third-party account."
       },
       "reminder": {
-        "zh-HK": "收款人不一致時，先停再查。",
-        "zh-CN": "收款人不一致时，先停再查。",
-        "en": "When payment details do not match, stop and verify first."
+        "zh-HK": "收款人不一致時，應先停、再查，不應先付款。",
+        "zh-CN": "收款人不一致时，应先停、再查，不应先付款。",
+        "en": "When payment details do not match, stop and verify before paying."
       }
     },
     {
@@ -725,85 +725,141 @@
         "en": "Withdrawal Trap"
       },
       "title": {
-        "zh-HK": "提款前要先付費？",
-        "zh-CN": "提款前要先付费？",
-        "en": "Pay Before Withdrawal?"
+        "zh-HK": "提款前要先付保證金？",
+        "zh-CN": "提款前要先付保证金？",
+        "en": "Pay a Deposit Before Withdrawal?"
       },
       "scenario": {
-        "zh-HK": "你要求提取本金，對方表示需要先支付一筆保證金，之後本金和保證金會一併退還。",
-        "zh-CN": "你要求提取本金，对方表示需要先支付一笔保证金，之后本金和保证金会一并退还。",
-        "en": "You request to withdraw your money, but are told that a security deposit must be paid first and will later be refunded together with your investment."
+        "zh-HK": "你要求提取本金，對方表示帳戶正接受合規審查，需要先支付一筆保證金。完成後，保證金和本金會一併退還。你應該怎樣做？",
+        "zh-CN": "你要求提取本金，对方表示账户正在接受合规审查，需要先支付一笔保证金。完成后，保证金和本金会一并退还。你应该怎样做？",
+        "en": "You request to withdraw your principal, but the adviser says that your account is under a compliance review and that a security deposit must be paid first. The deposit and principal will supposedly be returned together. What should you do?"
       },
       "options": [
         {
           "text": {
-            "zh-HK": "保證金相對本金較少，可以支付",
-            "zh-CN": "保证金相对本金较少，可以支付",
-            "en": "The deposit is small relative to the investment, so pay it"
-          },
-          "correct": false
-        },
-        {
-          "text": {
-            "zh-HK": "要求折扣後再付款",
-            "zh-CN": "要求折扣后再付款",
-            "en": "Negotiate a discount before paying"
-          },
-          "correct": false
-        },
-        {
-          "text": {
-            "zh-HK": "停止付款，立即聯絡銀行並保存證據",
-            "zh-CN": "停止付款，立即联络银行并保存证据",
-            "en": "Stop paying immediately, contact your bank and preserve evidence"
+            "zh-HK": "停止付款，立即聯絡銀行並保存所有證據",
+            "zh-CN": "停止付款，立即联络银行并保存所有证据",
+            "en": "Stop making payments, contact your bank immediately and preserve all evidence"
           },
           "correct": true
         },
         {
           "text": {
-            "zh-HK": "改用另一個帳戶付款",
-            "zh-CN": "改用另一个账户付款",
-            "en": "Use another bank account for payment"
+            "zh-HK": "要求對方降低保證金金額後再付款",
+            "zh-CN": "要求对方降低保证金金额后再付款",
+            "en": "Ask the adviser to reduce the deposit before paying it"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "改用另一個銀行帳戶支付保證金",
+            "zh-CN": "改用另一个银行账户支付保证金",
+            "en": "Use a different bank account to pay the deposit"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "分期支付保證金，以降低單次付款風險",
+            "zh-CN": "分期支付保证金，以降低单次付款风险",
+            "en": "Pay the deposit in instalments to reduce the risk of each payment"
           },
           "correct": false
         }
       ],
       "explanation": {
-        "zh-HK": "要求受害人先付款才能取回資金，是非常常見的二次詐騙模式。",
-        "zh-CN": "要求受害人先付款才能取回资金，是非常常见的二次诈骗模式。",
-        "en": "Requiring victims to make an additional payment before recovering money is a common secondary scam tactic."
+        "zh-HK": "要求受害人再付款才能取回資金，是常見的二次詐騙手法。費用可能被稱為稅款、保證金、解凍費、手續費或合規費，但基本結構相同。切勿為追回舊款而投入新款。",
+        "zh-CN": "要求受害人再付款才能取回资金，是常见的二次诈骗手法。费用可能被称为税款、保证金、解冻费、手续费或合规费，但基本结构相同。切勿为追回旧款而投入新款。",
+        "en": "Requiring a victim to make another payment before funds can be released is a common secondary scam tactic. The payment may be described as tax, a security deposit, an account release fee, an administration charge or a compliance fee, but the basic pattern is the same. Never send new money in an attempt to recover money already paid."
       },
       "reminder": {
-        "zh-HK": "提款前再付款，是重大警號。",
-        "zh-CN": "提款前再付款，是重大警号。",
-        "en": "Being asked to pay before withdrawing funds is a major red flag."
+        "zh-HK": "提款前再付款，是立即停止交易的重大警號。",
+        "zh-CN": "提款前再付款，是立即停止交易的重大警号。",
+        "en": "Being asked to pay before withdrawing funds is a major warning sign to stop immediately."
       }
     },
     {
       "id": 11,
       "type": "single",
-      "presentation": "classic",
+      "presentation": "scenario",
       "category": {
         "zh-HK": "心理陷阱",
         "zh-CN": "心理陷阱",
         "en": "Psychological Traps"
       },
       "title": {
-        "zh-HK": "沉沒成本效應",
-        "zh-CN": "沉没成本效应",
-        "en": "The Sunk Cost Trap"
+        "zh-HK": "最後一次付款？",
+        "zh-CN": "最后一次付款？",
+        "en": "One Final Payment?"
       },
-      "scenario": {
-        "zh-HK": "你已投入不少資金，對方表示只要完成最後一次付款便可取回全部資金。你心想：「現在停手，之前的錢就全沒了。」",
-        "zh-CN": "你已投入不少资金，对方表示只要完成最后一次付款便可取回全部资金。你心想：“现在停手，之前的钱就全没了。”",
-        "en": "You have already invested a substantial amount. The adviser says one final payment will unlock all funds. You think: 'If I stop now, all the money already invested will be lost.'"
+      "story": {
+        "zh-HK": {
+          "label": "投資案例",
+          "title": "只差最後一筆保證金",
+          "dialogues": [
+            {
+              "avatar": "💼",
+              "speaker": "投資顧問",
+              "text": "只差最後一筆保證金。付款後，你之前投入的資金和所有回報都可以取回。",
+              "side": "left"
+            },
+            {
+              "avatar": "👤",
+              "speaker": "投資者",
+              "text": "我已經投入了很多錢。如果現在停止，之前的錢就可能全部失去。",
+              "side": "right"
+            }
+          ]
+        },
+        "zh-CN": {
+          "label": "投资案例",
+          "title": "只差最后一笔保证金",
+          "dialogues": [
+            {
+              "avatar": "💼",
+              "speaker": "投资顾问",
+              "text": "只差最后一笔保证金。付款后，你之前投入的资金和所有回报都可以取回。",
+              "side": "left"
+            },
+            {
+              "avatar": "👤",
+              "speaker": "投资者",
+              "text": "我已经投入了很多钱。如果现在停止，之前的钱就可能全部失去。",
+              "side": "right"
+            }
+          ]
+        },
+        "en": {
+          "label": "Investment Case",
+          "title": "Only One Final Deposit",
+          "dialogues": [
+            {
+              "avatar": "💼",
+              "speaker": "Investment Adviser",
+              "text": "Only one final security deposit is required. After you pay it, you can withdraw all the money you invested and all the returns.",
+              "side": "left"
+            },
+            {
+              "avatar": "👤",
+              "speaker": "Investor",
+              "text": "I have already invested a lot of money. If I stop now, I may lose everything I have already paid.",
+              "side": "right"
+            }
+          ]
+        }
+      },
+      "question": {
+        "zh-HK": "投資者的想法最能反映以下哪一種心理陷阱？",
+        "zh-CN": "投资者的想法最能反映以下哪一种心理陷阱？",
+        "en": "Which psychological trap is best reflected in the investor's thinking?"
       },
       "options": [
         {
           "text": {
-            "zh-HK": "匯率風險",
-            "zh-CN": "汇率风险",
-            "en": "Exchange rate risk"
+            "zh-HK": "從眾效應",
+            "zh-CN": "从众效应",
+            "en": "Bandwagon effect"
           },
           "correct": false
         },
@@ -817,35 +873,35 @@
         },
         {
           "text": {
-            "zh-HK": "市場流動性風險",
-            "zh-CN": "市场流动性风险",
-            "en": "Liquidity risk"
+            "zh-HK": "權威效應",
+            "zh-CN": "权威效应",
+            "en": "Authority bias"
           },
           "correct": false
         },
         {
           "text": {
-            "zh-HK": "信用評級下降",
-            "zh-CN": "信用评级下降",
-            "en": "Credit rating downgrade"
+            "zh-HK": "確認偏誤",
+            "zh-CN": "确认偏误",
+            "en": "Confirmation bias"
           },
           "correct": false
         }
       ],
       "explanation": {
-        "zh-HK": "沉沒成本效應會令人因過往投入而作出不合理決定。過去的損失不應成為繼續付款的理由。",
-        "zh-CN": "沉没成本效应会令人因过往投入而作出不合理决定。过去的损失不应成为继续付款的理由。",
-        "en": "The sunk cost effect causes people to continue making poor decisions because of previous investments of money, time or effort."
+        "zh-HK": "沉沒成本效應是指人們因為已投入金錢、時間或心力，而繼續作出本來不合理的決定。過去的損失無法透過增加新風險自動挽回。此時應根據目前掌握的事實重新判斷，而不是被過去的投入綁架。",
+        "zh-CN": "沉没成本效应是指人们因为已投入金钱、时间或心力，而继续作出本来不合理的决定。过去的损失无法通过增加新风险自动挽回。此时应根据目前掌握的事实重新判断，而不是被过去的投入绑架。",
+        "en": "The sunk cost effect occurs when people continue making an unreasonable decision because they have already invested money, time or effort. Past losses cannot automatically be recovered by taking further risks. The decision should be reconsidered using the facts currently available, rather than being controlled by what has already been spent."
       },
       "reminder": {
-        "zh-HK": "已付出的金錢，不應成為繼續付款的理由。",
-        "zh-CN": "已付出的金钱，不应成为继续付款的理由。",
-        "en": "Money already spent should never justify further payments."
+        "zh-HK": "已經付出的金錢，不應成為繼續付款的理由。",
+        "zh-CN": "已经付出的金钱，不应成为继续付款的理由。",
+        "en": "Money already spent should not become a reason to keep paying."
       }
     },
     {
       "id": 12,
-      "type": "single",
+      "type": "multiple",
       "presentation": "classic",
       "category": {
         "zh-HK": "求助應對",
@@ -858,53 +914,69 @@
         "en": "What Should You Do If You Suspect a Scam?"
       },
       "scenario": {
-        "zh-HK": "你開始懷疑這是一場騙局。以下哪一組行動最適當？",
-        "zh-CN": "你开始怀疑这是一场骗局。以下哪一组行动最适当？",
-        "en": "You begin to suspect that the investment may be a scam. Which response is most appropriate?"
+        "zh-HK": "你開始懷疑自己遇上投資騙局。以下哪些行動是適當的？（多選）",
+        "zh-CN": "你开始怀疑自己遇上投资骗局。以下哪些行动是适当的？（多选）",
+        "en": "You begin to suspect that you may be involved in an investment scam. Which actions are appropriate? Select all that apply."
       },
       "options": [
         {
           "text": {
-            "zh-HK": "繼續與對方周旋，先收集更多證據",
-            "zh-CN": "继续与对方周旋，先收集更多证据",
-            "en": "Continue communicating with the scammer to gather more evidence"
-          },
-          "correct": false
-        },
-        {
-          "text": {
-            "zh-HK": "在社交媒體公開對方資料",
-            "zh-CN": "在社交媒体公开对方资料",
-            "en": "Publish the person's details on social media"
-          },
-          "correct": false
-        },
-        {
-          "text": {
-            "zh-HK": "停止付款、聯絡銀行、保存證據並透過官方渠道求助",
-            "zh-CN": "停止付款、联络银行、保存证据并通过官方渠道求助",
-            "en": "Stop payments, contact your bank, preserve evidence and seek help through official channels"
+            "zh-HK": "立即停止付款，不再按對方要求轉帳",
+            "zh-CN": "立即停止付款，不再按对方要求转账",
+            "en": "Stop making payments immediately and do not follow further transfer instructions"
           },
           "correct": true
         },
         {
           "text": {
-            "zh-HK": "刪除所有對話紀錄和應用程式",
-            "zh-CN": "删除所有对话纪录和应用程序",
-            "en": "Delete all conversations and applications"
+            "zh-HK": "保存電話、電郵、網址、對話及交易紀錄",
+            "zh-CN": "保存电话、电邮、网址、对话及交易纪录",
+            "en": "Preserve phone details, emails, website addresses, conversations and transaction records"
+          },
+          "correct": true
+        },
+        {
+          "text": {
+            "zh-HK": "盡快聯絡銀行，說明懷疑受騙及查詢可採取的措施",
+            "zh-CN": "尽快联络银行，说明怀疑受骗及查询可采取的措施",
+            "en": "Contact your bank promptly, explain that you suspect fraud and ask what action can be taken"
+          },
+          "correct": true
+        },
+        {
+          "text": {
+            "zh-HK": "透過官方渠道尋求協助；如曾提供密碼或敏感資料，亦應檢查帳戶安全",
+            "zh-CN": "通过官方渠道寻求协助；如曾提供密码或敏感资料，也应检查账户安全",
+            "en": "Seek help through official channels and check account security if passwords or sensitive information were provided"
+          },
+          "correct": true
+        },
+        {
+          "text": {
+            "zh-HK": "刪除所有對話和交易紀錄，以免再看到相關內容",
+            "zh-CN": "删除所有对话和交易纪录，以免再看到相关内容",
+            "en": "Delete all conversations and transaction records so that you no longer have to see them"
+          },
+          "correct": false
+        },
+        {
+          "text": {
+            "zh-HK": "再支付一筆較小款項，測試對方是否真的容許提款",
+            "zh-CN": "再支付一笔较小款项，测试对方是否真的允许提款",
+            "en": "Make one more small payment to test whether the adviser will really allow a withdrawal"
           },
           "correct": false
         }
       ],
       "explanation": {
-        "zh-HK": "懷疑受騙時，應立即停止付款、保存資料、聯絡銀行及尋求協助，不要拖延。",
-        "zh-CN": "怀疑受骗时，应立即停止付款、保存资料、联络银行及寻求协助，不要拖延。",
-        "en": "If you suspect a scam, act quickly. Stop payments, preserve evidence, contact your bank and seek help through official channels."
+        "zh-HK": "懷疑受騙時，時間十分重要。應立即停止付款及聯絡銀行，並保存電話、電郵、網址、收款資料、對話和交易紀錄。如曾提供密碼或敏感資料，應更改密碼並檢查帳戶安全。不要因尷尬、職位或損失金額而延遲求助。",
+        "zh-CN": "怀疑受骗时，时间十分重要。应立即停止付款及联络银行，并保存电话、电邮、网址、收款资料、对话和交易纪录。如曾提供密码或敏感资料，应更改密码并检查账户安全。不要因尴尬、职位或损失金额而延迟求助。",
+        "en": "Time is important when fraud is suspected. Stop making payments, contact your bank and preserve phone details, emails, website addresses, payment information, conversations and transaction records. If passwords or sensitive information were provided, change the passwords and check the security of the affected accounts. Do not delay seeking help because of embarrassment, position or the amount lost."
       },
       "reminder": {
-        "zh-HK": "及早停止、保留證據和求助最重要。",
-        "zh-CN": "及早停止、保留证据和求助最重要。",
-        "en": "Stopping early, preserving evidence and getting help are the most important steps."
+        "zh-HK": "立即停、保存證據、聯絡銀行及透過官方渠道求助。",
+        "zh-CN": "立即停、保存证据、联络银行及通过官方渠道求助。",
+        "en": "Stop immediately, preserve evidence, contact your bank and seek help through official channels."
       }
     }
   ]

@@ -2,19 +2,19 @@
   {
     "id": "fraud_202608",
     "title": {
-      "zh-HK": "fraud_202608",
-      "zh-CN": "fraud_202608",
-      "en": "fraud_202608"
+      "zh-HK": "回報是真的，投資就是真的嗎？",
+      "zh-CN": "回报是真的，投资就是真的吗？",
+      "en": "Does a Real Return Mean a Real Investment?"
     },
     "description": {
-      "zh-HK": "",
-      "zh-CN": "",
-      "en": ""
+      "zh-HK": "識破投資騙局中的信任陷阱",
+      "zh-CN": "识破投资骗局中的信任陷阱",
+      "en": "Recognising Trust-Building Tactics Used in Investment Scams"
     },
     "path": "/fraud_202608/",
     "status": "active",
     "lastModified": {
-      "iso": "2026-08-28T17:49:57+08:00",
+      "iso": "2026-08-31T12:08:36+08:00",
       "display": "2026-08"
     }
   },

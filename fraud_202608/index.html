@@ -3,34 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
 
-  <title>回報是真的，投資就是真的嗎？｜BOKSS Awareness Hub</title>
-
-  <meta
-    name="description"
-    content="透過互動情境，學習識別投資騙局中的假冒身份、專業包裝、初期回報、追加投資及提款障礙。"
-  >
-
-  <!-- CSS：位於 fraud_202608/css/ -->
-  css/base.css
-  <link rel="stylesheet" href="css/quiz.css-card.css
-
-  /js/shared-footer.jsscript>
+  <!-- CSS：位於 misuse_202606/css/ -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/quiz.css">
+  <link rel="stylesheet" href="css/result.css">
+  <link rel="stylesheet" href="css/share-card.css">
+  <script src="/js/shared-footer.js" defer></script>
 </head>
-
 <body>
   <div class="card" id="quizCard">
-
     <div class="topbar">
       <div>
         <div class="badge" id="badge"></div>
       </div>
 
       <div class="lang-box">
-        <div class="lang-label" id="langLabel">
-          Language / 語言 / 语言
-        </div>
-
+        <div class="lang-label" id="langLabel">Language / 語言 / 语言</div>
         <select id="langSelect">
           <option value="zh-HK">繁體中文</option>
           <option value="zh-CN">简体中文</option>
@@ -40,30 +30,23 @@
     </div>
 
     <div class="hero-subtitle" id="heroSubtitle"></div>
-
     <h1 id="siteTitle"></h1>
-
     <div class="intro" id="intro"></div>
 
     <div class="disclaimer-note" id="disclaimerNote">
       <span class="disclaimer-text" data-lang="zh-HK">
-        本測驗為一般防騙教育用途。所有人物、機構、投資產品及情境均為虛構，如與現實事件相似，純屬巧合。
+        本測驗為資訊安全與合規教育用途之模擬情境，並不涉及任何特定真實人物、機構或個案。
       </span>
-
       <span class="disclaimer-text" data-lang="zh-CN">
-        本测验仅供一般防诈骗教育用途。所有人物、机构、投资产品及情境均为虚构，如与现实事件相似，纯属巧合。
+        本测验为信息安全与合规教育用途之模拟情境，并不涉及任何特定真实人物、机构或个案。
       </span>
-
       <span class="disclaimer-text" data-lang="en">
-        This quiz is for general anti-fraud education. All people,
-        organizations, investment products, and scenarios are fictional.
-        Any resemblance to real events is coincidental.
+        This quiz is a simulated scenario for cybersecurity and compliance education only, and does not refer to any specific real person, organization, or case.
       </span>
     </div>
 
     <div id="questionArea">
       <div class="meta" id="meta"></div>
-
       <h2 class="question-title" id="title"></h2>
 
       <div id="storyCard" class="story-card">
@@ -73,18 +56,12 @@
       </div>
 
       <div class="scenario" id="question"></div>
-
       <div class="question-type" id="questionType"></div>
-
       <div class="question-hint" id="questionHint"></div>
 
       <div id="answers"></div>
 
-      <div
-        class="answer-action"
-        id="answerAction"
-        style="display: none;"
-      >
+      <div class="answer-action" id="answerAction" style="display:none;">
         <button id="checkBtn" class="action-btn"></button>
       </div>
 
@@ -96,19 +73,15 @@
     </div>
 
     <div class="summary" id="summary"></div>
-
     <div id="finalResult" class="result"></div>
-
-    <!-- 保留舊 JS 可能使用的 footer 容器，避免 null error -->
     <div id="footer" style="display: none;"></div>
-
     <div id="siteFooter" class="footer-note"></div>
   </div>
 
   <!-- JS：位於網站 root /js/ -->
-  /js/quiz-core.jsscript>
-  /js/quiz-render.jsscript>
-  /js/result-share.jsscript>
-  /js/main.jsscript>
+  <script src="/js/quiz-core.js"></script>
+  <script src="/js/quiz-render.js"></script>
+  <script src="/js/result-share.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>

@@ -1,53 +1,1124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-HK">
 <head>
-  <!-- HUB_SPLIT_20260623_v1 -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BOKSS Awareness Hub</title>
-  <meta name="description" content="BOKSS Awareness Hub - 資安與私隱教育測驗目錄">
-  <link rel="stylesheet" href="style.css">
-  <script src="hub.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+
+  <title>回報是真的，投資就是真的嗎？</title>
+
+  ./css/base.css
+
+  <style>
+    /* Essential fallback only. The main visual theme remains in css/base.css. */
+
+    [hidden] {
+      display: none !important;
+    }
+
+    .app-shell {
+      width: min(960px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 24px 0 40px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 12px;
+    }
+
+    .language-control {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .language-control select {
+      min-height: 40px;
+      padding: 6px 10px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.94);
+      color: #102f3e;
+      border-radius: 22px;
+      padding: clamp(18px, 4vw, 34px);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .hero__badge {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: #d9f1ed;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      margin: 14px 0 8px;
+      line-height: 1.18;
+    }
+
+    .hero__subtitle {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0 0 10px;
+    }
+
+    .hero__intro {
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    .progress-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .progress-track {
+      height: 10px;
+      background: #dce8ec;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0;
+      background: #2d988f;
+      transition: width 0.25s ease;
+    }
+
+    .question-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .pill {
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #e4f1f3;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .question-title {
+      margin: 0.2rem 0 0.7rem;
+    }
+
+    .scenario {
+      padding: 15px 17px;
+      border-radius: 14px;
+      background: #edf6f5;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .options {
+      display: grid;
+      gap: 11px;
+      border: 0;
+      padding: 0;
+      margin: 0;
+    }
+
+    .option {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      padding: 14px 15px;
+      border: 2px solid #cbdde2;
+      border-radius: 14px;
+      background: #ffffff;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+
+    .option:hover {
+      border-color: #2d988f;
+    }
+
+    .option:has(input:checked) {
+      border-color: #177a72;
+      background: #eaf7f5;
+    }
+
+    .option input {
+      margin-top: 0.25em;
+      flex: 0 0 auto;
+    }
+
+    .option.is-correct {
+      border-color: #218c55;
+      background: #e7f7ed;
+    }
+
+    .option.is-wrong {
+      border-color: #c94646;
+      background: #fceaea;
+    }
+
+    .feedback {
+      margin-top: 17px;
+      padding: 16px;
+      border-radius: 14px;
+      background: #f1f5f6;
+      line-height: 1.6;
+    }
+
+    .feedback h3 {
+      margin: 0 0 5px;
+    }
+
+    .reminder {
+      margin-top: 9px;
+      padding-top: 9px;
+      border-top: 1px solid #cadbde;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      min-height: 44px;
+      padding: 9px 17px;
+      border: 0;
+      border-radius: 12px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button.primary {
+      background: #126f69;
+      color: #ffffff;
+    }
+
+    button.secondary {
+      background: #dfebee;
+      color: #173b48;
+    }
+
+    button:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .result {
+      text-align: center;
+    }
+
+    .result-badge {
+      width: min(260px, 80%);
+      height: auto;
+      border-radius: 18px;
+      margin: 12px auto;
+      display: block;
+    }
+
+    .result-score {
+      font-size: clamp(2rem, 8vw, 4rem);
+      font-weight: 800;
+      margin: 6px 0;
+    }
+
+    .disclaimer {
+      margin-top: 18px;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      background: rgba(255, 255, 255, 0.9);
+      color: #173b48;
+      padding: 14px 16px;
+      border-radius: 14px;
+    }
+
+    .site-footer {
+      text-align: center;
+      color: #ffffff;
+      font-weight: 700;
+      margin-top: 18px;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+    }
+
+    .error-card {
+      border-left: 6px solid #cc3333;
+    }
+
+    @media (max-width: 560px) {
+      .app-shell {
+        width: min(100% - 18px, 960px);
+        padding-top: 12px;
+      }
+
+      .actions button {
+        flex: 1;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <div class="page">
-    <div class="hero">
-      <div class="topbar">
-        <div>
-          <div class="badge" id="hubBadge">BOKSS Awareness Hub</div>
+  <main class="app-shell">
+    <div class="topbar">
+      <label class="language-control">
+        <span id="langLabel">Language / 語言 / 语言</span>
+
+        <select id="languageSelect" aria-label="Language">
+          <option value="zh-HK">繁體中文</option>
+          <option value="zh-CN">简体中文</option>
+          <option value="en">English</option>
+        </select>
+      </label>
+    </div>
+
+    <section
+      id="loadingCard"
+      class="card"
+      aria-live="polite"
+    >
+      載入題目中…
+    </section>
+
+    <section
+      id="errorCard"
+      class="card error-card"
+      hidden
+      aria-live="assertive"
+    >
+      <h2 id="errorTitle">❌ Failed to load quiz</h2>
+      <p id="errorDetail"></p>
+    </section>
+
+    <div id="app" hidden>
+      <header class="card hero">
+        <span id="heroBadge" class="hero__badge"></span>
+
+        <h1 id="siteTitle"></h1>
+
+        <p
+          id="heroSubtitle"
+          class="hero__subtitle"
+        ></p>
+
+        <p
+          id="intro"
+          class="hero__intro"
+        ></p>
+      </header>
+
+      <section
+        id="quizCard"
+        class="card"
+        aria-live="polite"
+      >
+        <div class="progress-row">
+          <span id="questionCounter"></span>
+          <span id="scoreText"></span>
         </div>
 
-        <div class="lang-box">
-          <div class="lang-label" id="langLabel">Language / 語言 / 语言</div>
-          <select id="langSelect">
-            <option value="zh-HK">繁體中文</option>
-            <option value="zh-CN">简体中文</option>
-            <option value="en">English</option>
-          </select>
+        <div
+          class="progress-track"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div
+            id="progressBar"
+            class="progress-bar"
+          ></div>
         </div>
-      </div>
 
-      <div class="subtitle" id="hubSubtitle">資安與私隱學習目錄</div>
-      <h1 class="hero-title" id="hubTitle">請選擇一個測驗開始</h1>
-      <div class="intro" id="hubIntro">
-        這裡集合了不同主題的資安及私隱教育測驗。你可按需要選擇合適的測驗開始，並持續留意最新更新。
-      </div>
+        <div class="question-meta">
+          <span
+            id="category"
+            class="pill"
+          ></span>
 
-      <div class="hero-highlight" id="hubHighlight">
-        🎯 精選互動測驗 · 即開即玩
-      </div>
+          <span
+            id="questionType"
+            class="pill"
+          ></span>
+        </div>
+
+        <h2
+          id="questionTitle"
+          class="question-title"
+        ></h2>
+
+        <div
+          id="scenario"
+          class="scenario"
+        ></div>
+
+        <p id="questionHint"></p>
+
+        <fieldset
+          id="options"
+          class="options"
+        ></fieldset>
+
+        <div
+          id="feedback"
+          class="feedback"
+          hidden
+        ></div>
+
+        <div class="actions">
+          <button
+            id="prevButton"
+            class="secondary"
+            type="button"
+          ></button>
+
+          <button
+            id="checkButton"
+            class="primary"
+            type="button"
+          ></button>
+
+          <button
+            id="nextButton"
+            class="primary"
+            type="button"
+            hidden
+          ></button>
+        </div>
+      </section>
+
+      <section
+        id="resultCard"
+        class="card result"
+        hidden
+        aria-live="polite"
+      >
+        <h2 id="resultTitle"></h2>
+
+        <div
+          id="resultScore"
+          class="result-score"
+        ></div>
+
+        
+
+        <h3 id="levelText"></h3>
+
+        <p id="resultMessage"></p>
+
+        <div
+          class="actions"
+          style="justify-content: center;"
+        >
+          <button
+            id="restartButton"
+            class="primary"
+            type="button"
+          ></button>
+
+          <button
+            id="copyButton"
+            class="secondary"
+            type="button"
+          ></button>
+        </div>
+
+        <p
+          id="copyStatus"
+          role="status"
+        ></p>
+      </section>
+
+      <aside class="disclaimer">
+        本測驗為一般防騙教育用途。所有人物、機構、投資產品及情境均為虛構，如與現實事件相似，純屬巧合。
+        <br>
+        本测验为一般防诈骗教育用途。所有人物、机构、投资产品及情境均为虚构，如与现实事件相似，纯属巧合。
+        <br>
+        This quiz is for general anti-fraud education. All people, organisations,
+        investment products, and scenarios are fictional. Any resemblance to real
+        events is coincidental.
+      </aside>
+
+      <footer
+        id="siteFooter"
+        class="site-footer"
+      ></footer>
     </div>
+  </main>
 
-    <div class="section-title" id="sectionTitle">📚 測驗目錄</div>
+  <script>
+    (() => {
+      "use strict";
 
-    <div id="quizList" class="quiz-list">
-      <div class="loading-box" id="loadingBox">載入中...</div>
-    </div>
+      const $ = (id) => document.getElementById(id);
 
-    <div class="footer" id="hubFooter">
-      © 2026 Baptist Oi Kwan Social Service (BOKSS). All rights reserved.
-      <small id="hubFooterSub">Awareness Hub · Cybersecurity & Privacy Education</small>
-    </div>
-  </div>
+      const supportedLanguages = [
+        "zh-HK",
+        "zh-CN",
+        "en"
+      ];
+
+      const defaultLanguage = "zh-HK";
+
+      let data = null;
+      let current = 0;
+      let answers = [];
+
+      let language =
+        localStorage.getItem("fraudQuizLanguage") ||
+        defaultLanguage;
+
+      if (!supportedLanguages.includes(language)) {
+        language = defaultLanguage;
+      }
+
+      $("languageSelect").value = language;
+
+      const text = (value, fallback = "") => {
+        if (value == null) {
+          return fallback;
+        }
+
+        if (typeof value === "string") {
+          return value;
+        }
+
+        return (
+          value[language] ??
+          value[defaultLanguage] ??
+          value.en ??
+          Object.values(value)[0] ??
+          fallback
+        );
+      };
+
+      const ui = (key, fallback = "") => {
+        if (!data || !data.ui) {
+          return fallback;
+        }
+
+        const pack =
+          data.ui[language] ||
+          data.ui[defaultLanguage] ||
+          {};
+
+        return pack[key] ?? fallback;
+      };
+
+      const format = (template, values) => {
+        return Object.entries(values).reduce(
+          (result, [key, value]) => {
+            return result.replaceAll(
+              `{${key}}`,
+              String(value)
+            );
+          },
+          template
+        );
+      };
+
+      async function loadQuiz() {
+        try {
+          const response = await fetch(
+            "./questions.json",
+            {
+              cache: "no-store"
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+          }
+
+          data = await response.json();
+
+          if (
+            !data ||
+            !data.ui ||
+            !Array.isArray(data.questions) ||
+            data.questions.length === 0
+          ) {
+            throw new Error(
+              "Invalid questions.json structure"
+            );
+          }
+
+          answers = data.questions.map(() => ({
+            selected: [],
+            checked: false,
+            correct: false
+          }));
+
+          $("loadingCard").hidden = true;
+          $("app").hidden = false;
+
+          renderAll();
+        } catch (error) {
+          $("loadingCard").hidden = true;
+          $("errorCard").hidden = false;
+
+          $("errorDetail").textContent =
+            error && error.message
+              ? error.message
+              : String(error);
+
+          console.error(
+            "Quiz load error:",
+            error
+          );
+        }
+      }
+
+      function renderAll() {
+        document.documentElement.lang = language;
+
+        document.title = ui(
+          "siteTitle",
+          "Fraud Awareness Quiz"
+        );
+
+        $("langLabel").textContent = ui(
+          "langLabel",
+          "Language / 語言 / 语言"
+        );
+
+        $("heroBadge").textContent = ui("badge");
+        $("siteTitle").textContent = ui("siteTitle");
+        $("heroSubtitle").textContent = ui("heroSubtitle");
+        $("intro").textContent = ui("intro");
+        $("siteFooter").textContent = ui("footer");
+
+        $("prevButton").textContent = ui(
+          "prev",
+          "Previous"
+        );
+
+        $("checkButton").textContent = ui(
+          "checkAnswer",
+          "Submit answer"
+        );
+
+        $("restartButton").textContent = ui(
+          "restartQuiz",
+          ui("restart", "Restart")
+        );
+
+        $("copyButton").textContent = ui(
+          "copyLink",
+          "Copy quiz link"
+        );
+
+        if (!$("resultCard").hidden) {
+          renderResult();
+        } else {
+          renderQuestion();
+        }
+      }
+
+      function renderQuestion() {
+        const question = data.questions[current];
+        const state = answers[current];
+        const total = data.questions.length;
+
+        const answeredCorrectly = answers.filter(
+          (answer) =>
+            answer.checked &&
+            answer.correct
+        ).length;
+
+        $("questionCounter").textContent = format(
+          ui(
+            "questionLabel",
+            "{current}/{total}"
+          ),
+          {
+            current: current + 1,
+            total
+          }
+        );
+
+        $("scoreText").textContent =
+          `${ui("scoreLabel", "Score")}: ` +
+          `${answeredCorrectly}/${total}`;
+
+        const progress =
+          ((current + 1) / total) * 100;
+
+        $("progressBar").style.width =
+          `${progress}%`;
+
+        $("progressBar")
+          .parentElement
+          .setAttribute(
+            "aria-valuenow",
+            String(Math.round(progress))
+          );
+
+        $("category").textContent =
+          text(question.category);
+
+        const multiple =
+          question.type === "multiple";
+
+        $("questionType").textContent = ui(
+          multiple
+            ? "multipleLabel"
+            : "singleLabel",
+          multiple
+            ? "Multiple choice"
+            : "Single choice"
+        );
+
+        $("questionHint").textContent = ui(
+          multiple
+            ? "multipleHint"
+            : "singleHint"
+        );
+
+        $("questionTitle").textContent =
+          text(question.title);
+
+        $("scenario").textContent =
+          text(question.scenario);
+
+        $("options").replaceChildren();
+
+        $("options").setAttribute(
+          "aria-label",
+          text(question.title)
+        );
+
+        question.options.forEach(
+          (option, index) => {
+            const label =
+              document.createElement("label");
+
+            label.className = "option";
+
+            const input =
+              document.createElement("input");
+
+            input.type = multiple
+              ? "checkbox"
+              : "radio";
+
+            input.name =
+              `question-${question.id ?? current}`;
+
+            input.value = String(index);
+
+            input.checked =
+              state.selected.includes(index);
+
+            input.disabled =
+              state.checked;
+
+            input.addEventListener(
+              "change",
+              () => {
+                if (multiple) {
+                  state.selected = [
+                    ...$("options")
+                      .querySelectorAll(
+                        "input:checked"
+                      )
+                  ].map(
+                    (item) =>
+                      Number(item.value)
+                  );
+                } else {
+                  state.selected = [index];
+                }
+              }
+            );
+
+            const span =
+              document.createElement("span");
+
+            span.textContent =
+              text(option.text);
+
+            label.append(
+              input,
+              span
+            );
+
+            if (state.checked) {
+              if (option.correct) {
+                label.classList.add(
+                  "is-correct"
+                );
+              } else if (
+                state.selected.includes(index)
+              ) {
+                label.classList.add(
+                  "is-wrong"
+                );
+              }
+            }
+
+            $("options").append(label);
+          }
+        );
+
+        $("feedback").hidden =
+          !state.checked;
+
+        if (state.checked) {
+          renderFeedback(
+            question,
+            state
+          );
+        }
+
+        $("prevButton").disabled =
+          current === 0;
+
+        $("checkButton").hidden =
+          state.checked;
+
+        $("nextButton").hidden =
+          !state.checked;
+
+        $("nextButton").textContent =
+          current === total - 1
+            ? ui("finish", "Finish")
+            : ui("next", "Next");
+      }
+
+      function renderFeedback(
+        question,
+        state
+      ) {
+        const box = $("feedback");
+
+        box.replaceChildren();
+
+        const heading =
+          document.createElement("h3");
+
+        heading.textContent =
+          state.correct
+            ? ui(
+                "correctLabel",
+                "Correct"
+              )
+            : ui(
+                "wrongLabel",
+                "Incorrect"
+              );
+
+        const explanation =
+          document.createElement("p");
+
+        explanation.textContent =
+          text(question.explanation);
+
+        box.append(
+          heading,
+          explanation
+        );
+
+        if (question.reminder) {
+          const reminder =
+            document.createElement("p");
+
+          reminder.className =
+            "reminder";
+
+          const strong =
+            document.createElement("strong");
+
+          strong.textContent =
+            `${ui(
+              "reminderLabel",
+              "Reminder"
+            )}: `;
+
+          reminder.append(
+            strong,
+            document.createTextNode(
+              text(question.reminder)
+            )
+          );
+
+          box.append(reminder);
+        }
+      }
+
+      function checkAnswer() {
+        const state =
+          answers[current];
+
+        const question =
+          data.questions[current];
+
+        const selected = [
+          ...$("options").querySelectorAll(
+            "input:checked"
+          )
+        ].map(
+          (item) =>
+            Number(item.value)
+        );
+
+        if (selected.length === 0) {
+          alert(
+            ui(
+              "selectAtLeastOne",
+              "Please select at least one answer."
+            )
+          );
+
+          return;
+        }
+
+        const correct =
+          question.options
+            .map(
+              (option, index) =>
+                option.correct
+                  ? index
+                  : -1
+            )
+            .filter(
+              (index) =>
+                index >= 0
+            );
+
+        state.selected =
+          selected.sort(
+            (a, b) => a - b
+          );
+
+        state.correct =
+          state.selected.length ===
+            correct.length &&
+          state.selected.every(
+            (value, index) =>
+              value === correct[index]
+          );
+
+        state.checked = true;
+
+        renderQuestion();
+      }
+
+      function showResult() {
+        $("quizCard").hidden = true;
+        $("resultCard").hidden = false;
+
+        renderResult();
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      }
+
+      function renderResult() {
+        const correct =
+          answers.filter(
+            (answer) =>
+              answer.correct
+          ).length;
+
+        const total =
+          data.questions.length;
+
+        const percent =
+          Math.round(
+            (correct / total) * 100
+          );
+
+        const level =
+          percent === 100
+            ? "perfect"
+            : percent >= 70
+              ? "pass70"
+              : "below70";
+
+        const pack =
+          data.ui[language] ||
+          data.ui[defaultLanguage];
+
+        $("resultTitle").textContent = ui(
+          "resultTitle",
+          "Your result"
+        );
+
+        $("resultScore").textContent =
+          `${percent}%`;
+
+        const levelName =
+          pack.levels &&
+          pack.levels[level]
+            ? pack.levels[level]
+            : level;
+
+        $("levelText").textContent =
+          `${ui("levelLabel", "Rank")}: ` +
+          levelName;
+
+        $("resultMessage").textContent =
+          text(
+            data.messages &&
+            data.messages[level]
+          );
+
+        $("resultBadge").src =
+          `./img/badge-${level}.jpeg`;
+
+        $("resultBadge").alt =
+          levelName;
+
+        $("restartButton").textContent = ui(
+          "restartQuiz",
+          ui("restart", "Restart")
+        );
+
+        $("copyButton").textContent = ui(
+          "copyLink",
+          "Copy quiz link"
+        );
+      }
+
+      $("languageSelect").addEventListener(
+        "change",
+        (event) => {
+          language =
+            supportedLanguages.includes(
+              event.target.value
+            )
+              ? event.target.value
+              : defaultLanguage;
+
+          localStorage.setItem(
+            "fraudQuizLanguage",
+            language
+          );
+
+          $("copyStatus").textContent = "";
+
+          renderAll();
+        }
+      );
+
+      $("checkButton").addEventListener(
+        "click",
+        checkAnswer
+      );
+
+      $("prevButton").addEventListener(
+        "click",
+        () => {
+          if (current > 0) {
+            current -= 1;
+            renderQuestion();
+          }
+        }
+      );
+
+      $("nextButton").addEventListener(
+        "click",
+        () => {
+          if (!answers[current].checked) {
+            alert(
+              ui(
+                "answerBeforeNext",
+                "Please answer this question before moving on."
+              )
+            );
+
+            return;
+          }
+
+          if (
+            current <
+            data.questions.length - 1
+          ) {
+            current += 1;
+
+            renderQuestion();
+
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          } else {
+            showResult();
+          }
+        }
+      );
+
+      $("restartButton").addEventListener(
+        "click",
+        () => {
+          current = 0;
+
+          answers = data.questions.map(
+            () => ({
+              selected: [],
+              checked: false,
+              correct: false
+            })
+          );
+
+          $("resultCard").hidden = true;
+          $("quizCard").hidden = false;
+          $("copyStatus").textContent = "";
+
+          renderQuestion();
+
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        }
+      );
+
+      $("copyButton").addEventListener(
+        "click",
+        async () => {
+          const quizLink =
+            window.location.href.split("#")[0];
+
+          try {
+            await navigator.clipboard.writeText(
+              quizLink
+            );
+
+            $("copyStatus").textContent = ui(
+              "copied",
+              "Link copied successfully."
+            );
+          } catch (error) {
+            $("copyStatus").textContent =
+              quizLink;
+          }
+        }
+      );
+
+      loadQuiz();
+    })();
+  </script>
 </body>
 </html>
